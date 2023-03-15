@@ -1,8 +1,8 @@
 namespace Project_Media_Bazaar
 {
-    public partial class Form1 : Form
+    public partial class ManagementForm : Form
     {
-        public Form1()
+        public ManagementForm()
         {
             InitializeComponent();
         }
