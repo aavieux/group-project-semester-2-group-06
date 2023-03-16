@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project_Media_Bazaar", "Project_Media_Bazaar\Project_Media_Bazaar.csproj", "{B47CD9B9-00E3-44B0-9E1C-F336C5D937D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{9EE40EA6-A3C7-473C-9FEF-D16BB94F998F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{9EE40EA6-A3C7-473C-9FEF-D16BB94F998F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataManagement", "DataManagement\DataManagement.csproj", "{96074106-4A23-4F1D-B618-A90E66F5C871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9EE40EA6-A3C7-473C-9FEF-D16BB94F998F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EE40EA6-A3C7-473C-9FEF-D16BB94F998F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EE40EA6-A3C7-473C-9FEF-D16BB94F998F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96074106-4A23-4F1D-B618-A90E66F5C871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96074106-4A23-4F1D-B618-A90E66F5C871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96074106-4A23-4F1D-B618-A90E66F5C871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96074106-4A23-4F1D-B618-A90E66F5C871}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
