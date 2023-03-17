@@ -1,20 +1,30 @@
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.csproj.AssemblyReference.cache
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.ProductInformation.resources
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.csproj.GenerateResource.cache
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.AssemblyInfoInputs.cache
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.AssemblyInfo.cs
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.csproj.CoreCompileInputs.cache
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.exe
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.deps.json
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.runtimeconfig.json
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.dll
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.pdb
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Domain.dll
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Domain.pdb
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.csproj.CopyComplete
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.dll
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\refint\Project_Media_Bazaar.dll
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.pdb
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.genruntimeconfig.cache
-C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\ref\Project_Media_Bazaar.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.csproj.AssemblyReference.cache
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.AddProduct.resources
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.ManagementForm.resources
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.csproj.GenerateResource.cache
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.GeneratedMSBuildEditorConfig.editorconfig
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.AssemblyInfoInputs.cache
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.AssemblyInfo.cs
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.csproj.CoreCompileInputs.cache
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.exe
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.deps.json
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.runtimeconfig.json
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Project_Media_Bazaar.pdb
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\System.Data.SqlClient.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\runtimes\win-arm64\native\sni.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\runtimes\win-x64\native\sni.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\DataManagement.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Domain.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\Domain.pdb
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\bin\Debug\net7.0-windows\DataManagement.pdb
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.csproj.CopyComplete
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\refint\Project_Media_Bazaar.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.pdb
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.genruntimeconfig.cache
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\ref\Project_Media_Bazaar.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.ProductStatisticsForm.resources

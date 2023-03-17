@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,9 +11,10 @@ namespace Domain
 {
     public class Management
     {
-        public void AddProduct(string name, int amount, Category category, string description)
+        SqlHelperG sql = new SqlHelperG();
+        public void AddProduct(string name, Category category, string description)
         {
-
+            sql.AddProduct(name, category.ToString(), description);
         }
         public void DeleteProduct(int id)
         {
