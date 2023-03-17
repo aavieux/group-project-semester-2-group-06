@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 ﻿using DataManagement;
 using System;
 using System.Collections.Generic;
 using System.Data;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+>>>>>>> 7465f7d20ddbe970773f4e3e1e633f8e12700d67
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain
 {
+<<<<<<< HEAD
     public static class Company
     {
         private static List<Product> products = new List<Product>();
@@ -30,6 +37,25 @@ namespace Domain
         {
             SqlHelperG sql = new SqlHelperG();
             sql.DeleteProduct(product.Id);
+=======
+    public class Company
+    {
+        public List<Product> products { get; private set; }
+        public Company()
+        {
+            products = new List<Product>();
+        }
+        public Product? findProductById(int id)
+        {
+            foreach(Product product in products)
+            {
+                if(product.Id == id)
+                {
+                    return product;
+                }
+            }
+            return null;
+>>>>>>> 7465f7d20ddbe970773f4e3e1e633f8e12700d67
         }
     }
 }
