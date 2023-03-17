@@ -41,6 +41,7 @@ public partial class ManagementForm : Form
 
     private void bProductStatistics_Click(object sender, EventArgs e)
     {
-
+        ProductStatisticsForm form = new ProductStatisticsForm();
+        form.ShowDialog();
     }
 }

@@ -27,3 +27,4 @@ D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windo
 D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.pdb
 D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.genruntimeconfig.cache
 D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\ref\Project_Media_Bazaar.dll
+D:\group-project-semester-2-group-06\Project_Media_Bazaar\obj\Debug\net7.0-windows\Project_Media_Bazaar.ProductStatisticsForm.resources

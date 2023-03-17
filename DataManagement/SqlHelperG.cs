@@ -122,5 +122,18 @@ public class SqlHelperG
             throw;
         }
     }
+    public DataTable AddStockIncrease()
+    {
+        query = "";
+        try
+        {
+
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 
 }
