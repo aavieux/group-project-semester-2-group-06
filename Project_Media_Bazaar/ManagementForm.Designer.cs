@@ -28,68 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            lbProducts = new ListBox();
+            bAddProduct = new Button();
+            bRemoveProduct = new Button();
+            bIncreaseStock = new Button();
+            bReduceStock = new Button();
+            bRefreshProducts = new Button();
+            bProductStatistics = new Button();
             SuspendLayout();
             // 
-            // listBox1
+            // lbProducts
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(12, 12);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(1153, 854);
-            listBox1.TabIndex = 0;
+            lbProducts.FormattingEnabled = true;
+            lbProducts.ItemHeight = 15;
+            lbProducts.Location = new Point(8, 7);
+            lbProducts.Margin = new Padding(2);
+            lbProducts.Name = "lbProducts";
+            lbProducts.Size = new Size(808, 634);
+            lbProducts.TabIndex = 0;
             // 
-            // button1
+            // bAddProduct
             // 
-            button1.Location = new Point(1171, 241);
-            button1.Name = "button1";
-            button1.Size = new Size(298, 155);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            bAddProduct.Location = new Point(820, 7);
+            bAddProduct.Margin = new Padding(2);
+            bAddProduct.Name = "bAddProduct";
+            bAddProduct.Size = new Size(209, 93);
+            bAddProduct.TabIndex = 1;
+            bAddProduct.Text = "Add product";
+            bAddProduct.UseVisualStyleBackColor = true;
+            bAddProduct.Click += bAddProduct_Click;
             // 
-            // button2
+            // bRemoveProduct
             // 
-            button2.Location = new Point(1171, 402);
-            button2.Name = "button2";
-            button2.Size = new Size(298, 149);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            bRemoveProduct.Location = new Point(820, 113);
+            bRemoveProduct.Margin = new Padding(2);
+            bRemoveProduct.Name = "bRemoveProduct";
+            bRemoveProduct.Size = new Size(209, 89);
+            bRemoveProduct.TabIndex = 2;
+            bRemoveProduct.Text = "Remove product";
+            bRemoveProduct.UseVisualStyleBackColor = true;
+            bRemoveProduct.Click += bRemoveProduct_Click;
             // 
-            // button3
+            // bIncreaseStock
             // 
-            button3.Location = new Point(1171, 557);
-            button3.Name = "button3";
-            button3.Size = new Size(298, 151);
-            button3.TabIndex = 3;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            bIncreaseStock.Location = new Point(820, 217);
+            bIncreaseStock.Margin = new Padding(2);
+            bIncreaseStock.Name = "bIncreaseStock";
+            bIncreaseStock.Size = new Size(209, 91);
+            bIncreaseStock.TabIndex = 3;
+            bIncreaseStock.Text = "Increase stock";
+            bIncreaseStock.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // bReduceStock
             // 
-            button4.Location = new Point(1171, 714);
-            button4.Name = "button4";
-            button4.Size = new Size(298, 152);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            bReduceStock.Location = new Point(820, 323);
+            bReduceStock.Margin = new Padding(2);
+            bReduceStock.Name = "bReduceStock";
+            bReduceStock.Size = new Size(209, 91);
+            bReduceStock.TabIndex = 4;
+            bReduceStock.Text = "Reduce stock";
+            bReduceStock.UseVisualStyleBackColor = true;
+            // 
+            // bRefreshProducts
+            // 
+            bRefreshProducts.Location = new Point(820, 429);
+            bRefreshProducts.Margin = new Padding(2);
+            bRefreshProducts.Name = "bRefreshProducts";
+            bRefreshProducts.Size = new Size(209, 91);
+            bRefreshProducts.TabIndex = 5;
+            bRefreshProducts.Text = "Refresh";
+            bRefreshProducts.UseVisualStyleBackColor = true;
+            bRefreshProducts.Click += bRefreshProducts_Click;
+            // 
+            // bProductStatistics
+            // 
+            bProductStatistics.Location = new Point(820, 539);
+            bProductStatistics.Margin = new Padding(2);
+            bProductStatistics.Name = "bProductStatistics";
+            bProductStatistics.Size = new Size(209, 91);
+            bProductStatistics.TabIndex = 6;
+            bProductStatistics.Text = "Open statistics";
+            bProductStatistics.UseVisualStyleBackColor = true;
+            bProductStatistics.Click += bProductStatistics_Click;
             // 
             // ManagementForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1481, 885);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(listBox1);
+            ClientSize = new Size(1037, 650);
+            Controls.Add(bProductStatistics);
+            Controls.Add(bRefreshProducts);
+            Controls.Add(bReduceStock);
+            Controls.Add(bIncreaseStock);
+            Controls.Add(bRemoveProduct);
+            Controls.Add(bAddProduct);
+            Controls.Add(lbProducts);
+            Margin = new Padding(2);
             Name = "ManagementForm";
             Text = "Form1";
             ResumeLayout(false);
@@ -97,10 +131,12 @@
 
         #endregion
 
-        private ListBox listBox1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private ListBox lbProducts;
+        private Button bAddProduct;
+        private Button bRemoveProduct;
+        private Button bIncreaseStock;
+        private Button bReduceStock;
+        private Button bRefreshProducts;
+        private Button bProductStatistics;
     }
 }

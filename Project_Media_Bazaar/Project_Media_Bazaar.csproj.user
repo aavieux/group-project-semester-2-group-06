@@ -8,5 +8,8 @@
     <Compile Update="ManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ProductStatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

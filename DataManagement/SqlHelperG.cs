@@ -63,8 +63,53 @@ public class SqlHelperG
         {
             using (SqlConnection conn = new SqlConnection(connection))
             {
+
                 cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@amount", amount);
+                cmd.Parameters.AddWithValue("@id", id);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+    public DataTable ReadProducts()
+    {
+        datatable1 = new DataTable();
+        query = "SELECT * FROM dbo.Product";
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                reader = new SqlDataAdapter();
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                reader.SelectCommand = cmd;
+                reader.Fill(datatable1);
+                conn.Close();
+                reader.Dispose();
+                return datatable1;
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+    public void DeleteProduct(int id)
+    {
+        query = "DELETE FROM dbo.Product WHERE id = @id";
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 conn.Open();
                 cmd.ExecuteNonQuery();
