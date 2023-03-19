@@ -1,0 +1,12 @@
+D:\group-project-semester-2-group-06\DataManagement\bin\Debug\net7.0\DataManagement.deps.json
+D:\group-project-semester-2-group-06\DataManagement\bin\Debug\net7.0\DataManagement.dll
+D:\group-project-semester-2-group-06\DataManagement\bin\Debug\net7.0\DataManagement.pdb
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.csproj.AssemblyReference.cache
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.GeneratedMSBuildEditorConfig.editorconfig
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.AssemblyInfoInputs.cache
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.AssemblyInfo.cs
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.csproj.CoreCompileInputs.cache
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.dll
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\refint\DataManagement.dll
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.pdb
+D:\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\ref\DataManagement.dll
