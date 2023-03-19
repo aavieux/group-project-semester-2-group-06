@@ -43,9 +43,10 @@
             // 
             // bAddProduct
             // 
-            bAddProduct.Location = new Point(1171, 186);
+            bAddProduct.Location = new Point(820, 112);
+            bAddProduct.Margin = new Padding(2);
             bAddProduct.Name = "bAddProduct";
-            bAddProduct.Size = new Size(299, 155);
+            bAddProduct.Size = new Size(209, 93);
             bAddProduct.TabIndex = 1;
             bAddProduct.Text = "Add product";
             bAddProduct.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@
             // 
             // bRemoveProduct
             // 
-            bRemoveProduct.Location = new Point(1170, 361);
+            bRemoveProduct.Location = new Point(819, 217);
+            bRemoveProduct.Margin = new Padding(2);
             bRemoveProduct.Name = "bRemoveProduct";
-            bRemoveProduct.Size = new Size(299, 148);
+            bRemoveProduct.Size = new Size(209, 89);
             bRemoveProduct.TabIndex = 2;
             bRemoveProduct.Text = "Remove product";
             bRemoveProduct.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // 
             // bViewDetailsProduct
             // 
-            bViewDetailsProduct.Location = new Point(1170, 12);
+            bViewDetailsProduct.Location = new Point(819, 7);
+            bViewDetailsProduct.Margin = new Padding(2);
             bViewDetailsProduct.Name = "bViewDetailsProduct";
-            bViewDetailsProduct.Size = new Size(299, 152);
+            bViewDetailsProduct.Size = new Size(209, 91);
             bViewDetailsProduct.TabIndex = 3;
             bViewDetailsProduct.Text = "View details";
             bViewDetailsProduct.UseVisualStyleBackColor = true;
@@ -73,18 +76,20 @@
             // 
             // bReduceStock
             // 
-            bReduceStock.Location = new Point(1171, 538);
+            bReduceStock.Location = new Point(820, 323);
+            bReduceStock.Margin = new Padding(2);
             bReduceStock.Name = "bReduceStock";
-            bReduceStock.Size = new Size(299, 152);
+            bReduceStock.Size = new Size(209, 91);
             bReduceStock.TabIndex = 4;
             bReduceStock.Text = "Reduce stock";
             bReduceStock.UseVisualStyleBackColor = true;
             // 
             // bRefreshProducts
             // 
-            bRefreshProducts.Location = new Point(1171, 715);
+            bRefreshProducts.Location = new Point(820, 429);
+            bRefreshProducts.Margin = new Padding(2);
             bRefreshProducts.Name = "bRefreshProducts";
-            bRefreshProducts.Size = new Size(299, 152);
+            bRefreshProducts.Size = new Size(209, 91);
             bRefreshProducts.TabIndex = 5;
             bRefreshProducts.Text = "Refresh";
             bRefreshProducts.UseVisualStyleBackColor = true;
@@ -92,9 +97,10 @@
             // 
             // bProductStatistics
             // 
-            bProductStatistics.Location = new Point(1171, 898);
+            bProductStatistics.Location = new Point(820, 539);
+            bProductStatistics.Margin = new Padding(2);
             bProductStatistics.Name = "bProductStatistics";
-            bProductStatistics.Size = new Size(299, 152);
+            bProductStatistics.Size = new Size(209, 91);
             bProductStatistics.TabIndex = 6;
             bProductStatistics.Text = "Open statistics";
             bProductStatistics.UseVisualStyleBackColor = true;
@@ -103,9 +109,10 @@
             // lvProducts
             // 
             lvProducts.Columns.AddRange(new ColumnHeader[] { ColumnId, ColumnName, ColumnAmount, ColumnCategory });
-            lvProducts.Location = new Point(-1, 12);
+            lvProducts.Location = new Point(-1, 7);
+            lvProducts.Margin = new Padding(2);
             lvProducts.Name = "lvProducts";
-            lvProducts.Size = new Size(1165, 1070);
+            lvProducts.Size = new Size(817, 644);
             lvProducts.TabIndex = 7;
             lvProducts.UseCompatibleStateImageBehavior = false;
             lvProducts.View = View.Details;
@@ -113,7 +120,7 @@
             // ColumnId
             // 
             ColumnId.Text = "ID";
-            ColumnId.Width = 200;
+            ColumnId.Width = 50;
             // 
             // ColumnName
             // 
@@ -132,9 +139,9 @@
             // 
             // ManagementForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1481, 1083);
+            ClientSize = new Size(1037, 650);
             Controls.Add(lvProducts);
             Controls.Add(bProductStatistics);
             Controls.Add(bRefreshProducts);
@@ -142,6 +149,7 @@
             Controls.Add(bViewDetailsProduct);
             Controls.Add(bRemoveProduct);
             Controls.Add(bAddProduct);
+            Margin = new Padding(2);
             Name = "ManagementForm";
             Text = "Form1";
             ResumeLayout(false);

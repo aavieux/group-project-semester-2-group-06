@@ -32,14 +32,21 @@ public partial class ManagementForm : Form
     {
         Company.FillProductsList();
         lvProducts.Items.Clear();
-
         foreach (Product product in Company.GetProducts())
         {
             if (product.Amount > 50)
-                lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
+            {
+                string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
+                lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
+                lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Green;
+
+            }
             else
             {
-               // lvProducts.Items.Add();
+                string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
+                lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
+                lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
+                //lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
                 //lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
             }
 
