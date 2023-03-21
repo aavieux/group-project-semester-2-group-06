@@ -1,38 +1,37 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using DataManagement;
 
 namespace Domain
 {
-    public class Company
+    public static class Company
     {
-        public List<Product> products { get; private set; }
-        public Company()
+        private static List<Product> products = new List<Product>();
+        public static void FillProductsList()
         {
-            products = new List<Product>();
-        }
-        public Product? findProductById(int id)
-        {
-            foreach(Product product in products)
+            SqlHelperG sql = new SqlHelperG();
+            Product product;
+            products.Clear();
+            var table = sql.ReadProducts();
+            foreach (DataRow dr in table.Rows)
             {
-                if(product.Id == id)
-                {
-                    return product;
-                }
+                products.Add(product = new Product((int)dr[0], (string)dr[1], (int)dr[2], (string)dr[3], (string)dr[4]));
             }
-<<<<<<< Updated upstream
-            return null;
-        }
-=======
         }
         public static List<Product> GetProducts()
         {
             return products;
         }
-       
->>>>>>> Stashed changes
+        public static void DeleteProduct(Product product)
+        {
+            SqlHelperG sql = new SqlHelperG();
+            sql.DeleteProduct(product.Id);
+
+        }
     }
 }

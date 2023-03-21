@@ -128,7 +128,6 @@
             this.Text = "AddProduct";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.bAddProduct = new System.Windows.Forms.Button();
             this.bRemoveProduct = new System.Windows.Forms.Button();
             this.bViewDetailsProduct = new System.Windows.Forms.Button();
@@ -153,14 +154,16 @@
             this.Name = "ManagementForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
-
         }
 
         #endregion
         private Button bAddProduct;
         private Button bRemoveProduct;
         private Button bViewDetailsProduct;
+
         private Button bChangeStock;
+
+        private Button bReduceStock;
         private Button bRefreshProducts;
         private Button bProductStatistics;
         private ListView lvProducts;

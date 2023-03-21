@@ -28,62 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.showName = new System.Windows.Forms.Label();
-            this.showCategory = new System.Windows.Forms.Label();
-            this.showDescription = new System.Windows.Forms.Label();
-            this.showAmount = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            showName = new Label();
+            showCategory = new Label();
+            showDescription = new Label();
+            showAmount = new Label();
+            SuspendLayout();
             // 
             // showName
             // 
-            this.showName.AutoSize = true;
-            this.showName.Location = new System.Drawing.Point(159, 100);
-            this.showName.Name = "showName";
-            this.showName.Size = new System.Drawing.Size(46, 20);
-            this.showName.TabIndex = 0;
-            this.showName.Text = "name";
+            showName.AutoSize = true;
+            showName.Location = new Point(199, 135);
+            showName.Margin = new Padding(4, 0, 4, 0);
+            showName.Name = "showName";
+            showName.Size = new Size(56, 25);
+            showName.TabIndex = 0;
+            showName.Text = "name";
             // 
             // showCategory
             // 
-            this.showCategory.AutoSize = true;
-            this.showCategory.Location = new System.Drawing.Point(348, 109);
-            this.showCategory.Name = "showCategory";
-            this.showCategory.Size = new System.Drawing.Size(67, 20);
-            this.showCategory.TabIndex = 1;
-            this.showCategory.Text = "category";
+            showCategory.AutoSize = true;
+            showCategory.Location = new Point(199, 185);
+            showCategory.Margin = new Padding(4, 0, 4, 0);
+            showCategory.Name = "showCategory";
+            showCategory.Size = new Size(81, 25);
+            showCategory.TabIndex = 1;
+            showCategory.Text = "category";
             // 
             // showDescription
             // 
-            this.showDescription.AutoSize = true;
-            this.showDescription.Location = new System.Drawing.Point(367, 215);
-            this.showDescription.Name = "showDescription";
-            this.showDescription.Size = new System.Drawing.Size(83, 20);
-            this.showDescription.TabIndex = 2;
-            this.showDescription.Text = "description";
+            showDescription.AutoSize = true;
+            showDescription.Location = new Point(199, 210);
+            showDescription.Margin = new Padding(4, 0, 4, 0);
+            showDescription.Name = "showDescription";
+            showDescription.Size = new Size(100, 25);
+            showDescription.TabIndex = 2;
+            showDescription.Text = "description";
             // 
             // showAmount
             // 
-            this.showAmount.AutoSize = true;
-            this.showAmount.Location = new System.Drawing.Point(557, 53);
-            this.showAmount.Name = "showAmount";
-            this.showAmount.Size = new System.Drawing.Size(60, 20);
-            this.showAmount.TabIndex = 3;
-            this.showAmount.Text = "amount";
+            showAmount.AutoSize = true;
+            showAmount.Location = new Point(199, 160);
+            showAmount.Margin = new Padding(4, 0, 4, 0);
+            showAmount.Name = "showAmount";
+            showAmount.Size = new Size(74, 25);
+            showAmount.TabIndex = 3;
+            showAmount.Text = "amount";
             // 
-            // Product
+            // ProductInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.showAmount);
-            this.Controls.Add(this.showDescription);
-            this.Controls.Add(this.showCategory);
-            this.Controls.Add(this.showName);
-            this.Name = "Product";
-            this.Text = "Product Information";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1000, 562);
+            Controls.Add(showAmount);
+            Controls.Add(showDescription);
+            Controls.Add(showCategory);
+            Controls.Add(showName);
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "ProductInformation";
+            Text = "Product Information";
+            Load += ProductInformation_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

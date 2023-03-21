@@ -1,6 +1,4 @@
 namespace Project_Media_Bazaar;
-
-using DataManagement;
 using Domain;
 
 public partial class ManagementForm : Form

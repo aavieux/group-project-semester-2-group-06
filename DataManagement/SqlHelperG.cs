@@ -36,8 +36,8 @@ public class SqlHelperG
             throw;
         }
     }
-    public void ChangeStockAmount(int id, int amount)
-    {
+    public void ChangeStockAmount(int id, int amount){
+
         query = "UPDATE dbo.Product SET amount = @amount WHERE id=@id";
         try
         {
@@ -125,5 +125,4 @@ public class SqlHelperG
             throw;
         }
     }
-
 }
