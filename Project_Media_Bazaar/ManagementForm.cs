@@ -63,7 +63,6 @@ public partial class ManagementForm : Form
         ProductInformation form = new ProductInformation(Company.GetProducts()[lvProducts.FocusedItem.Index]);
         form.ShowDialog();
     }
-
     private void bChangeStock_Click(object sender, EventArgs e)
     {
         AmountChange amountChange = new AmountChange(Company.GetProducts()[lvProducts.FocusedItem.Index], manager);
