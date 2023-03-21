@@ -20,5 +20,16 @@ namespace Domain
             Category = Enum.Parse<Category>(category);
             Description = description;
         }
+        public void changeAmount(int amount)
+        {
+            if (amount < 0)
+            {
+                throw new ArgumentException();
+            }
+            else
+            {
+                Amount = amount;
+            }
+        }
     }
 }

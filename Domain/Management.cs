@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Domain
 {
@@ -18,15 +17,36 @@ namespace Domain
         }
         public void DeleteProduct(int id)
         {
-
+            sql.DeleteProduct(id);
         }
-        public void ReduceStock(int id, int amount) 
+        public bool ChangeStockAmount(Product product, int amount, string operation)
         {
+            try
+            {
+                if (operation.Equals("increase"))
+                {
+                    product.changeAmount(product.Amount + amount);
 
+                }
+                if (operation.Equals("decrease"))
+                {
+                    product.changeAmount(product.Amount - amount);
+                }
+                sql.ChangeStockAmount(product.Id, amount);
+            }
+            catch (ArgumentException)
+            {
+                return false;
+            }
+            return true;
         }
-        public void IncreaseStock(int id, int amount) 
+        public void CreateChange(int productId, int change, int isRestock)
         {
-
+            sql.CreateChange(productId, DateTime.Now, change, isRestock);
+        }
+        public void ChangeStockAmount(int productId, int amount)
+        {
+            sql.ChangeStockAmount(productId, amount);
         }
     }
 }

@@ -36,28 +36,8 @@ public class SqlHelperG
             throw;
         }
     }
-    public void RemoveProduct(int id)
-    {
-        query = "Delete from dbo.Product where id=@id";
-        try
-        {
-            using (SqlConnection conn = new SqlConnection(connection))
-            {
-                cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", id);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-        }
-        catch (Exception)
-        {
+    public void ChangeStockAmount(int id, int amount){
 
-            throw;
-        }
-    }
-    public void IncreaseStock(int id, int amount)
-    {
         query = "UPDATE dbo.Product SET amount = @amount WHERE id=@id";
         try
         {
@@ -122,5 +102,27 @@ public class SqlHelperG
             throw;
         }
     }
+    public void CreateChange(int productId, DateTime dateTime, int change, int isRestock)
+    {
+        query = "INSERT INTO dbo.StockChange (productId, date, change, isRestock) VALUES (@productId, @date, @change, @isRestock)";
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@productId", productId);
+                cmd.Parameters.AddWithValue("@date", dateTime);
+                cmd.Parameters.AddWithValue("@change", change);
+                cmd.Parameters.AddWithValue("@isRestock", isRestock);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
+        catch (Exception)
+        {
 
+            throw;
+        }
+    }
 }

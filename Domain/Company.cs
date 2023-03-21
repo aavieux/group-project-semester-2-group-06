@@ -31,6 +31,7 @@ namespace Domain
         {
             SqlHelperG sql = new SqlHelperG();
             sql.DeleteProduct(product.Id);
+
         }
     }
 }

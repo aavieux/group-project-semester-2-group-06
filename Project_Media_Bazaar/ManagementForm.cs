@@ -1,6 +1,4 @@
 namespace Project_Media_Bazaar;
-
-using DataManagement;
 using Domain;
 
 public partial class ManagementForm : Form
@@ -20,7 +18,7 @@ public partial class ManagementForm : Form
 
     private void bRemoveProduct_Click(object sender, EventArgs e)
     {
-        Company.DeleteProduct(Company.GetProducts()[lvProducts.FocusedItem.Index]);
+        Company.GetProducts().Remove(Company.GetProducts()[lvProducts.FocusedItem.Index]);
         RefreshListbox();
     }
 
@@ -64,5 +62,10 @@ public partial class ManagementForm : Form
     {
         ProductInformation form = new ProductInformation(Company.GetProducts()[lvProducts.FocusedItem.Index]);
         form.ShowDialog();
+    }
+    private void bChangeStock_Click(object sender, EventArgs e)
+    {
+        AmountChange amountChange = new AmountChange(Company.GetProducts()[lvProducts.FocusedItem.Index], manager);
+        amountChange.ShowDialog();
     }
 }
