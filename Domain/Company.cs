@@ -23,7 +23,16 @@ namespace Domain
                     return product;
                 }
             }
+<<<<<<< Updated upstream
             return null;
         }
+=======
+        }
+        public static List<Product> GetProducts()
+        {
+            return products;
+        }
+       
+>>>>>>> Stashed changes
     }
 }
