@@ -1,3 +1,5 @@
+using LoginRegister;
+
 namespace Project_Media_Bazaar
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace Project_Media_Bazaar
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new ManagementForm());
+            Application.Run(new LoginRegister.LoginRegister());
         }
     }
 }

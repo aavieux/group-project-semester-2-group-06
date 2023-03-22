@@ -3,9 +3,10 @@ using Domain;
 
 public partial class ManagementForm : Form
 {
+
     Management manager = new Management();
     Company company = new Company();
-    public ManagementForm()
+    public ManagementForm(Person person)
     {
         InitializeComponent();
         RefreshListbox();
