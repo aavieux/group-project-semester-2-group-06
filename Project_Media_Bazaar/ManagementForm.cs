@@ -9,23 +9,6 @@ public partial class ManagementForm : Form
         InitializeComponent();
         RefreshListbox();
     }
-
-    private void bAddProduct_Click(object sender, EventArgs e)
-    {
-        AddProduct form = new AddProduct(manager);
-        form.ShowDialog();
-    }
-
-    private void bRemoveProduct_Click(object sender, EventArgs e)
-    {
-        Company.GetProducts().Remove(Company.GetProducts()[lvProducts.FocusedItem.Index]);
-        RefreshListbox();
-    }
-
-    private void bRefreshProducts_Click(object sender, EventArgs e)
-    {
-        RefreshListbox();
-    }
     private void RefreshListbox()
     {
         Company.FillProductsList();
@@ -52,20 +35,58 @@ public partial class ManagementForm : Form
         }
     }
 
-    private void bProductStatistics_Click(object sender, EventArgs e)
+    private void bViewDetailsProduct_Click_1(object sender, EventArgs e)
+    {
+        try
+        {
+            ProductInformation form = new ProductInformation(Company.GetProducts()[lvProducts.FocusedItem.Index]);
+            form.ShowDialog();
+        }
+        catch (NullReferenceException)
+        {
+            MessageBox.Show("No item selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void bAddProduct_Click_1(object sender, EventArgs e)
+    {
+        AddProduct form = new AddProduct(manager);
+        form.ShowDialog();
+    }
+
+    private void bRemoveProduct_Click_1(object sender, EventArgs e)
+    {
+        try
+        {
+            Company.DeleteProduct(Company.GetProducts()[lvProducts.FocusedItem.Index]);
+            RefreshListbox();
+        }catch(NullReferenceException)
+        {
+            MessageBox.Show("No item selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void bRefreshProducts_Click_1(object sender, EventArgs e)
+    {
+        RefreshListbox();
+    }
+
+    private void bProductStatistics_Click_1(object sender, EventArgs e)
     {
         ProductStatisticsForm form = new ProductStatisticsForm();
         form.ShowDialog();
     }
 
-    private void bViewDetailsProduct_Click(object sender, EventArgs e)
+    private void bChangeStock_Click_1(object sender, EventArgs e)
     {
-        ProductInformation form = new ProductInformation(Company.GetProducts()[lvProducts.FocusedItem.Index]);
-        form.ShowDialog();
-    }
-    private void bChangeStock_Click(object sender, EventArgs e)
-    {
-        AmountChange amountChange = new AmountChange(Company.GetProducts()[lvProducts.FocusedItem.Index], manager);
-        amountChange.ShowDialog();
+        try
+        {
+            AmountChange amountChange = new AmountChange(Company.GetProducts()[lvProducts.FocusedItem.Index], manager);
+            amountChange.ShowDialog();
+        }
+        catch (NullReferenceException)
+        {
+            MessageBox.Show("No item selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace Project_Media_Bazaar
             this.manager = manager;
         }
 
-        private void bAddProduct_Click(object sender, EventArgs e)
+        private void bAddProduct_Click_1(object sender, EventArgs e)
         {
             manager.AddProduct(tbName.Text, (Category)cbProductCategory.SelectedIndex, tbDescription.Text);
             this.Close();

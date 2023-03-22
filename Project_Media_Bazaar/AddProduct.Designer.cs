@@ -40,7 +40,7 @@
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(276, 75);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(165, 27);
             this.tbName.TabIndex = 0;
@@ -48,7 +48,7 @@
             // tbDescription
             // 
             this.tbDescription.Location = new System.Drawing.Point(276, 138);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(165, 27);
             this.tbDescription.TabIndex = 2;
@@ -96,7 +96,7 @@
             "Kitchen Appliances",
             "Automotive"});
             this.cbProductCategory.Location = new System.Drawing.Point(276, 107);
-            this.cbProductCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbProductCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbProductCategory.Name = "cbProductCategory";
             this.cbProductCategory.Size = new System.Drawing.Size(165, 28);
             this.cbProductCategory.TabIndex = 9;
@@ -104,12 +104,13 @@
             // bAddProduct
             // 
             this.bAddProduct.Location = new System.Drawing.Point(276, 178);
-            this.bAddProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAddProduct.Margin = new System.Windows.Forms.Padding(2);
             this.bAddProduct.Name = "bAddProduct";
             this.bAddProduct.Size = new System.Drawing.Size(164, 66);
             this.bAddProduct.TabIndex = 10;
             this.bAddProduct.Text = "Add product";
             this.bAddProduct.UseVisualStyleBackColor = true;
+            this.bAddProduct.Click += new System.EventHandler(this.bAddProduct_Click_1);
             // 
             // AddProduct
             // 
@@ -123,11 +124,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.tbName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddProduct";
             this.Text = "AddProduct";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
