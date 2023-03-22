@@ -10,3 +10,15 @@ C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\gro
 C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\refint\DataManagement.dll
 C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.pdb
 C:\Users\mario\OneDrive - Office 365 Fontys\Fontys\Accelerated\Group project\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\ref\DataManagement.dll
+D:\main\group-project-semester-2-group-06\DataManagement\bin\Debug\net7.0\DataManagement.deps.json
+D:\main\group-project-semester-2-group-06\DataManagement\bin\Debug\net7.0\DataManagement.dll
+D:\main\group-project-semester-2-group-06\DataManagement\bin\Debug\net7.0\DataManagement.pdb
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.csproj.AssemblyReference.cache
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.GeneratedMSBuildEditorConfig.editorconfig
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.AssemblyInfoInputs.cache
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.AssemblyInfo.cs
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.csproj.CoreCompileInputs.cache
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.dll
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\refint\DataManagement.dll
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.pdb
+D:\main\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\ref\DataManagement.dll

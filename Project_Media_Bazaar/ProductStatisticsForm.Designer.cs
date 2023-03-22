@@ -28,12 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ProductStatisticsForm";
+            lTotalSales = new Label();
+            label1 = new Label();
+            lMostSoldProduct = new Label();
+            SuspendLayout();
+            // 
+            // lTotalSales
+            // 
+            lTotalSales.AutoSize = true;
+            lTotalSales.Location = new Point(368, 105);
+            lTotalSales.Name = "lTotalSales";
+            lTotalSales.Size = new Size(59, 25);
+            lTotalSales.TabIndex = 0;
+            lTotalSales.Text = "label1";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(266, 105);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 25);
+            label1.TabIndex = 1;
+            label1.Text = "Total sales:";
+            // 
+            // lMostSoldProduct
+            // 
+            lMostSoldProduct.AutoSize = true;
+            lMostSoldProduct.Location = new Point(355, 193);
+            lMostSoldProduct.Name = "lMostSoldProduct";
+            lMostSoldProduct.Size = new Size(59, 25);
+            lMostSoldProduct.TabIndex = 2;
+            lMostSoldProduct.Text = "label1";
+            // 
+            // ProductStatisticsForm
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(768, 411);
+            Controls.Add(lMostSoldProduct);
+            Controls.Add(label1);
+            Controls.Add(lTotalSales);
+            Name = "ProductStatisticsForm";
+            Text = "ProductStatisticsForm";
+            Load += ProductStatisticsForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lTotalSales;
+        private Label label1;
+        private Label lMostSoldProduct;
     }
 }

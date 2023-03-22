@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace Project_Media_Bazaar
 {
     public partial class ProductStatisticsForm : Form
     {
+        Company company = new Company();
         public ProductStatisticsForm()
         {
             InitializeComponent();
+            company.FillProductsList();
+            company.FillStockChangesList();
+            lTotalSales.Text = company.CalculateTotalSales().ToString();
+            lMostSoldProduct.Text = company.MostSoldStockId().ToString();
+        }
+
+        private void ProductStatisticsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DataManagement;
 
@@ -117,6 +118,30 @@ public class SqlHelperG
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+    public DataTable ReadStockChanges()
+    {
+        query = "SELECT * FROM dbo.StockChange";
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                datatable1 = new DataTable();
+                reader = new SqlDataAdapter();
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                reader.SelectCommand = cmd;
+                reader.Fill(datatable1);
+                conn.Close();
+                reader.Dispose();
+                return datatable1;
             }
         }
         catch (Exception)

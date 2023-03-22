@@ -4,6 +4,7 @@ using Domain;
 public partial class ManagementForm : Form
 {
     Management manager = new Management();
+    Company company = new Company();
     public ManagementForm()
     {
         InitializeComponent();
@@ -11,9 +12,9 @@ public partial class ManagementForm : Form
     }
     private void RefreshListbox()
     {
-        Company.FillProductsList();
+        company.FillProductsList();
         lvProducts.Items.Clear();
-        foreach (Product product in Company.GetProducts())
+        foreach (Product product in company.GetProducts())
         {
             if (product.Amount > 50)
             {
@@ -39,7 +40,7 @@ public partial class ManagementForm : Form
     {
         try
         {
-            ProductInformation form = new ProductInformation(Company.GetProducts()[lvProducts.FocusedItem.Index]);
+            ProductInformation form = new ProductInformation(company.GetProducts()[lvProducts.FocusedItem.Index]);
             form.ShowDialog();
         }
         catch (NullReferenceException)
@@ -58,7 +59,7 @@ public partial class ManagementForm : Form
     {
         try
         {
-            Company.DeleteProduct(Company.GetProducts()[lvProducts.FocusedItem.Index]);
+            company.DeleteProduct(company.GetProducts()[lvProducts.FocusedItem.Index]);
             RefreshListbox();
         }catch(NullReferenceException)
         {
@@ -81,7 +82,7 @@ public partial class ManagementForm : Form
     {
         try
         {
-            AmountChange amountChange = new AmountChange(Company.GetProducts()[lvProducts.FocusedItem.Index], manager);
+            AmountChange amountChange = new AmountChange(company.GetProducts()[lvProducts.FocusedItem.Index], manager);
             amountChange.ShowDialog();
         }
         catch (NullReferenceException)
