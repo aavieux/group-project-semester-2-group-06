@@ -150,4 +150,29 @@ public class SqlHelperG
             throw;
         }
     }
+    public DataTable ReadPeople()
+    {
+        query = "SELECT * FROM dbo.Person";
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+
+                datatable1 = new DataTable();
+                reader = new SqlDataAdapter();
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                reader.SelectCommand = cmd;
+                reader.Fill(datatable1);
+                conn.Close();
+                reader.Dispose();
+                return datatable1;
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 }

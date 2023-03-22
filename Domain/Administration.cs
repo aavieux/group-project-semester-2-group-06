@@ -1,19 +1,46 @@
-﻿using System;
+﻿using DataManagement;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain;
+
+public class Administration
 {
-    public class Administration
+    List<Person> people = new List<Person>();
+    SqlHelperG sql = new SqlHelperG();
+    public void RemoveEmployee(Employee employee) { }
+    public void EditEmployee(Employee employee) { }
+    public Person? LogIn(string nickname, string password)
     {
-        List<Employee> employees;   
-        public void AddEmployee(Employee employee)
+        FillPersonList();
+        foreach (Person person in people)
         {
-            employees.Add(employee);
+            if(person.nickname== nickname && person.password == password)
+            {
+                return person;
+            }
         }
-        public void RemoveEmployee(Employee employee) { }
-        public void EditEmployee(Employee employee) { }
+        return null;
+    }
+    private void FillPersonList()
+    {
+        people.Clear();
+        Person person;
+        DataTable dt = sql.ReadPeople();
+        foreach (DataRow row in dt.Rows)
+        {
+            person = new Person((int)row[0], (string)row[1], (string)row[2], (DateTime)row[3], (string)row[4], (string)row[5], (double)row[6], (string)row[7], (string)row[8], (string)row[9], (string)row[10]);
+            people.Add(person);
+
+        }
+    }
+    public List<Person> GetPeople()
+    {
+        FillPersonList();
+        return people;
     }
 }

@@ -19,19 +19,20 @@ namespace Project_Media_Bazaar
         public EmployeeDashboard()
         {
             InitializeComponent();
-            
-            this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;Trust Server Certificate = true;");
+
+            this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
             cbRole.DataSource = Enum.GetValues(typeof(EmployeeRole));
 
-            
+
             var user = DataAccessEmployeeDashboard.GetItems();
             foreach (var item in user)
-            {cbSelect.
+            {
+                cbSelect.
                 Items.Add(item.Id());
             }
         }
 
-       
+
         private async void btnCreate_Click(object sender, EventArgs e)
         {
             string email = "";
@@ -44,7 +45,7 @@ namespace Project_Media_Bazaar
             string nickname = "";
             string password = "";
             int workingHours;
-            EmployeeRole role=new EmployeeRole();
+            EmployeeRole role = new EmployeeRole();
 
             // Validate email address
             if (!string.IsNullOrWhiteSpace(tbemail.Text))
@@ -132,8 +133,8 @@ namespace Project_Media_Bazaar
 
 
 
-            Employee employee = new Employee(email,workingHours, role, firstName, lastName, dateTime, address, phoneNumber, salary, nickname, password);
-      
+            Employee employee = new Employee(email, workingHours, role, firstName, lastName, dateTime, address, phoneNumber, salary, nickname, password);
+
             var newUser = DataAccessEmployeeDashboard.AddItem(employee);
         }
 
@@ -148,9 +149,10 @@ namespace Project_Media_Bazaar
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
-        {listBoxEmployees.Items.Clear();
+        {
+            listBoxEmployees.Items.Clear();
             int id = int.Parse(tbIdDelete.Text);
-             DataAccessEmployeeDashboard.DeleteItem(id);
+            DataAccessEmployeeDashboard.DeleteItem(id);
             MessageBox.Show("Succesfully deleted item");
         }
 
@@ -160,7 +162,7 @@ namespace Project_Media_Bazaar
             var newUser = DataAccessEmployeeDashboard.GetItem(id);
 
             listBoxEmployees.Items.Add(newUser.GetEmployee());
-            
+
 
         }
 
@@ -169,8 +171,8 @@ namespace Project_Media_Bazaar
             int id = int.Parse(cbSelect.Text);
             var newUser = DataAccessEmployeeDashboard.GetItem(id);
             tbfistName.Text = newUser.GetName();
-            tbphone.Text = newUser.Getphone();
-            
+            tbphone.Text = newUser.phoneNumber;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -179,7 +181,7 @@ namespace Project_Media_Bazaar
             string name = tbfistName.Text;
             string phoneNumber = tbphone.Text;
 
-             
+
             //DataAccessEmployeeDashboard.UpdateItem(newUser);
         }
     }

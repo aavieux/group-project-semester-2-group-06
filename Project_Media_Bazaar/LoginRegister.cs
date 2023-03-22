@@ -14,21 +14,18 @@ namespace LoginRegister
 {
     public partial class LoginRegister : Form
     {
+        Administration administration;
         public LoginRegister()
         {
             InitializeComponent();
             tabControlLoginRegister.SelectTab("login_tab");
-            LoadLogInData();
-        }
-        private void LoadLogInData()
-        {
-
+            administration = new Administration();
         }
         private void ClearFields()
         {
             //Login fields
-            loginpasswordtxt.Clear();
-            loginemailtxt.Clear();
+            tbPassword.Clear();
+            tbLogin.Clear();
             //Register fields
             fullnametxt.Clear();
             emailadresstxt.Clear();
@@ -38,28 +35,6 @@ namespace LoginRegister
         private void tabControlLoginRegister_Click(object sender, EventArgs e) //CreateAccountTAB
         {
             ClearFields();
-        }
-        private void loginbtn_Click(object sender, EventArgs e)
-        {
-            //database.check by email and password
-            
-            // VVVVVVVVVV
-            // Person person = new Person(//database data);
-
-            if (Person.roleType == manager)
-            {
-                this.Hide();
-                ManagementForm managementForm = new ManagementForm(person);
-                managementForm.Show();
-            }
-            else if (Person.roletype == employee)
-            {
-                this.Hide();
-                UserForm userFOrm = new UserForm(person);
-                userFOrm.Show();
-            }
-            
-            this.Close();
         }
 
         private void registerbtn_Click(object sender, EventArgs e)
@@ -86,9 +61,10 @@ namespace LoginRegister
             //    MessageBox.Show(ex.ToString());
             //}
         }
-        private void OpenUser(Object user)
-        {
 
+        private void bLogin_Click(object sender, EventArgs e)
+        {
+            administration.LogIn(tbLogin.Text, tbPassword.Text);
         }
     }
 }

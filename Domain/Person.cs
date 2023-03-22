@@ -8,16 +8,19 @@ namespace Domain
 {
     public class Person
     {
-        private int id;
-        private string firstName;
-        private string lastName;
-        private DateTime birthDate;
-        private string address;
-        private string phoneNumber;
-        private double salary;
-        private string nickname;
-        private string password;
-        public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, double salary, string nickname, string password)
+        public int id { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; private set; }
+        public DateTime birthDate { get; private set; }
+        public string address { get; private set; }
+        public string phoneNumber { get; set; }
+        public double salary { get; private set; }
+        public string nickname { get; private set; }
+        public string password { get; private set; }
+        public string email { get; set; }
+        public string roleType { get; private set; }
+        public Person() { }
+        public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, double salary, string email, string nickname, string password, string roleType)
         {
             this.id = id;
             this.firstName = firstName;
@@ -26,20 +29,22 @@ namespace Domain
             this.address = address;
             this.phoneNumber = phoneNumber;
             this.salary = salary;
+            this.email = email;
             this.nickname = nickname;
+            this.roleType = roleType;
             this.password = password;
         }
-    
-        public  string GetName()
+        public string GetName()
         {
             return this.firstName;
         }
-        public  string GetAddress() 
+        public string GetAddress()
         {
             return this.address;
-                }
+        }
         public void ChangeName(string name) { this.firstName = name; }
         public double GetSalary() { return this.salary; }
-        public void SetSalary(double salary) { this.salary= salary; }   
+        public void SetSalary(double salary) { this.salary = salary; }
+        
     }
 }

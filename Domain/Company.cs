@@ -14,9 +14,11 @@ namespace Domain
         private List<Product> products = new List<Product>();
         private List<StockChange> stockChanges = new List<StockChange>();
         private List<int> seenProducts = new List<int>();
+        private List<Person> people = new List<Person>();
+        SqlHelperG sql = new SqlHelperG();
+
         public void FillProductsList()
         {
-            SqlHelperG sql = new SqlHelperG();
             Product product;
             products.Clear();
             var table = sql.ReadProducts();
@@ -31,13 +33,11 @@ namespace Domain
         }
         public void DeleteProduct(Product product)
         {
-            SqlHelperG sql = new SqlHelperG();
             sql.DeleteProduct(product.Id);
 
         }
         public List<StockChange> FillStockChangesList()
         {
-            SqlHelperG sql = new SqlHelperG();
             StockChange stockChange;
             stockChanges.Clear();
             DataTable table = sql.ReadStockChanges();
@@ -69,19 +69,19 @@ namespace Domain
             }
             return soldProducts;
         }
-        
+
         public string MostSoldStockId()
         {
             List<StockChange> stockChanges = GetSoldStocks();
             IDictionary<int, int> sales = new Dictionary<int, int>();
             int soldAmount = 0;
-            foreach(StockChange stockChange in stockChanges)
+            foreach (StockChange stockChange in stockChanges)
             {
                 if (!seenProducts.Contains(stockChange.ProductId()))
                 {
-                    foreach(StockChange sameStock in stockChanges)
+                    foreach (StockChange sameStock in stockChanges)
                     {
-                        if(sameStock.ProductId() == stockChange.ProductId())
+                        if (sameStock.ProductId() == stockChange.ProductId())
                         {
                             soldAmount += sameStock.GetChangeAmount();
                         }
@@ -96,11 +96,12 @@ namespace Domain
         }
         private Product GetProductById(int id)
         {
-            foreach(Product product in products)
+            foreach (Product product in products)
             {
-                if(product.Id == id) return product;
+                if (product.Id == id) return product;
             }
             return null;
         }
+
     }
 }
