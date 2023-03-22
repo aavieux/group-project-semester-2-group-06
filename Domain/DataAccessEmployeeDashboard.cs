@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using Domain;
+using System.Data.SqlClient;
+
 namespace Domain
 {
   public  class DataAccessEmployeeDashboard
