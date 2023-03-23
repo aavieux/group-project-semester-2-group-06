@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using Domain.Enums;
+
 namespace Project_Media_Bazaar
 {
     public partial class AddProduct : Form

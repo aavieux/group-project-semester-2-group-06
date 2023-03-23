@@ -21,6 +21,10 @@ namespace LoginRegister
             tabControlLoginRegister.SelectTab("login_tab");
             administration = new Administration();
         }
+        private void DisplayError()
+        {
+
+        }
         private void ClearFields()
         {
             //Login fields
@@ -64,7 +68,30 @@ namespace LoginRegister
 
         private void bLogin_Click(object sender, EventArgs e)
         {
-            administration.LogIn(tbLogin.Text, tbPassword.Text);
+            if (administration.CheckLogIn(tbLogin.Text, tbPassword.Text) != null)
+            {
+                Person person = administration.CheckLogIn(tbLogin.Text, tbPassword.Text);
+
+                if (person.roleType == "Manager")
+                {
+                    this.Hide();
+                    ManagementForm managementForm = new ManagementForm(person);
+                    managementForm.ShowDialog();
+                    this.Close();
+
+                }
+                else if (person.roleType.Equals("Administrator"))
+                {
+                    this.Hide();
+                    EmployeeDashboard employeeDashboard = new EmployeeDashboard(person);
+                    employeeDashboard.ShowDialog();
+                    this.Close();
+                }
+            }
+            else
+            {
+                DisplayError();
+            }
         }
     }
 }

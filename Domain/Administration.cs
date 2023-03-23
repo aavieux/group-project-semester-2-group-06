@@ -14,7 +14,7 @@ public class Administration
     SqlHelperG sql = new SqlHelperG();
     public void RemoveEmployee(Employee employee) { }
     public void EditEmployee(Employee employee) { }
-    public Person? LogIn(string nickname, string password)
+    public Person? CheckLogIn(string nickname, string password)
     {
         FillPersonList();
         foreach (Person person in people)
@@ -29,13 +29,12 @@ public class Administration
     private void FillPersonList()
     {
         people.Clear();
-        Person person;
         DataTable dt = sql.ReadPeople();
         foreach (DataRow row in dt.Rows)
         {
-            person = new Person((int)row[0], (string)row[1], (string)row[2], (DateTime)row[3], (string)row[4], (string)row[5], (double)row[6], (string)row[7], (string)row[8], (string)row[9], (string)row[10]);
+            Person person;
+            person = new Person((int)row[0], (string)row[1], (string)row[2], (DateTime)row[3], (string)row[4], (string)row[5], (decimal)row[6], (string)row[7], (string)row[8], (string)row[9], (string)row[10]);
             people.Add(person);
-
         }
     }
     public List<Person> GetPeople()

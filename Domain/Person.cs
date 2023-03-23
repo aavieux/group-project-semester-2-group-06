@@ -14,13 +14,13 @@ namespace Domain
         public DateTime birthDate { get; private set; }
         public string address { get; private set; }
         public string phoneNumber { get; set; }
-        public double salary { get; private set; }
+        public decimal salary { get; private set; }
         public string nickname { get; private set; }
         public string password { get; private set; }
         public string email { get; set; }
         public string roleType { get; private set; }
         public Person() { }
-        public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, double salary, string email, string nickname, string password, string roleType)
+        public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, string roleType)
         {
             this.id = id;
             this.firstName = firstName;
@@ -34,17 +34,17 @@ namespace Domain
             this.roleType = roleType;
             this.password = password;
         }
-        public string GetName()
-        {
-            return this.firstName;
-        }
-        public string GetAddress()
-        {
-            return this.address;
-        }
+        //public string GetName()
+        //{
+        //    return this.firstName;
+        //}
+        //public string GetAddress()
+        //{
+        //    return this.address;
+        //}
         public void ChangeName(string name) { this.firstName = name; }
-        public double GetSalary() { return this.salary; }
-        public void SetSalary(double salary) { this.salary = salary; }
+        //public double GetSalary() { return this.salary; }
+        public void SetSalary(decimal salary) { this.salary = salary; }
         
     }
 }

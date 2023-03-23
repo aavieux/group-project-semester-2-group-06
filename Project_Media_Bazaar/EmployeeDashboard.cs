@@ -10,15 +10,19 @@ using System.Threading.Tasks;
 using Domain;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Domain.Enums;
 
 namespace Project_Media_Bazaar
 {
     public partial class EmployeeDashboard : Form
     {
         DataAccessEmployeeDashboard DataAccessEmployeeDashboard;
-        public EmployeeDashboard()
+        Person currentPerson;
+        public EmployeeDashboard(Person person)
         {
+            currentPerson = person;
             InitializeComponent();
+            this.Text = $"Logged as: {person.firstName + " " + person.lastName}";
 
             this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
             cbRole.DataSource = Enum.GetValues(typeof(EmployeeRole));
@@ -45,6 +49,7 @@ namespace Project_Media_Bazaar
             string nickname = "";
             string password = "";
             int workingHours;
+
             EmployeeRole role = new EmployeeRole();
 
             // Validate email address
@@ -170,7 +175,7 @@ namespace Project_Media_Bazaar
         {
             int id = int.Parse(cbSelect.Text);
             var newUser = DataAccessEmployeeDashboard.GetItem(id);
-            tbfistName.Text = newUser.GetName();
+            tbfistName.Text = newUser.firstName;
             tbphone.Text = newUser.phoneNumber;
 
         }

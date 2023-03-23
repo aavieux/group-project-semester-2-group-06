@@ -62,7 +62,8 @@ public partial class ManagementForm : Form
         {
             company.DeleteProduct(company.GetProducts()[lvProducts.FocusedItem.Index]);
             RefreshListbox();
-        }catch(NullReferenceException)
+        }
+        catch (NullReferenceException)
         {
             MessageBox.Show("No item selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

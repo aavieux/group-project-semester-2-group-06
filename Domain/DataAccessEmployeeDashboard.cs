@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using Domain.Enums;
 
 namespace Domain;
 
@@ -55,7 +56,7 @@ public class DataAccessEmployeeDashboard
                     {
                         var item = new Employee((int)reader["ID"], reader.GetString(reader.GetOrdinal("email")),
                             reader.GetInt32(reader.GetOrdinal("workingHours")), (EmployeeRole)reader.GetOrdinal("Role"), reader.GetString(reader.GetOrdinal("firstName")), reader.GetString(reader.GetOrdinal("lastName")),
-                            reader.GetDateTime(reader.GetOrdinal("birthDate")), reader.GetString(reader.GetOrdinal("address")), reader.GetString(reader.GetOrdinal("phoneNumber")), (Double)reader.GetDecimal(reader.GetOrdinal("salary")),
+                            reader.GetDateTime(reader.GetOrdinal("birthDate")), reader.GetString(reader.GetOrdinal("address")), reader.GetString(reader.GetOrdinal("phoneNumber")), (Decimal)reader.GetDecimal(reader.GetOrdinal("salary")),
                             reader.GetString(reader.GetOrdinal("nickname")), reader.GetString(reader.GetOrdinal("Password")), reader.GetString(reader.GetOrdinal("roleType")));
 
                         items.Add(item);

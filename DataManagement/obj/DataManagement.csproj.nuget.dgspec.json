@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\main\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj": {}
+    "C:\\Users\\sando\\Repositories\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj": {}
   },
   "projects": {
-    "D:\\main\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj": {
+    "C:\\Users\\sando\\Repositories\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\main\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj",
+        "projectUniqueName": "C:\\Users\\sando\\Repositories\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj",
         "projectName": "DataManagement",
-        "projectPath": "D:\\main\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj",
-        "packagesPath": "C:\\Users\\Grigoriy\\.nuget\\packages\\",
-        "outputPath": "D:\\main\\group-project-semester-2-group-06\\DataManagement\\obj\\",
+        "projectPath": "C:\\Users\\sando\\Repositories\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj",
+        "packagesPath": "C:\\Users\\sando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sando\\Repositories\\group-project-semester-2-group-06\\DataManagement\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\programms\\Visual Studio\\shared components\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Grigoriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

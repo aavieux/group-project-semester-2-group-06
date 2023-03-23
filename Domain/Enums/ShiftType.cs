@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Enums
 {
-    public enum EmployeeRole
+    public enum ShiftType
     {
-        JuniorSales,SeniorSales,FloorManager
+        NightShift, DayShift, EveningShift
     }
 }
