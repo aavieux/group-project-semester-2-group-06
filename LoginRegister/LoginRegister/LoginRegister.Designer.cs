@@ -244,7 +244,7 @@
             // 
             // registerbtn
             // 
-            registerbtn.FlatStyle = FlatStyle.Popup;
+            registerbtn.FlatStyle = FlatStyle.Flat;
             registerbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             registerbtn.Location = new Point(172, 356);
             registerbtn.Name = "registerbtn";
