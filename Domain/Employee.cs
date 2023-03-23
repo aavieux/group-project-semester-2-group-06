@@ -31,9 +31,9 @@ namespace Domain
         {
             return id;
         }
-        public string GetEmployee()
+        public string GetInfo()
         {
-            return $"Id:{id},Name:{firstName}, Password:{password}";
+            return $"Id: {id} || Name: {firstName} {lastName}";
         }
         public List<Shift> GetShifts()
         {

@@ -28,96 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.changedStock = new System.Windows.Forms.TextBox();
-            this.changingAmount = new System.Windows.Forms.NumericUpDown();
-            this.changeStock = new System.Windows.Forms.Button();
-            this.changeType = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.changingAmount)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            changedStock = new TextBox();
+            changingAmount = new NumericUpDown();
+            changeStock = new Button();
+            changeType = new ComboBox();
+            label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)changingAmount).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(157, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Change amount: ";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(36, 117);
+            label1.Name = "label1";
+            label1.Size = new Size(160, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Change amount: ";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(157, 323);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Current amount: ";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(36, 288);
+            label2.Name = "label2";
+            label2.Size = new Size(159, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Current amount: ";
             // 
             // changedStock
             // 
-            this.changedStock.Location = new System.Drawing.Point(391, 323);
-            this.changedStock.Name = "changedStock";
-            this.changedStock.Size = new System.Drawing.Size(150, 27);
-            this.changedStock.TabIndex = 2;
+            changedStock.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            changedStock.Location = new Point(229, 285);
+            changedStock.Margin = new Padding(3, 2, 3, 2);
+            changedStock.Name = "changedStock";
+            changedStock.Size = new Size(86, 34);
+            changedStock.TabIndex = 2;
             // 
             // changingAmount
             // 
-            this.changingAmount.Location = new System.Drawing.Point(391, 168);
-            this.changingAmount.Name = "changingAmount";
-            this.changingAmount.Size = new System.Drawing.Size(150, 27);
-            this.changingAmount.TabIndex = 3;
+            changingAmount.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            changingAmount.Location = new Point(229, 115);
+            changingAmount.Margin = new Padding(3, 2, 3, 2);
+            changingAmount.Name = "changingAmount";
+            changingAmount.Size = new Size(245, 34);
+            changingAmount.TabIndex = 3;
             // 
             // changeStock
             // 
-            this.changeStock.Location = new System.Drawing.Point(391, 244);
-            this.changeStock.Name = "changeStock";
-            this.changeStock.Size = new System.Drawing.Size(150, 35);
-            this.changeStock.TabIndex = 4;
-            this.changeStock.Text = "Change stock";
-            this.changeStock.UseVisualStyleBackColor = true;
-            this.changeStock.Click += new System.EventHandler(this.changeStock_Click);
+            changeStock.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            changeStock.Location = new Point(229, 183);
+            changeStock.Margin = new Padding(3, 2, 3, 2);
+            changeStock.Name = "changeStock";
+            changeStock.Size = new Size(244, 47);
+            changeStock.TabIndex = 4;
+            changeStock.Text = "Change stock";
+            changeStock.UseVisualStyleBackColor = true;
+            changeStock.Click += changeStock_Click;
             // 
             // changeType
             // 
-            this.changeType.FormattingEnabled = true;
-            this.changeType.Items.AddRange(new object[] {
-            "increase",
-            "decrease"});
-            this.changeType.Location = new System.Drawing.Point(390, 78);
-            this.changeType.Name = "changeType";
-            this.changeType.Size = new System.Drawing.Size(151, 28);
-            this.changeType.TabIndex = 5;
+            changeType.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            changeType.FormattingEnabled = true;
+            changeType.Items.AddRange(new object[] { "increase", "decrease" });
+            changeType.Location = new Point(229, 39);
+            changeType.Margin = new Padding(3, 2, 3, 2);
+            changeType.Name = "changeType";
+            changeType.Size = new Size(244, 36);
+            changeType.TabIndex = 5;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(157, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Change type: ";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(36, 39);
+            label3.Name = "label3";
+            label3.Size = new Size(131, 28);
+            label3.TabIndex = 6;
+            label3.Text = "Change type: ";
             // 
             // AmountChange
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.changeType);
-            this.Controls.Add(this.changeStock);
-            this.Controls.Add(this.changingAmount);
-            this.Controls.Add(this.changedStock);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "AmountChange";
-            this.Text = "AmountChange";
-            ((System.ComponentModel.ISupportInitialize)(this.changingAmount)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 338);
+            Controls.Add(label3);
+            Controls.Add(changeType);
+            Controls.Add(changeStock);
+            Controls.Add(changingAmount);
+            Controls.Add(changedStock);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "AmountChange";
+            Text = "AmountChange";
+            ((System.ComponentModel.ISupportInitialize)changingAmount).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

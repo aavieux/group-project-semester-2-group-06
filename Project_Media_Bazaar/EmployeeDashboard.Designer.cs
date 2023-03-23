@@ -32,7 +32,6 @@
             tabDashboard = new TabPage();
             tbIdDelete = new TextBox();
             btnDelete = new Button();
-            btnView = new Button();
             btnFilter = new Button();
             tbF = new TextBox();
             listBoxEmployees = new ListBox();
@@ -99,7 +98,6 @@
             // 
             tabDashboard.Controls.Add(tbIdDelete);
             tabDashboard.Controls.Add(btnDelete);
-            tabDashboard.Controls.Add(btnView);
             tabDashboard.Controls.Add(btnFilter);
             tabDashboard.Controls.Add(tbF);
             tabDashboard.Controls.Add(listBoxEmployees);
@@ -132,17 +130,6 @@
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
-            // btnView
-            // 
-            btnView.Location = new Point(725, 62);
-            btnView.Margin = new Padding(3, 2, 3, 2);
-            btnView.Name = "btnView";
-            btnView.Size = new Size(82, 22);
-            btnView.TabIndex = 3;
-            btnView.Text = "View";
-            btnView.UseVisualStyleBackColor = true;
-            btnView.Click += btnView_Click;
-            // 
             // btnFilter
             // 
             btnFilter.BackColor = Color.Coral;
@@ -165,12 +152,13 @@
             // 
             // listBoxEmployees
             // 
+            listBoxEmployees.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             listBoxEmployees.FormattingEnabled = true;
-            listBoxEmployees.ItemHeight = 15;
+            listBoxEmployees.ItemHeight = 28;
             listBoxEmployees.Location = new Point(5, 97);
             listBoxEmployees.Margin = new Padding(3, 2, 3, 2);
             listBoxEmployees.Name = "listBoxEmployees";
-            listBoxEmployees.Size = new Size(803, 229);
+            listBoxEmployees.Size = new Size(803, 228);
             listBoxEmployees.TabIndex = 0;
             // 
             // tabCreateEmployee
@@ -469,10 +457,11 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(105, 202);
+            btnSave.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.Location = new Point(16, 195);
             btnSave.Margin = new Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(82, 22);
+            btnSave.Size = new Size(358, 39);
             btnSave.TabIndex = 6;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -481,43 +470,48 @@
             // lbphone
             // 
             lbphone.AutoSize = true;
-            lbphone.Location = new Point(16, 142);
+            lbphone.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            lbphone.Location = new Point(16, 144);
             lbphone.Name = "lbphone";
-            lbphone.Size = new Size(89, 15);
+            lbphone.Size = new Size(156, 28);
             lbphone.TabIndex = 5;
             lbphone.Text = "Phone number:";
             // 
             // lbName
             // 
             lbName.AutoSize = true;
-            lbName.Location = new Point(16, 82);
+            lbName.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            lbName.Location = new Point(16, 80);
             lbName.Name = "lbName";
-            lbName.Size = new Size(42, 15);
+            lbName.Size = new Size(73, 28);
             lbName.TabIndex = 4;
             lbName.Text = "Name:";
             // 
             // tbphone
             // 
-            tbphone.Location = new Point(128, 140);
+            tbphone.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            tbphone.Location = new Point(178, 141);
             tbphone.Margin = new Padding(3, 2, 3, 2);
             tbphone.Name = "tbphone";
-            tbphone.Size = new Size(110, 23);
+            tbphone.Size = new Size(196, 34);
             tbphone.TabIndex = 3;
             // 
             // tbfistName
             // 
-            tbfistName.Location = new Point(128, 82);
+            tbfistName.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            tbfistName.Location = new Point(115, 77);
             tbfistName.Margin = new Padding(3, 2, 3, 2);
             tbfistName.Name = "tbfistName";
-            tbfistName.Size = new Size(110, 23);
+            tbfistName.Size = new Size(259, 34);
             tbfistName.TabIndex = 2;
             // 
             // btnSelect
             // 
-            btnSelect.Location = new Point(183, 22);
+            btnSelect.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSelect.Location = new Point(228, 21);
             btnSelect.Margin = new Padding(3, 2, 3, 2);
             btnSelect.Name = "btnSelect";
-            btnSelect.Size = new Size(82, 22);
+            btnSelect.Size = new Size(146, 36);
             btnSelect.TabIndex = 1;
             btnSelect.Text = "Select";
             btnSelect.UseVisualStyleBackColor = true;
@@ -525,11 +519,12 @@
             // 
             // cbSelect
             // 
+            cbSelect.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
             cbSelect.FormattingEnabled = true;
-            cbSelect.Location = new Point(39, 22);
+            cbSelect.Location = new Point(16, 22);
             cbSelect.Margin = new Padding(3, 2, 3, 2);
             cbSelect.Name = "cbSelect";
-            cbSelect.Size = new Size(100, 23);
+            cbSelect.Size = new Size(171, 36);
             cbSelect.TabIndex = 0;
             // 
             // EmployeeDashboard
@@ -585,7 +580,6 @@
         private TextBox tbRoleType;
         private ComboBox cbRole;
         private TextBox tbemail;
-        private Button btnView;
         private Button btnDelete;
         private TextBox tbIdDelete;
         private TabPage tabUpdateEmployee;

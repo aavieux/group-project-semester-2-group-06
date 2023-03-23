@@ -28,108 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.tbDescription = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbProductCategory = new System.Windows.Forms.ComboBox();
-            this.bAddProduct = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            tbName = new TextBox();
+            tbDescription = new TextBox();
+            label1 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            cbProductCategory = new ComboBox();
+            bAddProduct = new Button();
+            SuspendLayout();
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(276, 75);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(165, 27);
-            this.tbName.TabIndex = 0;
+            tbName.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tbName.Location = new Point(171, 64);
+            tbName.Margin = new Padding(2);
+            tbName.Name = "tbName";
+            tbName.Size = new Size(145, 34);
+            tbName.TabIndex = 0;
             // 
             // tbDescription
             // 
-            this.tbDescription.Location = new System.Drawing.Point(276, 138);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(2);
-            this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(165, 27);
-            this.tbDescription.TabIndex = 2;
+            tbDescription.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tbDescription.Location = new Point(171, 177);
+            tbDescription.Margin = new Padding(2);
+            tbDescription.Name = "tbDescription";
+            tbDescription.Size = new Size(145, 34);
+            tbDescription.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(224, 78);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Name:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(38, 64);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(68, 28);
+            label1.TabIndex = 5;
+            label1.Text = "Name:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(201, 107);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Category:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(38, 122);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(96, 28);
+            label3.TabIndex = 7;
+            label3.Text = "Category:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(186, 138);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Description:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(38, 180);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(116, 28);
+            label4.TabIndex = 8;
+            label4.Text = "Description:";
             // 
             // cbProductCategory
             // 
-            this.cbProductCategory.FormattingEnabled = true;
-            this.cbProductCategory.Items.AddRange(new object[] {
-            "TV",
-            "HiFi",
-            "Computers",
-            "Mobile",
-            "Personal Care",
-            "Home Care",
-            "Kitchen Appliances",
-            "Automotive"});
-            this.cbProductCategory.Location = new System.Drawing.Point(276, 107);
-            this.cbProductCategory.Margin = new System.Windows.Forms.Padding(2);
-            this.cbProductCategory.Name = "cbProductCategory";
-            this.cbProductCategory.Size = new System.Drawing.Size(165, 28);
-            this.cbProductCategory.TabIndex = 9;
+            cbProductCategory.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            cbProductCategory.FormattingEnabled = true;
+            cbProductCategory.Items.AddRange(new object[] { "TV", "HiFi", "Computers", "Mobile", "Personal Care", "Home Care", "Kitchen Appliances", "Automotive" });
+            cbProductCategory.Location = new Point(171, 122);
+            cbProductCategory.Margin = new Padding(2);
+            cbProductCategory.Name = "cbProductCategory";
+            cbProductCategory.Size = new Size(145, 36);
+            cbProductCategory.TabIndex = 9;
             // 
             // bAddProduct
             // 
-            this.bAddProduct.Location = new System.Drawing.Point(276, 178);
-            this.bAddProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.bAddProduct.Name = "bAddProduct";
-            this.bAddProduct.Size = new System.Drawing.Size(164, 66);
-            this.bAddProduct.TabIndex = 10;
-            this.bAddProduct.Text = "Add product";
-            this.bAddProduct.UseVisualStyleBackColor = true;
-            this.bAddProduct.Click += new System.EventHandler(this.bAddProduct_Click_1);
+            bAddProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            bAddProduct.Location = new Point(365, 63);
+            bAddProduct.Margin = new Padding(2);
+            bAddProduct.Name = "bAddProduct";
+            bAddProduct.Size = new Size(144, 147);
+            bAddProduct.TabIndex = 10;
+            bAddProduct.Text = "Add product";
+            bAddProduct.UseVisualStyleBackColor = true;
+            bAddProduct.Click += bAddProduct_Click_1;
             // 
             // AddProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 360);
-            this.Controls.Add(this.bAddProduct);
-            this.Controls.Add(this.cbProductCategory);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbDescription);
-            this.Controls.Add(this.tbName);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AddProduct";
-            this.Text = "AddProduct";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(560, 270);
+            Controls.Add(bAddProduct);
+            Controls.Add(cbProductCategory);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(tbDescription);
+            Controls.Add(tbName);
+            Margin = new Padding(2);
+            Name = "AddProduct";
+            Text = "AddProduct";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

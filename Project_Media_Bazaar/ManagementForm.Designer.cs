@@ -43,6 +43,7 @@
             // 
             // bAddProduct
             // 
+            bAddProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             bAddProduct.Location = new Point(820, 112);
             bAddProduct.Margin = new Padding(2);
             bAddProduct.Name = "bAddProduct";
@@ -54,6 +55,7 @@
             // 
             // bRemoveProduct
             // 
+            bRemoveProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             bRemoveProduct.Location = new Point(819, 217);
             bRemoveProduct.Margin = new Padding(2);
             bRemoveProduct.Name = "bRemoveProduct";
@@ -65,6 +67,7 @@
             // 
             // bViewDetailsProduct
             // 
+            bViewDetailsProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             bViewDetailsProduct.Location = new Point(819, 7);
             bViewDetailsProduct.Margin = new Padding(2);
             bViewDetailsProduct.Name = "bViewDetailsProduct";
@@ -76,6 +79,7 @@
             // 
             // bRefreshProducts
             // 
+            bRefreshProducts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             bRefreshProducts.Location = new Point(820, 429);
             bRefreshProducts.Margin = new Padding(2);
             bRefreshProducts.Name = "bRefreshProducts";
@@ -87,6 +91,7 @@
             // 
             // bProductStatistics
             // 
+            bProductStatistics.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             bProductStatistics.Location = new Point(820, 539);
             bProductStatistics.Margin = new Padding(2);
             bProductStatistics.Name = "bProductStatistics";
@@ -99,10 +104,11 @@
             // lvProducts
             // 
             lvProducts.Columns.AddRange(new ColumnHeader[] { ColumnId, ColumnName, ColumnAmount, ColumnCategory });
+            lvProducts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             lvProducts.Location = new Point(-1, 7);
             lvProducts.Margin = new Padding(2);
             lvProducts.Name = "lvProducts";
-            lvProducts.Size = new Size(817, 644);
+            lvProducts.Size = new Size(816, 644);
             lvProducts.TabIndex = 7;
             lvProducts.UseCompatibleStateImageBehavior = false;
             lvProducts.View = View.Details;
@@ -110,28 +116,26 @@
             // ColumnId
             // 
             ColumnId.Text = "ID";
-            ColumnId.Width = 50;
+            ColumnId.Width = 204;
             // 
             // ColumnName
             // 
             ColumnName.Text = "Name";
-            ColumnName.TextAlign = HorizontalAlignment.Center;
-            ColumnName.Width = 200;
+            ColumnName.Width = 204;
             // 
             // ColumnAmount
             // 
             ColumnAmount.Text = "Amount";
-            ColumnAmount.TextAlign = HorizontalAlignment.Center;
-            ColumnAmount.Width = 150;
+            ColumnAmount.Width = 204;
             // 
             // ColumnCategory
             // 
             ColumnCategory.Text = "Category";
-            ColumnCategory.TextAlign = HorizontalAlignment.Center;
-            ColumnCategory.Width = 150;
+            ColumnCategory.Width = 204;
             // 
             // bChangeStock
             // 
+            bChangeStock.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             bChangeStock.Location = new Point(820, 320);
             bChangeStock.Margin = new Padding(2);
             bChangeStock.Name = "bChangeStock";

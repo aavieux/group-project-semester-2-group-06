@@ -39,7 +39,7 @@ public class DataAccessEmployeeDashboard
             }
         }
     }
-    public List<Employee> GetItems()
+    public List<Employee> GetAllUsers()
     {
         using (var connection = new SqlConnection(_connectionString))
         {
