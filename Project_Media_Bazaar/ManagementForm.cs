@@ -92,4 +92,9 @@ public partial class ManagementForm : Form
             MessageBox.Show("No item selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
+
+    private void bViewDetailsProduct_Click(object sender, EventArgs e)
+    {
+
+    }
 }

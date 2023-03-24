@@ -33,7 +33,11 @@ namespace Domain
         //}
         public string GetInfo()
         {
-            return $"Id: {id} || Name: {firstName} {lastName}";
+            return $"{firstName} {lastName}";
+        }
+        public string GetIdAndName()
+        {
+            return $"Id: {id} || {GetInfo()}";
         }
         //public List<Shift> GetShifts()
         //{
