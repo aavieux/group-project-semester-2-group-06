@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i4cMHk5aH+585lExaYDD2eXInYVQ/oos6N2BMClgA5Kn78Km8B1r9ym8coF6UJRsikzeqRvKZPtE7bgNlHC0Jg==",
+  "dgSpecHash": "Ufv6qGp6jKGTozkpdO3EgpGoziqI0tbvFayxrLgGw1wxux0qvwd6cjWHs2hmL4hokXpl+4yXIU9pQEbxKyWUaQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Source\\Repos\\group-project-semester-2-group-06\\DataManagement\\DataManagement.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Sem2\\Project copy\\DataManagement\\DataManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
