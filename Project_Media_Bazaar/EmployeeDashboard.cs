@@ -202,7 +202,7 @@ namespace Project_Media_Bazaar
             int secondId = 0;
             foreach (Employee item in employees)
             {
-                if(item.GetInfo().ToString().Contains(cbSelect.SelectedItem.ToString()))
+                if(item.GetIdAndName().ToString().Contains(cbSelect.SelectedItem.ToString()))
                 {
                     secondId = item.id;
                 }
@@ -221,9 +221,9 @@ namespace Project_Media_Bazaar
             tbphone.Clear();
             string[] parts = cbSelect.SelectedItem.ToString().Split(new string[] { " || " }, StringSplitOptions.None);
             string secondPart = parts[1];
-            string[] subParts = secondPart.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            int secondId = int.Parse(subParts[0]);
-            Employee employee = DataAccessEmployeeDashboard.GetItem(secondId);
+            secondPart.Replace("Id: ", "");
+           
+            Employee employee = DataAccessEmployeeDashboard.GetItem(int.Parse(secondPart));
 
             employee.firstName = tbfirstName.Text;
             employee.phoneNumber = tbphone.Text;
