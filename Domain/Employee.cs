@@ -27,18 +27,18 @@ namespace Domain
             this.shifts = shifts;
         }
 
-        public int Id()
-        {
-            return id;
-        }
+        //public int Id()
+        //{
+        //    return id;
+        //}
         public string GetInfo()
         {
             return $"Id: {id} || Name: {firstName} {lastName}";
         }
-        public List<Shift> GetShifts()
-        {
-            return shifts;
-        }
+        //public List<Shift> GetShifts()
+        //{
+        //    return shifts;
+        //}
         public void SetId(int id)
         {
             base.id = id;

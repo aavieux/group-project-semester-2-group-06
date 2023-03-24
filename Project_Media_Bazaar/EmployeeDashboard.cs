@@ -26,6 +26,7 @@ namespace Project_Media_Bazaar
 
             this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
             cbRole.DataSource = Enum.GetValues(typeof(EmployeeRole));
+
             LoadData();
         }
         private void LoadData()
@@ -141,7 +142,7 @@ namespace Project_Media_Bazaar
 
             Employee employee = new Employee(email, workingHours, role, firstName, lastName, dateTime, address, phoneNumber, salary, nickname, password);
 
-            var newUser = DataAccessEmployeeDashboard.AddItem(employee);
+            DataAccessEmployeeDashboard.AddItem(employee);
         }
 
         //private void btnView_Click(object sender, EventArgs e)

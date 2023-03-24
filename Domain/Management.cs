@@ -11,14 +11,14 @@ namespace Domain
 {
     public class Management
     {
-        SqlHelperG sql = new SqlHelperG();
+        SqlHelperG sqlHelper = new SqlHelperG();
         public void AddProduct(string name, Category category, string description)
         {
-            sql.AddProduct(name, category.ToString(), description);
+            sqlHelper.AddProduct(name, category.ToString(), description);
         }
         public void DeleteProduct(int id)
         {
-            sql.DeleteProduct(id);
+            sqlHelper.DeleteProduct(id);
         }
         public bool ChangeStockAmount(Product product, int amount, string operation)
         {
@@ -33,7 +33,7 @@ namespace Domain
                 {
                     product.changeAmount(product.Amount - amount);
                 }
-                sql.ChangeStockAmount(product.Id, amount);
+                sqlHelper.ChangeStockAmount(product.Id, amount);
             }
             catch (ArgumentException)
             {
@@ -43,11 +43,11 @@ namespace Domain
         }
         public void CreateChange(int productId, int change, int isRestock)
         {
-            sql.CreateChange(productId, DateTime.Now, change, isRestock);
+            sqlHelper.CreateChange(productId, DateTime.Now, change, isRestock);
         }
         public void ChangeStockAmount(int productId, int amount)
         {
-            sql.ChangeStockAmount(productId, amount);
+            sqlHelper.ChangeStockAmount(productId, amount);
         }
     }
 }
