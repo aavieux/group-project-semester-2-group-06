@@ -46,3 +46,15 @@ C:\Users\user\Source\Repos\group-project-semester-2-group-06\DataManagement\obj\
 C:\Users\user\Source\Repos\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\refint\DataManagement.dll
 C:\Users\user\Source\Repos\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\DataManagement.pdb
 C:\Users\user\Source\Repos\group-project-semester-2-group-06\DataManagement\obj\Debug\net7.0\ref\DataManagement.dll
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\bin\Debug\net7.0\DataManagement.deps.json
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\bin\Debug\net7.0\DataManagement.dll
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\bin\Debug\net7.0\DataManagement.pdb
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\DataManagement.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\DataManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\DataManagement.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\DataManagement.AssemblyInfo.cs
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\DataManagement.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\DataManagement.dll
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\refint\DataManagement.dll
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\DataManagement.pdb
+C:\Users\user\Desktop\Sem2\Project copy\DataManagement\obj\Debug\net7.0\ref\DataManagement.dll

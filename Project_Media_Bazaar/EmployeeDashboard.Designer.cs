@@ -394,6 +394,7 @@
             this.btnCreate.TabIndex = 19;
             this.btnCreate.Text = "Create Employee";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // tbWorkingHours
             // 
