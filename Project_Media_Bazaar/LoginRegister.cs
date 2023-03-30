@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.Enums;
 using Project_Media_Bazaar;
 using System;
 using System.Collections.Generic;
@@ -72,7 +73,7 @@ namespace LoginRegister
             {
                 Person person = administration.CheckLogIn(tbLogin.Text, tbPassword.Text);
 
-                if (person.roleType == "Manager")
+                if (person.userRole == UserRole.Manager)
                 {
                     this.Hide();
                     ManagementForm managementForm = new ManagementForm(person);
@@ -80,7 +81,7 @@ namespace LoginRegister
                     this.Close();
 
                 }
-                else if (person.roleType.Equals("Administrator"))
+                else if (person.userRole == UserRole.Administrator)
                 {
                     this.Hide();
                     EmployeeDashboard employeeDashboard = new EmployeeDashboard(person);

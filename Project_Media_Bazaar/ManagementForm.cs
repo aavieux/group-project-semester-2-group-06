@@ -39,6 +39,36 @@ public partial class ManagementForm : Form
 
     private void bViewDetailsProduct_Click_1(object sender, EventArgs e)
     {
+
+    }
+
+    private void bAddProduct_Click_1(object sender, EventArgs e)
+    {
+
+    }
+
+    private void bRemoveProduct_Click_1(object sender, EventArgs e)
+    {
+
+    }
+
+    private void bRefreshProducts_Click_1(object sender, EventArgs e)
+    {
+
+    }
+
+    private void bProductStatistics_Click_1(object sender, EventArgs e)
+    {
+
+    }
+
+    private void bChangeStock_Click_1(object sender, EventArgs e)
+    {
+
+    }
+
+    private void bViewDetailsProduct_Click(object sender, EventArgs e)
+    {
         try
         {
             ProductInformation form = new ProductInformation(company.GetProducts()[lvProducts.FocusedItem.Index]);
@@ -50,13 +80,13 @@ public partial class ManagementForm : Form
         }
     }
 
-    private void bAddProduct_Click_1(object sender, EventArgs e)
+    private void bAddProduct_Click(object sender, EventArgs e)
     {
         AddProduct form = new AddProduct(manager);
         form.ShowDialog();
     }
 
-    private void bRemoveProduct_Click_1(object sender, EventArgs e)
+    private void bRemoveProduct_Click(object sender, EventArgs e)
     {
         try
         {
@@ -69,18 +99,7 @@ public partial class ManagementForm : Form
         }
     }
 
-    private void bRefreshProducts_Click_1(object sender, EventArgs e)
-    {
-        RefreshListbox();
-    }
-
-    private void bProductStatistics_Click_1(object sender, EventArgs e)
-    {
-        ProductStatisticsForm form = new ProductStatisticsForm();
-        form.ShowDialog();
-    }
-
-    private void bChangeStock_Click_1(object sender, EventArgs e)
+    private void bChangeStock_Click(object sender, EventArgs e)
     {
         try
         {
@@ -93,8 +112,14 @@ public partial class ManagementForm : Form
         }
     }
 
-    private void bViewDetailsProduct_Click(object sender, EventArgs e)
+    private void bRefreshProducts_Click(object sender, EventArgs e)
     {
+        RefreshListbox();
+    }
 
+    private void bProductStatistics_Click(object sender, EventArgs e)
+    {
+        ProductStatisticsForm form = new ProductStatisticsForm();
+        form.ShowDialog();
     }
 }

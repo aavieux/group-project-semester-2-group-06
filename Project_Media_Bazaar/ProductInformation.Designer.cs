@@ -37,53 +37,53 @@
             // showName
             // 
             showName.AutoSize = true;
-            showName.Location = new Point(199, 135);
-            showName.Margin = new Padding(4, 0, 4, 0);
+            showName.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showName.Location = new Point(31, 19);
             showName.Name = "showName";
-            showName.Size = new Size(56, 25);
+            showName.Size = new Size(83, 37);
             showName.TabIndex = 0;
             showName.Text = "name";
             // 
             // showCategory
             // 
             showCategory.AutoSize = true;
-            showCategory.Location = new Point(199, 185);
-            showCategory.Margin = new Padding(4, 0, 4, 0);
+            showCategory.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showCategory.Location = new Point(31, 71);
             showCategory.Name = "showCategory";
-            showCategory.Size = new Size(81, 25);
+            showCategory.Size = new Size(120, 37);
             showCategory.TabIndex = 1;
             showCategory.Text = "category";
             // 
             // showDescription
             // 
             showDescription.AutoSize = true;
-            showDescription.Location = new Point(199, 210);
-            showDescription.Margin = new Padding(4, 0, 4, 0);
+            showDescription.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showDescription.Location = new Point(31, 121);
             showDescription.Name = "showDescription";
-            showDescription.Size = new Size(100, 25);
+            showDescription.Size = new Size(149, 37);
             showDescription.TabIndex = 2;
             showDescription.Text = "description";
             // 
             // showAmount
             // 
             showAmount.AutoSize = true;
-            showAmount.Location = new Point(199, 160);
-            showAmount.Margin = new Padding(4, 0, 4, 0);
+            showAmount.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showAmount.Location = new Point(31, 179);
             showAmount.Name = "showAmount";
-            showAmount.Size = new Size(74, 25);
+            showAmount.Size = new Size(109, 37);
             showAmount.TabIndex = 3;
             showAmount.Text = "amount";
             // 
             // ProductInformation
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 562);
+            ClientSize = new Size(700, 337);
             Controls.Add(showAmount);
             Controls.Add(showDescription);
             Controls.Add(showCategory);
             Controls.Add(showName);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ProductInformation";
             Text = "Product Information";
             Load += ProductInformation_Load;

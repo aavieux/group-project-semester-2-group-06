@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,9 @@ namespace Domain
         public string nickname { get; private set; }
         public string password { get; private set; }
         public string email { get; set; }
-        public string roleType { get; private set; }
+        public UserRole userRole { get; private set; }
         public Person() { }
-        public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, string roleType)
+        public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, UserRole roleType)
         {
             this.id = id;
             this.firstName = firstName;
@@ -31,7 +32,20 @@ namespace Domain
             this.salary = salary;
             this.email = email;
             this.nickname = nickname;
-            this.roleType = roleType;
+            this.userRole = roleType;
+            this.password = password;
+        }
+        public Person(string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, UserRole roleType)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.birthDate = birthDate;
+            this.address = address;
+            this.phoneNumber = phoneNumber;
+            this.salary = salary;
+            this.email = email;
+            this.nickname = nickname;
+            this.userRole = roleType;
             this.password = password;
         }
         //public string GetName()
