@@ -27,5 +27,10 @@ namespace Project_Media_Bazaar
         {
 
         }
+
+        private void lMostSoldProduct_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

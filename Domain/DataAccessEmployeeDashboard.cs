@@ -11,8 +11,9 @@ public class DataAccessEmployeeDashboard
     {
         _connectionString = connectionString;
     }
-    public Employee AddItem(Employee employee)
+    public bool AddItem(Employee employee)
     {
+        bool yesOrNo = false;
         using (var connection = new SqlConnection(_connectionString))
         {
             var commandText = "INSERT INTO Employee (firstName,lastName,birthDate,address,phoneNumber, salary, email, nickname,password,roleType,workingHours, role) VALUES (@Name,@LastName,@DateOfBirth,@Address,@PhoneNumber,@Salary,@Email,@Nickname, @Password, @Role, @WorkingHours, @Role1); SELECT SCOPE_IDENTITY()";
@@ -23,19 +24,28 @@ public class DataAccessEmployeeDashboard
                 command.Parameters.AddWithValue("@DateOfBirth", employee.birthDate);
                 command.Parameters.AddWithValue("@Address", employee.address);
                 command.Parameters.AddWithValue("@PhoneNumber", employee.phoneNumber);
-                command.Parameters.AddWithValue("@Salary", employee.salary);
+                command.Parameters.AddWithValue("@Salary", Convert.ToDecimal(employee.salary));
                 command.Parameters.AddWithValue("@Email", employee.email);
                 command.Parameters.AddWithValue("@Nickname", employee.nickname);
                 command.Parameters.AddWithValue("@Password", employee.password);
-                command.Parameters.AddWithValue("@Role", employee.role);
+                command.Parameters.AddWithValue("@Role", employee.employeeRole);
                 command.Parameters.AddWithValue("@WorkingHours", employee.workingHours);
-                command.Parameters.AddWithValue("@Role1", employee.role);
+                command.Parameters.AddWithValue("@Role1", employee.employeeRole);
 
-                connection.Open();
-                var id = (int)command.ExecuteScalar();
-                employee.SetId(id);
-
-                return employee;
+                try
+                {
+                    connection.Open();
+                    var id = (int)command.ExecuteScalar();
+                    employee.SetId(id);
+                    yesOrNo = true;
+                    return yesOrNo;
+                }
+                catch (Exception)
+                {
+                    yesOrNo = true;
+                    return yesOrNo;
+                }
+                
             }
         }
     }
@@ -54,10 +64,11 @@ public class DataAccessEmployeeDashboard
 
                     while (reader.Read())
                     {
-                        var item = new Employee((int)reader["ID"], reader.GetString(reader.GetOrdinal("email")),
-                            reader.GetInt32(reader.GetOrdinal("workingHours")), (EmployeeRole)reader.GetOrdinal("Role"), reader.GetString(reader.GetOrdinal("firstName")), reader.GetString(reader.GetOrdinal("lastName")),
+                        var item = new Employee(reader.GetString(reader.GetOrdinal("email")),
+                            reader.GetInt32(reader.GetOrdinal("workingHours")), Enum.Parse<UserRole>(reader.GetString(reader.GetOrdinal("Role"))), reader.GetString(reader.GetOrdinal("firstName")), reader.GetString(reader.GetOrdinal("lastName")),
                             reader.GetDateTime(reader.GetOrdinal("birthDate")), reader.GetString(reader.GetOrdinal("address")), reader.GetString(reader.GetOrdinal("phoneNumber")), (Decimal)reader.GetDecimal(reader.GetOrdinal("salary")),
-                            reader.GetString(reader.GetOrdinal("nickname")), reader.GetString(reader.GetOrdinal("Password")), reader.GetString(reader.GetOrdinal("roleType")));
+                            reader.GetString(reader.GetOrdinal("nickname")), reader.GetString(reader.GetOrdinal("Password")), Enum.Parse<EmployeeRole>(reader.GetString(reader.GetOrdinal("roleType"))));
+                        item.id = (int)reader["ID"];
 
                         items.Add(item);
                     }

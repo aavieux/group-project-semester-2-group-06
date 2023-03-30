@@ -25,11 +25,11 @@ namespace Project_Media_Bazaar
             this.Text = $"Logged as: {currentPerson.firstName + " " + currentPerson.lastName}";
 
             this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
-             List<Employee> employees=  this.DataAccessEmployeeDashboard.GetAllUsers();
+            List<Employee> employees = this.DataAccessEmployeeDashboard.GetAllUsers();
 
             foreach (Employee employee in employees)
             {
-                cbSelect.Items.Add(employee.GetIdAndName()); 
+                cbSelect.Items.Add(employee.GetIdAndName());
             }
             cbRole.DataSource = Enum.GetValues(typeof(EmployeeRole));
 
@@ -53,102 +53,71 @@ namespace Project_Media_Bazaar
             DateTime dateTime;
             string address = "";
             string phoneNumber = "";
-            double salary;
+            decimal salary;
             string nickname = "";
             string password = "";
             int workingHours;
 
-            EmployeeRole role = new EmployeeRole();
+            UserRole role = new UserRole();
 
             // Validate email address
-            if (!string.IsNullOrWhiteSpace(tbemail.Text))
+            if (!string.IsNullOrWhiteSpace(tbemail.Text) &&
+                !string.IsNullOrWhiteSpace(tbfirstName.Text) &&
+                !string.IsNullOrWhiteSpace(tblastName.Text) &&
+                !string.IsNullOrWhiteSpace(tbAdress.Text) &&
+                !string.IsNullOrWhiteSpace(tbPhoneNumber.Text) &&
+                decimal.TryParse(tbsalary.Text, out salary) &&
+                !string.IsNullOrWhiteSpace(tbnickname.Text) &&
+                !string.IsNullOrWhiteSpace(tbpassword.Text) &&
+                int.TryParse(tbWorkingHours.Text, out workingHours) &&
+                cbRole.SelectedItem != null && cbRole.SelectedItem is EmployeeRole)
             {
                 try
                 {
+                    firstName = tbfirstName.Text.Trim();
+                    lastName = tblastName.Text.Trim();
+                    address = tbAdress.Text.Trim();
+                    phoneNumber = tbPhoneNumber.Text.Trim();
+                    nickname = tbnickname.Text.Trim();
+                    password = tbpassword.Text;
+                    role = (UserRole)cbRole.SelectedItem;
+                    EmployeeRole employeeRole = EmployeeRole.JuniorSales;
+                    dateTime = dtBirthDate.Value;
+                    salary = decimal.Parse(tbsalary.Text);
                     var mailAddress = new System.Net.Mail.MailAddress(tbemail.Text);
                     email = mailAddress.Address;
+
+                    Employee employee = new Employee(email, workingHours, role, firstName, lastName, dateTime, address, phoneNumber, salary, nickname, password, employeeRole);
+                    if (DataAccessEmployeeDashboard.AddItem(employee))
+                    {
+                        MessageBox.Show("Done!");
+                    }
+                    
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Invalid email address");
+                    MessageBox.Show("Error creating an employee!");
                 }
-            }
-
-            // Validate first name
-            if (!string.IsNullOrWhiteSpace(tbfirstName.Text))
-            {
-                firstName = tbfirstName.Text.Trim();
-            }
-            else { MessageBox.Show("Invalid first name"); }
-
-            // Validate last name
-            if (!string.IsNullOrWhiteSpace(tblastName.Text))
-            {
-                lastName = tblastName.Text.Trim();
-            }
-            else { MessageBox.Show("Invalid last name"); }
-            // Validate birth date
-            if (DateTime.TryParse(dtBirthDate.Text, out dateTime))
-            {
-                MessageBox.Show("Invalid birth date");
-                // Handle invalid date format
-            }
-
-            // Validate address
-            if (!string.IsNullOrWhiteSpace(tbAdress.Text))
-            {
-                address = tbAdress.Text.Trim();
-            }
-            else { MessageBox.Show("Invalid address"); }
-
-            // Validate phone number
-            if (!string.IsNullOrWhiteSpace(tbPhoneNumber.Text))
-            {
-                phoneNumber = tbPhoneNumber.Text.Trim();
-            }
-            else { MessageBox.Show("Invalid phone number"); }
-
-            // Validate salary
-            if (double.TryParse(tbsalary.Text, out salary))
-            {
-                MessageBox.Show("Invalid salary");
-            }
-
-            // Validate nickname
-            if (!string.IsNullOrWhiteSpace(tbnickname.Text))
-            {
-                nickname = tbnickname.Text.Trim();
-            }
-            else { MessageBox.Show("Invalid nickname"); }
-            // Validate password
-            if (!string.IsNullOrWhiteSpace(tbpassword.Text))
-            {
-                password = tbpassword.Text;
-            }
-            else { MessageBox.Show("Invalid password"); }
-
-            // Validate working hours
-            if (int.TryParse(tbWorkingHours.Text, out workingHours))
-            {
-                MessageBox.Show("Invalid working hours");
-                // Handle invalid working hours format
-            }
-
-            // Validate employee role
-            if (cbRole.SelectedItem != null && cbRole.SelectedItem is EmployeeRole)
-            {
-                role = (EmployeeRole)cbRole.SelectedItem;
             }
             else
             {
-                // Handle invalid employee role selection
+                MessageBox.Show("Invalid input!");
             }
+            
 
+            tbfirstName.Text = "";
+            tblastName.Text = "";
+            tbAdress.Text = "";
+            tbPhoneNumber.Text = "";
+            tbnickname.Text = "";
+            tbpassword.Text = "";
+            cbRole.SelectedItem = -1;
+            tbWorkingHours.Text = "";
 
+            tbsalary.Text = "";
+            tbemail.Text = "";
 
-            Employee employee = new Employee(email, workingHours, role, firstName, lastName, dateTime, address, phoneNumber, salary, nickname, password);
-
-            DataAccessEmployeeDashboard.AddItem(employee);
+            //tbRoleType deleted
         }
 
         //private void btnView_Click(object sender, EventArgs e)
@@ -163,13 +132,13 @@ namespace Project_Media_Bazaar
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -189,7 +158,8 @@ namespace Project_Media_Bazaar
             string phoneNumber = tbphone.Text;
 
 
-            //DataAccessEmployeeDashboard.UpdateItem(newUser);
+           //DataAccessEmployeeDashboard.UpdateItem(newUser);
+
         }
 
         private void btnSelect_Click_1(object sender, EventArgs e)
@@ -198,20 +168,20 @@ namespace Project_Media_Bazaar
             //string secondPart = parts[1];
             //string[] subParts = secondPart.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             //int secondId = int.Parse(subParts[0]);
-            List<Employee>employees = DataAccessEmployeeDashboard.GetAllUsers();
+            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsers();
             int secondId = 0;
             foreach (Employee item in employees)
             {
-                if(item.GetIdAndName().ToString().Contains(cbSelect.SelectedItem.ToString()))
+                if (item.GetIdAndName().ToString().Contains(cbSelect.SelectedItem.ToString()))
                 {
                     secondId = item.id;
                 }
             }
-           
+
 
             Employee employee = DataAccessEmployeeDashboard.GetItem(secondId);
 
-            tbfirstName.Text = employee.firstName;
+            tbfistName.Text = $"{employee.firstName} {employee.lastName}";
             tbphone.Text = employee.phoneNumber;
         }
 
@@ -222,7 +192,7 @@ namespace Project_Media_Bazaar
             string[] parts = cbSelect.SelectedItem.ToString().Split(new string[] { " || " }, StringSplitOptions.None);
             string secondPart = parts[1];
             secondPart.Replace("Id: ", "");
-           
+
             Employee employee = DataAccessEmployeeDashboard.GetItem(int.Parse(secondPart));
 
             employee.firstName = tbfirstName.Text;
@@ -231,7 +201,7 @@ namespace Project_Media_Bazaar
 
             DataAccessEmployeeDashboard.UpdateItem(employee);
 
-            MessageBox.Show("User updated successfully");
+            MessageBox.Show("Done!");
         }
 
         private void btnDelete_Click_1(object sender, EventArgs e)
@@ -241,9 +211,9 @@ namespace Project_Media_Bazaar
                 int id = int.Parse(tbIdDelete.Text);
                 DataAccessEmployeeDashboard.DeleteItem(id);
                 MessageBox.Show("Succesfully deleted item");
+                LoadData();
             }
             catch (Exception) { }
-
             LoadData();
         }
 
@@ -261,8 +231,6 @@ namespace Project_Media_Bazaar
                 }
                 else
                     LoadData();
-
-
             }
             catch (Exception) { }
         }

@@ -10,20 +10,24 @@ namespace Domain
     public class Employee : Person
     {
         public int workingHours { get; set; }
-        public EmployeeRole role { get; set; }
+        public EmployeeRole employeeRole { get; set; }
         private List<Shift>? shifts;
         public Employee() : base() { }
 
-        public Employee(int id, string email, int workingHours, EmployeeRole role, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, string roleType) : base(id, firstName, lastName, birthDate, address, phoneNumber, salary, email, nickname, password, roleType)
+        //public Employee(int id, string email, int workingHours, UserRole role, string firstName, string lastName, 
+        //    DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole roleType) 
+        //    : base()
+        //{
+        //    this.workingHours = workingHours;
+        //    this.employeeRole = role;
+        //    this.shifts = shifts;
+        //}
+        public Employee(string email, int workingHours, UserRole role, string firstName, string lastName, 
+            DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole employeeRole) 
+            : base(firstName, lastName, birthDate, address, phoneNumber, salary, email, nickname, password, role)
         {
             this.workingHours = workingHours;
-            this.role = role;
-            this.shifts = shifts;
-        }
-        public Employee(string email, int workingHours, EmployeeRole role, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, double salary, string nickname, string password)
-        {
-            this.workingHours = workingHours;
-            this.role = role;
+            this.employeeRole = employeeRole;
             this.shifts = shifts;
         }
 
