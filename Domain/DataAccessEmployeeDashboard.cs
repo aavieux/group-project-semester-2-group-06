@@ -134,23 +134,48 @@ public class DataAccessEmployeeDashboard
 
 
 
-    public void UpdateItem(Employee employee)
+    public void UpdateEmployee(Employee employee)
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            connection.Open();
-
-            var commandText = "UPDATE Employee SET firstName = @firstName, phoneNumber = @phoneNumber WHERE Id = @Id";
+            var commandText = "UPDATE Employee SET firstName = @firstName, lastName = @lastName, address = @address, salary = @salary, email = @email, "
+                            + "nickname = @nickname, password = @password, workingHours = @workingHours, phoneNumber = @phoneNumber WHERE id = @id";
             using (var command = new SqlCommand(commandText, connection))
             {
-                command.Parameters.AddWithValue("@Id", employee.id);
+                command.Parameters.AddWithValue("@id", employee.id);
                 command.Parameters.AddWithValue("@firstName", employee.firstName);
+                command.Parameters.AddWithValue("@lastName", employee.lastName);
+                command.Parameters.AddWithValue("@address", employee.address);
+                command.Parameters.AddWithValue("@salary", employee.salary);
+                command.Parameters.AddWithValue("@email", employee.email);
+                command.Parameters.AddWithValue("@nickname", employee.nickname);
+                command.Parameters.AddWithValue("@password", employee.password);
+                command.Parameters.AddWithValue("@workingHours", employee.workingHours);
                 command.Parameters.AddWithValue("@phoneNumber", employee.phoneNumber);
 
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected == 0)
+                    {
+                        throw new Exception("No rows were affected by the update operation.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception
+                    throw ex;
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
     }
+
 
 
 

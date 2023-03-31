@@ -1,4 +1,4 @@
-﻿namespace LoginRegister
+﻿namespace Project_Media_Bazaar
 {
     partial class LoginRegister
     {
@@ -57,11 +57,12 @@
             tabControlLoginRegister.Alignment = TabAlignment.Left;
             tabControlLoginRegister.Controls.Add(login_tab);
             tabControlLoginRegister.Controls.Add(register_tab);
-            tabControlLoginRegister.Location = new Point(12, 12);
+            tabControlLoginRegister.Location = new Point(17, 20);
+            tabControlLoginRegister.Margin = new Padding(4, 5, 4, 5);
             tabControlLoginRegister.Multiline = true;
             tabControlLoginRegister.Name = "tabControlLoginRegister";
             tabControlLoginRegister.SelectedIndex = 0;
-            tabControlLoginRegister.Size = new Size(776, 440);
+            tabControlLoginRegister.Size = new Size(1109, 733);
             tabControlLoginRegister.TabIndex = 0;
             // 
             // login_tab
@@ -73,39 +74,42 @@
             login_tab.Controls.Add(loginpasswordlbl);
             login_tab.Controls.Add(bLogin);
             login_tab.Controls.Add(login_lbl);
-            login_tab.Location = new Point(27, 4);
+            login_tab.Location = new Point(34, 4);
+            login_tab.Margin = new Padding(4, 5, 4, 5);
             login_tab.Name = "login_tab";
-            login_tab.Padding = new Padding(3, 3, 3, 3);
-            login_tab.Size = new Size(745, 432);
+            login_tab.Padding = new Padding(4, 5, 4, 5);
+            login_tab.Size = new Size(1071, 725);
             login_tab.TabIndex = 0;
             login_tab.Text = "Log In";
+            login_tab.Click += login_tab_Click;
             // 
             // tbPassword
             // 
             tbPassword.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            tbPassword.Location = new Point(172, 237);
-            tbPassword.Margin = new Padding(3, 2, 3, 2);
+            tbPassword.Location = new Point(246, 395);
+            tbPassword.Margin = new Padding(4, 3, 4, 3);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
-            tbPassword.Size = new Size(401, 34);
+            tbPassword.Size = new Size(571, 47);
             tbPassword.TabIndex = 19;
             // 
             // tbLogin
             // 
             tbLogin.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            tbLogin.Location = new Point(172, 164);
-            tbLogin.Margin = new Padding(3, 2, 3, 2);
+            tbLogin.Location = new Point(246, 273);
+            tbLogin.Margin = new Padding(4, 3, 4, 3);
             tbLogin.Name = "tbLogin";
-            tbLogin.Size = new Size(401, 34);
+            tbLogin.Size = new Size(571, 47);
             tbLogin.TabIndex = 16;
             // 
             // loginemaillbl
             // 
             loginemaillbl.AutoSize = true;
             loginemaillbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            loginemaillbl.Location = new Point(172, 125);
+            loginemaillbl.Location = new Point(246, 208);
+            loginemaillbl.Margin = new Padding(4, 0, 4, 0);
             loginemaillbl.Name = "loginemaillbl";
-            loginemaillbl.Size = new Size(138, 28);
+            loginemaillbl.Size = new Size(205, 41);
             loginemaillbl.TabIndex = 17;
             loginemaillbl.Text = "Email Adress:";
             // 
@@ -113,9 +117,10 @@
             // 
             loginpasswordlbl.AutoSize = true;
             loginpasswordlbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            loginpasswordlbl.Location = new Point(172, 198);
+            loginpasswordlbl.Location = new Point(246, 330);
+            loginpasswordlbl.Margin = new Padding(4, 0, 4, 0);
             loginpasswordlbl.Name = "loginpasswordlbl";
-            loginpasswordlbl.Size = new Size(106, 28);
+            loginpasswordlbl.Size = new Size(158, 41);
             loginpasswordlbl.TabIndex = 18;
             loginpasswordlbl.Text = "Password:";
             // 
@@ -125,9 +130,10 @@
             bLogin.Cursor = Cursors.Hand;
             bLogin.FlatStyle = FlatStyle.Flat;
             bLogin.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            bLogin.Location = new Point(172, 302);
+            bLogin.Location = new Point(246, 503);
+            bLogin.Margin = new Padding(4, 5, 4, 5);
             bLogin.Name = "bLogin";
-            bLogin.Size = new Size(401, 43);
+            bLogin.Size = new Size(573, 72);
             bLogin.TabIndex = 15;
             bLogin.Text = "Log In";
             bLogin.UseVisualStyleBackColor = false;
@@ -137,9 +143,10 @@
             // 
             login_lbl.AutoSize = true;
             login_lbl.Font = new Font("Segoe UI", 25F, FontStyle.Bold, GraphicsUnit.Point);
-            login_lbl.Location = new Point(317, 51);
+            login_lbl.Location = new Point(453, 85);
+            login_lbl.Margin = new Padding(4, 0, 4, 0);
             login_lbl.Name = "login_lbl";
-            login_lbl.Size = new Size(119, 46);
+            login_lbl.Size = new Size(175, 67);
             login_lbl.TabIndex = 1;
             login_lbl.Text = "Log in";
             // 
@@ -155,10 +162,11 @@
             register_tab.Controls.Add(fullnametxt);
             register_tab.Controls.Add(registerbtn);
             register_tab.Controls.Add(crateanaccount_lbl);
-            register_tab.Location = new Point(27, 4);
+            register_tab.Location = new Point(34, 4);
+            register_tab.Margin = new Padding(4, 5, 4, 5);
             register_tab.Name = "register_tab";
-            register_tab.Padding = new Padding(3, 3, 3, 3);
-            register_tab.Size = new Size(745, 432);
+            register_tab.Padding = new Padding(4, 5, 4, 5);
+            register_tab.Size = new Size(1071, 725);
             register_tab.TabIndex = 1;
             register_tab.Text = "Register";
             register_tab.UseVisualStyleBackColor = true;
@@ -167,9 +175,10 @@
             // 
             passwordlbl.AutoSize = true;
             passwordlbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            passwordlbl.Location = new Point(172, 292);
+            passwordlbl.Location = new Point(246, 487);
+            passwordlbl.Margin = new Padding(4, 0, 4, 0);
             passwordlbl.Name = "passwordlbl";
-            passwordlbl.Size = new Size(70, 17);
+            passwordlbl.Size = new Size(106, 28);
             passwordlbl.TabIndex = 39;
             passwordlbl.Text = "Password:";
             // 
@@ -177,9 +186,10 @@
             // 
             emailadresslbl.AutoSize = true;
             emailadresslbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            emailadresslbl.Location = new Point(172, 224);
+            emailadresslbl.Location = new Point(246, 373);
+            emailadresslbl.Margin = new Padding(4, 0, 4, 0);
             emailadresslbl.Name = "emailadresslbl";
-            emailadresslbl.Size = new Size(91, 17);
+            emailadresslbl.Size = new Size(138, 28);
             emailadresslbl.TabIndex = 38;
             emailadresslbl.Text = "Email Adress:";
             // 
@@ -187,9 +197,10 @@
             // 
             phonenumberlbl.AutoSize = true;
             phonenumberlbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            phonenumberlbl.Location = new Point(172, 145);
+            phonenumberlbl.Location = new Point(246, 242);
+            phonenumberlbl.Margin = new Padding(4, 0, 4, 0);
             phonenumberlbl.Name = "phonenumberlbl";
-            phonenumberlbl.Size = new Size(106, 17);
+            phonenumberlbl.Size = new Size(160, 28);
             phonenumberlbl.TabIndex = 37;
             phonenumberlbl.Text = "Phone Number:";
             // 
@@ -197,56 +208,58 @@
             // 
             fullnamelbl.AutoSize = true;
             fullnamelbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            fullnamelbl.Location = new Point(172, 74);
+            fullnamelbl.Location = new Point(246, 123);
+            fullnamelbl.Margin = new Padding(4, 0, 4, 0);
             fullnamelbl.Name = "fullnamelbl";
-            fullnamelbl.Size = new Size(75, 17);
+            fullnamelbl.Size = new Size(113, 28);
             fullnamelbl.TabIndex = 36;
             fullnamelbl.Text = "Full Name:";
             // 
             // passwordtxt
             // 
             passwordtxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            passwordtxt.Location = new Point(172, 313);
-            passwordtxt.Margin = new Padding(3, 2, 3, 2);
+            passwordtxt.Location = new Point(246, 522);
+            passwordtxt.Margin = new Padding(4, 3, 4, 3);
             passwordtxt.Name = "passwordtxt";
             passwordtxt.PasswordChar = '*';
-            passwordtxt.Size = new Size(401, 25);
+            passwordtxt.Size = new Size(571, 33);
             passwordtxt.TabIndex = 35;
             // 
             // emailadresstxt
             // 
             emailadresstxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            emailadresstxt.Location = new Point(172, 245);
-            emailadresstxt.Margin = new Padding(3, 2, 3, 2);
+            emailadresstxt.Location = new Point(246, 408);
+            emailadresstxt.Margin = new Padding(4, 3, 4, 3);
             emailadresstxt.Name = "emailadresstxt";
-            emailadresstxt.Size = new Size(401, 25);
+            emailadresstxt.Size = new Size(571, 33);
             emailadresstxt.TabIndex = 34;
             // 
             // phonenumbertxt
             // 
             phonenumbertxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            phonenumbertxt.Location = new Point(172, 169);
-            phonenumbertxt.Margin = new Padding(3, 2, 3, 2);
+            phonenumbertxt.Location = new Point(246, 282);
+            phonenumbertxt.Margin = new Padding(4, 3, 4, 3);
             phonenumbertxt.Name = "phonenumbertxt";
-            phonenumbertxt.Size = new Size(401, 25);
+            phonenumbertxt.Size = new Size(571, 33);
             phonenumbertxt.TabIndex = 33;
             // 
             // fullnametxt
             // 
             fullnametxt.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            fullnametxt.Location = new Point(172, 95);
-            fullnametxt.Margin = new Padding(3, 2, 3, 2);
+            fullnametxt.Location = new Point(246, 158);
+            fullnametxt.Margin = new Padding(4, 3, 4, 3);
             fullnametxt.Name = "fullnametxt";
-            fullnametxt.Size = new Size(401, 25);
+            fullnametxt.Size = new Size(571, 33);
             fullnametxt.TabIndex = 32;
             // 
             // registerbtn
             // 
             registerbtn.FlatStyle = FlatStyle.Popup;
             registerbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            registerbtn.Location = new Point(172, 356);
+            registerbtn.Location = new Point(246, 593);
+            registerbtn.Margin = new Padding(4, 5, 4, 5);
             registerbtn.Name = "registerbtn";
-            registerbtn.Size = new Size(401, 41);
+            registerbtn.Size = new Size(573, 68);
             registerbtn.TabIndex = 31;
             registerbtn.Text = "Register";
             registerbtn.UseVisualStyleBackColor = true;
@@ -256,18 +269,20 @@
             // 
             crateanaccount_lbl.AutoSize = true;
             crateanaccount_lbl.Font = new Font("Segoe UI", 25F, FontStyle.Bold, GraphicsUnit.Point);
-            crateanaccount_lbl.Location = new Point(223, 14);
+            crateanaccount_lbl.Location = new Point(319, 23);
+            crateanaccount_lbl.Margin = new Padding(4, 0, 4, 0);
             crateanaccount_lbl.Name = "crateanaccount_lbl";
-            crateanaccount_lbl.Size = new Size(305, 46);
+            crateanaccount_lbl.Size = new Size(450, 67);
             crateanaccount_lbl.TabIndex = 30;
             crateanaccount_lbl.Text = "Create an account";
             // 
             // LoginRegister
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 464);
+            ClientSize = new Size(1143, 773);
             Controls.Add(tabControlLoginRegister);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "LoginRegister";
             Text = "LoginRegister";
             tabControlLoginRegister.ResumeLayout(false);

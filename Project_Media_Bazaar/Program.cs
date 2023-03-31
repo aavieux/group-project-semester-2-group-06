@@ -1,4 +1,3 @@
-using LoginRegister;
 
 namespace Project_Media_Bazaar
 {
@@ -13,7 +12,7 @@ namespace Project_Media_Bazaar
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginRegister.LoginRegister());
+            Application.Run(new LoginRegister());
         }
     }
 }

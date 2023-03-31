@@ -11,12 +11,12 @@ using Domain;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Domain.Enums;
-using LoginRegister;
 
 namespace Project_Media_Bazaar
 {
     public partial class EmployeeDashboard : Form
     {
+        LoginRegister loginRegister;
         DataAccessEmployeeDashboard DataAccessEmployeeDashboard;
         Person currentPerson;
         List<Employee> employees;
@@ -39,7 +39,7 @@ namespace Project_Media_Bazaar
 
             LoadData();
         }
-        private void LoadData()
+        public void LoadData()
         {
             listBoxEmployees.Items.Clear();
             List<Employee> users = DataAccessEmployeeDashboard.GetAllUsers();
@@ -49,7 +49,7 @@ namespace Project_Media_Bazaar
             }
         }
 
-   
+
         private void btnSelect_Click(object sender, EventArgs e)
         {
             int id = int.Parse(cbSelect.Text);
@@ -59,7 +59,7 @@ namespace Project_Media_Bazaar
 
         }
 
-   
+
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             tbfirstName.Clear();
@@ -74,7 +74,7 @@ namespace Project_Media_Bazaar
             employee.phoneNumber = tbphone.Text;
 
 
-            DataAccessEmployeeDashboard.UpdateItem(employee);
+            DataAccessEmployeeDashboard.UpdateEmployee(employee);
 
             MessageBox.Show("Done!");
         }
@@ -127,12 +127,12 @@ namespace Project_Media_Bazaar
                         MessageBox.Show("Done!");
                     }
 
-            }
+                }
                 catch (FormatException)
-            {
-                MessageBox.Show("Error creating an employee!");
+                {
+                    MessageBox.Show("Error creating an employee!");
+                }
             }
-        }
             else
             {
                 MessageBox.Show("Invalid input!");
@@ -218,16 +218,16 @@ namespace Project_Media_Bazaar
                 if (item.GetIdAndName().ToString().Contains(cbSelect.SelectedItem.ToString()))
                 {
                     secondId = item.id;
-                    
+
                     item.SetName(tbfistName.Text);
-                   item.SetPhone(tbphone.Text);
-                    DataAccessEmployeeDashboard.UpdateItem(item);
+                    item.SetPhone(tbphone.Text);
+                    DataAccessEmployeeDashboard.UpdateEmployee(item);
                 }
             }
-             
+
         }
 
-       
+
 
         private void btnSelectEmployeeToShift_Click(object sender, EventArgs e)
         {
@@ -260,26 +260,31 @@ namespace Project_Media_Bazaar
             {
                 if (item.GetIdAndName().ToString().Contains(cbEmployeesShifts.SelectedItem.ToString()))
                 {
-                    secondId = item.id;                   
+                    secondId = item.id;
                 }
             }
 
             string selectedValueString = cbEmployeesShifts.ToString();
             ShiftType shiftType = ShiftType.DayShift;
             DateTime dateOfShift = dtDateShift.Value;
-            Shift shift = new Shift(shiftType,dateOfShift, secondId);
+            Shift shift = new Shift(shiftType, dateOfShift, secondId);
             DataAccessEmployeeDashboard.AssignEmployeeToShift(shift);
-                MessageBox.Show("Done!");
+            MessageBox.Show("Done!");
 
         }
 
         private void listBoxEmployees_DoubleClick(object sender, EventArgs e)
         {
             var chosenEmployee = employees[listBoxEmployees.SelectedIndex];
-            UpdateEmployee updateEmployee = new UpdateEmployee(chosenEmployee);
+            UpdateEmployee updateEmployee = new UpdateEmployee(chosenEmployee, this);
             updateEmployee.ShowDialog();
-            this.Close();
-            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loginRegister = new LoginRegister();
+            this.Hide();
+            loginRegister.ShowDialog();
         }
     }
 }

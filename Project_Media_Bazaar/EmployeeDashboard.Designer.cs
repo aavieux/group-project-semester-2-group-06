@@ -28,615 +28,672 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabDashboard = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tbIdDelete = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.tbF = new System.Windows.Forms.TextBox();
-            this.listBoxEmployees = new System.Windows.Forms.ListBox();
-            this.tabCreateEmployee = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.gbCredentials = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbpassword = new System.Windows.Forms.TextBox();
-            this.tbemail = new System.Windows.Forms.TextBox();
-            this.tbnickname = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.gpPersonalData = new System.Windows.Forms.GroupBox();
-            this.tbfirstName = new System.Windows.Forms.TextBox();
-            this.tblastName = new System.Windows.Forms.TextBox();
-            this.lbFirstName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.tbAdress = new System.Windows.Forms.TextBox();
-            this.tbPhoneNumber = new System.Windows.Forms.TextBox();
-            this.tbsalary = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbRole = new System.Windows.Forms.ComboBox();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.tbWorkingHours = new System.Windows.Forms.TextBox();
-            this.tabShift = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.btnShift = new System.Windows.Forms.Button();
-            this.dtDateShift = new System.Windows.Forms.DateTimePicker();
-            this.cbShifts = new System.Windows.Forms.ComboBox();
-            this.tbphoneShift = new System.Windows.Forms.TextBox();
-            this.tbNameEmShift = new System.Windows.Forms.TextBox();
-            this.btnSelectEmployeeToShift = new System.Windows.Forms.Button();
-            this.cbEmployeesShifts = new System.Windows.Forms.ComboBox();
-            this.tabUpdateEmployee = new System.Windows.Forms.TabPage();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.lbphone = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
-            this.tbphone = new System.Windows.Forms.TextBox();
-            this.tbfistName = new System.Windows.Forms.TextBox();
-            this.btnSelect = new System.Windows.Forms.Button();
-            this.cbSelect = new System.Windows.Forms.ComboBox();
-            this.tabControl1.SuspendLayout();
-            this.tabDashboard.SuspendLayout();
-            this.tabCreateEmployee.SuspendLayout();
-            this.gbCredentials.SuspendLayout();
-            this.gpPersonalData.SuspendLayout();
-            this.tabShift.SuspendLayout();
-            this.tabUpdateEmployee.SuspendLayout();
-            this.SuspendLayout();
+            tabControl1 = new TabControl();
+            tabDashboard = new TabPage();
+            bLogout = new Button();
+            tbIdDelete = new TextBox();
+            btnDelete = new Button();
+            btnFilter = new Button();
+            tbF = new TextBox();
+            listBoxEmployees = new ListBox();
+            tabCreateEmployee = new TabPage();
+            label10 = new Label();
+            label9 = new Label();
+            gbCredentials = new GroupBox();
+            label8 = new Label();
+            label6 = new Label();
+            tbpassword = new TextBox();
+            tbemail = new TextBox();
+            tbnickname = new TextBox();
+            label7 = new Label();
+            gpPersonalData = new GroupBox();
+            tbfirstName = new TextBox();
+            tblastName = new TextBox();
+            lbFirstName = new Label();
+            label1 = new Label();
+            dtBirthDate = new DateTimePicker();
+            tbAdress = new TextBox();
+            tbPhoneNumber = new TextBox();
+            tbsalary = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            cbRole = new ComboBox();
+            btnCreate = new Button();
+            tbWorkingHours = new TextBox();
+            tabShift = new TabPage();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            btnShift = new Button();
+            dtDateShift = new DateTimePicker();
+            cbShifts = new ComboBox();
+            tbphoneShift = new TextBox();
+            tbNameEmShift = new TextBox();
+            btnSelectEmployeeToShift = new Button();
+            cbEmployeesShifts = new ComboBox();
+            tabUpdateEmployee = new TabPage();
+            btnSave = new Button();
+            lbphone = new Label();
+            lbName = new Label();
+            tbphone = new TextBox();
+            tbfistName = new TextBox();
+            btnSelect = new Button();
+            cbSelect = new ComboBox();
+            tabControl1.SuspendLayout();
+            tabDashboard.SuspendLayout();
+            tabCreateEmployee.SuspendLayout();
+            gbCredentials.SuspendLayout();
+            gpPersonalData.SuspendLayout();
+            tabShift.SuspendLayout();
+            tabUpdateEmployee.SuspendLayout();
+            SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.tabControl1.Controls.Add(this.tabDashboard);
-            this.tabControl1.Controls.Add(this.tabCreateEmployee);
-            this.tabControl1.Controls.Add(this.tabShift);
-            this.tabControl1.Controls.Add(this.tabUpdateEmployee);
-            this.tabControl1.Location = new System.Drawing.Point(27, 12);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(992, 460);
-            this.tabControl1.TabIndex = 0;
+            tabControl1.Alignment = TabAlignment.Left;
+            tabControl1.Controls.Add(tabDashboard);
+            tabControl1.Controls.Add(tabCreateEmployee);
+            tabControl1.Controls.Add(tabShift);
+            tabControl1.Controls.Add(tabUpdateEmployee);
+            tabControl1.Location = new Point(34, 15);
+            tabControl1.Margin = new Padding(4, 4, 4, 4);
+            tabControl1.Multiline = true;
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1240, 575);
+            tabControl1.TabIndex = 0;
             // 
             // tabDashboard
             // 
-            this.tabDashboard.Controls.Add(this.button1);
-            this.tabDashboard.Controls.Add(this.tbIdDelete);
-            this.tabDashboard.Controls.Add(this.btnDelete);
-            this.tabDashboard.Controls.Add(this.btnFilter);
-            this.tabDashboard.Controls.Add(this.tbF);
-            this.tabDashboard.Controls.Add(this.listBoxEmployees);
-            this.tabDashboard.Location = new System.Drawing.Point(30, 4);
-            this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDashboard.Size = new System.Drawing.Size(958, 452);
-            this.tabDashboard.TabIndex = 0;
-            this.tabDashboard.Text = "Dashboard";
-            this.tabDashboard.UseVisualStyleBackColor = true;
+            tabDashboard.Controls.Add(bLogout);
+            tabDashboard.Controls.Add(tbIdDelete);
+            tabDashboard.Controls.Add(btnDelete);
+            tabDashboard.Controls.Add(btnFilter);
+            tabDashboard.Controls.Add(tbF);
+            tabDashboard.Controls.Add(listBoxEmployees);
+            tabDashboard.Location = new Point(34, 4);
+            tabDashboard.Margin = new Padding(4, 4, 4, 4);
+            tabDashboard.Name = "tabDashboard";
+            tabDashboard.Padding = new Padding(4, 4, 4, 4);
+            tabDashboard.Size = new Size(1202, 567);
+            tabDashboard.TabIndex = 0;
+            tabDashboard.Text = "Dashboard";
+            tabDashboard.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // bLogout
             // 
-            this.button1.Location = new System.Drawing.Point(843, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Log out";
-            this.button1.UseVisualStyleBackColor = true;
+            bLogout.Location = new Point(1054, 19);
+            bLogout.Margin = new Padding(4, 4, 4, 4);
+            bLogout.Name = "bLogout";
+            bLogout.Size = new Size(118, 36);
+            bLogout.TabIndex = 6;
+            bLogout.Text = "Log out";
+            bLogout.UseVisualStyleBackColor = true;
+            bLogout.Click += button1_Click;
             // 
             // tbIdDelete
             // 
-            this.tbIdDelete.Location = new System.Drawing.Point(9, 35);
-            this.tbIdDelete.Name = "tbIdDelete";
-            this.tbIdDelete.Size = new System.Drawing.Size(265, 27);
-            this.tbIdDelete.TabIndex = 5;
+            tbIdDelete.Location = new Point(11, 44);
+            tbIdDelete.Margin = new Padding(4, 4, 4, 4);
+            tbIdDelete.Name = "tbIdDelete";
+            tbIdDelete.Size = new Size(330, 31);
+            tbIdDelete.TabIndex = 5;
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
-            this.btnDelete.Location = new System.Drawing.Point(281, 35);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(89, 29);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_2);
+            btnDelete.BackColor = Color.IndianRed;
+            btnDelete.Location = new Point(351, 44);
+            btnDelete.Margin = new Padding(4, 4, 4, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(111, 36);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click_2;
             // 
             // btnFilter
             // 
-            this.btnFilter.BackColor = System.Drawing.Color.Coral;
-            this.btnFilter.Location = new System.Drawing.Point(281, 76);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(89, 29);
-            this.btnFilter.TabIndex = 2;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = false;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click_2);
+            btnFilter.BackColor = Color.Coral;
+            btnFilter.Location = new Point(351, 95);
+            btnFilter.Margin = new Padding(4, 4, 4, 4);
+            btnFilter.Name = "btnFilter";
+            btnFilter.Size = new Size(111, 36);
+            btnFilter.TabIndex = 2;
+            btnFilter.Text = "Filter";
+            btnFilter.UseVisualStyleBackColor = false;
+            btnFilter.Click += btnFilter_Click_2;
             // 
             // tbF
             // 
-            this.tbF.Location = new System.Drawing.Point(9, 77);
-            this.tbF.Name = "tbF";
-            this.tbF.Size = new System.Drawing.Size(265, 27);
-            this.tbF.TabIndex = 1;
+            tbF.Location = new Point(11, 96);
+            tbF.Margin = new Padding(4, 4, 4, 4);
+            tbF.Name = "tbF";
+            tbF.Size = new Size(330, 31);
+            tbF.TabIndex = 1;
             // 
             // listBoxEmployees
             // 
-            this.listBoxEmployees.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listBoxEmployees.FormattingEnabled = true;
-            this.listBoxEmployees.ItemHeight = 35;
-            this.listBoxEmployees.Location = new System.Drawing.Point(6, 129);
-            this.listBoxEmployees.Name = "listBoxEmployees";
-            this.listBoxEmployees.Size = new System.Drawing.Size(917, 284);
-            this.listBoxEmployees.TabIndex = 0;
-            this.listBoxEmployees.DoubleClick += new System.EventHandler(this.listBoxEmployees_DoubleClick);
+            listBoxEmployees.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            listBoxEmployees.FormattingEnabled = true;
+            listBoxEmployees.ItemHeight = 41;
+            listBoxEmployees.Location = new Point(8, 161);
+            listBoxEmployees.Margin = new Padding(4, 4, 4, 4);
+            listBoxEmployees.Name = "listBoxEmployees";
+            listBoxEmployees.Size = new Size(1145, 332);
+            listBoxEmployees.TabIndex = 0;
+            listBoxEmployees.DoubleClick += listBoxEmployees_DoubleClick;
             // 
             // tabCreateEmployee
             // 
-            this.tabCreateEmployee.Controls.Add(this.label10);
-            this.tabCreateEmployee.Controls.Add(this.label9);
-            this.tabCreateEmployee.Controls.Add(this.gbCredentials);
-            this.tabCreateEmployee.Controls.Add(this.gpPersonalData);
-            this.tabCreateEmployee.Controls.Add(this.cbRole);
-            this.tabCreateEmployee.Controls.Add(this.btnCreate);
-            this.tabCreateEmployee.Controls.Add(this.tbWorkingHours);
-            this.tabCreateEmployee.Location = new System.Drawing.Point(30, 4);
-            this.tabCreateEmployee.Name = "tabCreateEmployee";
-            this.tabCreateEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCreateEmployee.Size = new System.Drawing.Size(958, 452);
-            this.tabCreateEmployee.TabIndex = 1;
-            this.tabCreateEmployee.Text = "CreateEmployee";
-            this.tabCreateEmployee.UseVisualStyleBackColor = true;
+            tabCreateEmployee.Controls.Add(label10);
+            tabCreateEmployee.Controls.Add(label9);
+            tabCreateEmployee.Controls.Add(gbCredentials);
+            tabCreateEmployee.Controls.Add(gpPersonalData);
+            tabCreateEmployee.Controls.Add(cbRole);
+            tabCreateEmployee.Controls.Add(btnCreate);
+            tabCreateEmployee.Controls.Add(tbWorkingHours);
+            tabCreateEmployee.Location = new Point(64, 4);
+            tabCreateEmployee.Margin = new Padding(4, 4, 4, 4);
+            tabCreateEmployee.Name = "tabCreateEmployee";
+            tabCreateEmployee.Padding = new Padding(4, 4, 4, 4);
+            tabCreateEmployee.Size = new Size(1172, 567);
+            tabCreateEmployee.TabIndex = 1;
+            tabCreateEmployee.Text = "CreateEmployee";
+            tabCreateEmployee.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(30, 316);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 20);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Role:";
+            label10.AutoSize = true;
+            label10.Location = new Point(38, 395);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(50, 25);
+            label10.TabIndex = 25;
+            label10.Text = "Role:";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 260);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 20);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Working Hours:";
+            label9.AutoSize = true;
+            label9.Location = new Point(38, 325);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(136, 25);
+            label9.TabIndex = 24;
+            label9.Text = "Working Hours:";
             // 
             // gbCredentials
             // 
-            this.gbCredentials.Controls.Add(this.label8);
-            this.gbCredentials.Controls.Add(this.label6);
-            this.gbCredentials.Controls.Add(this.tbpassword);
-            this.gbCredentials.Controls.Add(this.tbemail);
-            this.gbCredentials.Controls.Add(this.tbnickname);
-            this.gbCredentials.Controls.Add(this.label7);
-            this.gbCredentials.Location = new System.Drawing.Point(6, 9);
-            this.gbCredentials.Name = "gbCredentials";
-            this.gbCredentials.Size = new System.Drawing.Size(373, 191);
-            this.gbCredentials.TabIndex = 23;
-            this.gbCredentials.TabStop = false;
-            this.gbCredentials.Text = "Credentials";
+            gbCredentials.Controls.Add(label8);
+            gbCredentials.Controls.Add(label6);
+            gbCredentials.Controls.Add(tbpassword);
+            gbCredentials.Controls.Add(tbemail);
+            gbCredentials.Controls.Add(tbnickname);
+            gbCredentials.Controls.Add(label7);
+            gbCredentials.Location = new Point(8, 11);
+            gbCredentials.Margin = new Padding(4, 4, 4, 4);
+            gbCredentials.Name = "gbCredentials";
+            gbCredentials.Padding = new Padding(4, 4, 4, 4);
+            gbCredentials.Size = new Size(466, 239);
+            gbCredentials.TabIndex = 23;
+            gbCredentials.TabStop = false;
+            gbCredentials.Text = "Credentials";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 152);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 20);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Email:";
+            label8.AutoSize = true;
+            label8.Location = new Point(31, 190);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(58, 25);
+            label8.TabIndex = 24;
+            label8.Text = "Email:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Nickname:";
+            label6.AutoSize = true;
+            label6.Location = new Point(30, 64);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(94, 25);
+            label6.TabIndex = 14;
+            label6.Text = "Nickname:";
             // 
             // tbpassword
             // 
-            this.tbpassword.Location = new System.Drawing.Point(229, 100);
-            this.tbpassword.Name = "tbpassword";
-            this.tbpassword.Size = new System.Drawing.Size(125, 27);
-            this.tbpassword.TabIndex = 7;
+            tbpassword.Location = new Point(286, 125);
+            tbpassword.Margin = new Padding(4, 4, 4, 4);
+            tbpassword.Name = "tbpassword";
+            tbpassword.Size = new Size(155, 31);
+            tbpassword.TabIndex = 7;
             // 
             // tbemail
             // 
-            this.tbemail.Location = new System.Drawing.Point(229, 149);
-            this.tbemail.Name = "tbemail";
-            this.tbemail.Size = new System.Drawing.Size(125, 27);
-            this.tbemail.TabIndex = 21;
+            tbemail.Location = new Point(286, 186);
+            tbemail.Margin = new Padding(4, 4, 4, 4);
+            tbemail.Name = "tbemail";
+            tbemail.Size = new Size(155, 31);
+            tbemail.TabIndex = 21;
             // 
             // tbnickname
             // 
-            this.tbnickname.Location = new System.Drawing.Point(229, 51);
-            this.tbnickname.Name = "tbnickname";
-            this.tbnickname.Size = new System.Drawing.Size(125, 27);
-            this.tbnickname.TabIndex = 6;
+            tbnickname.Location = new Point(286, 64);
+            tbnickname.Margin = new Padding(4, 4, 4, 4);
+            tbnickname.Name = "tbnickname";
+            tbnickname.Size = new Size(155, 31);
+            tbnickname.TabIndex = 6;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 103);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 20);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Password:";
+            label7.AutoSize = true;
+            label7.Location = new Point(31, 129);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(91, 25);
+            label7.TabIndex = 15;
+            label7.Text = "Password:";
             // 
             // gpPersonalData
             // 
-            this.gpPersonalData.Controls.Add(this.tbfirstName);
-            this.gpPersonalData.Controls.Add(this.tblastName);
-            this.gpPersonalData.Controls.Add(this.lbFirstName);
-            this.gpPersonalData.Controls.Add(this.label1);
-            this.gpPersonalData.Controls.Add(this.dtBirthDate);
-            this.gpPersonalData.Controls.Add(this.tbAdress);
-            this.gpPersonalData.Controls.Add(this.tbPhoneNumber);
-            this.gpPersonalData.Controls.Add(this.tbsalary);
-            this.gpPersonalData.Controls.Add(this.label5);
-            this.gpPersonalData.Controls.Add(this.label4);
-            this.gpPersonalData.Controls.Add(this.label3);
-            this.gpPersonalData.Controls.Add(this.label2);
-            this.gpPersonalData.Location = new System.Drawing.Point(385, 9);
-            this.gpPersonalData.Name = "gpPersonalData";
-            this.gpPersonalData.Size = new System.Drawing.Size(509, 437);
-            this.gpPersonalData.TabIndex = 22;
-            this.gpPersonalData.TabStop = false;
-            this.gpPersonalData.Text = "Personal Data";
+            gpPersonalData.Controls.Add(tbfirstName);
+            gpPersonalData.Controls.Add(tblastName);
+            gpPersonalData.Controls.Add(lbFirstName);
+            gpPersonalData.Controls.Add(label1);
+            gpPersonalData.Controls.Add(dtBirthDate);
+            gpPersonalData.Controls.Add(tbAdress);
+            gpPersonalData.Controls.Add(tbPhoneNumber);
+            gpPersonalData.Controls.Add(tbsalary);
+            gpPersonalData.Controls.Add(label5);
+            gpPersonalData.Controls.Add(label4);
+            gpPersonalData.Controls.Add(label3);
+            gpPersonalData.Controls.Add(label2);
+            gpPersonalData.Location = new Point(481, 11);
+            gpPersonalData.Margin = new Padding(4, 4, 4, 4);
+            gpPersonalData.Name = "gpPersonalData";
+            gpPersonalData.Padding = new Padding(4, 4, 4, 4);
+            gpPersonalData.Size = new Size(636, 546);
+            gpPersonalData.TabIndex = 22;
+            gpPersonalData.TabStop = false;
+            gpPersonalData.Text = "Personal Data";
             // 
             // tbfirstName
             // 
-            this.tbfirstName.Location = new System.Drawing.Point(232, 27);
-            this.tbfirstName.Name = "tbfirstName";
-            this.tbfirstName.Size = new System.Drawing.Size(125, 27);
-            this.tbfirstName.TabIndex = 0;
+            tbfirstName.Location = new Point(290, 34);
+            tbfirstName.Margin = new Padding(4, 4, 4, 4);
+            tbfirstName.Name = "tbfirstName";
+            tbfirstName.Size = new Size(155, 31);
+            tbfirstName.TabIndex = 0;
             // 
             // tblastName
             // 
-            this.tblastName.Location = new System.Drawing.Point(232, 75);
-            this.tblastName.Name = "tblastName";
-            this.tblastName.Size = new System.Drawing.Size(125, 27);
-            this.tblastName.TabIndex = 1;
+            tblastName.Location = new Point(290, 94);
+            tblastName.Margin = new Padding(4, 4, 4, 4);
+            tblastName.Name = "tblastName";
+            tblastName.Size = new Size(155, 31);
+            tblastName.TabIndex = 1;
             // 
             // lbFirstName
             // 
-            this.lbFirstName.AutoSize = true;
-            this.lbFirstName.Location = new System.Drawing.Point(27, 35);
-            this.lbFirstName.Name = "lbFirstName";
-            this.lbFirstName.Size = new System.Drawing.Size(83, 20);
-            this.lbFirstName.TabIndex = 8;
-            this.lbFirstName.Text = "First Name:";
+            lbFirstName.AutoSize = true;
+            lbFirstName.Location = new Point(34, 44);
+            lbFirstName.Margin = new Padding(4, 0, 4, 0);
+            lbFirstName.Name = "lbFirstName";
+            lbFirstName.Size = new Size(101, 25);
+            lbFirstName.TabIndex = 8;
+            lbFirstName.Text = "First Name:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Last Name:";
+            label1.AutoSize = true;
+            label1.Location = new Point(34, 96);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(99, 25);
+            label1.TabIndex = 9;
+            label1.Text = "Last Name:";
             // 
             // dtBirthDate
             // 
-            this.dtBirthDate.Location = new System.Drawing.Point(232, 125);
-            this.dtBirthDate.Name = "dtBirthDate";
-            this.dtBirthDate.Size = new System.Drawing.Size(234, 27);
-            this.dtBirthDate.TabIndex = 2;
+            dtBirthDate.Location = new Point(290, 156);
+            dtBirthDate.Margin = new Padding(4, 4, 4, 4);
+            dtBirthDate.Name = "dtBirthDate";
+            dtBirthDate.Size = new Size(292, 31);
+            dtBirthDate.TabIndex = 2;
             // 
             // tbAdress
             // 
-            this.tbAdress.Location = new System.Drawing.Point(232, 184);
-            this.tbAdress.Name = "tbAdress";
-            this.tbAdress.Size = new System.Drawing.Size(125, 27);
-            this.tbAdress.TabIndex = 3;
+            tbAdress.Location = new Point(290, 230);
+            tbAdress.Margin = new Padding(4, 4, 4, 4);
+            tbAdress.Name = "tbAdress";
+            tbAdress.Size = new Size(155, 31);
+            tbAdress.TabIndex = 3;
             // 
             // tbPhoneNumber
             // 
-            this.tbPhoneNumber.Location = new System.Drawing.Point(232, 236);
-            this.tbPhoneNumber.Name = "tbPhoneNumber";
-            this.tbPhoneNumber.Size = new System.Drawing.Size(125, 27);
-            this.tbPhoneNumber.TabIndex = 4;
+            tbPhoneNumber.Location = new Point(290, 295);
+            tbPhoneNumber.Margin = new Padding(4, 4, 4, 4);
+            tbPhoneNumber.Name = "tbPhoneNumber";
+            tbPhoneNumber.Size = new Size(155, 31);
+            tbPhoneNumber.TabIndex = 4;
             // 
             // tbsalary
             // 
-            this.tbsalary.Location = new System.Drawing.Point(232, 287);
-            this.tbsalary.Name = "tbsalary";
-            this.tbsalary.Size = new System.Drawing.Size(125, 27);
-            this.tbsalary.TabIndex = 5;
+            tbsalary.Location = new Point(290, 359);
+            tbsalary.Margin = new Padding(4, 4, 4, 4);
+            tbsalary.Name = "tbsalary";
+            tbsalary.Size = new Size(155, 31);
+            tbsalary.TabIndex = 5;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 287);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Salary:";
+            label5.AutoSize = true;
+            label5.Location = new Point(34, 359);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(63, 25);
+            label5.TabIndex = 13;
+            label5.Text = "Salary:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 236);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Phone Number:";
+            label4.AutoSize = true;
+            label4.Location = new Point(34, 295);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(136, 25);
+            label4.TabIndex = 12;
+            label4.Text = "Phone Number:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Address:";
+            label3.AutoSize = true;
+            label3.Location = new Point(34, 230);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(81, 25);
+            label3.TabIndex = 11;
+            label3.Text = "Address:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Date Of Birth:";
+            label2.AutoSize = true;
+            label2.Location = new Point(34, 164);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(119, 25);
+            label2.TabIndex = 10;
+            label2.Text = "Date Of Birth:";
             // 
             // cbRole
             // 
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Location = new System.Drawing.Point(208, 313);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(151, 28);
-            this.cbRole.TabIndex = 20;
+            cbRole.FormattingEnabled = true;
+            cbRole.Location = new Point(260, 391);
+            cbRole.Margin = new Padding(4, 4, 4, 4);
+            cbRole.Name = "cbRole";
+            cbRole.Size = new Size(188, 33);
+            cbRole.TabIndex = 20;
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnCreate.Location = new System.Drawing.Point(11, 371);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(347, 76);
-            this.btnCreate.TabIndex = 19;
-            this.btnCreate.Text = "Create Employee";
-            this.btnCreate.UseVisualStyleBackColor = false;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click_1);
+            btnCreate.BackColor = Color.DarkSeaGreen;
+            btnCreate.Location = new Point(14, 464);
+            btnCreate.Margin = new Padding(4, 4, 4, 4);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(434, 95);
+            btnCreate.TabIndex = 19;
+            btnCreate.Text = "Create Employee";
+            btnCreate.UseVisualStyleBackColor = false;
+            btnCreate.Click += btnCreate_Click_1;
             // 
             // tbWorkingHours
             // 
-            this.tbWorkingHours.Location = new System.Drawing.Point(208, 260);
-            this.tbWorkingHours.Name = "tbWorkingHours";
-            this.tbWorkingHours.Size = new System.Drawing.Size(151, 27);
-            this.tbWorkingHours.TabIndex = 17;
+            tbWorkingHours.Location = new Point(260, 325);
+            tbWorkingHours.Margin = new Padding(4, 4, 4, 4);
+            tbWorkingHours.Name = "tbWorkingHours";
+            tbWorkingHours.Size = new Size(188, 31);
+            tbWorkingHours.TabIndex = 17;
             // 
             // tabShift
             // 
-            this.tabShift.Controls.Add(this.label14);
-            this.tabShift.Controls.Add(this.label13);
-            this.tabShift.Controls.Add(this.label12);
-            this.tabShift.Controls.Add(this.label11);
-            this.tabShift.Controls.Add(this.btnShift);
-            this.tabShift.Controls.Add(this.dtDateShift);
-            this.tabShift.Controls.Add(this.cbShifts);
-            this.tabShift.Controls.Add(this.tbphoneShift);
-            this.tabShift.Controls.Add(this.tbNameEmShift);
-            this.tabShift.Controls.Add(this.btnSelectEmployeeToShift);
-            this.tabShift.Controls.Add(this.cbEmployeesShifts);
-            this.tabShift.Location = new System.Drawing.Point(30, 4);
-            this.tabShift.Name = "tabShift";
-            this.tabShift.Size = new System.Drawing.Size(958, 452);
-            this.tabShift.TabIndex = 2;
-            this.tabShift.Text = "Assign Shift";
-            this.tabShift.UseVisualStyleBackColor = true;
+            tabShift.Controls.Add(label14);
+            tabShift.Controls.Add(label13);
+            tabShift.Controls.Add(label12);
+            tabShift.Controls.Add(label11);
+            tabShift.Controls.Add(btnShift);
+            tabShift.Controls.Add(dtDateShift);
+            tabShift.Controls.Add(cbShifts);
+            tabShift.Controls.Add(tbphoneShift);
+            tabShift.Controls.Add(tbNameEmShift);
+            tabShift.Controls.Add(btnSelectEmployeeToShift);
+            tabShift.Controls.Add(cbEmployeesShifts);
+            tabShift.Location = new Point(64, 4);
+            tabShift.Margin = new Padding(4, 4, 4, 4);
+            tabShift.Name = "tabShift";
+            tabShift.Size = new Size(1172, 567);
+            tabShift.TabIndex = 2;
+            tabShift.Text = "Assign Shift";
+            tabShift.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(118, 254);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 20);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "Date:";
+            label14.AutoSize = true;
+            label14.Location = new Point(148, 318);
+            label14.Margin = new Padding(4, 0, 4, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(53, 25);
+            label14.TabIndex = 10;
+            label14.Text = "Date:";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(118, 208);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 20);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Shift:";
+            label13.AutoSize = true;
+            label13.Location = new Point(148, 260);
+            label13.Margin = new Padding(4, 0, 4, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(52, 25);
+            label13.TabIndex = 9;
+            label13.Text = "Shift:";
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(118, 159);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(108, 20);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Phone number:";
+            label12.AutoSize = true;
+            label12.Location = new Point(148, 199);
+            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(133, 25);
+            label12.TabIndex = 8;
+            label12.Text = "Phone number:";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(118, 103);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 20);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Name:";
+            label11.AutoSize = true;
+            label11.Location = new Point(148, 129);
+            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(63, 25);
+            label11.TabIndex = 7;
+            label11.Text = "Name:";
             // 
             // btnShift
             // 
-            this.btnShift.Location = new System.Drawing.Point(113, 349);
-            this.btnShift.Name = "btnShift";
-            this.btnShift.Size = new System.Drawing.Size(779, 75);
-            this.btnShift.TabIndex = 6;
-            this.btnShift.Text = "Assign Shift";
-            this.btnShift.UseVisualStyleBackColor = true;
-            this.btnShift.Click += new System.EventHandler(this.btnShift_Click);
+            btnShift.Location = new Point(141, 436);
+            btnShift.Margin = new Padding(4, 4, 4, 4);
+            btnShift.Name = "btnShift";
+            btnShift.Size = new Size(974, 94);
+            btnShift.TabIndex = 6;
+            btnShift.Text = "Assign Shift";
+            btnShift.UseVisualStyleBackColor = true;
+            btnShift.Click += btnShift_Click;
             // 
             // dtDateShift
             // 
-            this.dtDateShift.Location = new System.Drawing.Point(292, 254);
-            this.dtDateShift.Name = "dtDateShift";
-            this.dtDateShift.Size = new System.Drawing.Size(250, 27);
-            this.dtDateShift.TabIndex = 5;
+            dtDateShift.Location = new Point(365, 318);
+            dtDateShift.Margin = new Padding(4, 4, 4, 4);
+            dtDateShift.Name = "dtDateShift";
+            dtDateShift.Size = new Size(312, 31);
+            dtDateShift.TabIndex = 5;
             // 
             // cbShifts
             // 
-            this.cbShifts.FormattingEnabled = true;
-            this.cbShifts.Location = new System.Drawing.Point(292, 205);
-            this.cbShifts.Name = "cbShifts";
-            this.cbShifts.Size = new System.Drawing.Size(151, 28);
-            this.cbShifts.TabIndex = 4;
+            cbShifts.FormattingEnabled = true;
+            cbShifts.Location = new Point(365, 256);
+            cbShifts.Margin = new Padding(4, 4, 4, 4);
+            cbShifts.Name = "cbShifts";
+            cbShifts.Size = new Size(188, 33);
+            cbShifts.TabIndex = 4;
             // 
             // tbphoneShift
             // 
-            this.tbphoneShift.Location = new System.Drawing.Point(292, 159);
-            this.tbphoneShift.Name = "tbphoneShift";
-            this.tbphoneShift.Size = new System.Drawing.Size(125, 27);
-            this.tbphoneShift.TabIndex = 3;
+            tbphoneShift.Location = new Point(365, 199);
+            tbphoneShift.Margin = new Padding(4, 4, 4, 4);
+            tbphoneShift.Name = "tbphoneShift";
+            tbphoneShift.Size = new Size(155, 31);
+            tbphoneShift.TabIndex = 3;
             // 
             // tbNameEmShift
             // 
-            this.tbNameEmShift.Location = new System.Drawing.Point(292, 103);
-            this.tbNameEmShift.Name = "tbNameEmShift";
-            this.tbNameEmShift.Size = new System.Drawing.Size(125, 27);
-            this.tbNameEmShift.TabIndex = 2;
+            tbNameEmShift.Location = new Point(365, 129);
+            tbNameEmShift.Margin = new Padding(4, 4, 4, 4);
+            tbNameEmShift.Name = "tbNameEmShift";
+            tbNameEmShift.Size = new Size(155, 31);
+            tbNameEmShift.TabIndex = 2;
             // 
             // btnSelectEmployeeToShift
             // 
-            this.btnSelectEmployeeToShift.Location = new System.Drawing.Point(292, 38);
-            this.btnSelectEmployeeToShift.Name = "btnSelectEmployeeToShift";
-            this.btnSelectEmployeeToShift.Size = new System.Drawing.Size(94, 29);
-            this.btnSelectEmployeeToShift.TabIndex = 1;
-            this.btnSelectEmployeeToShift.Text = "Select";
-            this.btnSelectEmployeeToShift.UseVisualStyleBackColor = true;
-            this.btnSelectEmployeeToShift.Click += new System.EventHandler(this.btnSelectEmployeeToShift_Click);
+            btnSelectEmployeeToShift.Location = new Point(365, 48);
+            btnSelectEmployeeToShift.Margin = new Padding(4, 4, 4, 4);
+            btnSelectEmployeeToShift.Name = "btnSelectEmployeeToShift";
+            btnSelectEmployeeToShift.Size = new Size(118, 36);
+            btnSelectEmployeeToShift.TabIndex = 1;
+            btnSelectEmployeeToShift.Text = "Select";
+            btnSelectEmployeeToShift.UseVisualStyleBackColor = true;
+            btnSelectEmployeeToShift.Click += btnSelectEmployeeToShift_Click;
             // 
             // cbEmployeesShifts
             // 
-            this.cbEmployeesShifts.FormattingEnabled = true;
-            this.cbEmployeesShifts.Location = new System.Drawing.Point(113, 38);
-            this.cbEmployeesShifts.Name = "cbEmployeesShifts";
-            this.cbEmployeesShifts.Size = new System.Drawing.Size(151, 28);
-            this.cbEmployeesShifts.TabIndex = 0;
+            cbEmployeesShifts.FormattingEnabled = true;
+            cbEmployeesShifts.Location = new Point(141, 48);
+            cbEmployeesShifts.Margin = new Padding(4, 4, 4, 4);
+            cbEmployeesShifts.Name = "cbEmployeesShifts";
+            cbEmployeesShifts.Size = new Size(188, 33);
+            cbEmployeesShifts.TabIndex = 0;
             // 
             // tabUpdateEmployee
             // 
-            this.tabUpdateEmployee.Controls.Add(this.btnSave);
-            this.tabUpdateEmployee.Controls.Add(this.lbphone);
-            this.tabUpdateEmployee.Controls.Add(this.lbName);
-            this.tabUpdateEmployee.Controls.Add(this.tbphone);
-            this.tabUpdateEmployee.Controls.Add(this.tbfistName);
-            this.tabUpdateEmployee.Controls.Add(this.btnSelect);
-            this.tabUpdateEmployee.Controls.Add(this.cbSelect);
-            this.tabUpdateEmployee.Location = new System.Drawing.Point(30, 4);
-            this.tabUpdateEmployee.Name = "tabUpdateEmployee";
-            this.tabUpdateEmployee.Size = new System.Drawing.Size(958, 452);
-            this.tabUpdateEmployee.TabIndex = 3;
-            this.tabUpdateEmployee.Text = "UpdateEmployee";
-            this.tabUpdateEmployee.UseVisualStyleBackColor = true;
+            tabUpdateEmployee.Controls.Add(btnSave);
+            tabUpdateEmployee.Controls.Add(lbphone);
+            tabUpdateEmployee.Controls.Add(lbName);
+            tabUpdateEmployee.Controls.Add(tbphone);
+            tabUpdateEmployee.Controls.Add(tbfistName);
+            tabUpdateEmployee.Controls.Add(btnSelect);
+            tabUpdateEmployee.Controls.Add(cbSelect);
+            tabUpdateEmployee.Location = new Point(64, 4);
+            tabUpdateEmployee.Margin = new Padding(4, 4, 4, 4);
+            tabUpdateEmployee.Name = "tabUpdateEmployee";
+            tabUpdateEmployee.Size = new Size(1172, 567);
+            tabUpdateEmployee.TabIndex = 3;
+            tabUpdateEmployee.Text = "UpdateEmployee";
+            tabUpdateEmployee.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.Location = new System.Drawing.Point(233, 336);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(482, 52);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_2);
+            btnSave.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSave.Location = new Point(291, 420);
+            btnSave.Margin = new Padding(4, 4, 4, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(602, 65);
+            btnSave.TabIndex = 6;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click_2;
             // 
             // lbphone
             // 
-            this.lbphone.AutoSize = true;
-            this.lbphone.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbphone.Location = new System.Drawing.Point(233, 245);
-            this.lbphone.Name = "lbphone";
-            this.lbphone.Size = new System.Drawing.Size(197, 35);
-            this.lbphone.TabIndex = 5;
-            this.lbphone.Text = "Phone number:";
+            lbphone.AutoSize = true;
+            lbphone.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            lbphone.Location = new Point(291, 306);
+            lbphone.Margin = new Padding(4, 0, 4, 0);
+            lbphone.Name = "lbphone";
+            lbphone.Size = new Size(233, 41);
+            lbphone.TabIndex = 5;
+            lbphone.Text = "Phone number:";
             // 
             // lbName
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbName.Location = new System.Drawing.Point(233, 164);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(92, 35);
-            this.lbName.TabIndex = 4;
-            this.lbName.Text = "Name:";
+            lbName.AutoSize = true;
+            lbName.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            lbName.Location = new Point(291, 205);
+            lbName.Margin = new Padding(4, 0, 4, 0);
+            lbName.Name = "lbName";
+            lbName.Size = new Size(109, 41);
+            lbName.TabIndex = 4;
+            lbName.Text = "Name:";
             // 
             // tbphone
             // 
-            this.tbphone.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbphone.Location = new System.Drawing.Point(492, 239);
-            this.tbphone.Name = "tbphone";
-            this.tbphone.Size = new System.Drawing.Size(223, 41);
-            this.tbphone.TabIndex = 3;
+            tbphone.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            tbphone.Location = new Point(615, 299);
+            tbphone.Margin = new Padding(4, 4, 4, 4);
+            tbphone.Name = "tbphone";
+            tbphone.Size = new Size(278, 47);
+            tbphone.TabIndex = 3;
             // 
             // tbfistName
             // 
-            this.tbfistName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbfistName.Location = new System.Drawing.Point(492, 164);
-            this.tbfistName.Name = "tbfistName";
-            this.tbfistName.Size = new System.Drawing.Size(223, 41);
-            this.tbfistName.TabIndex = 2;
+            tbfistName.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            tbfistName.Location = new Point(615, 205);
+            tbfistName.Margin = new Padding(4, 4, 4, 4);
+            tbfistName.Name = "tbfistName";
+            tbfistName.Size = new Size(278, 47);
+            tbfistName.TabIndex = 2;
             // 
             // btnSelect
             // 
-            this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSelect.Location = new System.Drawing.Point(548, 71);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(167, 48);
-            this.btnSelect.TabIndex = 1;
-            this.btnSelect.Text = "Select";
-            this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click_2);
+            btnSelect.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSelect.Location = new Point(685, 89);
+            btnSelect.Margin = new Padding(4, 4, 4, 4);
+            btnSelect.Name = "btnSelect";
+            btnSelect.Size = new Size(209, 60);
+            btnSelect.TabIndex = 1;
+            btnSelect.Text = "Select";
+            btnSelect.UseVisualStyleBackColor = true;
+            btnSelect.Click += btnSelect_Click_2;
             // 
             // cbSelect
             // 
-            this.cbSelect.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbSelect.FormattingEnabled = true;
-            this.cbSelect.Location = new System.Drawing.Point(233, 71);
-            this.cbSelect.Name = "cbSelect";
-            this.cbSelect.Size = new System.Drawing.Size(195, 43);
-            this.cbSelect.TabIndex = 0;
+            cbSelect.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            cbSelect.FormattingEnabled = true;
+            cbSelect.Location = new Point(291, 89);
+            cbSelect.Margin = new Padding(4, 4, 4, 4);
+            cbSelect.Name = "cbSelect";
+            cbSelect.Size = new Size(243, 49);
+            cbSelect.TabIndex = 0;
             // 
             // EmployeeDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 493);
-            this.Controls.Add(this.tabControl1);
-            this.Name = "EmployeeDashboard";
-            this.Text = "EmployeeDashboard";
-            this.tabControl1.ResumeLayout(false);
-            this.tabDashboard.ResumeLayout(false);
-            this.tabDashboard.PerformLayout();
-            this.tabCreateEmployee.ResumeLayout(false);
-            this.tabCreateEmployee.PerformLayout();
-            this.gbCredentials.ResumeLayout(false);
-            this.gbCredentials.PerformLayout();
-            this.gpPersonalData.ResumeLayout(false);
-            this.gpPersonalData.PerformLayout();
-            this.tabShift.ResumeLayout(false);
-            this.tabShift.PerformLayout();
-            this.tabUpdateEmployee.ResumeLayout(false);
-            this.tabUpdateEmployee.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1291, 616);
+            Controls.Add(tabControl1);
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "EmployeeDashboard";
+            Text = "EmployeeDashboard";
+            tabControl1.ResumeLayout(false);
+            tabDashboard.ResumeLayout(false);
+            tabDashboard.PerformLayout();
+            tabCreateEmployee.ResumeLayout(false);
+            tabCreateEmployee.PerformLayout();
+            gbCredentials.ResumeLayout(false);
+            gbCredentials.PerformLayout();
+            gpPersonalData.ResumeLayout(false);
+            gpPersonalData.PerformLayout();
+            tabShift.ResumeLayout(false);
+            tabShift.PerformLayout();
+            tabUpdateEmployee.ResumeLayout(false);
+            tabUpdateEmployee.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -683,7 +740,7 @@
         private GroupBox gbCredentials;
         private Label label8;
         private GroupBox gpPersonalData;
-        private Button button1;
+        private Button bLogout;
         private Button btnSelectEmployeeToShift;
         private ComboBox cbEmployeesShifts;
         private TextBox tbphoneShift;

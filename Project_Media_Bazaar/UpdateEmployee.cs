@@ -15,7 +15,8 @@ namespace Project_Media_Bazaar
     {
         DataAccessEmployeeDashboard dataAccessEmployeeDashboard;
         private Employee employee;
-        public UpdateEmployee(Employee chosenEmployee)
+        private EmployeeDashboard employeeDashboard;
+        public UpdateEmployee(Employee chosenEmployee, EmployeeDashboard ed)
         {
             this.dataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
             employee = chosenEmployee;
@@ -29,7 +30,9 @@ namespace Project_Media_Bazaar
             tbNickname.Text=employee.nickname;
             tbPassword.Text = employee.password;
             tbWorkingHours.Text = employee.workingHours.ToString();
-
+            employee = new Employee();
+            employee = chosenEmployee;
+            this.employeeDashboard = ed;
 
         }
 
@@ -45,11 +48,10 @@ namespace Project_Media_Bazaar
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            int idChosen = this.employee.id;
             Employee employee = new Employee();
-    
-           
-           
             tbWorkingHours.Text = employee.workingHours.ToString();
+            employee.id = idChosen;
             employee.firstName=tbFirstName.Text; 
             employee.lastName=tbLastName.Text;  
             employee.phoneNumber=tbPassword.Text;
@@ -59,11 +61,10 @@ namespace Project_Media_Bazaar
             employee.nickname=tbNickname.Text;
             employee.password = tbPassword.Text;
             employee.workingHours = int.Parse(tbWorkingHours.Text);
-            dataAccessEmployeeDashboard.UpdateItem(employee);
+            dataAccessEmployeeDashboard.UpdateEmployee(employee);
             MessageBox.Show("Updated");
-          
-
-            this.Close();
+            employeeDashboard.LoadData();
+            this.Hide();
 
 
 
