@@ -24,7 +24,7 @@ namespace Domain
         //}
         public Employee(string email, int workingHours, UserRole role, string firstName, string lastName, 
             DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole employeeRole) 
-            : base(firstName, lastName, birthDate, address, phoneNumber, salary, email, nickname, password, role)
+            : base(role,firstName, lastName, birthDate, address, phoneNumber, salary, email, nickname, password, employeeRole)
         {
             this.workingHours = workingHours;
             this.employeeRole = employeeRole;
@@ -50,6 +50,14 @@ namespace Domain
         public void SetId(int id)
         {
             base.id = id;
+        }
+        public void SetName(string name)
+        {
+            base.firstName=firstName;
+        }
+        public void SetPhone(string phone)
+        {
+            base.phoneNumber = phoneNumber;
         }
     }
 }

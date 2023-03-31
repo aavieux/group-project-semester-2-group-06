@@ -11,15 +11,16 @@ namespace Domain
     {
         public int id { get; set; }
         public string firstName { get; set; }
-        public string lastName { get; private set; }
-        public DateTime birthDate { get; private set; }
-        public string address { get; private set; }
+        public string lastName { get; set; }
+        public DateTime birthDate { get;  set; }
+        public string address { get; set; }
         public string phoneNumber { get; set; }
-        public decimal salary { get; private set; }
-        public string nickname { get; private set; }
-        public string password { get; private set; }
+        public decimal salary { get;  set; }
+        public string nickname { get;set; }
+        public string password { get;  set; }
         public string email { get; set; }
-        public UserRole userRole { get; private set; }
+        public UserRole userRole { get;  set; }
+        public EmployeeRole employeeRole { get; private set; }  
         public Person() { }
         public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, UserRole roleType)
         {
@@ -33,9 +34,10 @@ namespace Domain
             this.email = email;
             this.nickname = nickname;
             this.userRole = roleType;
+            this.employeeRole = employeeRole;
             this.password = password;
         }
-        public Person(string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, UserRole roleType)
+        public Person(UserRole roleType,string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, EmployeeRole employeeRole)
         {
             this.firstName = firstName;
             this.lastName = lastName;

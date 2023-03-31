@@ -9,10 +9,16 @@ namespace Domain
 {
     public class Shift
     {
-        private int Id;
-        private int emplId;
-        private ShiftType shiftType;
-        private DateTime date;
+        public int Id;
+        public int emplId;
+        public ShiftType shiftType { get; set; }
+        public DateTime date { get; set; }
+        public Shift(ShiftType shiftType, DateTime date, int empid)
+        {
+            this.shiftType = shiftType;
+            this.date = date;   
+            this.emplId = empid;
+        }
         public string GetShiftId()
         {
             return $"{Id}";

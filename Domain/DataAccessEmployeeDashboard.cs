@@ -49,6 +49,25 @@ public class DataAccessEmployeeDashboard
             }
         }
     }
+
+    public void AssignEmployeeToShift(Shift shift)
+    {
+        bool yesOrNo = false;
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            var commandText = "INSERT INTO Shift (date,shiftType,empid) VALUES (@Date,@ShiftType,@empid); SELECT SCOPE_IDENTITY()";
+            using (var command = new SqlCommand(commandText, connection))
+            {
+                command.Parameters.AddWithValue("@empid", shift.emplId);
+                command.Parameters.AddWithValue("@Date", shift.date);
+                command.Parameters.AddWithValue("@ShiftType", shift.shiftType);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+
+            }
+        }
+    }
     public List<Employee> GetAllUsers()
     {
         using (var connection = new SqlConnection(_connectionString))
