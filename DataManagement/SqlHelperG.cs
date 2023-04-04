@@ -14,9 +14,9 @@ public class SqlHelperG
     string connection = "Data Source=mssqlstud.fhict.local;Initial Catalog=dbi501511_bazaar;User ID=dbi501511_Bazaar;Password=Samocska";
     string query;
 
-    public void AddProduct(string name, string category, string description)
+    public void AddProduct(string name, string category, string description, int threshold)
     {
-        query = "INSERT INTO dbo.Product (name, amount, category, description) VALUES (@name, @amount, @category, @description)";
+        query = "INSERT INTO dbo.Product (name, amount, category, description, threshold) VALUES (@name, @amount, @category, @description, @threshold)";
         try
         {
             using (SqlConnection conn = new SqlConnection(connection))
@@ -26,6 +26,8 @@ public class SqlHelperG
                 cmd.Parameters.AddWithValue("@amount", 0);
                 cmd.Parameters.AddWithValue("@category", category);
                 cmd.Parameters.AddWithValue("@description", description);
+                cmd.Parameters.AddWithValue("@threshold", threshold);
+
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();

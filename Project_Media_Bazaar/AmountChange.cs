@@ -24,8 +24,25 @@ namespace Project_Media_Bazaar
 
         private void changeStock_Click(object sender, EventArgs e)
         {
-            string operation = changeType.Text;
-            int amount = Convert.ToInt32(changingAmount.Value);
+            string operation;
+            if (rbIncrease.Checked)
+            {
+                operation = "increase";
+                ChangeStock(product, Convert.ToInt32(changingAmount.Value), operation);
+            }
+            else if(rbDecrease.Checked)
+            {
+                operation = "decrease";
+                ChangeStock(product, Convert.ToInt32(changingAmount.Value), operation);
+            }
+            else
+            {
+                MessageBox.Show("Choose a type of operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        private void ChangeStock(Product product, int amount, string operation)
+        {
             if (manager.ChangeStockAmount(product, amount, operation))
             {
                 changedStock.Text = product.Amount.ToString();
@@ -43,7 +60,6 @@ namespace Project_Media_Bazaar
             {
                 MessageBox.Show("Wrong amount!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

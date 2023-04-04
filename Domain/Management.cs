@@ -12,9 +12,9 @@ namespace Domain
     public class Management
     {
         SqlHelperG sqlHelper = new SqlHelperG();
-        public void AddProduct(string name, Category category, string description)
+        public void AddProduct(string name, Category category, string description, int threshold)
         {
-            sqlHelper.AddProduct(name, category.ToString(), description);
+            sqlHelper.AddProduct(name, category.ToString(), description, threshold);
         }
         public void DeleteProduct(int id)
         {

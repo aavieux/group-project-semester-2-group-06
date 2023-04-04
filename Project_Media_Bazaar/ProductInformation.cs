@@ -15,6 +15,7 @@ namespace Project_Media_Bazaar
             showAmount.Text = "Amount: " + ourProduct.Amount.ToString();
             showDescription.Text = "Description: " + ourProduct.Description;
             showCategory.Text = "Category: " + ourProduct.Category.ToString();
+            showThreshold.Text = "Threshold: " + ourProduct.Threshold.ToString();
         }
 
         private void ProductInformation_Load(object sender, EventArgs e)

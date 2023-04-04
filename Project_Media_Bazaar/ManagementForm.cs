@@ -17,7 +17,7 @@ public partial class ManagementForm : Form
         lvProducts.Items.Clear();
         foreach (Product product in company.GetProducts())
         {
-            if (product.Amount > 50)
+            if (product.Amount > product.Threshold)
             {
                 string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
                 lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
@@ -90,8 +90,13 @@ public partial class ManagementForm : Form
     {
         try
         {
-            company.DeleteProduct(company.GetProducts()[lvProducts.FocusedItem.Index]);
-            RefreshListbox();
+            var confirmResult = MessageBox.Show("Are you sure to delete this item ?",
+                                     "Confirm Delete!", MessageBoxButtons.YesNo);
+            if(confirmResult == DialogResult.Yes)
+            {
+                company.DeleteProduct(company.GetProducts()[lvProducts.FocusedItem.Index]);
+                RefreshListbox();
+            }
         }
         catch (NullReferenceException)
         {

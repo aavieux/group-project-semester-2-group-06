@@ -32,6 +32,7 @@
             showCategory = new Label();
             showDescription = new Label();
             showAmount = new Label();
+            showThreshold = new Label();
             SuspendLayout();
             // 
             // showName
@@ -74,11 +75,22 @@
             showAmount.TabIndex = 3;
             showAmount.Text = "amount";
             // 
+            // showThreshold
+            // 
+            showThreshold.AutoSize = true;
+            showThreshold.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showThreshold.Location = new Point(31, 233);
+            showThreshold.Name = "showThreshold";
+            showThreshold.Size = new Size(129, 37);
+            showThreshold.TabIndex = 4;
+            showThreshold.Text = "threshold";
+            // 
             // ProductInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 337);
+            Controls.Add(showThreshold);
             Controls.Add(showAmount);
             Controls.Add(showDescription);
             Controls.Add(showCategory);
@@ -97,5 +109,6 @@
         private Label showCategory;
         private Label showDescription;
         private Label showAmount;
+        private Label showThreshold;
     }
 }

@@ -14,13 +14,15 @@ namespace Domain
         public int Amount { get; private set; }
         public Category Category { get; private set; }
         public string Description { get; private set; }
+        public int Threshold { get; private set; }
 
-        public Product(int id, string name, int amount, string category, string description) {
+        public Product(int id, string name, int amount, string category, string description, int threshold) {
             Id = id;
             Name = name;
             Amount = amount;
             Category = Enum.Parse<Category>(category);
             Description = description;
+            Threshold = threshold;
         }
         public void changeAmount(int amount)
         {

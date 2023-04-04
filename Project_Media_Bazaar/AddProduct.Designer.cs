@@ -35,6 +35,8 @@
             label4 = new Label();
             cbProductCategory = new ComboBox();
             bAddProduct = new Button();
+            tbThreshold = new TextBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // tbName
@@ -111,11 +113,33 @@
             bAddProduct.UseVisualStyleBackColor = true;
             bAddProduct.Click += bAddProduct_Click_1;
             // 
+            // tbThreshold
+            // 
+            tbThreshold.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tbThreshold.Location = new Point(171, 229);
+            tbThreshold.Margin = new Padding(2);
+            tbThreshold.Name = "tbThreshold";
+            tbThreshold.Size = new Size(145, 34);
+            tbThreshold.TabIndex = 11;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(38, 232);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(102, 28);
+            label2.TabIndex = 12;
+            label2.Text = "Threshold:";
+            // 
             // AddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(560, 270);
+            ClientSize = new Size(560, 317);
+            Controls.Add(label2);
+            Controls.Add(tbThreshold);
             Controls.Add(bAddProduct);
             Controls.Add(cbProductCategory);
             Controls.Add(label4);
@@ -139,5 +163,7 @@
         private Label label4;
         private ComboBox cbProductCategory;
         private Button bAddProduct;
+        private TextBox tbThreshold;
+        private Label label2;
     }
 }

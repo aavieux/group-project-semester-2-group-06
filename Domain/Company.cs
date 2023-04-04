@@ -24,7 +24,7 @@ namespace Domain
             var table = sql.ReadProducts();
             foreach (DataRow dr in table.Rows)
             {
-                products.Add(product = new Product((int)dr[0], (string)dr[1], (int)dr[2], (string)dr[3], (string)dr[4]));
+                products.Add(product = new Product((int)dr[0], (string)dr[1], (int)dr[2], (string)dr[3], (string)dr[4], (int)dr[5]));
             }
         }
         public List<Product> GetProducts()
