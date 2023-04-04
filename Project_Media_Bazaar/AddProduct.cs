@@ -15,15 +15,18 @@ namespace Project_Media_Bazaar
     public partial class AddProduct : Form
     {
         Management manager;
-        public AddProduct(Management manager)
+        ManagementForm mForm;
+        public AddProduct(Management manager, ManagementForm mForm)
         {
             InitializeComponent();
+            this.mForm = mForm;
             this.manager = manager;
         }
 
         private void bAddProduct_Click_1(object sender, EventArgs e)
         {
             manager.AddProduct(tbName.Text, (Category)cbProductCategory.SelectedIndex, tbDescription.Text, Convert.ToInt32(tbThreshold.Text));
+            mForm.RefreshListbox();
             this.Close();
         }
     }

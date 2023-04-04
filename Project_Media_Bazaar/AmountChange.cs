@@ -15,11 +15,13 @@ namespace Project_Media_Bazaar
     {
         Product product;
         Management manager;
-        public AmountChange(Product product, Management manager)
+        ManagementForm mForm;
+        public AmountChange(Product product, Management manager, ManagementForm mForm)
         {
             InitializeComponent();
             this.product = product;
             this.manager = manager;
+            this.mForm = mForm;
         }
 
         private void changeStock_Click(object sender, EventArgs e)
@@ -55,10 +57,12 @@ namespace Project_Media_Bazaar
                     manager.CreateChange(product.Id, amount, 0);
                 }
                 manager.ChangeStockAmount(product.Id, product.Amount);
+                mForm.RefreshListbox();
             }
             else
             {
                 MessageBox.Show("Wrong amount!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mForm.RefreshListbox();
             }
         }
     }

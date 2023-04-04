@@ -31,40 +31,10 @@ public partial class LoginRegister : Form
         //Login fields
         tbPassword.Clear();
         tbLogin.Clear();
-        //Register fields
-        fullnametxt.Clear();
-        emailadresstxt.Clear();
-        passwordtxt.Clear();
-        phonenumbertxt.Clear();
     }
     private void tabControlLoginRegister_Click(object sender, EventArgs e) //CreateAccountTAB
     {
         ClearFields();
-    }
-
-    private void registerbtn_Click(object sender, EventArgs e)
-    {
-        //try
-        //{
-        //    string name = fullnametxt.Text;
-        //    string email = emailadresstxt.Text;
-        //    string phone = phonenumbertxt.Text;
-        //    string password = passwordtxt.Text;
-        //    bool exists = false;
-
-        //    if (!String.IsNullOrEmpty(name) && !String.IsNullOrEmpty(email) && !String.IsNullOrEmpty(phone) && !String.IsNullOrEmpty(password))
-        //    {
-        //        Management management = new Management();
-        //    }
-        //    else
-        //    {
-        //        ClearFields();
-        //    }
-        //}
-        //catch (Exception ex)
-        //{
-        //    MessageBox.Show(ex.ToString());
-        //}
     }
 
     private void bLogin_Click(object sender, EventArgs e)

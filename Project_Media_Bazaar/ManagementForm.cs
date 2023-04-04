@@ -11,7 +11,7 @@ public partial class ManagementForm : Form
         InitializeComponent();
         RefreshListbox();
     }
-    private void RefreshListbox()
+    public void RefreshListbox()
     {
         company.FillProductsList();
         lvProducts.Items.Clear();
@@ -82,7 +82,7 @@ public partial class ManagementForm : Form
 
     private void bAddProduct_Click(object sender, EventArgs e)
     {
-        AddProduct form = new AddProduct(manager);
+        AddProduct form = new AddProduct(manager, this);
         form.ShowDialog();
     }
 
@@ -108,7 +108,7 @@ public partial class ManagementForm : Form
     {
         try
         {
-            AmountChange amountChange = new AmountChange(company.GetProducts()[lvProducts.FocusedItem.Index], manager);
+            AmountChange amountChange = new AmountChange(company.GetProducts()[lvProducts.FocusedItem.Index], manager, this);
             amountChange.ShowDialog();
         }
         catch (NullReferenceException)
