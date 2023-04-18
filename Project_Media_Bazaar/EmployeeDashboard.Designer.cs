@@ -30,6 +30,7 @@
 		{
 			tabControl1 = new TabControl();
 			tabDashboard = new TabPage();
+			search_lbl = new Label();
 			bLogout = new Button();
 			tbF = new TextBox();
 			listBoxEmployees = new ListBox();
@@ -71,22 +72,12 @@
 			tbNameEmShift = new TextBox();
 			btnSelectEmployeeToShift = new Button();
 			cbEmployeesShifts = new ComboBox();
-			tabUpdateEmployee = new TabPage();
-			btnSave = new Button();
-			lbphone = new Label();
-			lbName = new Label();
-			tbphone = new TextBox();
-			tbfistName = new TextBox();
-			btnSelect = new Button();
-			cbSelect = new ComboBox();
-			search_lbl = new Label();
 			tabControl1.SuspendLayout();
 			tabDashboard.SuspendLayout();
 			tabCreateEmployee.SuspendLayout();
 			gbCredentials.SuspendLayout();
 			gpPersonalData.SuspendLayout();
 			tabShift.SuspendLayout();
-			tabUpdateEmployee.SuspendLayout();
 			SuspendLayout();
 			// 
 			// tabControl1
@@ -95,7 +86,6 @@
 			tabControl1.Controls.Add(tabDashboard);
 			tabControl1.Controls.Add(tabCreateEmployee);
 			tabControl1.Controls.Add(tabShift);
-			tabControl1.Controls.Add(tabUpdateEmployee);
 			tabControl1.Location = new Point(24, 9);
 			tabControl1.Margin = new Padding(3, 2, 3, 2);
 			tabControl1.Multiline = true;
@@ -119,12 +109,23 @@
 			tabDashboard.Text = "Dashboard";
 			tabDashboard.UseVisualStyleBackColor = true;
 			// 
+			// search_lbl
+			// 
+			search_lbl.AutoSize = true;
+			search_lbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+			search_lbl.Location = new Point(6, 29);
+			search_lbl.Name = "search_lbl";
+			search_lbl.Size = new Size(265, 28);
+			search_lbl.TabIndex = 7;
+			search_lbl.Text = "Search Employee By Name";
+			// 
 			// bLogout
 			// 
-			bLogout.Location = new Point(726, 24);
+			bLogout.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+			bLogout.Location = new Point(704, 29);
 			bLogout.Margin = new Padding(3, 2, 3, 2);
 			bLogout.Name = "bLogout";
-			bLogout.Size = new Size(83, 33);
+			bLogout.Size = new Size(105, 50);
 			bLogout.TabIndex = 6;
 			bLogout.Text = "Log out";
 			bLogout.UseVisualStyleBackColor = true;
@@ -531,105 +532,6 @@
 			cbEmployeesShifts.Size = new Size(133, 23);
 			cbEmployeesShifts.TabIndex = 0;
 			// 
-			// tabUpdateEmployee
-			// 
-			tabUpdateEmployee.Controls.Add(btnSave);
-			tabUpdateEmployee.Controls.Add(lbphone);
-			tabUpdateEmployee.Controls.Add(lbName);
-			tabUpdateEmployee.Controls.Add(tbphone);
-			tabUpdateEmployee.Controls.Add(tbfistName);
-			tabUpdateEmployee.Controls.Add(btnSelect);
-			tabUpdateEmployee.Controls.Add(cbSelect);
-			tabUpdateEmployee.Location = new Point(27, 4);
-			tabUpdateEmployee.Margin = new Padding(3, 2, 3, 2);
-			tabUpdateEmployee.Name = "tabUpdateEmployee";
-			tabUpdateEmployee.Size = new Size(837, 337);
-			tabUpdateEmployee.TabIndex = 3;
-			tabUpdateEmployee.Text = "UpdateEmployee";
-			tabUpdateEmployee.UseVisualStyleBackColor = true;
-			// 
-			// btnSave
-			// 
-			btnSave.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			btnSave.Location = new Point(204, 252);
-			btnSave.Margin = new Padding(3, 2, 3, 2);
-			btnSave.Name = "btnSave";
-			btnSave.Size = new Size(421, 39);
-			btnSave.TabIndex = 6;
-			btnSave.Text = "Save";
-			btnSave.UseVisualStyleBackColor = true;
-			btnSave.Click += btnSave_Click_2;
-			// 
-			// lbphone
-			// 
-			lbphone.AutoSize = true;
-			lbphone.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			lbphone.Location = new Point(204, 184);
-			lbphone.Name = "lbphone";
-			lbphone.Size = new Size(156, 28);
-			lbphone.TabIndex = 5;
-			lbphone.Text = "Phone number:";
-			// 
-			// lbName
-			// 
-			lbName.AutoSize = true;
-			lbName.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			lbName.Location = new Point(204, 123);
-			lbName.Name = "lbName";
-			lbName.Size = new Size(73, 28);
-			lbName.TabIndex = 4;
-			lbName.Text = "Name:";
-			// 
-			// tbphone
-			// 
-			tbphone.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			tbphone.Location = new Point(430, 179);
-			tbphone.Margin = new Padding(3, 2, 3, 2);
-			tbphone.Name = "tbphone";
-			tbphone.Size = new Size(196, 34);
-			tbphone.TabIndex = 3;
-			// 
-			// tbfistName
-			// 
-			tbfistName.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			tbfistName.Location = new Point(430, 123);
-			tbfistName.Margin = new Padding(3, 2, 3, 2);
-			tbfistName.Name = "tbfistName";
-			tbfistName.Size = new Size(196, 34);
-			tbfistName.TabIndex = 2;
-			// 
-			// btnSelect
-			// 
-			btnSelect.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			btnSelect.Location = new Point(480, 53);
-			btnSelect.Margin = new Padding(3, 2, 3, 2);
-			btnSelect.Name = "btnSelect";
-			btnSelect.Size = new Size(146, 36);
-			btnSelect.TabIndex = 1;
-			btnSelect.Text = "Select";
-			btnSelect.UseVisualStyleBackColor = true;
-			btnSelect.Click += btnSelect_Click_2;
-			// 
-			// cbSelect
-			// 
-			cbSelect.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			cbSelect.FormattingEnabled = true;
-			cbSelect.Location = new Point(204, 53);
-			cbSelect.Margin = new Padding(3, 2, 3, 2);
-			cbSelect.Name = "cbSelect";
-			cbSelect.Size = new Size(171, 36);
-			cbSelect.TabIndex = 0;
-			// 
-			// search_lbl
-			// 
-			search_lbl.AutoSize = true;
-			search_lbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-			search_lbl.Location = new Point(6, 29);
-			search_lbl.Name = "search_lbl";
-			search_lbl.Size = new Size(265, 28);
-			search_lbl.TabIndex = 7;
-			search_lbl.Text = "Search Employee By Name";
-			// 
 			// EmployeeDashboard
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -650,8 +552,6 @@
 			gpPersonalData.PerformLayout();
 			tabShift.ResumeLayout(false);
 			tabShift.PerformLayout();
-			tabUpdateEmployee.ResumeLayout(false);
-			tabUpdateEmployee.PerformLayout();
 			ResumeLayout(false);
 		}
 
@@ -683,14 +583,6 @@
 		private TextBox tbWorkingHours;
 		private ComboBox cbRole;
 		private TextBox tbemail;
-		private TabPage tabUpdateEmployee;
-		private TextBox tbfistName;
-		private Button btnSelect;
-		private ComboBox cbSelect;
-		private TextBox tbphone;
-		private Button btnSave;
-		private Label lbphone;
-		private Label lbName;
 		private Label label10;
 		private Label label9;
 		private GroupBox gbCredentials;

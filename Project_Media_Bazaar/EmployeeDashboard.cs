@@ -23,21 +23,23 @@ namespace Project_Media_Bazaar
 		public EmployeeDashboard(Person person)
 		{
 			currentPerson = person;
-			InitializeComponent();
-			this.Text = $"Logged as: {currentPerson.firstName + " " + currentPerson.lastName}";
-
 			this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
 			employees = this.DataAccessEmployeeDashboard.GetAllUsersFromDB();
 
-			foreach (Employee employee in employees)
-			{
-				cbSelect.Items.Add(employee.GetIdAndFirstAndLastName());
-				cbEmployeesShifts.Items.Add(employee.GetIdAndFirstAndLastName());
-			}
-			cbRole.DataSource = Enum.GetValues(typeof(EmployeeRole));
-			cbShifts.DataSource = Enum.GetValues(typeof(ShiftType));
-
+			InitializeComponent();
+			this.Text = $"Logged as: {currentPerson.firstName + " " + currentPerson.lastName}";
 			LoadData();
+
+
+			//foreach (Employee employee in employees)
+			//{
+			//	cbSelect.Items.Add(employee.GetIdAndFirstAndLastName());
+			//	cbEmployeesShifts.Items.Add(employee.GetIdAndFirstAndLastName());
+			//}
+			//cbRole.DataSource = Enum.GetValues(typeof(EmployeeRole));
+			//cbShifts.DataSource = Enum.GetValues(typeof(ShiftType));
+
+
 		}
 		public void LoadData()
 		{
@@ -49,34 +51,34 @@ namespace Project_Media_Bazaar
 		}
 
 
-		private void btnSelect_Click(object sender, EventArgs e)
-		{
-			int id = int.Parse(cbSelect.Text);
-			Employee newUser = DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(id);
-			tbfistName.Text = newUser.firstName;
-			tbphone.Text = newUser.phoneNumber;
+		//private void btnSelect_Click(object sender, EventArgs e)
+		//{
+		//	int id = int.Parse(cbSelect.Text);
+		//	Employee newUser = DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(id);
+		//	tbfistName.Text = newUser.firstName;
+		//	tbphone.Text = newUser.phoneNumber;
 
-		}
-
-
-		private void btnSave_Click_1(object sender, EventArgs e)
-		{
-			tbfirstName.Clear();
-			tbphone.Clear();
-			string[] parts = cbSelect.SelectedItem.ToString().Split(new string[] { " || " }, StringSplitOptions.None);
-			string secondPart = parts[1];
-			secondPart.Replace("Id: ", "");
-
-			Employee employee = DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(int.Parse(secondPart));
-
-			employee.firstName = tbfirstName.Text;
-			employee.phoneNumber = tbphone.Text;
+		//}
 
 
-			DataAccessEmployeeDashboard.UpdateEmployeeToDB(employee);
+		//private void btnSave_Click_1(object sender, EventArgs e)
+		//{
+		//	tbfirstName.Clear();
+		//	tbphone.Clear();
+		//	string[] parts = cbSelect.SelectedItem.ToString().Split(new string[] { " || " }, StringSplitOptions.None);
+		//	string secondPart = parts[1];
+		//	secondPart.Replace("Id: ", "");
 
-			MessageBox.Show("Done!");
-		}
+		//	Employee employee = DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(int.Parse(secondPart));
+
+		//	employee.firstName = tbfirstName.Text;
+		//	employee.phoneNumber = tbphone.Text;
+
+
+		//	DataAccessEmployeeDashboard.UpdateEmployeeToDB(employee);
+
+		//	MessageBox.Show("Done!");
+		//}
 
 		private void btnCreate_Click_1(object sender, EventArgs e)
 		{
@@ -153,65 +155,48 @@ namespace Project_Media_Bazaar
 			//tbRoleType deleted
 		}
 
-		private void btnDelete_Click_2(object sender, EventArgs e)
-		{
-
-		}
-
-		private void btnFilter_Click_2(object sender, EventArgs e)
-		{
-
-		}
-
-		private void btnSelect_Click_2(object sender, EventArgs e)
-		{
-			//string[] parts = cbSelect.SelectedItem.ToString().Split(new string[] { " || " }, StringSplitOptions.None);
-			//string secondPart = parts[1];
-			//string[] subParts = secondPart.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-			//int secondId = int.Parse(subParts[0]);
-			List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
-			int secondId = 0;
-			foreach (Employee item in employees)
-			{
-				if (item.GetIdAndFirstAndLastName().ToString().Contains(cbSelect.SelectedItem.ToString()))
-				{
-					secondId = item.id;
-				}
-			}
+		//private void btnSelect_Click_2(object sender, EventArgs e)
+		//{
+		//	//string[] parts = cbSelect.SelectedItem.ToString().Split(new string[] { " || " }, StringSplitOptions.None);
+		//	//string secondPart = parts[1];
+		//	//string[] subParts = secondPart.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+		//	//int secondId = int.Parse(subParts[0]);
+		//	List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
+		//	int secondId = 0;
+		//	foreach (Employee item in employees)
+		//	{
+		//		if (item.GetIdAndFirstAndLastName().ToString().Contains(cbSelect.SelectedItem.ToString()))
+		//		{
+		//			secondId = item.id;
+		//		}
+		//	}
 
 
-			Employee employee = DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(secondId);
+		//	Employee employee = DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(secondId);
 
-			tbfistName.Text = $"{employee.firstName} {employee.lastName}";
-			tbphone.Text = employee.phoneNumber;
-		}
+		//	tbfistName.Text = $"{employee.firstName} {employee.lastName}";
+		//	tbphone.Text = employee.phoneNumber;
+		//}
 
-		private void btnSave_Click_2(object sender, EventArgs e)
-		{
-			List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
-			int secondId = 0;
-			foreach (Employee item in employees)
-			{
-				if (item.GetIdAndFirstAndLastName().ToString().Contains(cbSelect.SelectedItem.ToString()))
-				{
-					secondId = item.id;
+		//private void btnSave_Click_2(object sender, EventArgs e)
+		//{
+		//	List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
+		//	int secondId = 0;
+		//	foreach (Employee item in employees)
+		//	{
+		//		if (item.GetIdAndFirstAndLastName().ToString().Contains(cbSelect.SelectedItem.ToString()))
+		//		{
+		//			secondId = item.id;
 
-					item.SetName(tbfistName.Text);
-					item.SetPhone(tbphone.Text);
-					DataAccessEmployeeDashboard.UpdateEmployeeToDB(item);
-				}
-			}
+		//			item.SetName(tbfistName.Text);
+		//			item.SetPhone(tbphone.Text);
+		//			DataAccessEmployeeDashboard.UpdateEmployeeToDB(item);
+		//		}
+		//	}
 
-		}
-
-
-
+		//}
 		private void btnSelectEmployeeToShift_Click(object sender, EventArgs e)
 		{
-			//string[] parts = cbSelect.SelectedItem.ToString().Split(new string[] { " || " }, StringSplitOptions.None);
-			//string secondPart = parts[1];
-			//string[] subParts = secondPart.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-			//int secondId = int.Parse(subParts[0]);
 			List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
 			int secondId = 0;
 			foreach (Employee item in employees)
@@ -221,8 +206,6 @@ namespace Project_Media_Bazaar
 					secondId = item.id;
 				}
 			}
-
-
 			Employee employee = DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(secondId);
 
 			tbNameEmShift.Text = $"{employee.firstName} {employee.lastName}";
