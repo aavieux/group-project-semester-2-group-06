@@ -17,8 +17,8 @@ namespace Project_Media_Bazaar
         public ProductStatisticsForm()
         {
             InitializeComponent();
-            company.FillProductsList();
-            company.FillStockChangesList();
+            company.GenerateProducts();
+            company.GenerateStockChangeList();
             lTotalSales.Text = company.CalculateTotalSales().ToString();
             lMostSoldProduct.Text = company.MostSoldStockId().ToString();
         }

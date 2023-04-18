@@ -13,6 +13,7 @@ namespace Domain
         public int emplId;
         public ShiftType shiftType { get; set; }
         public DateTime date { get; set; }
+
         public Shift(ShiftType shiftType, DateTime date, int empid)
         {
             this.shiftType = shiftType;

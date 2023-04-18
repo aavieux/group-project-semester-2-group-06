@@ -12,25 +12,29 @@ namespace Domain;
 public class Administration
 {
     List<Person> people = new List<Person>();
-    SqlHelperG sql = new SqlHelperG();
+    SqlHelperG sqlHelper = new SqlHelperG();
+
     public void RemoveEmployee(Employee employee) { }
+
     public void EditEmployee(Employee employee) { }
+
     public Person? CheckLogIn(string nickname, string password)
     {
-        FillPersonList();
+        GeneratePeopleFromDB();
+
         foreach (Person person in people)
         {
-            if(person.nickname== nickname && person.password == password)
+            if (person.nickname== nickname && person.password == password)
             {
                 return person;
             }
         }
         return null;
     }
-    private void FillPersonList()
+    private void GeneratePeopleFromDB()
     {
         people.Clear();
-        DataTable dt = sql.ReadPeople();
+        DataTable dt = sqlHelper.ReadPeopleFromDB();
         foreach (DataRow row in dt.Rows)
         {
             Person person;
@@ -38,9 +42,9 @@ public class Administration
             people.Add(person);
         }
     }
-    public List<Person> GetPeople()
+    public List<Person> GetAllPeople()
     {
-        FillPersonList();
+        GeneratePeopleFromDB();
         return people;
     }
 }

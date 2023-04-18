@@ -14,7 +14,7 @@ public class SqlHelperG
     string connection = "Data Source=mssqlstud.fhict.local;Initial Catalog=dbi501511_bazaar;User ID=dbi501511_Bazaar;Password=Samocska";
     string query;
 
-    public void AddProduct(string name, string category, string description, int threshold)
+    public void AddProductToDB(string name, string category, string description, int threshold)
     {
         query = "INSERT INTO dbo.Product (name, amount, category, description, threshold) VALUES (@name, @amount, @category, @description, @threshold)";
         try
@@ -39,7 +39,7 @@ public class SqlHelperG
             throw;
         }
     }
-    public void ChangeStockAmount(int id, int amount){
+    public void ChangeStockAmountFromDB(int id, int amount){
 
         query = "UPDATE dbo.Product SET amount = @amount WHERE id=@id";
         try
@@ -61,7 +61,7 @@ public class SqlHelperG
             throw;
         }
     }
-    public DataTable ReadProducts()
+    public DataTable ReadProductsFromDB()
     {
         datatable1 = new DataTable();
         query = "SELECT * FROM dbo.Product";
@@ -85,7 +85,7 @@ public class SqlHelperG
             throw;
         }
     }
-    public void DeleteProduct(int id)
+    public void DeleteProductFromDB(int id)
     {
         query = "DELETE FROM dbo.Product WHERE id = @id";
         try
@@ -105,7 +105,7 @@ public class SqlHelperG
             throw;
         }
     }
-    public void CreateChange(int productId, DateTime dateTime, int change, int isRestock)
+    public void CreateChangeToDB(int productId, DateTime dateTime, int change, int isRestock)
     {
         query = "INSERT INTO dbo.StockChange (productId, date, change, isRestock) VALUES (@productId, @date, @change, @isRestock)";
         try
@@ -128,7 +128,7 @@ public class SqlHelperG
             throw;
         }
     }
-    public DataTable ReadStockChanges()
+    public DataTable ReadStockChangesFromDB()
     {
         query = "SELECT * FROM dbo.StockChange";
         try
@@ -152,7 +152,7 @@ public class SqlHelperG
             throw;
         }
     }
-    public DataTable ReadPeople()
+    public DataTable ReadPeopleFromDB()
     {
         query = "SELECT * FROM dbo.Person";
         try

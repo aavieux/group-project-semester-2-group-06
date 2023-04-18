@@ -13,7 +13,7 @@ public partial class ManagementForm : Form
     }
     public void RefreshListbox()
     {
-        company.FillProductsList();
+        company.GenerateProducts();
         lvProducts.Items.Clear();
         foreach (Product product in company.GetProducts())
         {

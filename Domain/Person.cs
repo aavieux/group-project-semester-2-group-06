@@ -50,14 +50,7 @@ namespace Domain
             this.userRole = roleType;
             this.password = password;
         }
-        //public string GetName()
-        //{
-        //    return this.firstName;
-        //}
-        //public string GetAddress()
-        //{
-        //    return this.address;
-        //}
+
         public void ChangeName(string name) { this.firstName = name; }
         //public double GetSalary() { return this.salary; }
         public void SetSalary(decimal salary) { this.salary = salary; }

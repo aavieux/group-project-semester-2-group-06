@@ -24,6 +24,7 @@ namespace Domain
             Description = description;
             Threshold = threshold;
         }
+
         public void changeAmount(int amount)
         {
             if (amount < 0)

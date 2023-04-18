@@ -15,38 +15,52 @@ namespace Domain
         private List<StockChange> stockChanges = new List<StockChange>();
         private List<int> seenProducts = new List<int>();
         private List<Person> people = new List<Person>();
-        SqlHelperG sql = new SqlHelperG();
+        SqlHelperG sqlHelper = new SqlHelperG();
 
-        public void FillProductsList()
+        //Manage Products
+        public void GenerateProducts()
         {
-            Product product;
-            products.Clear();
-            var table = sql.ReadProducts();
+			products.Clear();
+			Product product;
+
+            var table = sqlHelper.ReadProductsFromDB();
+
             foreach (DataRow dr in table.Rows)
             {
                 products.Add(product = new Product((int)dr[0], (string)dr[1], (int)dr[2], (string)dr[3], (string)dr[4], (int)dr[5]));
             }
         }
-        public List<Product> GetProducts()
-        {
-            return products;
-        }
-        public void DeleteProduct(Product product)
-        {
-            sql.DeleteProduct(product.Id);
+		public List<Product> GetProducts()
+		{
+			return products;
+		}
+		private Product GetProductById(int id)
+		{
+			foreach (Product product in products)
+			{
+				if (product.Id == id) return product;
+			}
+			return null;
+		}
+		public void DeleteProduct(Product product)
+		{
+			sqlHelper.DeleteProductFromDB(product.Id);
+		}
 
-        }
-        public List<StockChange> FillStockChangesList()
-        {
-            StockChange stockChange;
-            stockChanges.Clear();
-            DataTable table = sql.ReadStockChanges();
-            foreach (DataRow dr in table.Rows)
-            {
-                stockChanges.Add(stockChange = new StockChange((int)dr[0], (int)dr[1], (DateTime)dr[2], (int)dr[3], (int)dr[4]));
-            }
-            return stockChanges;
-        }
+        //Generate StockChangeList
+		public List<StockChange> GenerateStockChangeList()
+		{
+			StockChange stockChange;
+			stockChanges.Clear();
+			DataTable table = sqlHelper.ReadStockChangesFromDB();
+			foreach (DataRow dr in table.Rows)
+			{
+				stockChanges.Add(stockChange = new StockChange((int)dr[0], (int)dr[1], (DateTime)dr[2], (int)dr[3], (int)dr[4]));
+			}
+			return stockChanges;
+		}
+
+        //Calculations
         public int CalculateTotalSales()
         {
             int totalSales = 0;
@@ -69,7 +83,6 @@ namespace Domain
             }
             return soldProducts;
         }
-
         public string MostSoldStockId()
         {
             List<StockChange> stockChanges = GetSoldStocks();
@@ -94,14 +107,5 @@ namespace Domain
             var mostSoldItem = sales.OrderByDescending(kvp => kvp.Value).ToDictionary(x => x.Key, x => x.Value).First();
             return GetProductById(mostSoldItem.Key).Name;
         }
-        private Product GetProductById(int id)
-        {
-            foreach (Product product in products)
-            {
-                if (product.Id == id) return product;
-            }
-            return null;
-        }
-
-    }
+	}
 }

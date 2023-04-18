@@ -27,12 +27,12 @@ namespace Project_Media_Bazaar
             this.Text = $"Logged as: {currentPerson.firstName + " " + currentPerson.lastName}";
 
             this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
-            employees = this.DataAccessEmployeeDashboard.GetAllUsers();
+            employees = this.DataAccessEmployeeDashboard.GetAllUsersFromDB();
 
             foreach (Employee employee in employees)
             {
-                cbSelect.Items.Add(employee.GetIdAndName());
-                cbEmployeesShifts.Items.Add(employee.GetIdAndName());
+                cbSelect.Items.Add(employee.GetIdAndFirstAndLastName());
+                cbEmployeesShifts.Items.Add(employee.GetIdAndFirstAndLastName());
             }
             cbRole.DataSource = Enum.GetValues(typeof(EmployeeRole));
             cbShifts.DataSource = Enum.GetValues(typeof(ShiftType));
@@ -42,10 +42,10 @@ namespace Project_Media_Bazaar
         public void LoadData()
         {
             listBoxEmployees.Items.Clear();
-            List<Employee> users = DataAccessEmployeeDashboard.GetAllUsers();
+            List<Employee> users = DataAccessEmployeeDashboard.GetAllUsersFromDB();
             foreach (Employee employee in users)
             {
-                listBoxEmployees.Items.Add(employee.GetIdAndName());
+                listBoxEmployees.Items.Add(employee.GetIdAndFirstAndLastName());
             }
         }
 
@@ -53,7 +53,7 @@ namespace Project_Media_Bazaar
         private void btnSelect_Click(object sender, EventArgs e)
         {
             int id = int.Parse(cbSelect.Text);
-            Employee newUser = DataAccessEmployeeDashboard.GetItem(id);
+            Employee newUser = DataAccessEmployeeDashboard.GetItemFromDB(id);
             tbfistName.Text = newUser.firstName;
             tbphone.Text = newUser.phoneNumber;
 
@@ -68,13 +68,13 @@ namespace Project_Media_Bazaar
             string secondPart = parts[1];
             secondPart.Replace("Id: ", "");
 
-            Employee employee = DataAccessEmployeeDashboard.GetItem(int.Parse(secondPart));
+            Employee employee = DataAccessEmployeeDashboard.GetItemFromDB(int.Parse(secondPart));
 
             employee.firstName = tbfirstName.Text;
             employee.phoneNumber = tbphone.Text;
 
 
-            DataAccessEmployeeDashboard.UpdateEmployee(employee);
+            DataAccessEmployeeDashboard.UpdateEmployeeToDB(employee);
 
             MessageBox.Show("Done!");
         }
@@ -122,7 +122,7 @@ namespace Project_Media_Bazaar
                     email = mailAddress.Address;
 
                     Employee employee = new Employee(email, workingHours, role, firstName, lastName, dateTime, address, phoneNumber, salary, nickname, password, employeeRole);
-                    if (DataAccessEmployeeDashboard.AddItem(employee))
+                    if (DataAccessEmployeeDashboard.AddItemToDB(employee))
                     {
                         MessageBox.Show("Done!");
                     }
@@ -160,7 +160,7 @@ namespace Project_Media_Bazaar
             try
             {
                 int id = int.Parse(tbIdDelete.Text);
-                DataAccessEmployeeDashboard.DeleteItem(id);
+                DataAccessEmployeeDashboard.DeleteItemFromDB(id);
                 MessageBox.Show("Succesfully deleted item");
                 LoadData();
             }
@@ -173,11 +173,11 @@ namespace Project_Media_Bazaar
             try
             {
                 int id = int.Parse(tbF.Text);
-                if (DataAccessEmployeeDashboard.GetItem(id) != null)
+                if (DataAccessEmployeeDashboard.GetItemFromDB(id) != null)
                 {
-                    Employee newUser = DataAccessEmployeeDashboard.GetItem(id);
+                    Employee newUser = DataAccessEmployeeDashboard.GetItemFromDB(id);
                     listBoxEmployees.Items.Clear();
-                    listBoxEmployees.Items.Add(newUser.GetInfo());
+                    listBoxEmployees.Items.Add(newUser.GetFirstAndLastName());
 
                 }
                 else
@@ -192,18 +192,18 @@ namespace Project_Media_Bazaar
             //string secondPart = parts[1];
             //string[] subParts = secondPart.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             //int secondId = int.Parse(subParts[0]);
-            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsers();
+            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
             int secondId = 0;
             foreach (Employee item in employees)
             {
-                if (item.GetIdAndName().ToString().Contains(cbSelect.SelectedItem.ToString()))
+                if (item.GetIdAndFirstAndLastName().ToString().Contains(cbSelect.SelectedItem.ToString()))
                 {
                     secondId = item.id;
                 }
             }
 
 
-            Employee employee = DataAccessEmployeeDashboard.GetItem(secondId);
+            Employee employee = DataAccessEmployeeDashboard.GetItemFromDB(secondId);
 
             tbfistName.Text = $"{employee.firstName} {employee.lastName}";
             tbphone.Text = employee.phoneNumber;
@@ -211,17 +211,17 @@ namespace Project_Media_Bazaar
 
         private void btnSave_Click_2(object sender, EventArgs e)
         {
-            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsers();
+            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
             int secondId = 0;
             foreach (Employee item in employees)
             {
-                if (item.GetIdAndName().ToString().Contains(cbSelect.SelectedItem.ToString()))
+                if (item.GetIdAndFirstAndLastName().ToString().Contains(cbSelect.SelectedItem.ToString()))
                 {
                     secondId = item.id;
 
                     item.SetName(tbfistName.Text);
                     item.SetPhone(tbphone.Text);
-                    DataAccessEmployeeDashboard.UpdateEmployee(item);
+                    DataAccessEmployeeDashboard.UpdateEmployeeToDB(item);
                 }
             }
 
@@ -235,18 +235,18 @@ namespace Project_Media_Bazaar
             //string secondPart = parts[1];
             //string[] subParts = secondPart.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             //int secondId = int.Parse(subParts[0]);
-            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsers();
+            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
             int secondId = 0;
             foreach (Employee item in employees)
             {
-                if (item.GetIdAndName().ToString().Contains(cbEmployeesShifts.SelectedItem.ToString()))
+                if (item.GetIdAndFirstAndLastName().ToString().Contains(cbEmployeesShifts.SelectedItem.ToString()))
                 {
                     secondId = item.id;
                 }
             }
 
 
-            Employee employee = DataAccessEmployeeDashboard.GetItem(secondId);
+            Employee employee = DataAccessEmployeeDashboard.GetItemFromDB(secondId);
 
             tbNameEmShift.Text = $"{employee.firstName} {employee.lastName}";
             tbphoneShift.Text = employee.phoneNumber;
@@ -254,11 +254,11 @@ namespace Project_Media_Bazaar
 
         private void btnShift_Click(object sender, EventArgs e)
         {
-            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsers();
+            List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
             int secondId = 0;
             foreach (Employee item in employees)
             {
-                if (item.GetIdAndName().ToString().Contains(cbEmployeesShifts.SelectedItem.ToString()))
+                if (item.GetIdAndFirstAndLastName().ToString().Contains(cbEmployeesShifts.SelectedItem.ToString()))
                 {
                     secondId = item.id;
                 }
@@ -268,7 +268,7 @@ namespace Project_Media_Bazaar
             ShiftType shiftType = ShiftType.DayShift;
             DateTime dateOfShift = dtDateShift.Value;
             Shift shift = new Shift(shiftType, dateOfShift, secondId);
-            DataAccessEmployeeDashboard.AssignEmployeeToShift(shift);
+            DataAccessEmployeeDashboard.AssignEmployeeToShiftToDB(shift);
             MessageBox.Show("Done!");
 
         }

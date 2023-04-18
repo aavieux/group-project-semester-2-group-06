@@ -12,41 +12,27 @@ namespace Domain
         public int workingHours { get; set; }
         public EmployeeRole employeeRole { get; set; }
         private List<Shift>? shifts;
+
         public Employee() : base() { }
 
-        //public Employee(int id, string email, int workingHours, UserRole role, string firstName, string lastName, 
-        //    DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole roleType) 
-        //    : base()
-        //{
-        //    this.workingHours = workingHours;
-        //    this.employeeRole = role;
-        //    this.shifts = shifts;
-        //}
         public Employee(string email, int workingHours, UserRole role, string firstName, string lastName, 
             DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole employeeRole) 
             : base(role,firstName, lastName, birthDate, address, phoneNumber, salary, email, nickname, password, employeeRole)
         {
             this.workingHours = workingHours;
             this.employeeRole = employeeRole;
-            this.shifts = shifts;
+            //this.shifts = shifts;
         }
 
-        //public int Id()
-        //{
-        //    return id;
-        //}
-        public string GetInfo()
+        public string GetFirstAndLastName()
         {
             return $"{firstName} {lastName}";
         }
-        public string GetIdAndName()
+        public string GetIdAndFirstAndLastName()
         {
-            return $"Id: {id} || {GetInfo()}";
+            return $"Id: {id} || {GetFirstAndLastName()}";
         }
-        //public List<Shift> GetShifts()
-        //{
-        //    return shifts;
-        //}
+
         public void SetId(int id)
         {
             base.id = id;
