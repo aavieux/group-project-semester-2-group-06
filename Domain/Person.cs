@@ -50,7 +50,19 @@ namespace Domain
             this.userRole = roleType;
             this.password = password;
         }
-
+        public Person (int id, string firstName, string lastName, string phoneNumber, DateTime birthDate, string adress, decimal salary, string email)
+        {
+            //for update
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.birthDate = birthDate;
+            this.phoneNumber = phoneNumber;
+            this.address = adress;
+            this.salary = salary;
+            this.email = email;
+            
+        }
         public void ChangeName(string name) { this.firstName = name; }
         //public double GetSalary() { return this.salary; }
         public void SetSalary(decimal salary) { this.salary = salary; }

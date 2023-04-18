@@ -23,6 +23,11 @@ namespace Domain
             this.employeeRole = employeeRole;
             //this.shifts = shifts;
         }
+        public Employee(int id,string firstName, string lastName, string phoneNumber, DateTime birthDate, string adress, decimal salary, string email, int workingHours) 
+            : base(id,firstName, lastName, phoneNumber, birthDate, adress, salary, email)
+        {
+            this.workingHours += workingHours;
+        }
 
         public string GetFirstAndLastName()
         {

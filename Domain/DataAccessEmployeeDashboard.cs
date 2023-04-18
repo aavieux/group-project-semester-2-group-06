@@ -41,12 +41,12 @@ public class DataAccessEmployeeDashboard
 			}
 		}
 	}
-	public void UpdateEmployeeToDB(Employee employee)
+	public bool UpdateEmployeeToDB(Employee employee)
 	{
 		using (var connection = new SqlConnection(_connectionString))
 		{
 			var commandText = "UPDATE Employee SET firstName = @firstName, lastName = @lastName, address = @address, salary = @salary, email = @email, "
-							+ "nickname = @nickname, password = @password, workingHours = @workingHours, phoneNumber = @phoneNumber WHERE id = @id";
+							+ "workingHours = @workingHours, phoneNumber = @phoneNumber WHERE id = @id";
 			using (var command = new SqlCommand(commandText, connection))
 			{
 				command.Parameters.AddWithValue("@id", employee.id);
@@ -55,8 +55,6 @@ public class DataAccessEmployeeDashboard
 				command.Parameters.AddWithValue("@address", employee.address);
 				command.Parameters.AddWithValue("@salary", employee.salary);
 				command.Parameters.AddWithValue("@email", employee.email);
-				command.Parameters.AddWithValue("@nickname", employee.nickname);
-				command.Parameters.AddWithValue("@password", employee.password);
 				command.Parameters.AddWithValue("@workingHours", employee.workingHours);
 				command.Parameters.AddWithValue("@phoneNumber", employee.phoneNumber);
 
@@ -67,13 +65,18 @@ public class DataAccessEmployeeDashboard
 
 					if (rowsAffected == 0)
 					{
-						throw new Exception("No rows were affected by the update operation.");
+						return false;
+					}
+					else
+					{
+						return true;
 					}
 				}
 				catch (Exception ex)
 				{
-					// Log the exception
-					throw ex;
+
+					return false;
+
 				}
 				finally
 				{
@@ -102,8 +105,8 @@ public class DataAccessEmployeeDashboard
 		}
 	}
 
-	//Manage Items(DB)
-	public Employee GetItemFromDB(int id)
+	//Manage Employees(DB)
+	public Employee GetEmployeeByIdFromDB(int id)
 	{
 		using (var connection = new SqlConnection(_connectionString))
 		{
@@ -122,8 +125,13 @@ public class DataAccessEmployeeDashboard
 						{
 							id = reader.GetInt32(reader.GetOrdinal("Id")),
 							firstName = reader.GetString(reader.GetOrdinal("firstName")),
+							lastName = reader.GetString(reader.GetOrdinal("lastName")),
+							phoneNumber = reader.GetString(reader.GetOrdinal("phoneNumber")),
+							birthDate = reader.GetDateTime(reader.GetOrdinal("birthDate")),
+							address = reader.GetString(reader.GetOrdinal("address")),
+							salary = reader.GetDecimal(reader.GetOrdinal("salary")),
 							email = reader.GetString(reader.GetOrdinal("email")),
-							phoneNumber = reader.GetString(reader.GetOrdinal("phoneNumber"))
+							workingHours = reader.GetInt32(reader.GetOrdinal("workingHours"))
 						};
 
 						return item;
@@ -134,7 +142,7 @@ public class DataAccessEmployeeDashboard
 			}
 		}
 	}
-	public bool AddItemToDB(Employee employee)
+	public bool AddEmployeeToDB(Employee employee)
 	{
 		bool yesOrNo = false;
 		using (var connection = new SqlConnection(_connectionString))
@@ -172,7 +180,7 @@ public class DataAccessEmployeeDashboard
 			}
 		}
 	}
-	public void DeleteItemFromDB(int id)
+	public bool DeleteEmployeeByIdFromDB(int id)
 	{
 		using (var connection = new SqlConnection(_connectionString))
 		{
@@ -184,7 +192,9 @@ public class DataAccessEmployeeDashboard
 				command.Parameters.AddWithValue("@Id", id);
 
 				command.ExecuteNonQuery();
+				return true;
 			}
+
 		}
 	}
 }

@@ -14,59 +14,109 @@ namespace Project_Media_Bazaar
 	public partial class UpdateEmployee : Form
 	{
 		DataAccessEmployeeDashboard dataAccessEmployeeDashboard;
-		private Employee employee;
-		private EmployeeDashboard employeeDashboard;
-		public UpdateEmployee(Employee chosenEmployee, EmployeeDashboard ed)
+		private Employee chosenEmployee;
+		private int chosenEmployeeId;
+		public UpdateEmployee(int chosenEmployeeid)
 		{
 			this.dataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
-			employee = chosenEmployee;
+			this.chosenEmployeeId = chosenEmployeeid;
 			InitializeComponent();
-			tbFirstName.Text = employee.firstName;
-			tbLastName.Text = employee.lastName;
-			tbPhone.Text = employee.phoneNumber;
-			tbEmail.Text = employee.email;
-			tbAddress.Text = employee.address;
-			tbSalary.Text = employee.salary.ToString();
-			tbNickname.Text = employee.nickname;
-			tbPassword.Text = employee.password;
-			tbWorkingHours.Text = employee.workingHours.ToString();
-			employee = new Employee();
-			employee = chosenEmployee;
-			this.employeeDashboard = ed;
+			LoadData();
+
+		}
+		private void LoadData()
+		{
+			this.chosenEmployee = dataAccessEmployeeDashboard.GetEmployeeByIdFromDB(chosenEmployeeId);
+
+			tbFirstName.Enabled = false;
+			tbLastName.Enabled = false;
+			tbPhone.Enabled = false;
+			birthDate_dtp.Enabled = false;
+			tbEmail.Enabled = false;
+			tbAddress.Enabled = false;
+			tbSalary.Enabled = false;
+			tbWorkingHours.Enabled = false;
+
+			tbFirstName.Text = chosenEmployee.firstName;
+			tbLastName.Text = chosenEmployee.lastName;
+			tbPhone.Text = chosenEmployee.phoneNumber;
+			tbEmail.Text = chosenEmployee.email;
+			tbAddress.Text = chosenEmployee.address;
+			tbSalary.Text = chosenEmployee.salary.ToString();
+			tbWorkingHours.Text = chosenEmployee.workingHours.ToString();
+
+		}
+		private void btnSave_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Employee saveEmployee = new Employee(chosenEmployee.id, tbFirstName.Text, tbLastName.Text, tbPhone.Text, birthDate_dtp.Value, tbAddress.Text, decimal.Parse(tbSalary.Text), tbEmail.Text, int.Parse(tbWorkingHours.Text));
+
+				if (dataAccessEmployeeDashboard.UpdateEmployeeToDB(saveEmployee))
+				{
+					MessageBox.Show("Updated");
+				}
+				else
+				{
+					MessageBox.Show("Something went wrong!");
+				}
+
+			}
+			catch (Exception)
+			{
+				MessageBox.Show("Error saving info!");
+			}
+			finally
+			{
+				LoadData();
+				btnSave.Visible = false;
+				update_btn.Visible = true;
+				delete_btn.Visible = true;
+			}
+		}
+
+		private void update_btn_Click(object sender, EventArgs e)
+		{
+			update_btn.Visible = false;
+			delete_btn.Visible = false;
+
+			btnSave.Visible = true;
+
+			tbFirstName.Enabled = true;
+			tbLastName.Enabled = true;
+			tbPhone.Enabled = true;
+			birthDate_dtp.Enabled = true;
+			tbEmail.Enabled = true;
+			tbAddress.Enabled = true;
+			tbSalary.Enabled = true;
+			tbWorkingHours.Enabled = true;
+		}
+		private void delete_btn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (dataAccessEmployeeDashboard.DeleteEmployeeByIdFromDB(chosenEmployee.id))
+				{
+					MessageBox.Show("Succesfully deleted employee!");
+				}
+				else
+				{
+					MessageBox.Show("Error deleting employee!");
+				}
+			}
+			catch (Exception)
+			{
+
+			}
+			finally
+			{
+				LoadData();
+			}
 
 		}
 
 		private void UpdateEmployee_Load(object sender, EventArgs e)
 		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void btnSave_Click(object sender, EventArgs e)
-		{
-			int idChosen = this.employee.id;
-			Employee employee = new Employee();
-			tbWorkingHours.Text = employee.workingHours.ToString();
-			employee.id = idChosen;
-			employee.firstName = tbFirstName.Text;
-			employee.lastName = tbLastName.Text;
-			employee.phoneNumber = tbPassword.Text;
-			employee.email = tbEmail.Text;
-			employee.address = tbAddress.Text;
-			employee.salary = decimal.Parse(tbSalary.Text);
-			employee.nickname = tbNickname.Text;
-			employee.password = tbPassword.Text;
-			employee.workingHours = int.Parse(tbWorkingHours.Text);
-			dataAccessEmployeeDashboard.UpdateEmployeeToDB(employee);
-			MessageBox.Show("Updated");
-			employeeDashboard.LoadData();
-			this.Hide();
-
-
 
 		}
 	}
