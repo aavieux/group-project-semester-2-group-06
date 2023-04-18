@@ -106,6 +106,49 @@ public class DataAccessEmployeeDashboard
 	}
 
 	//Manage Employees(DB)
+	public List<Employee> GetEmployeesFromDB()
+	{
+		using (var connection = new SqlConnection(_connectionString))
+		{
+			connection.Open();
+
+			var commandText = "SELECT * FROM Employee";
+			using (var command = new SqlCommand(commandText, connection))
+			{
+				List<Employee> employees = new List<Employee>();
+				try
+				{
+					using (var reader = command.ExecuteReader())
+					{
+						if (reader.Read())
+						{
+							Employee employee = new Employee
+							{
+								id = reader.GetInt32(reader.GetOrdinal("Id")),
+								firstName = reader.GetString(reader.GetOrdinal("firstName")),
+								lastName = reader.GetString(reader.GetOrdinal("lastName")),
+								phoneNumber = reader.GetString(reader.GetOrdinal("phoneNumber")),
+								birthDate = reader.GetDateTime(reader.GetOrdinal("birthDate")),
+								address = reader.GetString(reader.GetOrdinal("address")),
+								salary = reader.GetDecimal(reader.GetOrdinal("salary")),
+								email = reader.GetString(reader.GetOrdinal("email")),
+								workingHours = reader.GetInt32(reader.GetOrdinal("workingHours"))
+							};
+
+							employees.Add(employee);
+						}
+
+						return employees;
+					}
+				}
+				catch (Exception)
+				{
+					return null;
+				}
+
+			}
+		}
+	}
 	public Employee GetEmployeeByIdFromDB(int id)
 	{
 		using (var connection = new SqlConnection(_connectionString))

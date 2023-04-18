@@ -31,7 +31,6 @@
 			tabControl1 = new TabControl();
 			tabDashboard = new TabPage();
 			bLogout = new Button();
-			btnFilter = new Button();
 			tbF = new TextBox();
 			listBoxEmployees = new ListBox();
 			tabCreateEmployee = new TabPage();
@@ -80,6 +79,7 @@
 			tbfistName = new TextBox();
 			btnSelect = new Button();
 			cbSelect = new ComboBox();
+			search_lbl = new Label();
 			tabControl1.SuspendLayout();
 			tabDashboard.SuspendLayout();
 			tabCreateEmployee.SuspendLayout();
@@ -106,8 +106,8 @@
 			// 
 			// tabDashboard
 			// 
+			tabDashboard.Controls.Add(search_lbl);
 			tabDashboard.Controls.Add(bLogout);
-			tabDashboard.Controls.Add(btnFilter);
 			tabDashboard.Controls.Add(tbF);
 			tabDashboard.Controls.Add(listBoxEmployees);
 			tabDashboard.Location = new Point(27, 4);
@@ -121,34 +121,24 @@
 			// 
 			// bLogout
 			// 
-			bLogout.Location = new Point(738, 11);
+			bLogout.Location = new Point(726, 24);
 			bLogout.Margin = new Padding(3, 2, 3, 2);
 			bLogout.Name = "bLogout";
-			bLogout.Size = new Size(83, 22);
+			bLogout.Size = new Size(83, 33);
 			bLogout.TabIndex = 6;
 			bLogout.Text = "Log out";
 			bLogout.UseVisualStyleBackColor = true;
 			bLogout.Click += button1_Click;
 			// 
-			// btnFilter
-			// 
-			btnFilter.BackColor = Color.Coral;
-			btnFilter.Location = new Point(256, 59);
-			btnFilter.Margin = new Padding(3, 2, 3, 2);
-			btnFilter.Name = "btnFilter";
-			btnFilter.Size = new Size(78, 22);
-			btnFilter.TabIndex = 2;
-			btnFilter.Text = "Filter";
-			btnFilter.UseVisualStyleBackColor = false;
-			btnFilter.Click += btnFilter_Click_2;
-			// 
 			// tbF
 			// 
-			tbF.Location = new Point(8, 58);
+			tbF.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+			tbF.Location = new Point(6, 59);
 			tbF.Margin = new Padding(3, 2, 3, 2);
 			tbF.Name = "tbF";
-			tbF.Size = new Size(232, 23);
+			tbF.Size = new Size(347, 34);
 			tbF.TabIndex = 1;
+			tbF.TextChanged += tbF_TextChanged;
 			// 
 			// listBoxEmployees
 			// 
@@ -630,6 +620,16 @@
 			cbSelect.Size = new Size(171, 36);
 			cbSelect.TabIndex = 0;
 			// 
+			// search_lbl
+			// 
+			search_lbl.AutoSize = true;
+			search_lbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+			search_lbl.Location = new Point(6, 29);
+			search_lbl.Name = "search_lbl";
+			search_lbl.Size = new Size(265, 28);
+			search_lbl.TabIndex = 7;
+			search_lbl.Text = "Search Employee By Name";
+			// 
 			// EmployeeDashboard
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -659,7 +659,6 @@
 
 		private TabControl tabControl1;
 		private TabPage tabDashboard;
-		private Button btnFilter;
 		private TextBox tbF;
 		private ListBox listBoxEmployees;
 		private TabPage tabCreateEmployee;
@@ -709,5 +708,6 @@
 		private Label label12;
 		private Label label11;
 		private Button btnShift;
+		private Label search_lbl;
 	}
 }

@@ -17,7 +17,7 @@ namespace Project_Media_Bazaar
 		private Employee chosenEmployee;
 		private int chosenEmployeeId;
 		public UpdateEmployee(int chosenEmployeeid)
-		{
+		{ 
 			this.dataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
 			this.chosenEmployeeId = chosenEmployeeid;
 			InitializeComponent();
@@ -54,7 +54,6 @@ namespace Project_Media_Bazaar
 
 				if (dataAccessEmployeeDashboard.UpdateEmployeeToDB(saveEmployee))
 				{
-					MessageBox.Show("Updated");
 				}
 				else
 				{

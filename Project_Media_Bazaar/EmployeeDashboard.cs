@@ -42,8 +42,7 @@ namespace Project_Media_Bazaar
 		public void LoadData()
 		{
 			listBoxEmployees.Items.Clear();
-			List<Employee> users = DataAccessEmployeeDashboard.GetAllUsersFromDB();
-			foreach (Employee employee in users)
+			foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
 			{
 				listBoxEmployees.Items.Add(employee.GetIdAndFirstAndLastName());
 			}
@@ -161,20 +160,7 @@ namespace Project_Media_Bazaar
 
 		private void btnFilter_Click_2(object sender, EventArgs e)
 		{
-			try
-			{
-				int id = int.Parse(tbF.Text);
-				if (DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(id) != null)
-				{
-					Employee newUser = DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(id);
-					listBoxEmployees.Items.Clear();
-					listBoxEmployees.Items.Add(newUser.GetFirstAndLastName());
 
-				}
-				else
-					LoadData();
-			}
-			catch (Exception) { }
 		}
 
 		private void btnSelect_Click_2(object sender, EventArgs e)
@@ -278,6 +264,23 @@ namespace Project_Media_Bazaar
 			loginRegister = new LoginRegister();
 			this.Hide();
 			loginRegister.ShowDialog();
+		}
+
+		private void tbF_TextChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				listBoxEmployees.Items.Clear();
+				string search = tbF.Text;
+				foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
+				{
+					if (employee.GetFirstAndLastName().Contains(search))
+					{
+						listBoxEmployees.Items.Add(employee.GetIdAndFirstAndLastName());
+					}
+				}
+			}
+			catch (Exception) { }
 		}
 	}
 }
