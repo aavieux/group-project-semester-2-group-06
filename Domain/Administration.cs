@@ -55,4 +55,12 @@ public class Administration
         }
         throw new ArgumentException("Wrong login credentials!");
     }
+    public void UpdateEmployeePassword(int id, string newPassword)
+    {
+        sql.UpdateEmployeePassword(id, newPassword);
+    }
+    public Employee GetEmployeeById(int id)
+    {
+        return data.GetEmployeeById(id);
+    }
 }

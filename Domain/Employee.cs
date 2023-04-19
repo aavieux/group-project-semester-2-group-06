@@ -14,14 +14,14 @@ namespace Domain
         private List<Shift>? shifts;
         public Employee() : base() { }
 
-        //public Employee(int id, string email, int workingHours, UserRole role, string firstName, string lastName,
-        //    DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole roleType) 
-        //    : base()
-        //{
-        //    this.workingHours = workingHours;
-        //    this.employeeRole = role;
-        //    this.shifts = shifts;
-        //}
+        public Employee(int id, string email, int workingHours, UserRole role, string firstName, string lastName,
+            DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole employeeRole, Department department)
+            : base(role, firstName, lastName, birthDate, address, phoneNumber, salary, email, nickname, password, employeeRole, department)
+        {
+            this.workingHours = workingHours;
+            this.employeeRole = employeeRole;
+            this.shifts = shifts;
+        }
         public Employee(string email, int workingHours, UserRole role, string firstName, string lastName, 
             DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole employeeRole, Department department) 
             : base(role,firstName, lastName, birthDate, address, phoneNumber, salary, email, nickname, password, employeeRole, department)
@@ -58,6 +58,10 @@ namespace Domain
         public void SetPhone(string phone)
         {
             base.phoneNumber = phoneNumber;
+        }
+        public string GetFullName()
+        {
+            return $"{this.firstName} {this.lastName}";
         }
     }
 }

@@ -8,7 +8,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = new PathString("/");
+        options.LoginPath = new PathString("/login");
         options.AccessDeniedPath = new PathString("/");
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
     });

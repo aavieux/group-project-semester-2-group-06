@@ -1,12 +1,16 @@
 ﻿using System.Data.SqlClient;
 using Domain.Enums;
 using System.Diagnostics;
+using System.Data;
 
 namespace Domain;
 
 public class DataAccessEmployeeDashboard
 {
     private readonly string _connectionString;
+    DataTable datatable;
+    SqlDataAdapter reader;
+
 
     public DataAccessEmployeeDashboard(string connectionString)
     {
@@ -47,7 +51,7 @@ public class DataAccessEmployeeDashboard
                     yesOrNo = true;
                     return yesOrNo;
                 }
-                
+
             }
         }
     }
@@ -88,7 +92,7 @@ public class DataAccessEmployeeDashboard
                         var item = new Employee(reader.GetString(reader.GetOrdinal("email")),
                             reader.GetInt32(reader.GetOrdinal("workingHours")), Enum.Parse<UserRole>(reader.GetString(reader.GetOrdinal("Role"))), reader.GetString(reader.GetOrdinal("firstName")), reader.GetString(reader.GetOrdinal("lastName")),
                             reader.GetDateTime(reader.GetOrdinal("birthDate")), reader.GetString(reader.GetOrdinal("address")), reader.GetString(reader.GetOrdinal("phoneNumber")), (Decimal)reader.GetDecimal(reader.GetOrdinal("salary")),
-                            reader.GetString(reader.GetOrdinal("nickname")), reader.GetString(reader.GetOrdinal("Password")), Enum.Parse<EmployeeRole>(reader.GetString(reader.GetOrdinal("roleType"))), Enum.Parse<Department>(reader.GetString(reader.GetOrdinal("department"))));
+                            reader.GetString(reader.GetOrdinal("nickname")), reader.GetString(reader.GetOrdinal("Password")), Enum.Parse<EmployeeRole>(reader.GetString(reader.GetOrdinal("roleType"))), (Department)(reader.GetInt32(reader.GetOrdinal("department"))));
                         item.id = (int)reader["ID"];
 
                         items.Add(item);
@@ -182,6 +186,7 @@ public class DataAccessEmployeeDashboard
 
 
 
+
     public void DeleteItem(int id)
     {
         using (var connection = new SqlConnection(_connectionString))
@@ -197,7 +202,38 @@ public class DataAccessEmployeeDashboard
             }
         }
     }
-    
+    public Employee GetEmployeeById(int id)
+    {
+        string query = "SELECT * FROM Employee WHERE id = @id";
+        datatable = new DataTable();
+        List<Employee> employees = new List<Employee>();
+        try
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                reader = new SqlDataAdapter();
+                command.Parameters.AddWithValue("@id", id);
+                connection.Open();
+                reader.SelectCommand = command;
+                reader.Fill(datatable);
+                connection.Close();
+                reader.Dispose();
+                Employee employee;
+                DataRow row = datatable.Rows[0];
+                employee = new Employee((int)row[0], (string)row[7], (int)row[11], UserRole.Employee, (string)row[1], (string)row[2], (DateTime)row[3], (string)row[4],
+                   (string)row[5], (decimal)row[6], (string)row[8], (string)row[9], EmployeeRole.JuniorSales, (Department)row[13]);
+                return employee;
+
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
     //public int ExecuteNonQuery(string query)
     //{
     //    using (var connection = new SqlConnection(_connectionString))

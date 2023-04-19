@@ -178,4 +178,26 @@ public class SqlHelperG
             throw;
         }
     }
+    public void UpdateEmployeePassword(int id, string password)
+    {
+        string query = "UPDATE Employee SET password = @password WHERE id = @id";
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@id", id);
+                conn.Open();
+                command.ExecuteNonQuery();
+                conn.Close();
+                command.Dispose();
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 }

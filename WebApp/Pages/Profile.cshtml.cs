@@ -1,3 +1,4 @@
+using Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,9 +9,11 @@ namespace WebApp.Pages;
 [Authorize]
 public class ProfileModel : PageModel
 {
+    public Employee CurrentEmployee { get; set; }
+    Administration administration = new Administration();
+
     public void OnGet()
     {
-        //CurrentUser = peopleMan.GetUserById(Convert.ToInt32(User.FindFirst("id").Value));
-        //ViewData["Username"] = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        CurrentEmployee = administration.GetEmployeeById(Convert.ToInt32(User.FindFirst("id").Value));
     }
 }
