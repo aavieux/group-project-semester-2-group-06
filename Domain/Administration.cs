@@ -13,6 +13,7 @@ public class Administration
 {
     List<Person> people = new List<Person>();
     SqlHelperG sql = new SqlHelperG();
+    DataAccessEmployeeDashboard data = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
     public void RemoveEmployee(Employee employee) { }
     public void EditEmployee(Employee employee) { }
     public Person? CheckLogIn(string nickname, string password)
@@ -42,5 +43,16 @@ public class Administration
     {
         FillPersonList();
         return people;
+    }
+    public Employee LogInEmployee (string nicknameOrEmail, string password)
+    {
+        foreach (Employee user in data.GetAllUsers())
+        {
+            if ((nicknameOrEmail == user.email || nicknameOrEmail == user.nickname) && password == user.password)
+            {
+                return user;
+            }
+        }
+        throw new ArgumentException("Wrong login credentials!");
     }
 }
