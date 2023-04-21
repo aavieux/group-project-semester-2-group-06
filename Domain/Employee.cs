@@ -11,7 +11,7 @@ namespace Domain
     {
         public int workingHours { get; set; }
         public EmployeeRole employeeRole { get; set; }
-        private List<Shift>? shifts;
+        public List<Shift> shifts = new List<Shift>();
         public Employee() : base() { }
 
         public Employee(int id, string email, int workingHours, UserRole role, string firstName, string lastName,
@@ -20,7 +20,6 @@ namespace Domain
         {
             this.workingHours = workingHours;
             this.employeeRole = employeeRole;
-            this.shifts = shifts;
         }
         public Employee(string email, int workingHours, UserRole role, string firstName, string lastName, 
             DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole employeeRole, Department department) 
@@ -28,7 +27,6 @@ namespace Domain
         {
             this.workingHours = workingHours;
             this.employeeRole = employeeRole;
-            this.shifts = shifts;
         }
 
         //public int Id()

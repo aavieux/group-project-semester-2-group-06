@@ -1,21 +1,24 @@
 ﻿* {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    color: #93a1a1;
+    color: darkgreen;
     background-color: aliceblue;
 }
 h1 {
     grid-area: header;
     text-align: center;
     font-size: 35px;
+    color: darkgreen;
 }
-
+h2{
+    color: darkgreen;
+}
 .main-contact-container {
     display: flex;
     justify-content: center;
     height: 100%;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 15%;    
 }
 .contactlabel {
     padding: 12px 12px 12px 0;
@@ -24,8 +27,8 @@ h1 {
 .contactinput {
     border: 0;
     outline: 0;
-    color: rgb(60, 66, 87);
-    background-color: #93a1a1;
+    color: white;
+    background-color: green;
     box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
     border-radius: 4px;
     font-size: 14px;
@@ -47,7 +50,7 @@ h1 {
 .ContactButton {
     appearance: button;
     backface-visibility: hidden;
-    background-color: #2aa19899;
+    background-color: forestgreen;
     border-radius: 6px;
     border-width: 0;
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;

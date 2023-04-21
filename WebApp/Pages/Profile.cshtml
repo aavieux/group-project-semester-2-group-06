@@ -7,4 +7,9 @@
 <br>
 <a asp-page="ChangePassword">Want to change your password? Click here!</a>
 <br>
+<p>Shifts:</p>
+@foreach(var shift in Model.CurrentEmployee.shifts)
+{
+    <p>Date: @shift.date.Date Type: @shift.shiftType</p>
+}
 <a asp-page="Logout">Log out</a>
