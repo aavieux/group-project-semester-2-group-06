@@ -3,7 +3,7 @@
 @{
 }
 <h2>Your information:</h2>
-Name: @Model.CurrentEmployee.GetFullName()
+Name: @Model.CurrentEmployee.GetFirstAndLastName()
 <br>
 Email: @Model.CurrentEmployee.email
 <br>
@@ -13,7 +13,7 @@ Birth date: @Model.CurrentEmployee.birthDate.Date
 <br>
 Address: @Model.CurrentEmployee.address
 <br>
-Department: @Model.CurrentEmployee.Department
+Department: @*@Model.CurrentEmployee.Department*@
 <br>
 Your current position: @Model.CurrentEmployee.employeeRole
 <br>

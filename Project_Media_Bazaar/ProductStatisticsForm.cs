@@ -19,7 +19,7 @@ namespace Project_Media_Bazaar
         {
             this.person = person;
             InitializeComponent();
-            company.GenerateProducts(person.Department);
+            company.GetProducts();
             company.GenerateStockChangeList();
             lTotalSales.Text = company.CalculateTotalSales().ToString();
             lMostSoldProduct.Text = company.MostSoldStockId().ToString();

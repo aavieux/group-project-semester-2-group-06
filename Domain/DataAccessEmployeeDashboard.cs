@@ -74,21 +74,21 @@ public class DataAccessEmployeeDashboard
 						return false;
                 }
 					else
-                {
+                    {
 						return true;
-                }
+                    }
 				}
 				catch (Exception ex)
 				{
 
 					return false;
 
-            }
+                }
 				finally
 				{
 					connection.Close();
-        }
-    }
+                }
+            }
 		}
 	}
 
@@ -148,12 +148,10 @@ public class DataAccessEmployeeDashboard
 					}
 				}
 				catch (Exception)
-                    {
+                {
 					return null;
-                    }
-
-                    return items;
                 }
+                
             }
         }
     }
@@ -198,7 +196,7 @@ public class DataAccessEmployeeDashboard
 		bool yesOrNo = false;
         using (var connection = new SqlConnection(_connectionString))
         {
-			var commandText = "INSERT INTO Employee (firstName,lastName,birthDate,address,phoneNumber, salary, email, nickname,password,roleType,workingHours, role, department) VALUES (@Name,@LastName,@DateOfBirth,@Address,@PhoneNumber,@Salary,@Email,@Nickname, @Password, @Role, @WorkingHours, @Role1, @Department); SELECT SCOPE_IDENTITY()";
+			var commandText = "INSERT INTO Employee (firstName,lastName,birthDate,address,phoneNumber, salary, email, nickname,password,roleType,workingHours, role, department) VALUES (@Name,@LastName,@DateOfBirth,@Address,@PhoneNumber,@Salary,@Email,@Nickname, @Password, @Role, @WorkingHours, @Role1); SELECT SCOPE_IDENTITY()";
             using (var command = new SqlCommand(commandText, connection))
             {
 				command.Parameters.AddWithValue("@Name", employee.firstName);
@@ -213,7 +211,7 @@ public class DataAccessEmployeeDashboard
 				command.Parameters.AddWithValue("@Role", employee.employeeRole);
 				command.Parameters.AddWithValue("@WorkingHours", employee.workingHours);
 				command.Parameters.AddWithValue("@Role1", employee.employeeRole);
-                command.Parameters.AddWithValue("@Department", employee.Department);
+                //command.Parameters.AddWithValue("@Department", employee.Department);
                 try
                 {
                     connection.Open();
@@ -233,49 +231,28 @@ public class DataAccessEmployeeDashboard
     }
 	public bool DeleteEmployeeByIdFromDB(int id)
     {
-        using (var connection = new SqlConnection(_connectionString))
-        {
-            connection.Open();
-
-            var commandText = "DELETE FROM Employee WHERE Id = @Id";
-            using (var command = new SqlCommand(commandText, connection))
-            {
-                command.Parameters.AddWithValue("@Id", id);
-
-                command.ExecuteNonQuery();
-            }
-        }
-    }
-    public Employee GetEmployeeById(int id)
-    {
-        string query = "SELECT * FROM Employee WHERE id = @id";
-        datatable = new DataTable();
-        List<Employee> employees = new List<Employee>();
         try
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                reader = new SqlDataAdapter();
-                command.Parameters.AddWithValue("@id", id);
                 connection.Open();
-                reader.SelectCommand = command;
-                reader.Fill(datatable);
-                connection.Close();
-                reader.Dispose();
-                Employee employee;
-                DataRow row = datatable.Rows[0];
-                employee = new Employee((int)row[0], (string)row[7], (int)row[11], UserRole.Employee, (string)row[1], (string)row[2], (DateTime)row[3], (string)row[4],
-                   (string)row[5], (decimal)row[6], (string)row[8], (string)row[9], EmployeeRole.JuniorSales, (Department)row[13]);
-                return employee;
 
+                var commandText = "DELETE FROM Employee WHERE Id = @Id";
+                using (var command = new SqlCommand(commandText, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
             }
         }
         catch (Exception)
         {
-
-            throw;
+            Console.WriteLine("Error opening a database connection!");
+            return false;
         }
+        
     }
 
     //public int ExecuteNonQuery(string query)

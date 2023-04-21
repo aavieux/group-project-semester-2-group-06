@@ -16,35 +16,35 @@ namespace Domain
         private List<StockChange> stockChanges = new List<StockChange>();
         private List<int> seenProducts = new List<int>();
         private List<Person> people = new List<Person>();
-        SqlHelperG sql = new SqlHelperG();
+        SqlHelperG sqlHelper = new SqlHelperG();
 
-        public void FillProductsList(Department department)
+        public void GenerateProducts()
         {
             Product product;
             products.Clear();
-            var table = sql.ReadProducts();
+            var table = sqlHelper.ReadProductsFromDB();
             foreach (DataRow dr in table.Rows)
             {
-                if(department.ToString() == (string)dr[3])
-                {
-                    products.Add(product = new Product((int)dr[0], (string)dr[1], (int)dr[2], (string)dr[3], (string)dr[4], (int)dr[5]));
-                }
+
+                products.Add(product = new Product((int)dr[0], (string)dr[1], (int)dr[2], (string)dr[3], (string)dr[4], (int)dr[5]));
+
             }
         }
         public List<Product> GetProducts()
         {
+            GenerateProducts();
             return products;
         }
         public void DeleteProduct(Product product)
         {
-            sql.DeleteProduct(product.Id);
+            sqlHelper.DeleteProductFromDB(product.Id);
 
         }
-        public List<StockChange> FillStockChangesList()
+        public List<StockChange> GenerateStockChangeList()
         {
             StockChange stockChange;
             stockChanges.Clear();
-            DataTable table = sql.ReadStockChanges();
+            DataTable table = sqlHelper.ReadStockChangesFromDB();
             foreach (DataRow dr in table.Rows)
             {
                 stockChanges.Add(stockChange = new StockChange((int)dr[0], (int)dr[1], (DateTime)dr[2], (int)dr[3], (int)dr[4]));

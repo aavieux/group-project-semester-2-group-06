@@ -15,7 +15,7 @@ public partial class ManagementForm : Form
     }
     public void RefreshListbox()
     {
-        company.GenerateProducts(person.Department);
+        company.GetProducts();
         lvProducts.Items.Clear();
         foreach (Product product in company.GetProducts())
         {
