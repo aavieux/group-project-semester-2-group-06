@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace Project_Media_Bazaar
 {
-	public partial class UpdateEmployee : Form
-	{
-		DataAccessEmployeeDashboard dataAccessEmployeeDashboard;
+    public partial class UpdateEmployee : Form
+    {
+        DataAccessEmployeeDashboard dataAccessEmployeeDashboard;
 		private Employee chosenEmployee;
 		private int chosenEmployeeId;
 		public UpdateEmployee(int chosenEmployeeid)
-		{ 
-			this.dataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
+        {
+            this.dataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
 			this.chosenEmployeeId = chosenEmployeeid;
-			InitializeComponent();
+            InitializeComponent();
 			LoadData();
 
-		}
+        }
 		private void LoadData()
 		{
 			this.chosenEmployee = dataAccessEmployeeDashboard.GetEmployeeByIdFromDB(chosenEmployeeId);
@@ -47,18 +47,18 @@ namespace Project_Media_Bazaar
 
 		}
 		private void btnSave_Click(object sender, EventArgs e)
-		{
+        {
 			try
 			{
 				Employee saveEmployee = new Employee(chosenEmployee.id, tbFirstName.Text, tbLastName.Text, tbPhone.Text, birthDate_dtp.Value, tbAddress.Text, decimal.Parse(tbSalary.Text), tbEmail.Text, int.Parse(tbWorkingHours.Text));
-
+            
 				if (dataAccessEmployeeDashboard.UpdateEmployeeToDB(saveEmployee))
 				{
 				}
 				else
 				{
 					MessageBox.Show("Something went wrong!");
-				}
+        }
 
 			}
 			catch (Exception)
@@ -75,7 +75,7 @@ namespace Project_Media_Bazaar
 		}
 
 		private void update_btn_Click(object sender, EventArgs e)
-		{
+        {
 			update_btn.Visible = false;
 			delete_btn.Visible = false;
 
@@ -101,14 +101,14 @@ namespace Project_Media_Bazaar
 				else
 				{
 					MessageBox.Show("Error deleting employee!");
-				}
+        }
 			}
 			catch (Exception)
 			{
 
 			}
 			finally
-			{
+        {
 				LoadData();
 			}
 
@@ -117,6 +117,6 @@ namespace Project_Media_Bazaar
 		private void UpdateEmployee_Load(object sender, EventArgs e)
 		{
 
-		}
-	}
+        }
+    }
 }

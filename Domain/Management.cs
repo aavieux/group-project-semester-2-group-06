@@ -14,7 +14,7 @@ namespace Domain
         SqlHelperG sqlHelper = new SqlHelperG();
 
         //Manage Products
-        public void AddProduct(string name, Category category, string description, int threshold)
+        public void AddProduct(string name, Department category, string description, int threshold)
         {
             sqlHelper.AddProductToDB(name, category.ToString(), description, threshold);
         }

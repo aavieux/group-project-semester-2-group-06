@@ -20,9 +20,10 @@ namespace Domain
         public string password { get;  set; }
         public string email { get; set; }
         public UserRole userRole { get;  set; }
-        public EmployeeRole employeeRole { get; private set; }  
+        public EmployeeRole employeeRole { get; private set; }
+        public Department Department { get; set; }
         public Person() { }
-        public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, UserRole roleType)
+        public Person(int id, string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, UserRole roleType, Department department)
         {
             this.id = id;
             this.firstName = firstName;
@@ -36,6 +37,7 @@ namespace Domain
             this.userRole = roleType;
             this.employeeRole = employeeRole;
             this.password = password;
+            this.Department = department;
         }
         public Person(UserRole roleType,string firstName, string lastName, DateTime birthDate, string address, string phoneNumber, decimal salary, string email, string nickname, string password, EmployeeRole employeeRole)
         {
@@ -52,17 +54,26 @@ namespace Domain
         }
         public Person (int id, string firstName, string lastName, string phoneNumber, DateTime birthDate, string adress, decimal salary, string email)
         {
-            //for update
-            this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.birthDate = birthDate;
+            this.address = address;
             this.phoneNumber = phoneNumber;
-            this.address = adress;
             this.salary = salary;
             this.email = email;
-            
+            this.nickname = nickname;
+            this.userRole = roleType;
+            this.password = password;
+            this.Department = department;
         }
+        //public string GetName()
+        //{
+        //    return this.firstName;
+        //}
+        //public string GetAddress()
+        //{
+        //    return this.address;
+        //}
         public void ChangeName(string name) { this.firstName = name; }
         //public double GetSalary() { return this.salary; }
         public void SetSalary(decimal salary) { this.salary = salary; }

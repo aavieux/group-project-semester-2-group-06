@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
@@ -16,7 +17,7 @@ public class SqlHelperG
 
     public void AddProductToDB(string name, string category, string description, int threshold)
     {
-        query = "INSERT INTO dbo.Product (name, amount, category, description, threshold) VALUES (@name, @amount, @category, @description, @threshold)";
+        query = "INSERT INTO dbo.Product (name, amount, category, description) VALUES (@name, @amount, @category, @description)";
         try
         {
             using (SqlConnection conn = new SqlConnection(connection))
@@ -112,6 +113,7 @@ public class SqlHelperG
         {
             using (SqlConnection conn = new SqlConnection(connection))
             {
+                reader = new SqlDataAdapter();
                 cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@productId", productId);
                 cmd.Parameters.AddWithValue("@date", dateTime);
@@ -169,6 +171,28 @@ public class SqlHelperG
                 conn.Close();
                 reader.Dispose();
                 return datatable1;
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+    public void UpdateEmployeePassword(int id, string password)
+    {
+        string query = "UPDATE Employee SET password = @password WHERE id = @id";
+        try
+        {
+            using (SqlConnection conn = new SqlConnection(connection))
+            {
+                SqlCommand command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@id", id);
+                conn.Open();
+                command.ExecuteNonQuery();
+                conn.Close();
+                command.Dispose();
             }
         }
         catch (Exception)

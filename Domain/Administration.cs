@@ -21,7 +21,6 @@ public class Administration
     public Person? CheckLogIn(string nickname, string password)
     {
         GeneratePeopleFromDB();
-
         foreach (Person person in people)
         {
             if (person.nickname== nickname && person.password == password)
@@ -38,7 +37,7 @@ public class Administration
         foreach (DataRow row in dt.Rows)
         {
             Person person;
-            person = new Person((int)row[0], (string)row[1], (string)row[2], (DateTime)row[3], (string)row[4], (string)row[5], (decimal)row[6], (string)row[7], (string)row[8], (string)row[9], Enum.Parse<UserRole>((string)row[10]));
+            person = new Person((int)row[0], (string)row[1], (string)row[2], (DateTime)row[3], (string)row[4], (string)row[5], (decimal)row[6], (string)row[7], (string)row[8], (string)row[9], Enum.Parse<UserRole>((string)row[10]), Enum.Parse<Department>((string)row[11]));
             people.Add(person);
         }
     }
@@ -46,5 +45,24 @@ public class Administration
     {
         GeneratePeopleFromDB();
         return people;
+    }
+    public Employee LogInEmployee (string nicknameOrEmail, string password)
+    {
+        foreach (Employee user in data.GetAllUsers())
+        {
+            if ((nicknameOrEmail == user.email || nicknameOrEmail == user.nickname) && password == user.password)
+            {
+                return user;
+            }
+        }
+        throw new ArgumentException("Wrong login credentials!");
+    }
+    public void UpdateEmployeePassword(int id, string newPassword)
+    {
+        sql.UpdateEmployeePassword(id, newPassword);
+    }
+    public Employee GetEmployeeById(int id)
+    {
+        return data.GetEmployeeById(id);
     }
 }

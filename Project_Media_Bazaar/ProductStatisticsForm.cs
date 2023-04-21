@@ -14,10 +14,12 @@ namespace Project_Media_Bazaar
     public partial class ProductStatisticsForm : Form
     {
         Company company = new Company();
-        public ProductStatisticsForm()
+        Person person;
+        public ProductStatisticsForm(Person person)
         {
+            this.person = person;
             InitializeComponent();
-            company.GenerateProducts();
+            company.GenerateProducts(person.Department);
             company.GenerateStockChangeList();
             lTotalSales.Text = company.CalculateTotalSales().ToString();
             lMostSoldProduct.Text = company.MostSoldStockId().ToString();

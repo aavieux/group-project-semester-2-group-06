@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Enums
 {
-    public enum Category
+    public enum Department
     {
         TV,
         HiFi,

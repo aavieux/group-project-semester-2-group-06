@@ -6,14 +6,16 @@ public partial class ManagementForm : Form
 
     Management manager = new Management();
     Company company = new Company();
+    Person person;
     public ManagementForm(Person person)
     {
         InitializeComponent();
+        this.person = person;
         RefreshListbox();
     }
     public void RefreshListbox()
     {
-        company.GenerateProducts();
+        company.GenerateProducts(person.Department);
         lvProducts.Items.Clear();
         foreach (Product product in company.GetProducts())
         {
@@ -124,7 +126,7 @@ public partial class ManagementForm : Form
 
     private void bProductStatistics_Click(object sender, EventArgs e)
     {
-        ProductStatisticsForm form = new ProductStatisticsForm();
+        ProductStatisticsForm form = new ProductStatisticsForm(this.person);
         form.ShowDialog();
     }
 }

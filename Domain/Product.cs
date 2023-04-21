@@ -12,7 +12,7 @@ namespace Domain
         public int Id { get; private set; }
         public string Name { get; private set; }
         public int Amount { get; private set; }
-        public Category Category { get; private set; }
+        public Department Category { get; private set; }
         public string Description { get; private set; }
         public int Threshold { get; private set; }
 
@@ -20,11 +20,10 @@ namespace Domain
             Id = id;
             Name = name;
             Amount = amount;
-            Category = Enum.Parse<Category>(category);
+            Category = Enum.Parse<Department>(category);
             Description = description;
             Threshold = threshold;
         }
-
         public void changeAmount(int amount)
         {
             if (amount < 0)

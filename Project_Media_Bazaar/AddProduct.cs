@@ -25,7 +25,7 @@ namespace Project_Media_Bazaar
 
         private void bAddProduct_Click_1(object sender, EventArgs e)
         {
-            manager.AddProduct(tbName.Text, (Category)cbProductCategory.SelectedIndex, tbDescription.Text, Convert.ToInt32(tbThreshold.Text));
+            manager.AddProduct(tbName.Text, (Department)cbProductCategory.SelectedIndex, tbDescription.Text, Convert.ToInt32(tbThreshold.Text));
             mForm.RefreshListbox();
             this.Close();
         }
