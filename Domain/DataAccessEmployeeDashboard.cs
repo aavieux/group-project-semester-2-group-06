@@ -180,7 +180,9 @@ public class DataAccessEmployeeDashboard
 							address = reader.GetString(reader.GetOrdinal("address")),
 							salary = reader.GetDecimal(reader.GetOrdinal("salary")),
                             email = reader.GetString(reader.GetOrdinal("email")),
-							workingHours = reader.GetInt32(reader.GetOrdinal("workingHours"))
+							workingHours = reader.GetInt32(reader.GetOrdinal("workingHours")),
+                            password = reader.GetString(reader.GetOrdinal("password")),
+                            nickname = reader.GetString(reader.GetOrdinal("nickname"))
                         };
 
                         return item;

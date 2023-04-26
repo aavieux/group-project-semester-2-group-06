@@ -61,6 +61,30 @@ namespace Domain
             }
             return totalSales;
         }
+        public int TotalSalesToday()
+        {
+            int sales = 0;
+            foreach(StockChange stockChange in stockChanges)
+            {
+                if(stockChange.GetDate().Day == DateTime.Today.Day)
+                {
+                    sales += stockChange.GetChangeAmount();
+                }
+            }
+            return sales;
+        }
+        public int TotalSalesSpecificPeriod(DateTime Start, DateTime End)
+        {
+            int sales = 0;
+            foreach(StockChange stockChange in stockChanges)
+            {
+                if(stockChange.GetDate().Day > Start.Day && stockChange.GetDate().Day < End.Day)
+                {
+                    sales += stockChange.GetChangeAmount();
+                }
+            }
+            return sales;
+        }
         private List<StockChange> GetSoldStocks()
         {
             List<StockChange> soldProducts = new List<StockChange>();

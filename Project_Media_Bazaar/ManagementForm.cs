@@ -23,14 +23,14 @@ public partial class ManagementForm : Form
             {
                 string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
                 lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
-                lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Green;
+                lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.GreenYellow;
 
             }
             else
             {
                 string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
                 lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
-                lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
+                lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Firebrick;
                 //lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
                 //lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
             }

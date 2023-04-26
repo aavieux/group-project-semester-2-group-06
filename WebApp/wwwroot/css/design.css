@@ -9,6 +9,36 @@ h1 {
     text-align: center;
     font-size: 35px;
 }
+.topnav {
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+    .topnav a {
+        align-items: center;
+        margin-top: 1%;
+        display: inline-flex;
+        color: white;
+        vertical-align: central;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        background-color: #2aa19899;
+        height: 60px;
+        font-size: 30px;
+    }
+
+        .topnav a:hover {
+            background-color: #073642;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
 
 .main-contact-container {
     display: flex;
@@ -16,6 +46,7 @@ h1 {
     height: 100%;
     width: 100%;
     margin-top: 15%;
+    
 }
 .contactlabel {
     padding: 12px 12px 12px 0;
@@ -81,5 +112,18 @@ h1 {
     }
 
     .ContactButton:hover {
+        background-color: #1e817e;
+    }
+.LogoutButton {
+    background-color: #2aa19899;
+    color: white;
+    font-size: 100%;
+    margin: 12px 0 0;
+    padding: 5px;
+    text-align: center;
+    width: 15%;
+}
+
+    .LogoutButton:hover {
         background-color: #1e817e;
     }
