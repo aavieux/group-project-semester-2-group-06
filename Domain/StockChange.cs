@@ -37,4 +37,8 @@ public class StockChange
     {
         return productId;
     }
+    public DateTime GetDate()
+    {
+        return date;
+    }
 }

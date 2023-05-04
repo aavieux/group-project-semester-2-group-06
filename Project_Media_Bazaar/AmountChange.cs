@@ -32,7 +32,7 @@ namespace Project_Media_Bazaar
                 operation = "increase";
                 ChangeStock(product, Convert.ToInt32(changingAmount.Value), operation);
             }
-            else if(rbDecrease.Checked)
+            else if (rbDecrease.Checked)
             {
                 operation = "decrease";
                 ChangeStock(product, Convert.ToInt32(changingAmount.Value), operation);
@@ -64,6 +64,11 @@ namespace Project_Media_Bazaar
                 MessageBox.Show("Wrong amount!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 mForm.RefreshListbox();
             }
+        }
+
+        private void AmountChange_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

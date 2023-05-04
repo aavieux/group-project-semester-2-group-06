@@ -75,6 +75,7 @@
             changingAmount.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             changingAmount.Location = new Point(255, 115);
             changingAmount.Margin = new Padding(3, 2, 3, 2);
+            changingAmount.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             changingAmount.Name = "changingAmount";
             changingAmount.Size = new Size(245, 34);
             changingAmount.TabIndex = 3;
@@ -139,7 +140,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(690, 338);
             Controls.Add(gRadioButtons);
             Controls.Add(label3);
             Controls.Add(changeStock);
@@ -150,6 +151,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "AmountChange";
             Text = "AmountChange";
+            Load += AmountChange_Load;
             ((System.ComponentModel.ISupportInitialize)changingAmount).EndInit();
             gRadioButtons.ResumeLayout(false);
             gRadioButtons.PerformLayout();

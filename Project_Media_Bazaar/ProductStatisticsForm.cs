@@ -23,6 +23,7 @@ namespace Project_Media_Bazaar
             company.GenerateStockChangeList();
             lTotalSales.Text = company.CalculateTotalSales().ToString();
             lMostSoldProduct.Text = company.MostSoldStockId().ToString();
+            lSalesToday.Text = company.TotalSalesToday().ToString();
         }
 
         private void ProductStatisticsForm_Load(object sender, EventArgs e)
@@ -33,6 +34,16 @@ namespace Project_Media_Bazaar
         private void lMostSoldProduct_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bCheckSales_Click(object sender, EventArgs e)
+        {
+            lSalesSpecific.Text = "Result: " + company.TotalSalesSpecificPeriod(dtpStartDate.Value, dtpEndDate.Value).ToString();
         }
     }
 }
