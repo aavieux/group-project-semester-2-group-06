@@ -74,21 +74,21 @@ public class DataAccessEmployeeDashboard
 						return false;
                 }
 					else
-                    {
+                {
 						return true;
-                    }
+                }
 				}
 				catch (Exception ex)
 				{
-
+                
 					return false;
 
-                }
+            }
 				finally
 				{
 					connection.Close();
-                }
-            }
+        }
+    }
 		}
 	}
 
@@ -148,10 +148,12 @@ public class DataAccessEmployeeDashboard
 					}
 				}
 				catch (Exception)
-                {
+                    {
 					return null;
+                    }
+
+                    return items;
                 }
-                
             }
         }
     }
@@ -234,21 +236,21 @@ public class DataAccessEmployeeDashboard
 	public bool DeleteEmployeeByIdFromDB(int id)
     {
         try
+    {
+        using (var connection = new SqlConnection(_connectionString))
         {
-            using (var connection = new SqlConnection(_connectionString))
+            connection.Open();
+
+            var commandText = "DELETE FROM Employee WHERE Id = @Id";
+            using (var command = new SqlCommand(commandText, connection))
             {
-                connection.Open();
+                command.Parameters.AddWithValue("@Id", id);
 
-                var commandText = "DELETE FROM Employee WHERE Id = @Id";
-                using (var command = new SqlCommand(commandText, connection))
-                {
-                    command.Parameters.AddWithValue("@Id", id);
-
-                    command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                     return true;
                 }
             }
-        }
+            }
         catch (Exception)
         {
             Console.WriteLine("Error opening a database connection!");
@@ -256,7 +258,7 @@ public class DataAccessEmployeeDashboard
         }
         
     }
-
+    
     //public int ExecuteNonQuery(string query)
     //{
     //    using (var connection = new SqlConnection(_connectionString))

@@ -32,6 +32,9 @@
             tabDashboard = new TabPage();
             search_lbl = new Label();
             bLogout = new Button();
+            tbIdDelete = new TextBox();
+            btnDelete = new Button();
+            btnFilter = new Button();
             tbF = new TextBox();
             listBoxEmployees = new ListBox();
             tabCreateEmployee = new TabPage();
@@ -63,9 +66,14 @@
             tabShift = new TabPage();
             label14 = new Label();
             label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
             btnShift = new Button();
             dtDateShift = new DateTimePicker();
             cbShifts = new ComboBox();
+            tbphoneShift = new TextBox();
+            tbNameEmShift = new TextBox();
+            btnSelectEmployeeToShift = new Button();
             cbEmployeesShifts = new ComboBox();
             employee_lbl = new Label();
             tabControl1.SuspendLayout();
@@ -74,6 +82,7 @@
             gbCredentials.SuspendLayout();
             gpPersonalData.SuspendLayout();
             tabShift.SuspendLayout();
+            tabUpdateEmployee.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -94,6 +103,9 @@
             // 
             tabDashboard.Controls.Add(search_lbl);
             tabDashboard.Controls.Add(bLogout);
+            tabDashboard.Controls.Add(tbIdDelete);
+            tabDashboard.Controls.Add(btnDelete);
+            tabDashboard.Controls.Add(btnFilter);
             tabDashboard.Controls.Add(tbF);
             tabDashboard.Controls.Add(listBoxEmployees);
             tabDashboard.Location = new Point(27, 4);
@@ -126,6 +138,38 @@
             bLogout.Text = "Log out";
             bLogout.UseVisualStyleBackColor = true;
             bLogout.Click += button1_Click;
+            // 
+            // tbIdDelete
+            // 
+            tbIdDelete.Location = new Point(11, 44);
+            tbIdDelete.Margin = new Padding(4, 4, 4, 4);
+            tbIdDelete.Name = "tbIdDelete";
+            tbIdDelete.Size = new Size(330, 31);
+            tbIdDelete.TabIndex = 5;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.IndianRed;
+            btnDelete.Location = new Point(351, 44);
+            btnDelete.Margin = new Padding(4, 4, 4, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(111, 36);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click_2;
+            // 
+            // btnFilter
+            // 
+            btnFilter.BackColor = Color.Coral;
+            btnFilter.Location = new Point(351, 95);
+            btnFilter.Margin = new Padding(4, 4, 4, 4);
+            btnFilter.Name = "btnFilter";
+            btnFilter.Size = new Size(111, 36);
+            btnFilter.TabIndex = 2;
+            btnFilter.Text = "Filter";
+            btnFilter.UseVisualStyleBackColor = false;
+            btnFilter.Click += btnFilter_Click_2;
             // 
             // tbF
             // 
@@ -412,9 +456,14 @@
             tabShift.Controls.Add(employee_lbl);
             tabShift.Controls.Add(label14);
             tabShift.Controls.Add(label13);
+            tabShift.Controls.Add(label12);
+            tabShift.Controls.Add(label11);
             tabShift.Controls.Add(btnShift);
             tabShift.Controls.Add(dtDateShift);
             tabShift.Controls.Add(cbShifts);
+            tabShift.Controls.Add(tbphoneShift);
+            tabShift.Controls.Add(tbNameEmShift);
+            tabShift.Controls.Add(btnSelectEmployeeToShift);
             tabShift.Controls.Add(cbEmployeesShifts);
             tabShift.Location = new Point(27, 4);
             tabShift.Margin = new Padding(3, 2, 3, 2);
@@ -443,6 +492,26 @@
             label13.Size = new Size(56, 28);
             label13.TabIndex = 9;
             label13.Text = "Shift:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(148, 199);
+            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(133, 25);
+            label12.TabIndex = 8;
+            label12.Text = "Phone number:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(148, 129);
+            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(63, 25);
+            label11.TabIndex = 7;
+            label11.Text = "Name:";
             // 
             // btnShift
             // 
@@ -474,6 +543,33 @@
             cbShifts.Name = "cbShifts";
             cbShifts.Size = new Size(191, 36);
             cbShifts.TabIndex = 4;
+            // 
+            // tbphoneShift
+            // 
+            tbphoneShift.Location = new Point(365, 199);
+            tbphoneShift.Margin = new Padding(4, 4, 4, 4);
+            tbphoneShift.Name = "tbphoneShift";
+            tbphoneShift.Size = new Size(155, 31);
+            tbphoneShift.TabIndex = 3;
+            // 
+            // tbNameEmShift
+            // 
+            tbNameEmShift.Location = new Point(365, 129);
+            tbNameEmShift.Margin = new Padding(4, 4, 4, 4);
+            tbNameEmShift.Name = "tbNameEmShift";
+            tbNameEmShift.Size = new Size(155, 31);
+            tbNameEmShift.TabIndex = 2;
+            // 
+            // btnSelectEmployeeToShift
+            // 
+            btnSelectEmployeeToShift.Location = new Point(365, 48);
+            btnSelectEmployeeToShift.Margin = new Padding(4, 4, 4, 4);
+            btnSelectEmployeeToShift.Name = "btnSelectEmployeeToShift";
+            btnSelectEmployeeToShift.Size = new Size(118, 36);
+            btnSelectEmployeeToShift.TabIndex = 1;
+            btnSelectEmployeeToShift.Text = "Select";
+            btnSelectEmployeeToShift.UseVisualStyleBackColor = true;
+            btnSelectEmployeeToShift.Click += btnSelectEmployeeToShift_Click;
             // 
             // cbEmployeesShifts
             // 
@@ -515,6 +611,8 @@
             gpPersonalData.PerformLayout();
             tabShift.ResumeLayout(false);
             tabShift.PerformLayout();
+            tabUpdateEmployee.ResumeLayout(false);
+            tabUpdateEmployee.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -522,6 +620,7 @@
 
         private TabControl tabControl1;
         private TabPage tabDashboard;
+        private Button btnFilter;
         private TextBox tbF;
         private ListBox listBoxEmployees;
         private TabPage tabCreateEmployee;
@@ -546,17 +645,32 @@
         private TextBox tbWorkingHours;
         private ComboBox cbRole;
         private TextBox tbemail;
+        private Button btnDelete;
+        private TextBox tbIdDelete;
+        private TabPage tabUpdateEmployee;
+        private TextBox tbfistName;
+        private Button btnSelect;
+        private ComboBox cbSelect;
+        private TextBox tbphone;
+        private Button btnSave;
+        private Label lbphone;
+        private Label lbName;
         private Label label10;
         private Label label9;
         private GroupBox gbCredentials;
         private Label label8;
         private GroupBox gpPersonalData;
         private Button bLogout;
+        private Button btnSelectEmployeeToShift;
         private ComboBox cbEmployeesShifts;
+        private TextBox tbphoneShift;
+        private TextBox tbNameEmShift;
         private ComboBox cbShifts;
         private DateTimePicker dtDateShift;
         private Label label14;
         private Label label13;
+        private Label label12;
+        private Label label11;
         private Button btnShift;
         private Label search_lbl;
         private Label employee_lbl;

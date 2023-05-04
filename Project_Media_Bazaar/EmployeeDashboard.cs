@@ -51,11 +51,12 @@ namespace Project_Media_Bazaar
             {
                 listBoxEmployees.Items.Add(employee.GetIdAndFirstAndLastName());
             }
+        }
 
 
             cbEmployeesShifts.Items.Clear();
             foreach (Employee employee1 in DataAccessEmployeeDashboard.GetAllUsersFromDB())
-            {
+        {
                 cbEmployeesShifts.Items.Add(employee1.GetFirstAndLastName());
             }
 
@@ -63,10 +64,17 @@ namespace Project_Media_Bazaar
             foreach (ShiftType shiftType in Enum.GetValues(typeof(ShiftType)))
             {
                 cbShifts.Items.Add(shiftType.ToString());
-            }
+        }
         }
 
 
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            tbfirstName.Clear();
+            tbphone.Clear();
+            string[] parts = cbSelect.SelectedItem.ToString().Split(new string[] { " || " }, StringSplitOptions.None);
+            string secondPart = parts[1];
+            secondPart.Replace("Id: ", "");
 
         //private void btnSelect_Click(object sender, EventArgs e)
         //{
@@ -246,15 +254,16 @@ namespace Project_Media_Bazaar
         private void btnShift_Click(object sender, EventArgs e)
         {
             try
-            {
+        {
                 int currentId = 0;
                 foreach (Employee employee in DataAccessEmployeeDashboard.GetEmployeesFromDB())
-                {
+            {
                     if (employee.GetFirstAndLastName() == cbEmployeesShifts.SelectedItem.ToString())
-                    {
+                {
                         currentId = employee.id;
-                    }
-                }
+            }
+
+        }
                 if (currentId != 0)
                 {
                     Shift shift = new Shift(Enum.Parse<ShiftType>(cbShifts.SelectedItem.ToString()), dtDateShift.Value, currentId);
@@ -267,13 +276,25 @@ namespace Project_Media_Bazaar
                 else
                 {
                     MessageBox.Show("Could not find this user!");
-                }
-
             }
+
+
+            Employee employee = DataAccessEmployeeDashboard.GetItem(secondId);
+
+            tbNameEmShift.Text = $"{employee.firstName} {employee.lastName}";
+            tbphoneShift.Text = employee.phoneNumber;
+        }
             catch (Exception)
-            {
+                {
                 MessageBox.Show("Error assigning shift!");
             }
+
+            string selectedValueString = cbEmployeesShifts.ToString();
+            ShiftType shiftType = ShiftType.DayShift;
+            DateTime dateOfShift = dtDateShift.Value;
+            Shift shift = new Shift(shiftType, dateOfShift, secondId);
+            DataAccessEmployeeDashboard.AssignEmployeeToShift(shift);
+            MessageBox.Show("Done!");
 
         }
 

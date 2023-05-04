@@ -15,8 +15,16 @@ namespace Domain
 
         public Employee() : base() { }
 
-        public Employee(string email, int workingHours, UserRole role, string firstName, string lastName,
-            DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole employeeRole)
+        //public Employee(int id, string email, int workingHours, UserRole role, string firstName, string lastName, 
+        //    DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole roleType) 
+        //    : base()
+        //{
+        //    this.workingHours = workingHours;
+        //    this.employeeRole = role;
+        //    this.shifts = shifts;
+        //}
+        public Employee(string email, int workingHours, UserRole role, string firstName, string lastName, 
+            DateTime birthDate, string address, string phoneNumber, decimal salary, string nickname, string password, EmployeeRole employeeRole) 
             : base(role, firstName, lastName, birthDate, address, phoneNumber, salary, email, nickname, password, employeeRole)
         {
             this.workingHours = workingHours;

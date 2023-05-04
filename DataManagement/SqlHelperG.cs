@@ -17,7 +17,7 @@ public class SqlHelperG
 
     public void AddProductToDB(string name, string category, string description, int threshold)
     {
-        query = "INSERT INTO dbo.Product (name, amount, category, description) VALUES (@name, @amount, @category, @description)";
+        query = "INSERT INTO dbo.Product (name, amount, category, description, threshold) VALUES (@name, @amount, @category, @description, @threshold)";
         try
         {
             using (SqlConnection conn = new SqlConnection(connection))
@@ -140,12 +140,13 @@ public class SqlHelperG
                 datatable1 = new DataTable();
                 reader = new SqlDataAdapter();
                 cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@productId", productId);
+                cmd.Parameters.AddWithValue("@date", dateTime);
+                cmd.Parameters.AddWithValue("@change", change);
+                cmd.Parameters.AddWithValue("@isRestock", isRestock);
                 conn.Open();
-                reader.SelectCommand = cmd;
-                reader.Fill(datatable1);
+                cmd.ExecuteNonQuery();
                 conn.Close();
-                reader.Dispose();
-                return datatable1;
             }
         }
         catch (Exception)
@@ -193,6 +194,16 @@ public class SqlHelperG
                 command.ExecuteNonQuery();
                 conn.Close();
                 command.Dispose();
+            }
+                datatable1 = new DataTable();
+                reader = new SqlDataAdapter();
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                reader.SelectCommand = cmd;
+                reader.Fill(datatable1);
+                conn.Close();
+                reader.Dispose();
+                return datatable1;
             }
         }
         catch (Exception)

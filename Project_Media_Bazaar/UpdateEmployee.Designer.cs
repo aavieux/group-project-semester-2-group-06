@@ -49,6 +49,16 @@
             tbPhone = new TextBox();
             SuspendLayout();
             // 
+            // lbphone
+            // 
+            this.lbphone.AutoSize = true;
+            this.lbphone.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbphone.Location = new System.Drawing.Point(76, 106);
+            this.lbphone.Name = "lbphone";
+            this.lbphone.Size = new System.Drawing.Size(197, 35);
+            this.lbphone.TabIndex = 11;
+            this.lbphone.Text = "Phone number:";
+            // 
             // lbName
             // 
             lbName.AutoSize = true;
@@ -58,6 +68,14 @@
             lbName.Size = new Size(113, 28);
             lbName.TabIndex = 10;
             lbName.Text = "Last name:";
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tbPhone.Location = new System.Drawing.Point(279, 106);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(223, 41);
+            this.tbPhone.TabIndex = 9;
             // 
             // tbLastName
             // 
@@ -269,7 +287,10 @@
         }
 
         #endregion
+
+        private Label lbphone;
         private Label lbName;
+        private TextBox tbPhone;
         private TextBox tbLastName;
         private Button btnSave;
         private TextBox tbFirstName;
@@ -280,6 +301,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private TextBox tbPassword;
+        private TextBox tbNickname;
+        private Label label5;
+        private Label label6;
         private TextBox tbWorkingHours;
         private Label label7;
         private Button delete_btn;
