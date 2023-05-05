@@ -11,6 +11,7 @@ public partial class ManagementForm : Form
     {
         InitializeComponent();
         this.person = person;
+        this.Text = $"Logged as: {person.firstName} {person.lastName} | Have a great day!";
         RefreshListbox();
     }
     public void RefreshListbox()
