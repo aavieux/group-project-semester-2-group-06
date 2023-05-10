@@ -28,142 +28,135 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.tbDescription = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbProductCategory = new System.Windows.Forms.ComboBox();
-            this.bAddProduct = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            tbName = new TextBox();
+            tbDescription = new TextBox();
+            label1 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            cbProductCategory = new ComboBox();
+            bAddProduct = new Button();
+            label2 = new Label();
+            numThreshold = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)numThreshold).BeginInit();
+            SuspendLayout();
             // 
             // tbName
             // 
-            this.tbName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbName.Location = new System.Drawing.Point(195, 85);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(165, 41);
-            this.tbName.TabIndex = 0;
+            tbName.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tbName.Location = new Point(343, 38);
+            tbName.Margin = new Padding(2, 4, 2, 4);
+            tbName.Name = "tbName";
+            tbName.Size = new Size(205, 47);
+            tbName.TabIndex = 0;
             // 
             // tbDescription
             // 
-            this.tbDescription.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbDescription.Location = new System.Drawing.Point(195, 236);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(165, 41);
-            this.tbDescription.TabIndex = 2;
+            tbDescription.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            tbDescription.Location = new Point(343, 147);
+            tbDescription.Margin = new Padding(2, 4, 2, 4);
+            tbDescription.Name = "tbDescription";
+            tbDescription.Size = new Size(205, 47);
+            tbDescription.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(43, 85);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 35);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Name:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(235, 38);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 41);
+            label1.TabIndex = 5;
+            label1.Text = "Name:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(43, 163);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 35);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Category:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(193, 96);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(146, 41);
+            label3.TabIndex = 7;
+            label3.Text = "Category:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(43, 240);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 35);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Description:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(163, 147);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(176, 41);
+            label4.TabIndex = 8;
+            label4.Text = "Description:";
             // 
             // cbProductCategory
             // 
-            this.cbProductCategory.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbProductCategory.FormattingEnabled = true;
-            this.cbProductCategory.Items.AddRange(new object[] {
-            "TV",
-            "HiFi",
-            "Computers",
-            "Mobile",
-            "Personal Care",
-            "Home Care",
-            "Kitchen Appliances",
-            "Automotive"});
-            this.cbProductCategory.Location = new System.Drawing.Point(195, 163);
-            this.cbProductCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cbProductCategory.Name = "cbProductCategory";
-            this.cbProductCategory.Size = new System.Drawing.Size(165, 43);
-            this.cbProductCategory.TabIndex = 9;
+            cbProductCategory.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            cbProductCategory.FormattingEnabled = true;
+            cbProductCategory.Items.AddRange(new object[] { "TV", "HiFi", "Computers", "Mobile", "Personal Care", "Home Care", "Kitchen Appliances", "Automotive" });
+            cbProductCategory.Location = new Point(343, 93);
+            cbProductCategory.Margin = new Padding(2, 4, 2, 4);
+            cbProductCategory.Name = "cbProductCategory";
+            cbProductCategory.Size = new Size(205, 49);
+            cbProductCategory.TabIndex = 9;
             // 
             // bAddProduct
             // 
-            this.bAddProduct.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bAddProduct.Location = new System.Drawing.Point(417, 84);
-            this.bAddProduct.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.bAddProduct.Name = "bAddProduct";
-            this.bAddProduct.Size = new System.Drawing.Size(165, 196);
-            this.bAddProduct.TabIndex = 10;
-            this.bAddProduct.Text = "Add product";
-            this.bAddProduct.UseVisualStyleBackColor = true;
-            this.bAddProduct.Click += new System.EventHandler(this.bAddProduct_Click);
-            // 
-            // tbThreshold
-            // 
+            bAddProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            bAddProduct.Location = new Point(251, 302);
+            bAddProduct.Margin = new Padding(2, 4, 2, 4);
+            bAddProduct.Name = "bAddProduct";
+            bAddProduct.Size = new Size(238, 84);
+            bAddProduct.TabIndex = 10;
+            bAddProduct.Text = "Add product";
+            bAddProduct.UseVisualStyleBackColor = true;
+            bAddProduct.Click += bAddProduct_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(43, 309);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 35);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Threshold:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(182, 203);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(157, 41);
+            label2.TabIndex = 12;
+            label2.Text = "Threshold:";
             // 
             // numThreshold
             // 
-            numThreshold.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            numThreshold.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-            numThreshold.Location = new Point(227, 161);
-            numThreshold.Margin = new Padding(3, 2, 3, 2);
-            numThreshold.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numThreshold.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            numThreshold.Location = new Point(345, 208);
+            numThreshold.Margin = new Padding(4);
+            numThreshold.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
+            numThreshold.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numThreshold.Name = "numThreshold";
-            numThreshold.Size = new Size(145, 34);
+            numThreshold.Size = new Size(203, 39);
             numThreshold.TabIndex = 13;
+            numThreshold.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // AddProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 423);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.bAddProduct);
-            this.Controls.Add(this.cbProductCategory);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbDescription);
-            this.Controls.Add(this.tbName);
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.Name = "AddProduct";
-            this.Text = "AddProduct";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(728, 529);
+            Controls.Add(numThreshold);
+            Controls.Add(label2);
+            Controls.Add(bAddProduct);
+            Controls.Add(cbProductCategory);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(tbDescription);
+            Controls.Add(tbName);
+            Margin = new Padding(2, 4, 2, 4);
+            Name = "AddProduct";
+            Text = "AddProduct";
+            ((System.ComponentModel.ISupportInitialize)numThreshold).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

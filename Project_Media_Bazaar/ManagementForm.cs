@@ -114,7 +114,7 @@ public partial class ManagementForm : Form
             string search = tbF.Text;
             foreach (Product product in company.GetProducts())
             {
-                if (product.Name.Contains(search))
+                if (product.Name.ToUpper().Contains(search.ToUpper()))
                 {
 
                     if (product.Amount > product.Threshold)

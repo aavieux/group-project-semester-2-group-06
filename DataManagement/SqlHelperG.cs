@@ -17,7 +17,7 @@ public class SqlHelperG
 
     public void AddProductToDB(string name, string category, string description, int threshold)
     {
-        query = "INSERT INTO dbo.Product (name, amount, category, description) VALUES (@name, @amount, @category, @description)";
+        query = "INSERT INTO dbo.Product (name, amount, category, description, threshold) VALUES (@name, @amount, @category, @description, @threshold)";
         try
         {
             using (SqlConnection conn = new SqlConnection(connection))

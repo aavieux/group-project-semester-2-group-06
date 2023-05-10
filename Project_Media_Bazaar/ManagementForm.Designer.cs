@@ -195,7 +195,7 @@
             // 
             // btnTasks
             // 
-            btnTasks.Location = new Point(930, 90);
+            btnTasks.Location = new Point(930, 98);
             btnTasks.Margin = new Padding(4);
             btnTasks.Name = "btnTasks";
             btnTasks.Size = new Size(222, 64);

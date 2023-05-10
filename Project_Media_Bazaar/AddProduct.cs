@@ -25,12 +25,12 @@ namespace Project_Media_Bazaar
 
         private void bAddProduct_Click_1(object sender, EventArgs e)
         {
-          
+
         }
 
         private void bAddProduct_Click(object sender, EventArgs e)
         {
-            manager.AddProduct(tbName.Text, (Department)cbProductCategory.SelectedIndex, tbDescription.Text, Convert.ToInt32(8));
+            manager.AddProduct(tbName.Text, (Department)cbProductCategory.SelectedIndex, tbDescription.Text, Convert.ToInt32(numThreshold.Value));
             mForm.RefreshListbox();
             this.Close();
         }
