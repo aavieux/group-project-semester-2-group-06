@@ -1,5 +1,7 @@
 namespace Project_Media_Bazaar;
 using Domain;
+using Domain.Enums;
+using System.Xml.Linq;
 
 public partial class ManagementForm : Form
 {
@@ -13,6 +15,8 @@ public partial class ManagementForm : Form
         this.person = person;
         this.Text = $"Logged as: {person.firstName} {person.lastName} | Have a great day!";
         RefreshListbox();
+        cbCategories.DataSource = Enum.GetValues(typeof(Department));
+
     }
     public void RefreshListbox()
     {
@@ -129,5 +133,85 @@ public partial class ManagementForm : Form
     {
         ProductStatisticsForm form = new ProductStatisticsForm(this.person);
         form.ShowDialog();
+    }
+
+    private void tbF_TextChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            lvProducts.Items.Clear();
+            string search = tbF.Text;
+            foreach (Product product in company.GetProducts())
+            {
+                if (product.Name.Contains(search))
+                {
+                   
+                        if (product.Amount > product.Threshold)
+                        {
+                            string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
+                            lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
+                            lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Green;
+
+                        }
+                        else
+                        {
+                            string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
+                            lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
+                            lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
+                            //lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
+                            //lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
+                        }
+
+
+                    
+                }
+            }
+        }
+        catch (Exception) { }
+
+       
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        string selectedCategory = cbCategories.SelectedItem.ToString();
+
+
+        lvProducts.Items.Clear();
+        
+        foreach (Product product in company.GetProducts())
+        {
+            if (product.Category.ToString().Contains(selectedCategory))
+            {
+
+                if (product.Amount > product.Threshold)
+                {
+                    string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
+                    lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
+                    lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Green;
+
+                }
+                else
+                {
+                    string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
+                    lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
+                    lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
+                    //lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
+                    //lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
+                }
+
+
+
+
+
+            }
+        }
+    }
+
+    private void btnTasks_Click(object sender, EventArgs e)
+    {
+        TaskManager taskManager = new TaskManager();
+        taskManager.ShowDialog();
+
     }
 }

@@ -245,36 +245,7 @@ namespace Project_Media_Bazaar
 
         private void btnShift_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int currentId = 0;
-                foreach (Employee employee in DataAccessEmployeeDashboard.GetEmployeesFromDB())
-                {
-                    if (employee.GetFirstAndLastName() == cbEmployeesShifts.SelectedItem.ToString())
-                    {
-                        currentId = employee.id;
-                    }
-                }
-                if (currentId != 0)
-                {
-                    Shift shift = new Shift(Enum.Parse<ShiftType>(cbShifts.SelectedItem.ToString()), dtDateShift.Value, currentId);
-                    DataAccessEmployeeDashboard.AssignEmployeeToShiftToDB(shift);
-                    MessageBox.Show("Done!");
-                    cbEmployeesShifts.SelectedIndex = -1;
-                    cbShifts.SelectedIndex = -1;
-                    dtDateShift.Value = DateTime.Now;
-                }
-                else
-                {
-                    MessageBox.Show("Could not find this user!");
-                }
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error assigning shift!");
-            }
-
+          
         }
 
         private void listBoxEmployees_DoubleClick(object sender, EventArgs e)
@@ -308,6 +279,62 @@ namespace Project_Media_Bazaar
                 }
             }
             catch (Exception) { }
+        }
+
+        private void tbF_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                listBoxEmployees.Items.Clear();
+                string search = tbF.Text;
+                foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
+                {
+                    if (employee.GetFirstAndLastName().Contains(search))
+                    {
+                        listBoxEmployees.Items.Add(employee.GetIdAndFirstAndLastName());
+                    }
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void listBoxEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnShift_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int currentId = 0;
+                foreach (Employee employee in DataAccessEmployeeDashboard.GetEmployeesFromDB())
+                {
+                    if (employee.GetFirstAndLastName() == cbEmployeesShifts.SelectedItem.ToString())
+                    {
+                        currentId = employee.id;
+                    }
+                }
+                if (currentId != 0)
+                {
+                    Shift shift = new Shift(Enum.Parse<ShiftType>(cbShifts.SelectedItem.ToString()), dtDateShift.Value, currentId);
+                    DataAccessEmployeeDashboard.AssignEmployeeToShiftToDB(shift);
+                    MessageBox.Show("Done!");
+                    cbEmployeesShifts.SelectedIndex = -1;
+                    cbShifts.SelectedIndex = -1;
+                    dtDateShift.Value = DateTime.Now;
+                }
+                else
+                {
+                    MessageBox.Show("Could not find this user!");
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error assigning shift!");
+            }
+
         }
     }
 }
