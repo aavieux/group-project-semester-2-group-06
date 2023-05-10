@@ -229,7 +229,36 @@ public class DataAccessEmployeeDashboard
             }
         }
     }
-	public bool DeleteEmployeeByIdFromDB(int id)
+    public bool AddTaskToEmployeeToDB(int id,string TaskDescription,string DateOfTask)
+    {
+        bool yesOrNo = false;
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            var commandText = "INSERT INTO Employee (employeeId,TaskDescription,DateOfTask) VALUES (@Name,@LastName,@DateOfBirth); SELECT SCOPE_IDENTITY()";
+            using (var command = new SqlCommand(commandText, connection))
+            {
+                command.Parameters.AddWithValue("@Name", id);
+                command.Parameters.AddWithValue("@LastName", TaskDescription);
+                command.Parameters.AddWithValue("@DateOfBirth", DateOfTask);
+                
+                //command.Parameters.AddWithValue("@Department", employee.Department);
+                try
+                {
+                    connection.Open();
+                    
+                    yesOrNo = true;
+                    return yesOrNo;
+                }
+                catch (Exception)
+                {
+                    yesOrNo = true;
+                    return yesOrNo;
+                }
+
+            }
+        }
+    }
+    public bool DeleteEmployeeByIdFromDB(int id)
     {
         try
         {
