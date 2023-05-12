@@ -21,12 +21,15 @@ namespace Project_Media_Bazaar
         Person currentPerson;
         List<Employee> employees;
 
+        List<Employee> selectedEmployees;
         public EmployeeDashboard(Person person, LoginRegister loginForm)
         {
             loginRegister = loginForm;
             currentPerson = person;
             this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
             employees = this.DataAccessEmployeeDashboard.GetAllUsersFromDB();
+
+            selectedEmployees = new List<Employee>();
 
             InitializeComponent();
             this.Text = $"Logged as: {currentPerson.firstName + " " + currentPerson.lastName}";
@@ -54,11 +57,11 @@ namespace Project_Media_Bazaar
             }
 
 
-            cbEmployeesShifts.Items.Clear();
-            foreach (Employee employee1 in DataAccessEmployeeDashboard.GetAllUsersFromDB())
-            {
-                cbEmployeesShifts.Items.Add(employee1.GetFirstAndLastName());
-            }
+            //cbEmployeesShifts.Items.Clear();
+            //foreach (Employee employee1 in DataAccessEmployeeDashboard.GetAllUsersFromDB())
+            //{
+            //    cbEmployeesShifts.Items.Add(employee1.GetFirstAndLastName());
+            //}
 
             cbShifts.Items.Clear();
             foreach (ShiftType shiftType in Enum.GetValues(typeof(ShiftType)))
@@ -308,27 +311,18 @@ namespace Project_Media_Bazaar
         {
             try
             {
-                int currentId = 0;
-                foreach (Employee employee in DataAccessEmployeeDashboard.GetEmployeesFromDB())
+                foreach (Employee employee in selectedEmployees)
                 {
-                    if (employee.GetFirstAndLastName() == cbEmployeesShifts.SelectedItem.ToString())
-                    {
-                        currentId = employee.id;
-                    }
-                }
-                if (currentId != 0)
-                {
-                    Shift shift = new Shift(Enum.Parse<ShiftType>(cbShifts.SelectedItem.ToString()), dtDateShift.Value, currentId);
+
+
+                    Shift shift = new Shift(Enum.Parse<ShiftType>(cbShifts.SelectedItem.ToString()), dtDateShift.Value, employee.id);
                     DataAccessEmployeeDashboard.AssignEmployeeToShiftToDB(shift);
-                    MessageBox.Show("Done!");
-                    cbEmployeesShifts.SelectedIndex = -1;
+
+                    //cbEmployeesShifts.SelectedIndex = -1;
                     cbShifts.SelectedIndex = -1;
                     dtDateShift.Value = DateTime.Now;
                 }
-                else
-                {
-                    MessageBox.Show("Could not find this user!");
-                }
+                MessageBox.Show("Done!");
 
             }
             catch (Exception)
@@ -419,6 +413,13 @@ namespace Project_Media_Bazaar
             tbemail.Text = "";
             LoadData();
             //tbRoleType deleted
+        }
+
+        private void select_btn_Click(object sender, EventArgs e)
+        {
+
+            SelectEmployees se = new SelectEmployees(selectedEmployees);
+            se.ShowDialog();
         }
     }
 }

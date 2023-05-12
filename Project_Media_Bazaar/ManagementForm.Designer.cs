@@ -38,6 +38,7 @@
             ColumnName = new ColumnHeader();
             ColumnAmount = new ColumnHeader();
             ColumnCategory = new ColumnHeader();
+            StockItemIndicator = new ColumnHeader();
             bChangeStock = new Button();
             tbF = new TextBox();
             search_lbl = new Label();
@@ -51,10 +52,10 @@
             // bAddProduct
             // 
             bAddProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bAddProduct.Location = new Point(1171, 186);
-            bAddProduct.Margin = new Padding(2, 4, 2, 4);
+            bAddProduct.Location = new Point(820, 112);
+            bAddProduct.Margin = new Padding(1, 2, 1, 2);
             bAddProduct.Name = "bAddProduct";
-            bAddProduct.Size = new Size(299, 155);
+            bAddProduct.Size = new Size(209, 93);
             bAddProduct.TabIndex = 1;
             bAddProduct.Text = "Add product";
             bAddProduct.UseVisualStyleBackColor = true;
@@ -63,10 +64,10 @@
             // bRemoveProduct
             // 
             bRemoveProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bRemoveProduct.Location = new Point(1170, 361);
-            bRemoveProduct.Margin = new Padding(2, 4, 2, 4);
+            bRemoveProduct.Location = new Point(819, 217);
+            bRemoveProduct.Margin = new Padding(1, 2, 1, 2);
             bRemoveProduct.Name = "bRemoveProduct";
-            bRemoveProduct.Size = new Size(299, 149);
+            bRemoveProduct.Size = new Size(209, 89);
             bRemoveProduct.TabIndex = 2;
             bRemoveProduct.Text = "Remove product";
             bRemoveProduct.UseVisualStyleBackColor = true;
@@ -75,10 +76,10 @@
             // bViewDetailsProduct
             // 
             bViewDetailsProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bViewDetailsProduct.Location = new Point(1170, 11);
-            bViewDetailsProduct.Margin = new Padding(2, 4, 2, 4);
+            bViewDetailsProduct.Location = new Point(819, 7);
+            bViewDetailsProduct.Margin = new Padding(1, 2, 1, 2);
             bViewDetailsProduct.Name = "bViewDetailsProduct";
-            bViewDetailsProduct.Size = new Size(299, 151);
+            bViewDetailsProduct.Size = new Size(209, 91);
             bViewDetailsProduct.TabIndex = 3;
             bViewDetailsProduct.Text = "View details";
             bViewDetailsProduct.UseVisualStyleBackColor = true;
@@ -87,10 +88,10 @@
             // bRefreshProducts
             // 
             bRefreshProducts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bRefreshProducts.Location = new Point(1171, 715);
-            bRefreshProducts.Margin = new Padding(2, 4, 2, 4);
+            bRefreshProducts.Location = new Point(820, 429);
+            bRefreshProducts.Margin = new Padding(1, 2, 1, 2);
             bRefreshProducts.Name = "bRefreshProducts";
-            bRefreshProducts.Size = new Size(299, 151);
+            bRefreshProducts.Size = new Size(209, 91);
             bRefreshProducts.TabIndex = 5;
             bRefreshProducts.Text = "Refresh";
             bRefreshProducts.UseVisualStyleBackColor = true;
@@ -99,10 +100,10 @@
             // bProductStatistics
             // 
             bProductStatistics.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bProductStatistics.Location = new Point(1171, 899);
-            bProductStatistics.Margin = new Padding(2, 4, 2, 4);
+            bProductStatistics.Location = new Point(820, 539);
+            bProductStatistics.Margin = new Padding(1, 2, 1, 2);
             bProductStatistics.Name = "bProductStatistics";
-            bProductStatistics.Size = new Size(299, 151);
+            bProductStatistics.Size = new Size(209, 91);
             bProductStatistics.TabIndex = 6;
             bProductStatistics.Text = "Open statistics";
             bProductStatistics.UseVisualStyleBackColor = true;
@@ -110,43 +111,50 @@
             // 
             // lvProducts
             // 
-            lvProducts.Columns.AddRange(new ColumnHeader[] { ColumnId, ColumnName, ColumnAmount, ColumnCategory });
+            lvProducts.Columns.AddRange(new ColumnHeader[] { ColumnId, ColumnName, ColumnAmount, ColumnCategory, StockItemIndicator });
             lvProducts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lvProducts.Location = new Point(-1, 162);
-            lvProducts.Margin = new Padding(2, 4, 2, 4);
+            lvProducts.Location = new Point(10, 101);
+            lvProducts.Margin = new Padding(1, 2, 1, 2);
             lvProducts.Name = "lvProducts";
-            lvProducts.Size = new Size(1164, 919);
+            lvProducts.Size = new Size(798, 553);
             lvProducts.TabIndex = 7;
             lvProducts.UseCompatibleStateImageBehavior = false;
             lvProducts.View = View.Details;
+            lvProducts.SelectedIndexChanged += lvProducts_SelectedIndexChanged;
             // 
             // ColumnId
             // 
             ColumnId.Text = "ID";
-            ColumnId.Width = 204;
+            ColumnId.Width = 160;
             // 
             // ColumnName
             // 
             ColumnName.Text = "Name";
-            ColumnName.Width = 204;
+            ColumnName.Width = 160;
             // 
             // ColumnAmount
             // 
             ColumnAmount.Text = "Amount";
-            ColumnAmount.Width = 204;
+            ColumnAmount.Width = 160;
             // 
             // ColumnCategory
             // 
             ColumnCategory.Text = "Category";
-            ColumnCategory.Width = 204;
+            ColumnCategory.Width = 160;
+            // 
+            // StockItemIndicator
+            // 
+            StockItemIndicator.Text = "StockItemIndicator";
+            StockItemIndicator.TextAlign = HorizontalAlignment.Center;
+            StockItemIndicator.Width = 160;
             // 
             // bChangeStock
             // 
             bChangeStock.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bChangeStock.Location = new Point(1171, 534);
-            bChangeStock.Margin = new Padding(2, 4, 2, 4);
+            bChangeStock.Location = new Point(820, 320);
+            bChangeStock.Margin = new Padding(1, 2, 1, 2);
             bChangeStock.Name = "bChangeStock";
-            bChangeStock.Size = new Size(299, 149);
+            bChangeStock.Size = new Size(209, 89);
             bChangeStock.TabIndex = 8;
             bChangeStock.Text = "Change stock";
             bChangeStock.UseVisualStyleBackColor = true;
@@ -155,10 +163,10 @@
             // tbF
             // 
             tbF.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            tbF.Location = new Point(15, 86);
-            tbF.Margin = new Padding(4);
+            tbF.Location = new Point(126, 59);
+            tbF.Margin = new Padding(3, 2, 3, 2);
             tbF.Name = "tbF";
-            tbF.Size = new Size(494, 47);
+            tbF.Size = new Size(519, 34);
             tbF.TabIndex = 9;
             tbF.TextChanged += tbF_TextChanged;
             // 
@@ -166,28 +174,27 @@
             // 
             search_lbl.AutoSize = true;
             search_lbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            search_lbl.Location = new Point(15, 24);
-            search_lbl.Margin = new Padding(4, 0, 4, 0);
+            search_lbl.Location = new Point(233, 25);
             search_lbl.Name = "search_lbl";
-            search_lbl.Size = new Size(364, 41);
+            search_lbl.Size = new Size(247, 28);
             search_lbl.TabIndex = 10;
             search_lbl.Text = "Search Product By Name";
             // 
             // cbCategories
             // 
             cbCategories.FormattingEnabled = true;
-            cbCategories.Location = new Point(930, 11);
-            cbCategories.Margin = new Padding(4);
+            cbCategories.Location = new Point(651, 7);
+            cbCategories.Margin = new Padding(3, 2, 3, 2);
             cbCategories.Name = "cbCategories";
-            cbCategories.Size = new Size(222, 33);
+            cbCategories.Size = new Size(155, 23);
             cbCategories.TabIndex = 11;
             // 
             // button1
             // 
-            button1.Location = new Point(930, 52);
-            button1.Margin = new Padding(4);
+            button1.Location = new Point(651, 31);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(222, 35);
+            button1.Size = new Size(155, 24);
             button1.TabIndex = 12;
             button1.Text = "Filter by category";
             button1.UseVisualStyleBackColor = true;
@@ -195,10 +202,10 @@
             // 
             // btnTasks
             // 
-            btnTasks.Location = new Point(930, 98);
-            btnTasks.Margin = new Padding(4);
+            btnTasks.Location = new Point(651, 59);
+            btnTasks.Margin = new Padding(3, 2, 3, 2);
             btnTasks.Name = "btnTasks";
-            btnTasks.Size = new Size(222, 64);
+            btnTasks.Size = new Size(155, 38);
             btnTasks.TabIndex = 13;
             btnTasks.Text = "Manage employee tasks";
             btnTasks.UseVisualStyleBackColor = true;
@@ -206,9 +213,10 @@
             // 
             // bLogout
             // 
-            bLogout.Location = new Point(577, 11);
+            bLogout.Location = new Point(10, 59);
+            bLogout.Margin = new Padding(2);
             bLogout.Name = "bLogout";
-            bLogout.Size = new Size(152, 54);
+            bLogout.Size = new Size(111, 32);
             bLogout.TabIndex = 14;
             bLogout.Text = "Log out";
             bLogout.UseVisualStyleBackColor = true;
@@ -216,9 +224,10 @@
             // 
             // bShowAllAgain
             // 
-            bShowAllAgain.Location = new Point(811, 11);
+            bShowAllAgain.Location = new Point(568, 7);
+            bShowAllAgain.Margin = new Padding(2);
             bShowAllAgain.Name = "bShowAllAgain";
-            bShowAllAgain.Size = new Size(112, 46);
+            bShowAllAgain.Size = new Size(78, 48);
             bShowAllAgain.TabIndex = 15;
             bShowAllAgain.Text = "Show all";
             bShowAllAgain.UseVisualStyleBackColor = true;
@@ -226,9 +235,9 @@
             // 
             // ManagementForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1481, 1084);
+            ClientSize = new Size(1037, 637);
             Controls.Add(bShowAllAgain);
             Controls.Add(bLogout);
             Controls.Add(btnTasks);
@@ -243,7 +252,7 @@
             Controls.Add(bViewDetailsProduct);
             Controls.Add(bRemoveProduct);
             Controls.Add(bAddProduct);
-            Margin = new Padding(2, 4, 2, 4);
+            Margin = new Padding(1, 2, 1, 2);
             Name = "ManagementForm";
             Text = "Form1";
             ResumeLayout(false);
@@ -270,5 +279,6 @@
         private Button btnTasks;
         private Button bLogout;
         private Button bShowAllAgain;
+        private ColumnHeader StockItemIndicator;
     }
 }

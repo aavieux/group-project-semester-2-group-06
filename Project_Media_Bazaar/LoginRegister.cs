@@ -48,6 +48,7 @@ public partial class LoginRegister : Form
                 this.Hide();
                 ManagementForm managementForm = new ManagementForm(person, this);
                 managementForm.ShowDialog();
+                this.Show();
 
             }
             else if (person.userRole == UserRole.Administrator)
@@ -55,6 +56,7 @@ public partial class LoginRegister : Form
                 this.Hide();
                 EmployeeDashboard employeeDashboard = new EmployeeDashboard(person, this);
                 employeeDashboard.ShowDialog();
+                this.Show();
             }
         }
         else

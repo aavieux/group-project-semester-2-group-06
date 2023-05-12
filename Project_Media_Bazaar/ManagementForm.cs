@@ -28,16 +28,24 @@ public partial class ManagementForm : Form
         {
             if (product.Amount > product.Threshold)
             {
-                string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
-                lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
-                lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.GreenYellow;
+                //string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString(), "OK" };
+                lvProducts.Items.Add(product.Id.ToString());
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems.Add(product.Name);
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems.Add(product.Amount.ToString());
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems.Add(product.Category.ToString());
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems.Add("OK");
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems[0].BackColor = Color.GreenYellow;
 
             }
             else
             {
-                string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
-                lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
-                lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Firebrick;
+                //string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString(), "!" };
+                lvProducts.Items.Add(product.Id.ToString());
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems.Add(product.Name);
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems.Add(product.Amount.ToString());
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems.Add(product.Category.ToString());
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems.Add("!");
+                lvProducts.Items[lvProducts.Items.Count - 1].SubItems[0].BackColor = Color.Firebrick;
                 //lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
                 //lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
             }
@@ -151,6 +159,7 @@ public partial class ManagementForm : Form
             selectedCategory = cbCategories.SelectedItem.ToString();
 
             lvProducts.Items.Clear();
+            
 
             foreach (Product product in company.GetProducts())
             {
@@ -169,6 +178,7 @@ public partial class ManagementForm : Form
                         string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
                         lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
                         lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Firebrick;
+
                         //lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
                         //lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
                     }
@@ -257,13 +267,18 @@ public partial class ManagementForm : Form
 
     private void bLogout_Click(object sender, EventArgs e)
     {
-        this.Hide();
-        loginRegister.Show();
+        this.Close();
+
     }
 
     private void bShowAllAgain_Click(object sender, EventArgs e)
     {
         cbCategories.SelectedItem = null;
         RefreshListbox();
+    }
+
+    private void lvProducts_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }
