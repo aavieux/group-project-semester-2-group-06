@@ -254,11 +254,7 @@ namespace Project_Media_Bazaar
 
         private void listBoxEmployees_DoubleClick(object sender, EventArgs e)
         {
-            var chosenEmployee = employees[listBoxEmployees.SelectedIndex];
-            UpdateEmployee updateEmployee = new UpdateEmployee(chosenEmployee.id);
-            this.Hide();
-            updateEmployee.ShowDialog();
-            this.Show();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -420,6 +416,15 @@ namespace Project_Media_Bazaar
 
             SelectEmployees se = new SelectEmployees(selectedEmployees);
             se.ShowDialog();
+        }
+
+        private void listBoxEmployees_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var chosenEmployee = employees[listBoxEmployees.SelectedIndex];
+            UpdateEmployee updateEmployee = new UpdateEmployee(chosenEmployee.id);
+            this.Hide();
+            updateEmployee.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -52,7 +52,7 @@
             // bAddProduct
             // 
             bAddProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bAddProduct.Location = new Point(820, 112);
+            bAddProduct.Location = new Point(833, 111);
             bAddProduct.Margin = new Padding(1, 2, 1, 2);
             bAddProduct.Name = "bAddProduct";
             bAddProduct.Size = new Size(209, 93);
@@ -64,7 +64,7 @@
             // bRemoveProduct
             // 
             bRemoveProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bRemoveProduct.Location = new Point(819, 217);
+            bRemoveProduct.Location = new Point(832, 216);
             bRemoveProduct.Margin = new Padding(1, 2, 1, 2);
             bRemoveProduct.Name = "bRemoveProduct";
             bRemoveProduct.Size = new Size(209, 89);
@@ -76,7 +76,7 @@
             // bViewDetailsProduct
             // 
             bViewDetailsProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bViewDetailsProduct.Location = new Point(819, 7);
+            bViewDetailsProduct.Location = new Point(832, 6);
             bViewDetailsProduct.Margin = new Padding(1, 2, 1, 2);
             bViewDetailsProduct.Name = "bViewDetailsProduct";
             bViewDetailsProduct.Size = new Size(209, 91);
@@ -88,7 +88,7 @@
             // bRefreshProducts
             // 
             bRefreshProducts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bRefreshProducts.Location = new Point(820, 429);
+            bRefreshProducts.Location = new Point(833, 428);
             bRefreshProducts.Margin = new Padding(1, 2, 1, 2);
             bRefreshProducts.Name = "bRefreshProducts";
             bRefreshProducts.Size = new Size(209, 91);
@@ -100,7 +100,7 @@
             // bProductStatistics
             // 
             bProductStatistics.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bProductStatistics.Location = new Point(820, 539);
+            bProductStatistics.Location = new Point(833, 538);
             bProductStatistics.Margin = new Padding(1, 2, 1, 2);
             bProductStatistics.Name = "bProductStatistics";
             bProductStatistics.Size = new Size(209, 91);
@@ -113,10 +113,10 @@
             // 
             lvProducts.Columns.AddRange(new ColumnHeader[] { ColumnId, ColumnName, ColumnAmount, ColumnCategory, StockItemIndicator });
             lvProducts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lvProducts.Location = new Point(10, 101);
+            lvProducts.Location = new Point(11, 97);
             lvProducts.Margin = new Padding(1, 2, 1, 2);
             lvProducts.Name = "lvProducts";
-            lvProducts.Size = new Size(798, 553);
+            lvProducts.Size = new Size(805, 529);
             lvProducts.TabIndex = 7;
             lvProducts.UseCompatibleStateImageBehavior = false;
             lvProducts.View = View.Details;
@@ -151,7 +151,7 @@
             // bChangeStock
             // 
             bChangeStock.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bChangeStock.Location = new Point(820, 320);
+            bChangeStock.Location = new Point(833, 319);
             bChangeStock.Margin = new Padding(1, 2, 1, 2);
             bChangeStock.Name = "bChangeStock";
             bChangeStock.Size = new Size(209, 89);
@@ -186,7 +186,7 @@
             cbCategories.Location = new Point(651, 7);
             cbCategories.Margin = new Padding(3, 2, 3, 2);
             cbCategories.Name = "cbCategories";
-            cbCategories.Size = new Size(155, 23);
+            cbCategories.Size = new Size(165, 23);
             cbCategories.TabIndex = 11;
             // 
             // button1
@@ -194,7 +194,7 @@
             button1.Location = new Point(651, 31);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(155, 24);
+            button1.Size = new Size(165, 24);
             button1.TabIndex = 12;
             button1.Text = "Filter by category";
             button1.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@
             btnTasks.Location = new Point(651, 59);
             btnTasks.Margin = new Padding(3, 2, 3, 2);
             btnTasks.Name = "btnTasks";
-            btnTasks.Size = new Size(155, 38);
+            btnTasks.Size = new Size(165, 34);
             btnTasks.TabIndex = 13;
             btnTasks.Text = "Manage employee tasks";
             btnTasks.UseVisualStyleBackColor = true;
@@ -237,7 +237,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1037, 637);
+            ClientSize = new Size(1051, 637);
             Controls.Add(bShowAllAgain);
             Controls.Add(bLogout);
             Controls.Add(btnTasks);

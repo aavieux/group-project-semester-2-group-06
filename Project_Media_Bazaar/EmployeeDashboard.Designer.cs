@@ -148,6 +148,7 @@
             listBoxEmployees.Size = new Size(803, 172);
             listBoxEmployees.TabIndex = 0;
             listBoxEmployees.SelectedIndexChanged += listBoxEmployees_SelectedIndexChanged;
+            listBoxEmployees.MouseDoubleClick += listBoxEmployees_MouseDoubleClick;
             // 
             // tabCreateEmployee
             // 
