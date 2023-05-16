@@ -213,4 +213,83 @@ public partial class ManagementForm : Form
         taskManager.ShowDialog();
 
     }
+
+    private void bAddProduct_Click_2(object sender, EventArgs e)
+    {
+
+        AddProduct form = new AddProduct(manager, this);
+        form.ShowDialog();
+    }
+
+    private void bRemoveProduct_Click_2(object sender, EventArgs e)
+    {
+        try
+        {
+            var confirmResult = MessageBox.Show("Are you sure to delete this item ?",
+                                     "Confirm Delete!", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                company.DeleteProduct(company.GetProducts()[lvProducts.FocusedItem.Index]);
+                RefreshListbox();
+            }
+        }
+        catch (NullReferenceException)
+        {
+            MessageBox.Show("No item selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void bViewDetailsProduct_Click_2(object sender, EventArgs e)
+    {
+        try
+        {
+            ProductInformation form = new ProductInformation(company.GetProducts()[lvProducts.FocusedItem.Index]);
+            form.ShowDialog();
+        }
+        catch (NullReferenceException)
+        {
+            MessageBox.Show("No item selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void bChangeStock_Click_2(object sender, EventArgs e)
+    {
+        try
+        {
+            AmountChange amountChange = new AmountChange(company.GetProducts()[lvProducts.FocusedItem.Index], manager, this);
+            amountChange.ShowDialog();
+        }
+        catch (NullReferenceException)
+        {
+            MessageBox.Show("No item selected!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void bRefreshProducts_Click_2(object sender, EventArgs e)
+    {
+        RefreshListbox();
+    }
+
+    private void bProductStatistics_Click_2(object sender, EventArgs e)
+    {
+        ProductStatisticsForm form = new ProductStatisticsForm(this.person);
+        form.ShowDialog();
+    }
+
+    private void bLogout_Click(object sender, EventArgs e)
+    {
+        this.Close();
+
+    }
+
+    private void bShowAllAgain_Click(object sender, EventArgs e)
+    {
+        cbCategories.SelectedItem = null;
+        RefreshListbox();
+    }
+
+    private void lvProducts_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

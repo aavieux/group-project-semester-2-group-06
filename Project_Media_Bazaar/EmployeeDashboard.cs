@@ -336,5 +336,10 @@ namespace Project_Media_Bazaar
             }
 
         }
+
+        private void bLogout_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

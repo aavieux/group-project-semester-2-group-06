@@ -24,5 +24,9 @@ namespace Domain
         {
             return $"{Id}";
         }
+        public string GetInfo()
+        {
+            return $"{emplId}||{shiftType}||{date}";
+        }
     }
 }

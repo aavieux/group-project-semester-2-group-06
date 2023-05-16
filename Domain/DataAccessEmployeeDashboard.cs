@@ -110,9 +110,65 @@ public class DataAccessEmployeeDashboard
             }
         }
     }
+    public List<Shift> GetShiftIdFromDB(DateTime date)
+    {
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
 
-	//Manage Employees(DB)
-	public List<Employee> GetEmployeesFromDB()
+            var commandText = "SELECT * FROM Shift WHERE date = @date ";
+            using (var command = new SqlCommand(commandText, connection))
+            {
+                command.Parameters.AddWithValue("date",date);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    var items = new List<Shift>();
+                    if (reader.Read())
+                    {
+                        var item = new Shift(Enum.Parse<ShiftType>(reader.GetString(reader.GetOrdinal("shiftType"))), reader.GetDateTime(reader.GetOrdinal("date")), reader.GetInt32(reader.GetOrdinal("empId"))
+                         );
+
+                        items.Add(item);
+
+                        return items;
+                    }
+
+                    return null;
+                }
+            }
+        }
+    }
+    public List<Shift> GetAllShiftsFromDB()
+    {
+        bool yesOrNo = false;
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            var commandText = "SELECT * FROM Shift";
+            using (var command = new SqlCommand(commandText, connection))
+            {
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    var items = new List<Shift>();
+
+
+                    while (reader.Read())
+                    {
+                        var item = new Shift(Enum.Parse < ShiftType > (reader.GetString(reader.GetOrdinal("shiftType"))), reader.GetDateTime(reader.GetOrdinal("date")), reader.GetInt32(reader.GetOrdinal("empId"))
+                           );
+
+                        items.Add(item);
+                    }
+
+                    return items;
+                }
+            }
+        }
+    }
+
+    //Manage Employees(DB)
+    public List<Employee> GetEmployeesFromDB()
     {
         using (var connection = new SqlConnection(_connectionString))
         {
