@@ -17,7 +17,7 @@ namespace Domain
         public Shift(ShiftType shiftType, DateTime date, int empid)
         {
             this.shiftType = shiftType;
-            this.date = date;   
+            this.date = date;
             this.emplId = empid;
         }
         public string GetShiftId()
@@ -26,7 +26,7 @@ namespace Domain
         }
         public string GetInfo()
         {
-            return $"{emplId}||{shiftType}||{date}";
+            return $"Employee ID: {emplId} | Shift Type: {shiftType} | Date: {date}";
         }
     }
 }

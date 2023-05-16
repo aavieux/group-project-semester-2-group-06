@@ -129,7 +129,7 @@ namespace Project_Media_Bazaar
                 !string.IsNullOrWhiteSpace(tbnickname.Text) &&
                 !string.IsNullOrWhiteSpace(tbpassword.Text) &&
                 int.TryParse(tbWorkingHours.Text, out workingHours) &&
-                cbRole.SelectedItem != null && cbRole.SelectedItem is EmployeeRole)
+                cbRole.SelectedItem != null && Enum.Parse<EmployeeRole>(cbRole.SelectedItem.ToString()) != null)
             {
                 try
                 {
@@ -139,8 +139,8 @@ namespace Project_Media_Bazaar
                     phoneNumber = tbPhoneNumber.Text.Trim();
                     nickname = tbnickname.Text.Trim();
                     password = tbpassword.Text;
-                    role = (UserRole)cbRole.SelectedItem;
-                    EmployeeRole employeeRole = EmployeeRole.JuniorSales;
+                    role = UserRole.Employee;
+                    EmployeeRole employeeRole = Enum.Parse<EmployeeRole>(cbRole.SelectedItem.ToString());
                     //department = (Department) cbDepartment.SelectedIndex;
                     dateTime = dtBirthDate.Value;
                     salary = decimal.Parse(tbsalary.Text);
@@ -254,7 +254,7 @@ namespace Project_Media_Bazaar
 
         private void listBoxEmployees_DoubleClick(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -265,23 +265,6 @@ namespace Project_Media_Bazaar
         }
 
         private void tbF_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                listBoxEmployees.Items.Clear();
-                string search = tbF.Text;
-                foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
-                {
-                    if (employee.GetFirstAndLastName().Contains(search))
-                    {
-                        listBoxEmployees.Items.Add(employee.GetIdAndFirstAndLastName());
-                    }
-                }
-            }
-            catch (Exception) { }
-        }
-
-        private void tbF_TextChanged_1(object sender, EventArgs e)
         {
             try
             {
@@ -425,11 +408,6 @@ namespace Project_Media_Bazaar
             this.Hide();
             updateEmployee.ShowDialog();
             this.Show();
-        }
-
-        private void bLogout_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
