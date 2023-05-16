@@ -15,7 +15,7 @@ public partial class ManagementForm : Form
         loginRegister = loginForm;
         InitializeComponent();
         this.person = person;
-        this.Text = $"Logged as: {person.firstName} {person.lastName} | Have a great day!";
+        this.Text = $"Logged as: {person.firstName} {person.lastName} (Manager)";
         RefreshListbox();
         cbCategories.DataSource = Enum.GetValues(typeof(Department));
 

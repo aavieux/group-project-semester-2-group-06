@@ -36,18 +36,18 @@
             monthCalendar1.CalendarDimensions = new Size(3, 2);
             monthCalendar1.Dock = DockStyle.Fill;
             monthCalendar1.Location = new Point(0, 0);
-            monthCalendar1.Margin = new Padding(11);
+            monthCalendar1.Margin = new Padding(8, 7, 8, 7);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 0;
             monthCalendar1.DateChanged += monthCalendar1_DateChanged;
             // 
             // EmployeeShiftsView
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 562);
+            ClientSize = new Size(700, 337);
             Controls.Add(monthCalendar1);
-            Margin = new Padding(4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeShiftsView";
             Text = "EmployeeShiftsView";
             ResumeLayout(false);
