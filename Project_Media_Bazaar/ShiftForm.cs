@@ -23,31 +23,26 @@ namespace Project_Media_Bazaar
 
             InitializeComponent();
             lbEmployeeShifts.Items.Clear();
-           formattedDate  = date.ToString("dd/MM/yyyy");
+            formattedDate = date.ToString("dd/MM/yyyy");
             shifts = dataacces.GetAllShiftsFromDB();
-          
-               
             foreach (var shift in shifts)
             {
-                if(shift.GetInfo().Contains(formattedDate)) {
+                if (shift.GetInfo().Contains(formattedDate))
+                {
                     lbEmployeeShifts.Items.Add(shift.GetInfo());
                 }
-            
-                  
-
-                
             }
 
         }
 
         private void ShiftForm_Load(object sender, EventArgs e)
         {
-         
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
