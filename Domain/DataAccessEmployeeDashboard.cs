@@ -254,7 +254,7 @@ public class DataAccessEmployeeDashboard
 		bool yesOrNo = false;
         using (var connection = new SqlConnection(_connectionString))
         {
-			var commandText = "INSERT INTO Employee (firstName,lastName,birthDate,address,phoneNumber, salary, email, nickname,password,roleType,workingHours, role, department) VALUES (@Name,@LastName,@DateOfBirth,@Address,@PhoneNumber,@Salary,@Email,@Nickname, @Password, @Role, @WorkingHours, @Role1); SELECT SCOPE_IDENTITY()";
+			var commandText = "INSERT INTO Employee (firstName,lastName,birthDate,address,phoneNumber, salary, email, nickname,password,roleType,workingHours, role, department) VALUES (@Name,@LastName,@DateOfBirth,@Address,@PhoneNumber,@Salary,@Email,@Nickname, @Password, @Role, @WorkingHours, @Role1, @Department); SELECT SCOPE_IDENTITY()";
             using (var command = new SqlCommand(commandText, connection))
             {
 				command.Parameters.AddWithValue("@Name", employee.firstName);
@@ -269,7 +269,7 @@ public class DataAccessEmployeeDashboard
 				command.Parameters.AddWithValue("@Role", employee.employeeRole);
 				command.Parameters.AddWithValue("@WorkingHours", employee.workingHours);
 				command.Parameters.AddWithValue("@Role1", employee.employeeRole);
-                //command.Parameters.AddWithValue("@Department", employee.Department);
+                command.Parameters.AddWithValue("@Department", 0);
                 try
                 {
                     connection.Open();

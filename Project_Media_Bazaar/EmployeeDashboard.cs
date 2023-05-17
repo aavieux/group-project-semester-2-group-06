@@ -51,6 +51,8 @@ namespace Project_Media_Bazaar
         }
         public void LoadData()
         {
+            employees = this.DataAccessEmployeeDashboard.GetAllUsersFromDB();
+
             listBoxEmployees.Items.Clear();
             foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
             {
@@ -70,6 +72,7 @@ namespace Project_Media_Bazaar
                 cbShifts.Items.Add(shiftType.ToString());
             }
             cbShifts.SelectedIndex = 1;
+            GenerateDataForShift();
         }
         private void GenerateDataForShift()
         {
@@ -292,6 +295,7 @@ namespace Project_Media_Bazaar
             loginRegister = new LoginRegister();
             this.Hide();
             loginRegister.ShowDialog();
+
         }
 
         private void tbF_TextChanged(object sender, EventArgs e)
@@ -311,10 +315,6 @@ namespace Project_Media_Bazaar
             catch (Exception) { }
         }
 
-        private void listBoxEmployees_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAssignShift_Click_1(object sender, EventArgs e)
         {
@@ -443,8 +443,18 @@ namespace Project_Media_Bazaar
 
         private void listBoxEmployees_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            loginRegister.Show();
-            this.Hide();
+            try
+            {
+                var chosenEmployee = employees[listBoxEmployees.SelectedIndex];
+                UpdateEmployee updateEmployee = new UpdateEmployee(chosenEmployee.id);
+                updateEmployee.ShowDialog();
+                LoadData();
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void remove_btn_Click(object sender, EventArgs e)
@@ -486,6 +496,11 @@ namespace Project_Media_Bazaar
                 }
             }
             GenerateDataForShift();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

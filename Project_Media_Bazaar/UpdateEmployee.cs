@@ -97,19 +97,20 @@ namespace Project_Media_Bazaar
 				if (dataAccessEmployeeDashboard.DeleteEmployeeByIdFromDB(chosenEmployee.id))
 				{
 					MessageBox.Show("Succesfully deleted employee!");
+					this.Close();
 				}
 				else
 				{
 					MessageBox.Show("Error deleting employee!");
-        }
+				}
 			}
 			catch (Exception)
 			{
 
 			}
 			finally
-        {
-				LoadData();
+			{
+				
 			}
 
 		}
