@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbEmployeeShifts = new System.Windows.Forms.ListBox();
-            this.SuspendLayout();
+            lbEmployeeShifts = new ListBox();
+            SuspendLayout();
             // 
             // lbEmployeeShifts
             // 
-            this.lbEmployeeShifts.FormattingEnabled = true;
-            this.lbEmployeeShifts.ItemHeight = 20;
-            this.lbEmployeeShifts.Location = new System.Drawing.Point(43, 30);
-            this.lbEmployeeShifts.Name = "lbEmployeeShifts";
-            this.lbEmployeeShifts.Size = new System.Drawing.Size(706, 364);
-            this.lbEmployeeShifts.TabIndex = 0;
-            this.lbEmployeeShifts.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            lbEmployeeShifts.FormattingEnabled = true;
+            lbEmployeeShifts.ItemHeight = 15;
+            lbEmployeeShifts.Location = new Point(12, 8);
+            lbEmployeeShifts.Margin = new Padding(3, 2, 3, 2);
+            lbEmployeeShifts.Name = "lbEmployeeShifts";
+            lbEmployeeShifts.Size = new Size(676, 319);
+            lbEmployeeShifts.TabIndex = 0;
+            lbEmployeeShifts.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // ShiftForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lbEmployeeShifts);
-            this.Name = "ShiftForm";
-            this.Text = "ShiftForm";
-            this.Load += new System.EventHandler(this.ShiftForm_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 338);
+            Controls.Add(lbEmployeeShifts);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "ShiftForm";
+            Text = "ShiftForm";
+            Load += ShiftForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion

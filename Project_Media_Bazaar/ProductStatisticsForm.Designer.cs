@@ -137,7 +137,7 @@
             // 
             // dtpEndDate
             // 
-            dtpEndDate.Location = new Point(92, 273);
+            dtpEndDate.Location = new Point(372, 232);
             dtpEndDate.Name = "dtpEndDate";
             dtpEndDate.Size = new Size(200, 23);
             dtpEndDate.TabIndex = 9;
@@ -146,7 +146,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(18, 265);
+            label6.Location = new Point(298, 226);
             label6.Name = "label6";
             label6.Size = new Size(68, 31);
             label6.TabIndex = 10;
@@ -156,7 +156,7 @@
             // 
             lSalesSpecific.AutoSize = true;
             lSalesSpecific.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lSalesSpecific.Location = new Point(298, 244);
+            lSalesSpecific.Location = new Point(15, 269);
             lSalesSpecific.Name = "lSalesSpecific";
             lSalesSpecific.Size = new Size(94, 37);
             lSalesSpecific.TabIndex = 11;
@@ -165,11 +165,11 @@
             // bCheckSales
             // 
             bCheckSales.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            bCheckSales.Location = new Point(92, 302);
+            bCheckSales.Location = new Point(217, 309);
             bCheckSales.Name = "bCheckSales";
             bCheckSales.Size = new Size(200, 48);
             bCheckSales.TabIndex = 12;
-            bCheckSales.Text = "Check";
+            bCheckSales.Text = "Generate";
             bCheckSales.UseVisualStyleBackColor = true;
             bCheckSales.Click += bCheckSales_Click;
             // 

@@ -9,6 +9,7 @@ namespace Domain
 {
     public class Shift
     {
+        Administration administration;
         public int Id;
         public int emplId;
         public ShiftType shiftType { get; set; }
@@ -19,6 +20,7 @@ namespace Domain
             this.shiftType = shiftType;
             this.date = date;
             this.emplId = empid;
+
         }
         public string GetShiftId()
         {
@@ -26,7 +28,8 @@ namespace Domain
         }
         public string GetInfo()
         {
-            return $"Employee ID: {emplId} | Shift Type: {shiftType} | Date: {date}";
+            administration = new Administration();
+            return $"Employee ID: {emplId} Name: {administration.GetEmployeeById(emplId).GetFirstAndLastName()} | Shift Type: {shiftType} | Date: {date}";
         }
     }
 }

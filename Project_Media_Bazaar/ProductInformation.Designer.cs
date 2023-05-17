@@ -28,89 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.showName = new System.Windows.Forms.Label();
-            this.showCategory = new System.Windows.Forms.Label();
-            this.showDescription = new System.Windows.Forms.Label();
-            this.showAmount = new System.Windows.Forms.Label();
-            this.showThreshold = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            showName = new Label();
+            showCategory = new Label();
+            showDescription = new Label();
+            showAmount = new Label();
+            showThreshold = new Label();
+            button1 = new Button();
+            SuspendLayout();
             // 
             // showName
             // 
-            this.showName.AutoSize = true;
-            this.showName.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.showName.Location = new System.Drawing.Point(35, 25);
-            this.showName.Name = "showName";
-            this.showName.Size = new System.Drawing.Size(103, 46);
-            this.showName.TabIndex = 0;
-            this.showName.Text = "name";
+            showName.AutoSize = true;
+            showName.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showName.Location = new Point(31, 9);
+            showName.Name = "showName";
+            showName.Size = new Size(83, 37);
+            showName.TabIndex = 0;
+            showName.Text = "name";
             // 
             // showCategory
             // 
-            this.showCategory.AutoSize = true;
-            this.showCategory.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.showCategory.Location = new System.Drawing.Point(35, 95);
-            this.showCategory.Name = "showCategory";
-            this.showCategory.Size = new System.Drawing.Size(151, 46);
-            this.showCategory.TabIndex = 1;
-            this.showCategory.Text = "category";
+            showCategory.AutoSize = true;
+            showCategory.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showCategory.Location = new Point(31, 55);
+            showCategory.Name = "showCategory";
+            showCategory.Size = new Size(120, 37);
+            showCategory.TabIndex = 1;
+            showCategory.Text = "category";
             // 
             // showDescription
             // 
-            this.showDescription.AutoSize = true;
-            this.showDescription.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.showDescription.Location = new System.Drawing.Point(35, 161);
-            this.showDescription.Name = "showDescription";
-            this.showDescription.Size = new System.Drawing.Size(187, 46);
-            this.showDescription.TabIndex = 2;
-            this.showDescription.Text = "description";
+            showDescription.AutoSize = true;
+            showDescription.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showDescription.Location = new Point(31, 105);
+            showDescription.Name = "showDescription";
+            showDescription.Size = new Size(149, 37);
+            showDescription.TabIndex = 2;
+            showDescription.Text = "description";
             // 
             // showAmount
             // 
-            this.showAmount.AutoSize = true;
-            this.showAmount.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.showAmount.Location = new System.Drawing.Point(35, 239);
-            this.showAmount.Name = "showAmount";
-            this.showAmount.Size = new System.Drawing.Size(136, 46);
-            this.showAmount.TabIndex = 3;
-            this.showAmount.Text = "amount";
+            showAmount.AutoSize = true;
+            showAmount.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showAmount.Location = new Point(31, 160);
+            showAmount.Name = "showAmount";
+            showAmount.Size = new Size(109, 37);
+            showAmount.TabIndex = 3;
+            showAmount.Text = "amount";
             // 
             // showThreshold
             // 
-            this.showThreshold.AutoSize = true;
-            this.showThreshold.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.showThreshold.Location = new System.Drawing.Point(35, 311);
-            this.showThreshold.Name = "showThreshold";
-            this.showThreshold.Size = new System.Drawing.Size(162, 46);
-            this.showThreshold.TabIndex = 4;
-            this.showThreshold.Text = "threshold";
+            showThreshold.AutoSize = true;
+            showThreshold.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            showThreshold.Location = new Point(31, 215);
+            showThreshold.Name = "showThreshold";
+            showThreshold.Size = new Size(129, 37);
+            showThreshold.TabIndex = 4;
+            showThreshold.Text = "threshold";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 371);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(288, 53);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Send a re-shelf request";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(38, 278);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(252, 40);
+            button1.TabIndex = 5;
+            button1.Text = "Send a re-shelf request";
+            button1.UseVisualStyleBackColor = true;
             // 
             // ProductInformation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 449);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.showThreshold);
-            this.Controls.Add(this.showAmount);
-            this.Controls.Add(this.showDescription);
-            this.Controls.Add(this.showCategory);
-            this.Controls.Add(this.showName);
-            this.Name = "ProductInformation";
-            this.Text = "Product Information";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 337);
+            Controls.Add(button1);
+            Controls.Add(showThreshold);
+            Controls.Add(showAmount);
+            Controls.Add(showDescription);
+            Controls.Add(showCategory);
+            Controls.Add(showName);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "ProductInformation";
+            Text = "Product Information";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
