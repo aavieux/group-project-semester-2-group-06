@@ -1,0 +1,21 @@
+﻿@page "/"
+@model WebApp.Pages.ProfileModel
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApp</title>
+    <link rel="stylesheet" href="~/css/design.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApp.styles.css" asp-append-version="true" />
+</head>
+<h1>Welcome to your profile!</h1>
+<nav class="topnav-big">
+        <a asp-page="Profile">Home</a>
+        <a asp-page="ProfileInformation">Profile</a>
+        <a asp-page="Logout">Log out</a>
+        <a asp-page="Schedule">My schedule</a>
+
+</nav>
+<br>

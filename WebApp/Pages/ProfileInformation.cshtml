@@ -1,0 +1,24 @@
+﻿@page
+@model WebApp.Pages.ProfileInformationModel
+@{
+}
+<div class="bold">
+<h2>Your information:</h2>
+Name: @Model.CurrentEmployee.GetFirstAndLastName()
+<br>
+Email: @Model.CurrentEmployee.email
+<br>
+Working hours: @Model.CurrentEmployee.workingHours
+<br>
+Birth date: @Model.CurrentEmployee.birthDate.Date
+<br>
+Address: @Model.CurrentEmployee.address
+<br>
+Your current position: @Model.CurrentEmployee.employeeRole assistant
+<br>
+Phone number: @Model.CurrentEmployee.phoneNumber
+<br>
+Salary: @Model.CurrentEmployee.salary €
+<br>
+<a asp-page="ChangePassword">Want to change your password? Click here!</a>
+</div>
