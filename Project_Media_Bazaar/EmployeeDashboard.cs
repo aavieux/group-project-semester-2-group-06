@@ -466,16 +466,20 @@ namespace Project_Media_Bazaar
         {
             foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
             {
-                foreach (var item in selectEmployees_clb.SelectedItems)
+                try
                 {
-                    if (item.ToString() == employee.GetFirstAndLastName())
+                    foreach (var item in selectEmployees_clb.SelectedItems)
                     {
-                        selectedEmployees.Add(employee);
+                        if (item.ToString() == employee.GetFirstAndLastName())
+                        {
+                            selectedEmployees.Add(employee);
 
+
+                        }
 
                     }
-
                 }
+               
                 catch (FormatException)
                 {
                     MessageBox.Show("Error creating an employee!");
