@@ -32,8 +32,9 @@ namespace Project_Media_Bazaar
             selectedEmployees = new List<Employee>();
 
             InitializeComponent();
-            this.Text = $"Logged as: {currentPerson.firstName + " " + currentPerson.lastName}";
+            this.Text = $"Logged as: {currentPerson.firstName + " " + currentPerson.lastName} (Administrator)";
             LoadData();
+            GenerateDataForShift();
 
             //this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
             //employees = this.DataAccessEmployeeDashboard.GetAllUsersFromDB();
@@ -68,8 +69,37 @@ namespace Project_Media_Bazaar
             {
                 cbShifts.Items.Add(shiftType.ToString());
             }
+            cbShifts.SelectedIndex = 1;
         }
+        private void GenerateDataForShift()
+        {
 
+            List<Employee> toBeSelected = DataAccessEmployeeDashboard.GetAllUsersFromDB();
+
+            foreach (Employee emp in toBeSelected.ToList())
+            {
+                foreach (Employee emp2 in selectedEmployees)
+                {
+                    if (emp.id == emp2.id)
+                    {
+                        toBeSelected.RemoveAll(x => x.id == emp.id); // remove the ones that already exist
+                    }
+
+                }
+
+
+            }
+            selectEmployees_clb.Items.Clear();
+            foreach (Employee employee in toBeSelected)
+            {
+                selectEmployees_clb.Items.Add(employee.GetFirstAndLastName());
+            }
+            selectedEmployees_clb.Items.Clear();
+            foreach (Employee employee1 in selectedEmployees)
+            {
+                selectedEmployees_clb.Items.Add(employee1.GetFirstAndLastName());
+            }
+        }
 
 
         //private void btnSelect_Click(object sender, EventArgs e)
@@ -103,7 +133,7 @@ namespace Project_Media_Bazaar
         //	MessageBox.Show("Done!");
         //}
 
-        private void btnCreate_Click_1(object sender, EventArgs e)
+        private void btnCreateEmployee_Click_1(object sender, EventArgs e)
         {
             string email = "";
             string firstName = "";
@@ -286,27 +316,44 @@ namespace Project_Media_Bazaar
 
         }
 
-        private void btnShift_Click_1(object sender, EventArgs e)
+        private void btnAssignShift_Click_1(object sender, EventArgs e)
         {
             try
             {
-                foreach (Employee employee in selectedEmployees)
+                if (selectedEmployees.Count != 0)
                 {
+                    foreach (Employee employee in selectedEmployees)
+                    {
 
 
-                    Shift shift = new Shift(Enum.Parse<ShiftType>(cbShifts.SelectedItem.ToString()), dtDateShift.Value, employee.id);
-                    DataAccessEmployeeDashboard.AssignEmployeeToShiftToDB(shift);
+                        Shift shift = new Shift(Enum.Parse<ShiftType>(cbShifts.SelectedItem.ToString()), dtDateShift.Value, employee.id);
+                        DataAccessEmployeeDashboard.AssignEmployeeToShiftToDB(shift);
 
-                    //cbEmployeesShifts.SelectedIndex = -1;
-                    cbShifts.SelectedIndex = -1;
-                    dtDateShift.Value = DateTime.Now;
+                        //cbEmployeesShifts.SelectedIndex = -1;
+
+                        dtDateShift.Value = DateTime.Now;
+                    }
+                    MessageBox.Show($"Successfully assigned {selectedEmployees.Count} shifts!");
+                    selectedEmployees.Clear();
+                    selectEmployees_clb.Items.Clear();
+                    selectedEmployees_clb.Items.Clear();
+                    GenerateDataForShift();
+
                 }
-                MessageBox.Show("Done!");
+                else
+                {
+                    MessageBox.Show("Please select at least one employee!");
+                }
+
 
             }
             catch (Exception)
             {
                 MessageBox.Show("Error assigning shift!");
+            }
+            finally
+            {
+                cbShifts.SelectedIndex = 1;
             }
 
         }
@@ -317,54 +364,115 @@ namespace Project_Media_Bazaar
             this.Hide();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        //private void btnAssignShift_Click(object sender, EventArgs e)
+        //{
+        //    string email = "";
+        //    string firstName = "";
+        //    string lastName = "";
+        //    DateTime dateTime;
+        //    string address = "";
+        //    string phoneNumber = "";
+        //    decimal salary;
+        //    string nickname = "";
+        //    string password = "";
+        //    int workingHours;
+        //    //Department department;
+
+        //    UserRole role = new UserRole();
+
+        //    // Validate email address
+        //    if (!string.IsNullOrWhiteSpace(tbemail.Text) &&
+        //        !string.IsNullOrWhiteSpace(tbfirstName.Text) &&
+        //        !string.IsNullOrWhiteSpace(tblastName.Text) &&
+        //        !string.IsNullOrWhiteSpace(tbAdress.Text) &&
+        //        !string.IsNullOrWhiteSpace(tbPhoneNumber.Text) &&
+        //        decimal.TryParse(tbsalary.Text, out salary) &&
+        //        !string.IsNullOrWhiteSpace(tbnickname.Text) &&
+        //        !string.IsNullOrWhiteSpace(tbpassword.Text) &&
+        //        int.TryParse(tbWorkingHours.Text, out workingHours) &&
+        //        cbRole.SelectedItem != null && cbRole.SelectedItem is EmployeeRole)
+        //    {
+        //        try
+        //        {
+        //            firstName = tbfirstName.Text.Trim();
+        //            lastName = tblastName.Text.Trim();
+        //            address = tbAdress.Text.Trim();
+        //            phoneNumber = tbPhoneNumber.Text.Trim();
+        //            nickname = tbnickname.Text.Trim();
+        //            password = tbpassword.Text;
+        //            role = (UserRole)cbRole.SelectedItem;
+        //            EmployeeRole employeeRole = EmployeeRole.JuniorSales;
+        //            //department = (Department) cbDepartment.SelectedIndex;
+        //            dateTime = dtBirthDate.Value;
+        //            salary = decimal.Parse(tbsalary.Text);
+        //            var mailAddress = new System.Net.Mail.MailAddress(tbemail.Text);
+        //            email = mailAddress.Address;
+
+        //            Employee employee = new Employee(email, workingHours, role, firstName, lastName, dateTime, address, phoneNumber, salary, nickname, password, employeeRole);
+        //            if (DataAccessEmployeeDashboard.AddEmployeeToDB(employee))
+        //            {
+        //                MessageBox.Show("Done!");
+        //            }
+
+        //        }
+        //        catch (FormatException)
+        //        {
+        //            MessageBox.Show("Error creating an employee!");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Invalid input!");
+        //    }
+
+
+        //    tbfirstName.Text = "";
+        //    tblastName.Text = "";
+        //    tbAdress.Text = "";
+        //    tbPhoneNumber.Text = "";
+        //    tbnickname.Text = "";
+        //    tbpassword.Text = "";
+        //    cbRole.SelectedItem = -1;
+        //    tbWorkingHours.Text = "";
+
+        //    tbsalary.Text = "";
+        //    tbemail.Text = "";
+        //    LoadData();
+        //    //tbRoleType deleted
+        //}
+
+        private void listBoxEmployees_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string email = "";
-            string firstName = "";
-            string lastName = "";
-            DateTime dateTime;
-            string address = "";
-            string phoneNumber = "";
-            decimal salary;
-            string nickname = "";
-            string password = "";
-            int workingHours;
-            //Department department;
+            loginRegister.Show();
+            this.Hide();
+        }
 
-            UserRole role = new UserRole();
-
-            // Validate email address
-            if (!string.IsNullOrWhiteSpace(tbemail.Text) &&
-                !string.IsNullOrWhiteSpace(tbfirstName.Text) &&
-                !string.IsNullOrWhiteSpace(tblastName.Text) &&
-                !string.IsNullOrWhiteSpace(tbAdress.Text) &&
-                !string.IsNullOrWhiteSpace(tbPhoneNumber.Text) &&
-                decimal.TryParse(tbsalary.Text, out salary) &&
-                !string.IsNullOrWhiteSpace(tbnickname.Text) &&
-                !string.IsNullOrWhiteSpace(tbpassword.Text) &&
-                int.TryParse(tbWorkingHours.Text, out workingHours) &&
-                cbRole.SelectedItem != null && cbRole.SelectedItem is EmployeeRole)
+        private void remove_btn_Click(object sender, EventArgs e)
+        {
+            foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
             {
-                try
+                foreach (var item in selectedEmployees_clb.SelectedItems)
                 {
-                    firstName = tbfirstName.Text.Trim();
-                    lastName = tblastName.Text.Trim();
-                    address = tbAdress.Text.Trim();
-                    phoneNumber = tbPhoneNumber.Text.Trim();
-                    nickname = tbnickname.Text.Trim();
-                    password = tbpassword.Text;
-                    role = (UserRole)cbRole.SelectedItem;
-                    EmployeeRole employeeRole = EmployeeRole.JuniorSales;
-                    //department = (Department) cbDepartment.SelectedIndex;
-                    dateTime = dtBirthDate.Value;
-                    salary = decimal.Parse(tbsalary.Text);
-                    var mailAddress = new System.Net.Mail.MailAddress(tbemail.Text);
-                    email = mailAddress.Address;
-
-                    Employee employee = new Employee(email, workingHours, role, firstName, lastName, dateTime, address, phoneNumber, salary, nickname, password, employeeRole);
-                    if (DataAccessEmployeeDashboard.AddEmployeeToDB(employee))
+                    if (item.ToString() == employee.GetFirstAndLastName())
                     {
-                        MessageBox.Show("Done!");
+                        selectedEmployees.RemoveAll(x => x.id == employee.id); // remove the ones that already exist
+                    }
+                }
+            }
+            GenerateDataForShift();
+        }
+
+        private void select_btn_Click(object sender, EventArgs e)
+        {
+            foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
+            {
+                foreach (var item in selectEmployees_clb.SelectedItems)
+                {
+                    if (item.ToString() == employee.GetFirstAndLastName())
+                    {
+                        selectedEmployees.Add(employee);
+
+
                     }
 
                 }
@@ -373,41 +481,7 @@ namespace Project_Media_Bazaar
                     MessageBox.Show("Error creating an employee!");
                 }
             }
-            else
-            {
-                MessageBox.Show("Invalid input!");
-            }
-
-
-            tbfirstName.Text = "";
-            tblastName.Text = "";
-            tbAdress.Text = "";
-            tbPhoneNumber.Text = "";
-            tbnickname.Text = "";
-            tbpassword.Text = "";
-            cbRole.SelectedItem = -1;
-            tbWorkingHours.Text = "";
-
-            tbsalary.Text = "";
-            tbemail.Text = "";
-            LoadData();
-            //tbRoleType deleted
-        }
-
-        private void select_btn_Click(object sender, EventArgs e)
-        {
-
-            SelectEmployees se = new SelectEmployees(selectedEmployees);
-            se.ShowDialog();
-        }
-
-        private void listBoxEmployees_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            var chosenEmployee = employees[listBoxEmployees.SelectedIndex];
-            UpdateEmployee updateEmployee = new UpdateEmployee(chosenEmployee.id);
-            this.Hide();
-            updateEmployee.ShowDialog();
-            this.Show();
+            GenerateDataForShift();
         }
     }
 }

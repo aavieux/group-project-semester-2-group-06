@@ -22,13 +22,13 @@ namespace Project_Media_Bazaar
             this.selectedEmployees = selectedEmployees;
 
             InitializeComponent();
-            GenerateDaata();
+            GenerateData();
         }
-        private void GenerateDaata()
+        private void GenerateData()
         {
-           
+
             List<Employee> toBeSelected = dataAccessEmployeeDashboard.GetAllUsersFromDB();
-            
+
             foreach (Employee emp in toBeSelected.ToList())
             {
                 foreach (Employee emp2 in selectedEmployees)
@@ -37,9 +37,9 @@ namespace Project_Media_Bazaar
                     {
                         toBeSelected.RemoveAll(x => x.id == emp.id); // remove the ones that already exist
                     }
-                    
+
                 }
-                
+
 
             }
             selectEmployees_clb.Items.Clear();
@@ -68,7 +68,7 @@ namespace Project_Media_Bazaar
                     }
                 }
             }
-            GenerateDaata();
+            GenerateData();
         }
 
         private void remove_btn_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace Project_Media_Bazaar
                     }
                 }
             }
-            GenerateDaata();
+            GenerateData();
         }
     }
 }
