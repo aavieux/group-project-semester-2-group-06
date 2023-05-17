@@ -86,8 +86,8 @@
             tabControl1.Controls.Add(tabDashboard);
             tabControl1.Controls.Add(tabCreateEmployee);
             tabControl1.Controls.Add(tabShift);
-            tabControl1.Location = new Point(24, 9);
-            tabControl1.Margin = new Padding(3, 2, 3, 2);
+            tabControl1.Location = new Point(34, 15);
+            tabControl1.Margin = new Padding(4);
             tabControl1.Multiline = true;
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -100,8 +100,8 @@
             tabDashboard.Controls.Add(bLogout);
             tabDashboard.Controls.Add(tbF);
             tabDashboard.Controls.Add(listBoxEmployees);
-            tabDashboard.Location = new Point(27, 4);
-            tabDashboard.Margin = new Padding(3, 2, 3, 2);
+            tabDashboard.Location = new Point(34, 4);
+            tabDashboard.Margin = new Padding(4);
             tabDashboard.Name = "tabDashboard";
             tabDashboard.Padding = new Padding(3, 2, 3, 2);
             tabDashboard.Size = new Size(1041, 455);
@@ -113,9 +113,10 @@
             // 
             search_lbl.AutoSize = true;
             search_lbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            search_lbl.Location = new Point(6, 29);
+            search_lbl.Location = new Point(9, 49);
+            search_lbl.Margin = new Padding(4, 0, 4, 0);
             search_lbl.Name = "search_lbl";
-            search_lbl.Size = new Size(265, 28);
+            search_lbl.Size = new Size(390, 41);
             search_lbl.TabIndex = 7;
             search_lbl.Text = "Search Employee By Name";
             // 
@@ -125,7 +126,7 @@
             bLogout.Location = new Point(930, 7);
             bLogout.Margin = new Padding(3, 2, 3, 2);
             bLogout.Name = "bLogout";
-            bLogout.Size = new Size(105, 50);
+            bLogout.Size = new Size(150, 84);
             bLogout.TabIndex = 6;
             bLogout.Text = "Log out";
             bLogout.UseVisualStyleBackColor = true;
@@ -134,8 +135,8 @@
             // tbF
             // 
             tbF.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            tbF.Location = new Point(6, 59);
-            tbF.Margin = new Padding(3, 2, 3, 2);
+            tbF.Location = new Point(9, 99);
+            tbF.Margin = new Padding(4);
             tbF.Name = "tbF";
             tbF.Size = new Size(417, 34);
             tbF.TabIndex = 1;
@@ -145,9 +146,9 @@
             // 
             listBoxEmployees.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             listBoxEmployees.FormattingEnabled = true;
-            listBoxEmployees.ItemHeight = 28;
-            listBoxEmployees.Location = new Point(6, 97);
-            listBoxEmployees.Margin = new Padding(3, 2, 3, 2);
+            listBoxEmployees.ItemHeight = 41;
+            listBoxEmployees.Location = new Point(9, 161);
+            listBoxEmployees.Margin = new Padding(4);
             listBoxEmployees.Name = "listBoxEmployees";
             listBoxEmployees.Size = new Size(1029, 340);
             listBoxEmployees.TabIndex = 0;
@@ -161,8 +162,8 @@
             tabCreateEmployee.Controls.Add(cbRole);
             tabCreateEmployee.Controls.Add(btnCreate);
             tabCreateEmployee.Controls.Add(tbWorkingHours);
-            tabCreateEmployee.Location = new Point(27, 4);
-            tabCreateEmployee.Margin = new Padding(3, 2, 3, 2);
+            tabCreateEmployee.Location = new Point(34, 4);
+            tabCreateEmployee.Margin = new Padding(4);
             tabCreateEmployee.Name = "tabCreateEmployee";
             tabCreateEmployee.Padding = new Padding(3, 2, 3, 2);
             tabCreateEmployee.Size = new Size(1041, 455);
@@ -211,7 +212,8 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(22, 114);
+            label8.Location = new Point(31, 190);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(51, 21);
             label8.TabIndex = 24;
@@ -220,7 +222,8 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(21, 38);
+            label6.Location = new Point(30, 64);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(83, 21);
             label6.TabIndex = 14;
@@ -228,24 +231,24 @@
             // 
             // tbpassword
             // 
-            tbpassword.Location = new Point(200, 75);
-            tbpassword.Margin = new Padding(3, 2, 3, 2);
+            tbpassword.Location = new Point(286, 125);
+            tbpassword.Margin = new Padding(4);
             tbpassword.Name = "tbpassword";
             tbpassword.Size = new Size(110, 29);
             tbpassword.TabIndex = 7;
             // 
             // tbemail
             // 
-            tbemail.Location = new Point(200, 112);
-            tbemail.Margin = new Padding(3, 2, 3, 2);
+            tbemail.Location = new Point(286, 186);
+            tbemail.Margin = new Padding(4);
             tbemail.Name = "tbemail";
             tbemail.Size = new Size(110, 29);
             tbemail.TabIndex = 21;
             // 
             // tbnickname
             // 
-            tbnickname.Location = new Point(200, 38);
-            tbnickname.Margin = new Padding(3, 2, 3, 2);
+            tbnickname.Location = new Point(286, 64);
+            tbnickname.Margin = new Padding(4);
             tbnickname.Name = "tbnickname";
             tbnickname.Size = new Size(110, 29);
             tbnickname.TabIndex = 6;
@@ -253,7 +256,8 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(22, 77);
+            label7.Location = new Point(31, 129);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(79, 21);
             label7.TabIndex = 15;
@@ -273,8 +277,8 @@
             gpPersonalData.Controls.Add(label4);
             gpPersonalData.Controls.Add(label3);
             gpPersonalData.Controls.Add(label2);
-            gpPersonalData.Location = new Point(337, 7);
-            gpPersonalData.Margin = new Padding(3, 2, 3, 2);
+            gpPersonalData.Location = new Point(481, 11);
+            gpPersonalData.Margin = new Padding(4);
             gpPersonalData.Name = "gpPersonalData";
             gpPersonalData.Padding = new Padding(3, 2, 3, 2);
             gpPersonalData.Size = new Size(372, 444);
@@ -413,7 +417,7 @@
             btnCreate.Location = new Point(12, 394);
             btnCreate.Margin = new Padding(3, 2, 3, 2);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(304, 57);
+            btnCreate.Size = new Size(434, 95);
             btnCreate.TabIndex = 19;
             btnCreate.Text = "Create Employee";
             btnCreate.UseVisualStyleBackColor = false;
@@ -566,11 +570,11 @@
             // 
             // EmployeeDashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1108, 483);
             Controls.Add(tabControl1);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(4);
             Name = "EmployeeDashboard";
             Text = "EmployeeDashboard";
             tabControl1.ResumeLayout(false);

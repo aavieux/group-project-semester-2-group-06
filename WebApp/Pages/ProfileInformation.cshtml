@@ -2,6 +2,7 @@
 @model WebApp.Pages.ProfileInformationModel
 @{
 }
+<div class="bold">
 <h2>Your information:</h2>
 Name: @Model.CurrentEmployee.GetFirstAndLastName()
 <br>
@@ -13,10 +14,11 @@ Birth date: @Model.CurrentEmployee.birthDate.Date
 <br>
 Address: @Model.CurrentEmployee.address
 <br>
-Department: @*@Model.CurrentEmployee.Department*@
-<br>
-Your current position: @Model.CurrentEmployee.employeeRole
+Your current position: @Model.CurrentEmployee.employeeRole assistant
 <br>
 Phone number: @Model.CurrentEmployee.phoneNumber
 <br>
-Salary: @Model.CurrentEmployee.salary
+Salary: @Model.CurrentEmployee.salary €
+<br>
+<a asp-page="ChangePassword">Want to change your password? Click here!</a>
+</div>

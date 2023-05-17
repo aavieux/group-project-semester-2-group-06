@@ -443,11 +443,8 @@ namespace Project_Media_Bazaar
 
         private void listBoxEmployees_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var chosenEmployee = employees[listBoxEmployees.SelectedIndex];
-            UpdateEmployee updateEmployee = new UpdateEmployee(chosenEmployee.id);
+            loginRegister.Show();
             this.Hide();
-            updateEmployee.ShowDialog();
-            this.Show();
         }
 
         private void remove_btn_Click(object sender, EventArgs e)
@@ -477,6 +474,11 @@ namespace Project_Media_Bazaar
 
 
                     }
+
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Error creating an employee!");
                 }
             }
             GenerateDataForShift();

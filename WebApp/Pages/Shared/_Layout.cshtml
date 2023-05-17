@@ -14,11 +14,11 @@
             <a asp-page="Profile">Home</a>
             <a asp-page="ProfileInformation">Profile</a>
             <a asp-page="Logout">Log out</a>
-
         }
         else
         {
-            <a href="/login">Log In</a>
+            <a asp-page="About">About us</a>
+            <a asp-page="Login">Login</a>
         }
     </nav>
     <div class="container">
@@ -27,11 +27,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+@*    <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - Media Bazaar
         </div>
-    </footer>
+    </footer>*@
     @*
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

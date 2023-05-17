@@ -130,6 +130,37 @@ namespace Domain
             }
             return null;
         }
-
+        public DateTime GetSpecificMonthDate(string month)
+        {
+            System.DateTime moment;
+            switch (month) 
+            {
+                case "January":
+                    return moment = new System.DateTime(DateTime.Now.Year, 1, 15);
+                case "February":
+                    return moment = new System.DateTime(DateTime.Now.Year, 2, 15);
+                case "March":
+                    return moment = new System.DateTime(DateTime.Now.Year, 3, 15);
+                case "April":
+                    return moment = new System.DateTime(DateTime.Now.Year, 4, 15);
+                case "May":
+                    return moment = new System.DateTime(DateTime.Now.Year, 5, 15);
+                case "June":
+                    return moment = new System.DateTime(DateTime.Now.Year, 6, 15);
+                case "July":
+                    return moment = new System.DateTime(DateTime.Now.Year, 7, 15);
+                case "August":
+                    return moment = new System.DateTime(DateTime.Now.Year, 8, 15);
+                case "September":
+                    return moment = new System.DateTime(DateTime.Now.Year, 9, 15);
+                case "October":
+                    return moment = new System.DateTime(DateTime.Now.Year, 10, 15);
+                case "November":
+                    return moment = new System.DateTime(DateTime.Now.Year, 11, 15);
+                case "December":
+                    return moment = new System.DateTime(DateTime.Now.Year, 12, 15);
+                default: return DateTime.Today;
+            }
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿* {
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     color: #93a1a1;
     background-color: aliceblue;
@@ -23,7 +22,7 @@ h1 {
         color: white;
         vertical-align: central;
         text-align: center;
-        padding: 14px 16px;
+        padding: 5px 10px;
         text-decoration: none;
         font-size: 17px;
         background-color: #2aa19899;
@@ -36,6 +35,37 @@ h1 {
         }
 
         .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+.topnav-big {
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    margin-top: 20%;
+}
+
+    .topnav-big a {
+        align-items: center;
+        margin-top: 1%;
+        display: inline-flex;
+        color: white;
+        vertical-align: central;
+        text-align: center;
+        padding: 25px 45px;
+        text-decoration: none;
+        font-size: 17px;
+        background-color: #2aa19899;
+        height: 60px;
+        font-size: 30px;
+    }
+
+        .topnav-big a:hover {
+            background-color: #073642;
+        }
+
+        .topnav-big a.active {
             background-color: #04AA6D;
             color: white;
         }
@@ -118,7 +148,8 @@ h1 {
     background-color: #2aa19899;
     color: white;
     font-size: 100%;
-    margin: 12px 0 0;
+    margin-top: 20%;
+    margin: 30px 0 0;
     padding: 5px;
     text-align: center;
     width: 15%;
@@ -127,3 +158,101 @@ h1 {
     .LogoutButton:hover {
         background-color: #1e817e;
     }
+.day-shift {
+    color: #006600;
+}
+.evening-shift {
+    color: #00CCCC;
+}
+.night-shift {
+    color: #003399;
+}
+.bold {
+    font-weight: bold;
+    text-align: center;
+}
+.choose-month {
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #2aa19899;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 15%;
+}
+
+    .choose-month:disabled {
+        cursor: default;
+    }
+
+    .choose-month:focus {
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+    }
+
+    .choose-month:hover {
+        background-color: #1e817e;
+    }
+.calendar-tools {
+    text-align: center;
+}
+.my-schedule {
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #2aa19899;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 10px 10px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 15%;
+    text-align: center;
+}
+
+    .ContactButton:disabled {
+        cursor: default;
+    }
+
+    .ContactButton:focus {
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+    }
+
+    .ContactButton:hover {
+        background-color: #1e817e;
+    }
+.form-container{
+    text-align: center;
+}
