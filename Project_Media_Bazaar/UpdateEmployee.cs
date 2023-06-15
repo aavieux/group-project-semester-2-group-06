@@ -119,5 +119,27 @@ namespace Project_Media_Bazaar
 		{
 
         }
+
+        private void update_btn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+          
+
+            btnSave.Text = "";
+
+            tbFirstName.Text = "";
+            tbLastName.Text = "";
+            tbPhone.Text = "";
+            birthDate_dtp.Text = "";
+            tbEmail.Text = "";
+            tbAddress.Text = "";
+            tbSalary.Text = "";
+            tbWorkingHours.Text = "";
+			this.Close();
+        }
     }
 }

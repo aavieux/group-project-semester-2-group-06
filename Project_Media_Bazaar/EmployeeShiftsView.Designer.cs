@@ -28,29 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            monthCalendar1 = new MonthCalendar();
-            SuspendLayout();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.SuspendLayout();
             // 
             // monthCalendar1
             // 
-            monthCalendar1.CalendarDimensions = new Size(3, 2);
-            monthCalendar1.Dock = DockStyle.Fill;
-            monthCalendar1.Location = new Point(0, 0);
-            monthCalendar1.Margin = new Padding(8, 7, 8, 7);
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 0;
-            monthCalendar1.DateChanged += monthCalendar1_DateChanged;
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(3, 2);
+            this.monthCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 0);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
             // 
             // EmployeeShiftsView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 337);
-            Controls.Add(monthCalendar1);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "EmployeeShiftsView";
-            Text = "EmployeeShiftsView";
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.monthCalendar1);
+            this.Name = "EmployeeShiftsView";
+            this.Text = "EmployeeShiftsView";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

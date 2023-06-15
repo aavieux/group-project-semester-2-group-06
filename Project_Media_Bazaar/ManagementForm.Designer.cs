@@ -28,248 +28,248 @@
         /// </summary>
         private void InitializeComponent()
         {
-            bAddProduct = new Button();
-            bRemoveProduct = new Button();
-            bViewDetailsProduct = new Button();
-            bRefreshProducts = new Button();
-            bProductStatistics = new Button();
-            lvProducts = new ListView();
-            ColumnId = new ColumnHeader();
-            ColumnName = new ColumnHeader();
-            ColumnAmount = new ColumnHeader();
-            ColumnCategory = new ColumnHeader();
-            StockItemIndicator = new ColumnHeader();
-            bChangeStock = new Button();
-            tbF = new TextBox();
-            search_lbl = new Label();
-            cbCategories = new ComboBox();
-            button1 = new Button();
-            btnTasks = new Button();
-            bLogout = new Button();
-            bShowAllAgain = new Button();
-            btnEmployeeShiftsView = new Button();
-            SuspendLayout();
+            this.bAddProduct = new System.Windows.Forms.Button();
+            this.bRemoveProduct = new System.Windows.Forms.Button();
+            this.bViewDetailsProduct = new System.Windows.Forms.Button();
+            this.bRefreshProducts = new System.Windows.Forms.Button();
+            this.bProductStatistics = new System.Windows.Forms.Button();
+            this.lvProducts = new System.Windows.Forms.ListView();
+            this.ColumnId = new System.Windows.Forms.ColumnHeader();
+            this.ColumnName = new System.Windows.Forms.ColumnHeader();
+            this.ColumnAmount = new System.Windows.Forms.ColumnHeader();
+            this.ColumnCategory = new System.Windows.Forms.ColumnHeader();
+            this.StockItemIndicator = new System.Windows.Forms.ColumnHeader();
+            this.bChangeStock = new System.Windows.Forms.Button();
+            this.tbF = new System.Windows.Forms.TextBox();
+            this.search_lbl = new System.Windows.Forms.Label();
+            this.cbCategories = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnTasks = new System.Windows.Forms.Button();
+            this.bLogout = new System.Windows.Forms.Button();
+            this.bShowAllAgain = new System.Windows.Forms.Button();
+            this.btnEmployeeShiftsView = new System.Windows.Forms.Button();
+            this.btnAssignShift = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // bAddProduct
             // 
-            bAddProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bAddProduct.Location = new Point(1190, 185);
-            bAddProduct.Margin = new Padding(1, 4, 1, 4);
-            bAddProduct.Name = "bAddProduct";
-            bAddProduct.Size = new Size(299, 155);
-            bAddProduct.TabIndex = 1;
-            bAddProduct.Text = "Add product";
-            bAddProduct.UseVisualStyleBackColor = true;
-            bAddProduct.Click += bAddProduct_Click_2;
+            this.bAddProduct.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bAddProduct.Location = new System.Drawing.Point(952, 148);
+            this.bAddProduct.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.bAddProduct.Name = "bAddProduct";
+            this.bAddProduct.Size = new System.Drawing.Size(239, 124);
+            this.bAddProduct.TabIndex = 1;
+            this.bAddProduct.Text = "Add product";
+            this.bAddProduct.UseVisualStyleBackColor = true;
             // 
             // bRemoveProduct
             // 
-            bRemoveProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bRemoveProduct.Location = new Point(1189, 360);
-            bRemoveProduct.Margin = new Padding(1, 4, 1, 4);
-            bRemoveProduct.Name = "bRemoveProduct";
-            bRemoveProduct.Size = new Size(299, 149);
-            bRemoveProduct.TabIndex = 2;
-            bRemoveProduct.Text = "Remove product";
-            bRemoveProduct.UseVisualStyleBackColor = true;
-            bRemoveProduct.Click += bRemoveProduct_Click_2;
+            this.bRemoveProduct.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bRemoveProduct.Location = new System.Drawing.Point(951, 288);
+            this.bRemoveProduct.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.bRemoveProduct.Name = "bRemoveProduct";
+            this.bRemoveProduct.Size = new System.Drawing.Size(239, 119);
+            this.bRemoveProduct.TabIndex = 2;
+            this.bRemoveProduct.Text = "Remove product";
+            this.bRemoveProduct.UseVisualStyleBackColor = true;
             // 
             // bViewDetailsProduct
             // 
-            bViewDetailsProduct.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bViewDetailsProduct.Location = new Point(1189, 10);
-            bViewDetailsProduct.Margin = new Padding(1, 4, 1, 4);
-            bViewDetailsProduct.Name = "bViewDetailsProduct";
-            bViewDetailsProduct.Size = new Size(299, 151);
-            bViewDetailsProduct.TabIndex = 3;
-            bViewDetailsProduct.Text = "View details";
-            bViewDetailsProduct.UseVisualStyleBackColor = true;
-            bViewDetailsProduct.Click += bViewDetailsProduct_Click_2;
+            this.bViewDetailsProduct.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bViewDetailsProduct.Location = new System.Drawing.Point(951, 8);
+            this.bViewDetailsProduct.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.bViewDetailsProduct.Name = "bViewDetailsProduct";
+            this.bViewDetailsProduct.Size = new System.Drawing.Size(239, 121);
+            this.bViewDetailsProduct.TabIndex = 3;
+            this.bViewDetailsProduct.Text = "View details";
+            this.bViewDetailsProduct.UseVisualStyleBackColor = true;
             // 
             // bRefreshProducts
             // 
-            bRefreshProducts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bRefreshProducts.Location = new Point(1190, 714);
-            bRefreshProducts.Margin = new Padding(1, 4, 1, 4);
-            bRefreshProducts.Name = "bRefreshProducts";
-            bRefreshProducts.Size = new Size(299, 151);
-            bRefreshProducts.TabIndex = 5;
-            bRefreshProducts.Text = "Refresh";
-            bRefreshProducts.UseVisualStyleBackColor = true;
-            bRefreshProducts.Click += bRefreshProducts_Click_2;
+            this.bRefreshProducts.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bRefreshProducts.Location = new System.Drawing.Point(952, 571);
+            this.bRefreshProducts.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.bRefreshProducts.Name = "bRefreshProducts";
+            this.bRefreshProducts.Size = new System.Drawing.Size(239, 121);
+            this.bRefreshProducts.TabIndex = 5;
+            this.bRefreshProducts.Text = "Refresh";
+            this.bRefreshProducts.UseVisualStyleBackColor = true;
             // 
             // bProductStatistics
             // 
-            bProductStatistics.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bProductStatistics.Location = new Point(1190, 896);
-            bProductStatistics.Margin = new Padding(1, 4, 1, 4);
-            bProductStatistics.Name = "bProductStatistics";
-            bProductStatistics.Size = new Size(299, 151);
-            bProductStatistics.TabIndex = 6;
-            bProductStatistics.Text = "Open statistics";
-            bProductStatistics.UseVisualStyleBackColor = true;
-            bProductStatistics.Click += bProductStatistics_Click;
+            this.bProductStatistics.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bProductStatistics.Location = new System.Drawing.Point(952, 717);
+            this.bProductStatistics.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.bProductStatistics.Name = "bProductStatistics";
+            this.bProductStatistics.Size = new System.Drawing.Size(239, 121);
+            this.bProductStatistics.TabIndex = 6;
+            this.bProductStatistics.Text = "Open statistics";
+            this.bProductStatistics.UseVisualStyleBackColor = true;
             // 
             // lvProducts
             // 
-            lvProducts.Columns.AddRange(new ColumnHeader[] { ColumnId, ColumnName, ColumnAmount, ColumnCategory, StockItemIndicator });
-            lvProducts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lvProducts.Location = new Point(16, 161);
-            lvProducts.Margin = new Padding(1, 4, 1, 4);
-            lvProducts.Name = "lvProducts";
-            lvProducts.Size = new Size(1148, 879);
-            lvProducts.TabIndex = 7;
-            lvProducts.UseCompatibleStateImageBehavior = false;
-            lvProducts.View = View.Details;
+            this.lvProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColumnId,
+            this.ColumnName,
+            this.ColumnAmount,
+            this.ColumnCategory,
+            this.StockItemIndicator});
+            this.lvProducts.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lvProducts.Location = new System.Drawing.Point(13, 129);
+            this.lvProducts.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.lvProducts.Name = "lvProducts";
+            this.lvProducts.Size = new System.Drawing.Size(919, 704);
+            this.lvProducts.TabIndex = 7;
+            this.lvProducts.UseCompatibleStateImageBehavior = false;
+            this.lvProducts.View = System.Windows.Forms.View.Details;
             // 
             // ColumnId
             // 
-            ColumnId.Text = "ID";
-            ColumnId.Width = 160;
+            this.ColumnId.Text = "ID";
+            this.ColumnId.Width = 160;
             // 
             // ColumnName
             // 
-            ColumnName.Text = "Name";
-            ColumnName.Width = 160;
+            this.ColumnName.Text = "Name";
+            this.ColumnName.Width = 160;
             // 
             // ColumnAmount
             // 
-            ColumnAmount.Text = "Amount";
-            ColumnAmount.Width = 160;
+            this.ColumnAmount.Text = "Amount";
+            this.ColumnAmount.Width = 160;
             // 
             // ColumnCategory
             // 
-            ColumnCategory.Text = "Category";
-            ColumnCategory.Width = 160;
+            this.ColumnCategory.Text = "Category";
+            this.ColumnCategory.Width = 160;
             // 
             // StockItemIndicator
             // 
-            StockItemIndicator.Text = "StockItemIndicator";
-            StockItemIndicator.TextAlign = HorizontalAlignment.Center;
-            StockItemIndicator.Width = 160;
+            this.StockItemIndicator.Text = "StockItemIndicator";
+            this.StockItemIndicator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.StockItemIndicator.Width = 160;
             // 
             // bChangeStock
             // 
-            bChangeStock.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            bChangeStock.Location = new Point(1190, 531);
-            bChangeStock.Margin = new Padding(1, 4, 1, 4);
-            bChangeStock.Name = "bChangeStock";
-            bChangeStock.Size = new Size(299, 149);
-            bChangeStock.TabIndex = 8;
-            bChangeStock.Text = "Change stock";
-            bChangeStock.UseVisualStyleBackColor = true;
-            bChangeStock.Click += bChangeStock_Click_2;
+            this.bChangeStock.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bChangeStock.Location = new System.Drawing.Point(952, 425);
+            this.bChangeStock.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.bChangeStock.Name = "bChangeStock";
+            this.bChangeStock.Size = new System.Drawing.Size(239, 119);
+            this.bChangeStock.TabIndex = 8;
+            this.bChangeStock.Text = "Change stock";
+            this.bChangeStock.UseVisualStyleBackColor = true;
             // 
             // tbF
             // 
-            tbF.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            tbF.Location = new Point(180, 99);
-            tbF.Margin = new Padding(4);
-            tbF.Name = "tbF";
-            tbF.Size = new Size(740, 47);
-            tbF.TabIndex = 9;
-            tbF.TextChanged += tbF_TextChanged;
+            this.tbF.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbF.Location = new System.Drawing.Point(144, 79);
+            this.tbF.Name = "tbF";
+            this.tbF.Size = new System.Drawing.Size(593, 41);
+            this.tbF.TabIndex = 9;
             // 
             // search_lbl
             // 
-            search_lbl.AutoSize = true;
-            search_lbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            search_lbl.Location = new Point(332, 41);
-            search_lbl.Margin = new Padding(4, 0, 4, 0);
-            search_lbl.Name = "search_lbl";
-            search_lbl.Size = new Size(364, 41);
-            search_lbl.TabIndex = 10;
-            search_lbl.Text = "Search Product By Name";
+            this.search_lbl.AutoSize = true;
+            this.search_lbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.search_lbl.Location = new System.Drawing.Point(266, 33);
+            this.search_lbl.Name = "search_lbl";
+            this.search_lbl.Size = new System.Drawing.Size(305, 35);
+            this.search_lbl.TabIndex = 10;
+            this.search_lbl.Text = "Search Product By Name";
             // 
             // cbCategories
             // 
-            cbCategories.FormattingEnabled = true;
-            cbCategories.Location = new Point(930, 11);
-            cbCategories.Margin = new Padding(4);
-            cbCategories.Name = "cbCategories";
-            cbCategories.Size = new Size(234, 33);
-            cbCategories.TabIndex = 11;
+            this.cbCategories.FormattingEnabled = true;
+            this.cbCategories.Location = new System.Drawing.Point(744, 9);
+            this.cbCategories.Name = "cbCategories";
+            this.cbCategories.Size = new System.Drawing.Size(188, 28);
+            this.cbCategories.TabIndex = 11;
             // 
             // button1
             // 
-            button1.Location = new Point(930, 51);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(236, 40);
-            button1.TabIndex = 12;
-            button1.Text = "Filter by category";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Location = new System.Drawing.Point(744, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 32);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Filter by category";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnTasks
             // 
-            btnTasks.Location = new Point(930, 99);
-            btnTasks.Margin = new Padding(4);
-            btnTasks.Name = "btnTasks";
-            btnTasks.Size = new Size(236, 56);
-            btnTasks.TabIndex = 13;
-            btnTasks.Text = "Manage employee tasks";
-            btnTasks.UseVisualStyleBackColor = true;
-            btnTasks.Click += btnTasks_Click;
+            this.btnTasks.Location = new System.Drawing.Point(744, 79);
+            this.btnTasks.Name = "btnTasks";
+            this.btnTasks.Size = new System.Drawing.Size(189, 45);
+            this.btnTasks.TabIndex = 13;
+            this.btnTasks.Text = "Manage employee tasks";
+            this.btnTasks.UseVisualStyleBackColor = true;
             // 
             // bLogout
             // 
-            bLogout.Location = new Point(14, 99);
-            bLogout.Margin = new Padding(2, 4, 2, 4);
-            bLogout.Name = "bLogout";
-            bLogout.Size = new Size(159, 54);
-            bLogout.TabIndex = 14;
-            bLogout.Text = "Log out";
-            bLogout.UseVisualStyleBackColor = true;
-            bLogout.Click += bLogout_Click;
+            this.bLogout.Location = new System.Drawing.Point(11, 79);
+            this.bLogout.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.bLogout.Name = "bLogout";
+            this.bLogout.Size = new System.Drawing.Size(127, 43);
+            this.bLogout.TabIndex = 14;
+            this.bLogout.Text = "Log out";
+            this.bLogout.UseVisualStyleBackColor = true;
             // 
             // bShowAllAgain
             // 
-            bShowAllAgain.Location = new Point(811, 11);
-            bShowAllAgain.Margin = new Padding(2, 4, 2, 4);
-            bShowAllAgain.Name = "bShowAllAgain";
-            bShowAllAgain.Size = new Size(111, 80);
-            bShowAllAgain.TabIndex = 15;
-            bShowAllAgain.Text = "Show all";
-            bShowAllAgain.UseVisualStyleBackColor = true;
-            bShowAllAgain.Click += bShowAllAgain_Click;
+            this.bShowAllAgain.Location = new System.Drawing.Point(649, 9);
+            this.bShowAllAgain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.bShowAllAgain.Name = "bShowAllAgain";
+            this.bShowAllAgain.Size = new System.Drawing.Size(89, 64);
+            this.bShowAllAgain.TabIndex = 15;
+            this.bShowAllAgain.Text = "Show all";
+            this.bShowAllAgain.UseVisualStyleBackColor = true;
             // 
             // btnEmployeeShiftsView
             // 
-            btnEmployeeShiftsView.Location = new Point(15, 10);
-            btnEmployeeShiftsView.Margin = new Padding(4);
-            btnEmployeeShiftsView.Name = "btnEmployeeShiftsView";
-            btnEmployeeShiftsView.Size = new Size(158, 75);
-            btnEmployeeShiftsView.TabIndex = 16;
-            btnEmployeeShiftsView.Text = "View employee shifts";
-            btnEmployeeShiftsView.UseVisualStyleBackColor = true;
-            btnEmployeeShiftsView.Click += btnEmployeeShiftsView_Click;
+            this.btnEmployeeShiftsView.Location = new System.Drawing.Point(12, 8);
+            this.btnEmployeeShiftsView.Name = "btnEmployeeShiftsView";
+            this.btnEmployeeShiftsView.Size = new System.Drawing.Size(126, 60);
+            this.btnEmployeeShiftsView.TabIndex = 16;
+            this.btnEmployeeShiftsView.Text = "View employee shifts";
+            this.btnEmployeeShiftsView.UseVisualStyleBackColor = true;
+            // 
+            // btnAssignShift
+            // 
+            this.btnAssignShift.Location = new System.Drawing.Point(144, 12);
+            this.btnAssignShift.Name = "btnAssignShift";
+            this.btnAssignShift.Size = new System.Drawing.Size(91, 56);
+            this.btnAssignShift.TabIndex = 17;
+            this.btnAssignShift.Text = "Assign shift";
+            this.btnAssignShift.UseVisualStyleBackColor = true;
+            this.btnAssignShift.Click += new System.EventHandler(this.btnAssignShift_Click);
             // 
             // ManagementForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1501, 1061);
-            Controls.Add(btnEmployeeShiftsView);
-            Controls.Add(bShowAllAgain);
-            Controls.Add(bLogout);
-            Controls.Add(btnTasks);
-            Controls.Add(button1);
-            Controls.Add(cbCategories);
-            Controls.Add(search_lbl);
-            Controls.Add(tbF);
-            Controls.Add(bChangeStock);
-            Controls.Add(lvProducts);
-            Controls.Add(bProductStatistics);
-            Controls.Add(bRefreshProducts);
-            Controls.Add(bViewDetailsProduct);
-            Controls.Add(bRemoveProduct);
-            Controls.Add(bAddProduct);
-            Margin = new Padding(1, 4, 1, 4);
-            Name = "ManagementForm";
-            Text = "Form1";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1201, 844);
+            this.Controls.Add(this.btnAssignShift);
+            this.Controls.Add(this.btnEmployeeShiftsView);
+            this.Controls.Add(this.bShowAllAgain);
+            this.Controls.Add(this.bLogout);
+            this.Controls.Add(this.btnTasks);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbCategories);
+            this.Controls.Add(this.search_lbl);
+            this.Controls.Add(this.tbF);
+            this.Controls.Add(this.bChangeStock);
+            this.Controls.Add(this.lvProducts);
+            this.Controls.Add(this.bProductStatistics);
+            this.Controls.Add(this.bRefreshProducts);
+            this.Controls.Add(this.bViewDetailsProduct);
+            this.Controls.Add(this.bRemoveProduct);
+            this.Controls.Add(this.bAddProduct);
+            this.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.Name = "ManagementForm";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -294,5 +294,6 @@
         private Button bShowAllAgain;
         private ColumnHeader StockItemIndicator;
         private Button btnEmployeeShiftsView;
+        private Button btnAssignShift;
     }
 }

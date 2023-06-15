@@ -234,4 +234,10 @@ public partial class ManagementForm : Form
         EmployeeShiftsView employeeShiftsView = new EmployeeShiftsView();
         employeeShiftsView.ShowDialog();
     }
+
+    private void btnAssignShift_Click(object sender, EventArgs e)
+    {
+        AssignShiftAutomatic assignShiftAutomatic = new AssignShiftAutomatic();
+        assignShiftAutomatic.ShowDialog();
+    }
 }
