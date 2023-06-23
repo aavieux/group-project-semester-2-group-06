@@ -86,6 +86,7 @@
             tabControl1.Controls.Add(tabDashboard);
             tabControl1.Controls.Add(tabCreateEmployee);
             tabControl1.Controls.Add(tabShift);
+            tabControl1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             tabControl1.Location = new Point(24, 9);
             tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Multiline = true;

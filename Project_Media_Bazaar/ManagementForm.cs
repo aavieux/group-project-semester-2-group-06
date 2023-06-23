@@ -77,6 +77,7 @@ public partial class ManagementForm : Form
                         string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
                         lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
                         lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.DarkGreen;
+                        lvProducts.Items[lvProducts.Items.Count - 1].SubItems[0].ForeColor = Color.White;
 
                     }
                     else
@@ -118,6 +119,7 @@ public partial class ManagementForm : Form
                         string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
                         lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
                         lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.DarkGreen;
+                        lvProducts.Items[lvProducts.Items.Count - 1].SubItems[0].ForeColor = Color.White;
 
                     }
                     else
