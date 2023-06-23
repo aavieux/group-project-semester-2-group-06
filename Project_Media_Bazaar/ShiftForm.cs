@@ -23,7 +23,7 @@ namespace Project_Media_Bazaar
 
             InitializeComponent();
             lbEmployeeShifts.Items.Clear();
-            formattedDate = date.ToString("dd.M.yyyy");
+            formattedDate = date.ToString("dd/MM/yyyy");
             shifts = dataacces.GetAllShiftsFromDB();
             foreach (var shift in shifts)
             {

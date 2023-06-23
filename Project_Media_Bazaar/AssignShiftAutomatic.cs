@@ -18,7 +18,7 @@ namespace Project_Media_Bazaar
         Random random;
         public AssignShiftAutomatic()
         {
-            
+
             InitializeComponent();
             this.DataAccessEmployeeDashboard = new DataAccessEmployeeDashboard("Server=mssqlstud.fhict.local;Database=dbi501511_bazaar;User Id=dbi501511_Bazaar;Password=Samocska;");
         }
@@ -47,7 +47,7 @@ namespace Project_Media_Bazaar
                 // Assign shifts to employees
                 if (employees.Count > 0)
                 {
-                    
+
                     Employee employee = employees[0];
                     Shift shift = new Shift(randomShiftType, date, employee.id);
                     shifts.Add(shift);
@@ -63,7 +63,7 @@ namespace Project_Media_Bazaar
                 {
                     lbShifts.Items.Add($"{shift.date} - {shift.emplId} - {shift.shiftType}");
                 }
-               
+
                 // Update any relevant data or UI to reflect the shift assignment
             }
 
@@ -71,4 +71,4 @@ namespace Project_Media_Bazaar
 
         }
     }
-    }
+}

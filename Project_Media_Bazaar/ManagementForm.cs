@@ -101,7 +101,7 @@ public partial class ManagementForm : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-       
+
     }
 
     private void btnTasks_Click(object sender, EventArgs e)

@@ -42,7 +42,7 @@
             monthCalendar1.MaximumSize = new Size(689, 309);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 0;
-            monthCalendar1.DateChanged += monthCalendar1_DateChanged;
+            monthCalendar1.DateChanged += monthCalendar1_DateChanged_1;
             // 
             // search_lbl
             // 

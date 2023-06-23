@@ -28,149 +28,143 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.employee_lbl = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btnShift = new System.Windows.Forms.Button();
-            this.dtDateShift = new System.Windows.Forms.DateTimePicker();
-            this.cbEmployeesShifts = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            btnClose = new Button();
+            employee_lbl = new Label();
+            label14 = new Label();
+            btnShift = new Button();
+            dtDateShift = new DateTimePicker();
+            cbEmployeesShifts = new ComboBox();
+            label1 = new Label();
+            richTextBox1 = new RichTextBox();
+            bindingSource1 = new BindingSource(components);
+            label2 = new Label();
+            comboBox1 = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(626, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(162, 69);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.Location = new Point(548, 9);
+            btnClose.Margin = new Padding(3, 2, 3, 2);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(142, 52);
+            btnClose.TabIndex = 0;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // employee_lbl
             // 
-            this.employee_lbl.AutoSize = true;
-            this.employee_lbl.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.employee_lbl.Location = new System.Drawing.Point(23, 50);
-            this.employee_lbl.Name = "employee_lbl";
-            this.employee_lbl.Size = new System.Drawing.Size(201, 35);
-            this.employee_lbl.TabIndex = 18;
-            this.employee_lbl.Text = "Select Employee:";
+            employee_lbl.AutoSize = true;
+            employee_lbl.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            employee_lbl.Location = new Point(20, 38);
+            employee_lbl.Name = "employee_lbl";
+            employee_lbl.Size = new Size(159, 28);
+            employee_lbl.TabIndex = 18;
+            employee_lbl.Text = "Select Employee:";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(23, 211);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 35);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "Date:";
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(20, 158);
+            label14.Name = "label14";
+            label14.Size = new Size(57, 28);
+            label14.TabIndex = 17;
+            label14.Text = "Date:";
             // 
             // btnShift
             // 
-            this.btnShift.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnShift.Location = new System.Drawing.Point(32, 344);
-            this.btnShift.Name = "btnShift";
-            this.btnShift.Size = new System.Drawing.Size(733, 46);
-            this.btnShift.TabIndex = 15;
-            this.btnShift.Text = "Assign Task";
-            this.btnShift.UseVisualStyleBackColor = true;
-            this.btnShift.Click += new System.EventHandler(this.btnShift_Click);
+            btnShift.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnShift.Location = new Point(28, 258);
+            btnShift.Margin = new Padding(3, 2, 3, 2);
+            btnShift.Name = "btnShift";
+            btnShift.Size = new Size(641, 34);
+            btnShift.TabIndex = 15;
+            btnShift.Text = "Assign Task";
+            btnShift.UseVisualStyleBackColor = true;
+            btnShift.Click += btnShift_Click;
             // 
             // dtDateShift
             // 
-            this.dtDateShift.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtDateShift.Location = new System.Drawing.Point(261, 205);
-            this.dtDateShift.Name = "dtDateShift";
-            this.dtDateShift.Size = new System.Drawing.Size(233, 41);
-            this.dtDateShift.TabIndex = 14;
+            dtDateShift.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            dtDateShift.Location = new Point(228, 154);
+            dtDateShift.Margin = new Padding(3, 2, 3, 2);
+            dtDateShift.Name = "dtDateShift";
+            dtDateShift.Size = new Size(204, 34);
+            dtDateShift.TabIndex = 14;
             // 
             // cbEmployeesShifts
             // 
-            this.cbEmployeesShifts.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbEmployeesShifts.FormattingEnabled = true;
-            this.cbEmployeesShifts.Location = new System.Drawing.Point(261, 50);
-            this.cbEmployeesShifts.Name = "cbEmployeesShifts";
-            this.cbEmployeesShifts.Size = new System.Drawing.Size(233, 43);
-            this.cbEmployeesShifts.TabIndex = 12;
+            cbEmployeesShifts.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            cbEmployeesShifts.FormattingEnabled = true;
+            cbEmployeesShifts.Location = new Point(228, 38);
+            cbEmployeesShifts.Margin = new Padding(3, 2, 3, 2);
+            cbEmployeesShifts.Name = "cbEmployeesShifts";
+            cbEmployeesShifts.Size = new Size(204, 36);
+            cbEmployeesShifts.TabIndex = 12;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(23, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 35);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Task Description:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(20, 88);
+            label1.Name = "label1";
+            label1.Size = new Size(157, 28);
+            label1.TabIndex = 19;
+            label1.Text = "Task Description:";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(261, 99);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(233, 90);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(626, 205);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(166, 33);
-            this.progressBar1.TabIndex = 21;
+            richTextBox1.Location = new Point(228, 74);
+            richTextBox1.Margin = new Padding(3, 2, 3, 2);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(204, 68);
+            richTextBox1.TabIndex = 20;
+            richTextBox1.Text = "";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(626, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 35);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Select status:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(548, 81);
+            label2.Name = "label2";
+            label2.Size = new Size(124, 28);
+            label2.TabIndex = 22;
+            label2.Text = "Select status:";
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Completed",
-            "Working on",
-            "In process"});
-            this.comboBox1.Location = new System.Drawing.Point(627, 153);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 23;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Completed", "Working on", "In process" });
+            comboBox1.Location = new Point(549, 115);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(133, 23);
+            comboBox1.TabIndex = 23;
             // 
             // TaskManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.employee_lbl);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.btnShift);
-            this.Controls.Add(this.dtDateShift);
-            this.Controls.Add(this.cbEmployeesShifts);
-            this.Controls.Add(this.btnClose);
-            this.Name = "TaskManager";
-            this.Text = "TaskManager";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 338);
+            Controls.Add(comboBox1);
+            Controls.Add(label2);
+            Controls.Add(richTextBox1);
+            Controls.Add(label1);
+            Controls.Add(employee_lbl);
+            Controls.Add(label14);
+            Controls.Add(btnShift);
+            Controls.Add(dtDateShift);
+            Controls.Add(cbEmployeesShifts);
+            Controls.Add(btnClose);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "TaskManager";
+            Text = "TaskManager";
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -183,7 +177,6 @@
         private ComboBox cbEmployeesShifts;
         private Label label1;
         private RichTextBox richTextBox1;
-        private ProgressBar progressBar1;
         private BindingSource bindingSource1;
         private Label label2;
         private ComboBox comboBox1;
