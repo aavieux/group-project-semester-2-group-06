@@ -100,47 +100,7 @@ public partial class ManagementForm : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-        string selectedCategory;
-        try
-        {
-            selectedCategory = cbCategories.SelectedItem.ToString();
-
-            lvProducts.Items.Clear();
-
-
-            foreach (Product product in company.GetProducts())
-            {
-                if (product.Category.ToString().Contains(selectedCategory))
-                {
-
-                    if (product.Amount > product.Threshold)
-                    {
-                        string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
-                        lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
-                        lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.DarkGreen;
-
-                    }
-                    else
-                    {
-                        string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
-                        lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
-                        lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Firebrick;
-
-                        //lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
-                        //lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
-                    }
-
-
-
-
-
-                }
-            }
-        }
-        catch (Exception)
-        {
-            MessageBox.Show("Invalid filter", "Error");
-        }
+       
     }
 
     private void btnTasks_Click(object sender, EventArgs e)
@@ -231,13 +191,63 @@ public partial class ManagementForm : Form
 
     private void btnEmployeeShiftsView_Click(object sender, EventArgs e)
     {
-        EmployeeShiftsView employeeShiftsView = new EmployeeShiftsView();
-        employeeShiftsView.ShowDialog();
     }
 
     private void btnAssignShift_Click(object sender, EventArgs e)
     {
         AssignShiftAutomatic assignShiftAutomatic = new AssignShiftAutomatic();
         assignShiftAutomatic.ShowDialog();
+    }
+
+    private void btnEmployeeShiftsView_Click_1(object sender, EventArgs e)
+    {
+
+        EmployeeShiftsView employeeShiftsView = new EmployeeShiftsView();
+        employeeShiftsView.ShowDialog();
+    }
+
+    private void button1_Click_1(object sender, EventArgs e)
+    {
+        string selectedCategory;
+        try
+        {
+            selectedCategory = cbCategories.SelectedItem.ToString();
+
+            lvProducts.Items.Clear();
+
+
+            foreach (Product product in company.GetProducts())
+            {
+                if (product.Category.ToString().Contains(selectedCategory))
+                {
+
+                    if (product.Amount > product.Threshold)
+                    {
+                        string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
+                        lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
+                        lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.DarkGreen;
+
+                    }
+                    else
+                    {
+                        string[] row = { product.Name, product.Amount.ToString(), product.Category.ToString() };
+                        lvProducts.Items.Add(product.Id.ToString()).SubItems.AddRange(row);
+                        lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Firebrick;
+
+                        //lvProducts.Items.Add($"{product.Name} | Amount: {product.Amount} | Category: {product.Category.ToString()}");
+                        //lvProducts.Items[lvProducts.Items.Count - 1].BackColor = Color.Red;
+                    }
+
+
+
+
+
+                }
+            }
+        }
+        catch (Exception)
+        {
+            MessageBox.Show("Invalid filter", "Error");
+        }
     }
 }

@@ -72,6 +72,7 @@
             this.bRemoveProduct.TabIndex = 2;
             this.bRemoveProduct.Text = "Remove product";
             this.bRemoveProduct.UseVisualStyleBackColor = true;
+            this.bRemoveProduct.Click += new System.EventHandler(this.bRemoveProduct_Click_2);
             // 
             // bViewDetailsProduct
             // 
@@ -83,6 +84,7 @@
             this.bViewDetailsProduct.TabIndex = 3;
             this.bViewDetailsProduct.Text = "View details";
             this.bViewDetailsProduct.UseVisualStyleBackColor = true;
+            this.bViewDetailsProduct.Click += new System.EventHandler(this.bViewDetailsProduct_Click_2);
             // 
             // bRefreshProducts
             // 
@@ -194,6 +196,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Filter by category";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnTasks
             // 
@@ -203,6 +206,7 @@
             this.btnTasks.TabIndex = 13;
             this.btnTasks.Text = "Manage employee tasks";
             this.btnTasks.UseVisualStyleBackColor = true;
+            this.btnTasks.Click += new System.EventHandler(this.btnTasks_Click);
             // 
             // bLogout
             // 
@@ -223,6 +227,7 @@
             this.bShowAllAgain.TabIndex = 15;
             this.bShowAllAgain.Text = "Show all";
             this.bShowAllAgain.UseVisualStyleBackColor = true;
+            this.bShowAllAgain.Click += new System.EventHandler(this.bShowAllAgain_Click);
             // 
             // btnEmployeeShiftsView
             // 
@@ -232,6 +237,7 @@
             this.btnEmployeeShiftsView.TabIndex = 16;
             this.btnEmployeeShiftsView.Text = "View employee shifts";
             this.btnEmployeeShiftsView.UseVisualStyleBackColor = true;
+            this.btnEmployeeShiftsView.Click += new System.EventHandler(this.btnEmployeeShiftsView_Click_1);
             // 
             // btnAssignShift
             // 

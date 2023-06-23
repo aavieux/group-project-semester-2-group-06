@@ -127,6 +127,7 @@
             this.bLogout.TabIndex = 6;
             this.bLogout.Text = "Log out";
             this.bLogout.UseVisualStyleBackColor = true;
+            this.bLogout.Click += new System.EventHandler(this.bLogout_Click);
             // 
             // tbF
             // 
