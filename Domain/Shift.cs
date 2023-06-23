@@ -31,5 +31,9 @@ namespace Domain
             administration = new Administration();
             return $"Employee ID: {emplId} Name: {administration.GetEmployeeById(emplId).GetFirstAndLastName()} | Shift Type: {shiftType} | Date: {date}";
         }
+        public string GetTypeAndDate()
+        {
+            return $"{shiftType.ToString()} / {date.ToString()}";
+        }
     }
 }

@@ -40,28 +40,28 @@ namespace Project_Media_Bazaar
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int cursorPosition = comboBox1.SelectionStart;
-                string searchInput = comboBox1.Text;
+            //try
+            //{
+            //    int cursorPosition = comboBox1.SelectionStart;
+            //    string searchInput = comboBox1.Text;
 
-                comboBox1.DroppedDown = true;
+            //    comboBox1.DroppedDown = true;
 
 
-                comboBox1.Items.Clear();
-                foreach (Employee employee in dataAccessEmployeeDashboard.GetAllUsersFromDB())
-                {
-                    if (employee.GetFirstAndLastName().ToLower().Contains(searchInput.ToLower()))
-                    {
-                        comboBox1.Items.Add(employee.GetIdAndFirstAndLastName());
-                    }
-                }
-                comboBox1.SelectionStart = cursorPosition;
-            }
-            catch (Exception)
-            {
+            //    comboBox1.Items.Clear();
+            //    foreach (Employee employee in dataAccessEmployeeDashboard.GetAllUsersFromDB())
+            //    {
+            //        if (employee.GetFirstAndLastName().ToLower().Contains(searchInput.ToLower()))
+            //        {
+            //            comboBox1.Items.Add(employee.GetIdAndFirstAndLastName());
+            //        }
+            //    }
+            //    comboBox1.SelectionStart = cursorPosition;
+            //}
+            //catch (Exception)
+            //{
 
-            }
+            //}
 
         }
 
@@ -92,6 +92,67 @@ namespace Project_Media_Bazaar
             //    {
             //    }
             //}
+
+        }
+
+        private void search_txt_TextChanged(object sender, EventArgs e)
+        {
+
+            string searchInput = search_txt.Text;
+            listBox_search.Items.Clear();
+            if (!string.IsNullOrEmpty(searchInput))
+            {
+                foreach (Employee employee in dataAccessEmployeeDashboard.GetAllUsersFromDB())
+                {
+                    if (employee.GetFirstAndLastName().ToLower().Contains(searchInput.ToLower()))
+                    {
+                        listBox_search.Items.Add(employee.GetIdAndFirstAndLastName());
+                    }
+                }
+            }
+            else
+            {
+                listBox_shifts.Items.Clear();
+            }
+
+        }
+
+        private void listBox_search_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                foreach (Employee employee in dataAccessEmployeeDashboard.GetAllUsersFromDB())
+                {
+                    if (employee.GetIdAndFirstAndLastName().ToString() == listBox_search.Text.ToString())
+                    {
+                        listBox_shifts.Items.Clear();
+                        List<Shift> shiftsForEmpoyee = dataAccessEmployeeDashboard.GetShiftsForEmployee(employee.id);
+                        if (shiftsForEmpoyee.Count != 0)
+                        {
+                            listBox_shifts.Items.Add($"Showing shifts for {employee.GetFirstAndLastName()}");
+                            listBox_shifts.Items.Add($"-------------------------------------");
+                            foreach (Shift shift in shiftsForEmpoyee)
+                            {
+
+                                listBox_shifts.Items.Add(shift.GetTypeAndDate());
+                            }
+                        }
+                        else
+                        {
+                            listBox_shifts.Items.Add("No shifts found for this user!");
+                        }
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void listBox_search_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

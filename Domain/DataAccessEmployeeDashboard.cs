@@ -341,7 +341,18 @@ public class DataAccessEmployeeDashboard
         }
         
     }
-
+    public List<Shift> GetShiftsForEmployee(int userId)
+    {
+        List<Shift> shifts = new List<Shift>();
+        foreach (Shift shift in GetAllShiftsFromDB())
+        {
+            if (shift.emplId == userId)
+            {
+                shifts.Add(shift);
+            }
+        }
+        return shifts;
+    }
     //public int ExecuteNonQuery(string query)
     //{
     //    using (var connection = new SqlConnection(_connectionString))
