@@ -61,6 +61,7 @@
             label2 = new Label();
             btnCreate = new Button();
             tabShift = new TabPage();
+            btnEmployeeShiftsView = new Button();
             selectedEmployees_lbl = new Label();
             selectFromEmployees_lbl = new Label();
             selectedEmployees_clb = new ListBox();
@@ -72,7 +73,6 @@
             btnShift = new Button();
             dtDateShift = new DateTimePicker();
             cbShifts = new ComboBox();
-            btnEmployeeShiftsView = new Button();
             tabControl1.SuspendLayout();
             tabDashboard.SuspendLayout();
             tabCreateEmployee.SuspendLayout();
@@ -229,7 +229,7 @@
             gbCredentials.Margin = new Padding(2, 1, 2, 1);
             gbCredentials.Name = "gbCredentials";
             gbCredentials.Padding = new Padding(2, 1, 2, 1);
-            gbCredentials.Size = new Size(328, 244);
+            gbCredentials.Size = new Size(328, 282);
             gbCredentials.TabIndex = 23;
             gbCredentials.TabStop = false;
             gbCredentials.Text = "Credentials";
@@ -303,7 +303,7 @@
             gpPersonalData.Margin = new Padding(3, 2, 3, 2);
             gpPersonalData.Name = "gpPersonalData";
             gpPersonalData.Padding = new Padding(2, 1, 2, 1);
-            gpPersonalData.Size = new Size(527, 241);
+            gpPersonalData.Size = new Size(527, 279);
             gpPersonalData.TabIndex = 22;
             gpPersonalData.TabStop = false;
             gpPersonalData.Text = "Personal Data";
@@ -430,8 +430,10 @@
             // 
             // btnCreate
             // 
-            btnCreate.BackColor = Color.DarkSeaGreen;
-            btnCreate.Location = new Point(8, 287);
+            btnCreate.BackColor = Color.White;
+            btnCreate.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCreate.ForeColor = Color.Green;
+            btnCreate.Location = new Point(8, 288);
             btnCreate.Margin = new Padding(2, 1, 2, 1);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(324, 60);
@@ -461,6 +463,18 @@
             tabShift.TabIndex = 2;
             tabShift.Text = "Assign Shift";
             tabShift.UseVisualStyleBackColor = true;
+            // 
+            // btnEmployeeShiftsView
+            // 
+            btnEmployeeShiftsView.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEmployeeShiftsView.Location = new Point(15, 308);
+            btnEmployeeShiftsView.Margin = new Padding(3, 2, 3, 2);
+            btnEmployeeShiftsView.Name = "btnEmployeeShiftsView";
+            btnEmployeeShiftsView.Size = new Size(402, 45);
+            btnEmployeeShiftsView.TabIndex = 19;
+            btnEmployeeShiftsView.Text = "View employee shifts";
+            btnEmployeeShiftsView.UseVisualStyleBackColor = true;
+            btnEmployeeShiftsView.Click += btnEmployeeShiftsView_Click;
             // 
             // selectedEmployees_lbl
             // 
@@ -511,6 +525,7 @@
             // remove_btn
             // 
             remove_btn.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            remove_btn.ForeColor = Color.Firebrick;
             remove_btn.Location = new Point(653, 316);
             remove_btn.Margin = new Padding(2);
             remove_btn.Name = "remove_btn";
@@ -523,6 +538,7 @@
             // select_btn
             // 
             select_btn.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            select_btn.ForeColor = SystemColors.Highlight;
             select_btn.Location = new Point(422, 316);
             select_btn.Margin = new Padding(2);
             select_btn.Name = "select_btn";
@@ -557,7 +573,8 @@
             // btnShift
             // 
             btnShift.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            btnShift.Location = new Point(2, 309);
+            btnShift.ForeColor = Color.Green;
+            btnShift.Location = new Point(15, 255);
             btnShift.Margin = new Padding(2, 1, 2, 1);
             btnShift.Name = "btnShift";
             btnShift.Size = new Size(403, 50);
@@ -584,18 +601,6 @@
             cbShifts.Name = "cbShifts";
             cbShifts.Size = new Size(226, 38);
             cbShifts.TabIndex = 4;
-            // 
-            // btnEmployeeShiftsView
-            // 
-            btnEmployeeShiftsView.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEmployeeShiftsView.Location = new Point(3, 261);
-            btnEmployeeShiftsView.Margin = new Padding(3, 2, 3, 2);
-            btnEmployeeShiftsView.Name = "btnEmployeeShiftsView";
-            btnEmployeeShiftsView.Size = new Size(402, 45);
-            btnEmployeeShiftsView.TabIndex = 19;
-            btnEmployeeShiftsView.Text = "View employee shifts";
-            btnEmployeeShiftsView.UseVisualStyleBackColor = true;
-            btnEmployeeShiftsView.Click += btnEmployeeShiftsView_Click;
             // 
             // EmployeeDashboard
             // 
