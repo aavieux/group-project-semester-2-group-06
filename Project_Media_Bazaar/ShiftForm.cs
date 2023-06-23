@@ -23,7 +23,7 @@ namespace Project_Media_Bazaar
 
             InitializeComponent();
             lbEmployeeShifts.Items.Clear();
-            formattedDate = date.ToString("dd/MM/yyyy");
+            formattedDate = date.ToString("dd.M.yyyy");
             shifts = dataacces.GetAllShiftsFromDB();
             foreach (var shift in shifts)
             {
@@ -41,6 +41,11 @@ namespace Project_Media_Bazaar
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShiftForm_Load_1(object sender, EventArgs e)
         {
 
         }

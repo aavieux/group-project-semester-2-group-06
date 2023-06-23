@@ -27,6 +27,11 @@ namespace Project_Media_Bazaar
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+           
+        }
+
+        private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
+        {
             DateTime selectedDate = monthCalendar1.SelectionStart;
             ShiftForm shiftForm = new ShiftForm(selectedDate);
             shiftForm.Show();
