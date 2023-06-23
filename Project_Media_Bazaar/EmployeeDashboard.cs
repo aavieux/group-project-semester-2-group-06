@@ -306,7 +306,7 @@ namespace Project_Media_Bazaar
                 string search = tbF.Text;
                 foreach (Employee employee in DataAccessEmployeeDashboard.GetAllUsersFromDB())
                 {
-                    if (employee.GetFirstAndLastName().Contains(search))
+                    if (employee.GetFirstAndLastName().ToLower().Contains(search.ToLower()))
                     {
                         listBoxEmployees.Items.Add(employee.GetIdAndFirstAndLastName());
                     }

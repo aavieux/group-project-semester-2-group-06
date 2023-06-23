@@ -65,7 +65,7 @@ namespace Domain
             int sales = 0;
             foreach(StockChange stockChange in stockChanges)
             {
-                if(stockChange.GetDate().Day == DateTime.Today.Day)
+                if(stockChange.GetDate().Day == DateTime.Today.Day && !stockChange.IsRestock())
                 {
                     sales += stockChange.GetChangeAmount();
                 }
@@ -78,7 +78,7 @@ namespace Domain
             int sales = 0;
             foreach(StockChange stockChange in stockChanges)
             {
-                if(stockChange.GetDate() >= Start && stockChange.GetDate() <= End)
+                if(stockChange.GetDate() >= Start && stockChange.GetDate() <= End && !stockChange.IsRestock())
                 {
                     sales += stockChange.GetChangeAmount();
                 }

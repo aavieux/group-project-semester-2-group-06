@@ -142,6 +142,7 @@
             tbF.Name = "tbF";
             tbF.Size = new Size(364, 34);
             tbF.TabIndex = 1;
+            tbF.TextChanged += tbF_TextChanged;
             // 
             // listBoxEmployees
             // 
@@ -153,6 +154,7 @@
             listBoxEmployees.Name = "listBoxEmployees";
             listBoxEmployees.Size = new Size(858, 228);
             listBoxEmployees.TabIndex = 0;
+            listBoxEmployees.MouseDoubleClick += listBoxEmployees_MouseDoubleClick;
             // 
             // tabCreateEmployee
             // 
@@ -502,7 +504,7 @@
             selectedEmployees_clb.FormattingEnabled = true;
             selectedEmployees_clb.ItemHeight = 21;
             selectedEmployees_clb.Location = new Point(653, 35);
-            selectedEmployees_clb.Margin = new Padding(2, 2, 2, 2);
+            selectedEmployees_clb.Margin = new Padding(2);
             selectedEmployees_clb.Name = "selectedEmployees_clb";
             selectedEmployees_clb.SelectionMode = SelectionMode.MultiSimple;
             selectedEmployees_clb.Size = new Size(214, 277);
@@ -514,7 +516,7 @@
             selectEmployees_clb.FormattingEnabled = true;
             selectEmployees_clb.ItemHeight = 21;
             selectEmployees_clb.Location = new Point(422, 35);
-            selectEmployees_clb.Margin = new Padding(2, 2, 2, 2);
+            selectEmployees_clb.Margin = new Padding(2);
             selectEmployees_clb.Name = "selectEmployees_clb";
             selectEmployees_clb.SelectionMode = SelectionMode.MultiSimple;
             selectEmployees_clb.Size = new Size(213, 277);
