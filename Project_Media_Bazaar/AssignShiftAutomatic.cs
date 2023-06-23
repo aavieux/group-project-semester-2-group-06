@@ -1,15 +1,6 @@
 ﻿using Domain.Enums;
 using Domain;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 namespace Project_Media_Bazaar
 {
     public partial class AssignShiftAutomatic : Form
@@ -27,48 +18,49 @@ namespace Project_Media_Bazaar
         {
             Random random = new Random();
 
-            // Get a random date within the following week
-            DateTime currentDate = DateTime.Now;
-            DateTime nextWeek = currentDate.AddDays(7);
-
             List<Employee> employees = DataAccessEmployeeDashboard.GetAllUsersFromDB();
             List<Shift> shifts = new List<Shift>();
+            List<Shift> shiftsEmployee = new List<Shift>();
 
             // Shuffle the employees randomly
             employees = employees.OrderBy(e => random.Next()).ToList();
 
-            // Iterate through the available shifts
-            for (DateTime date = currentDate; date < nextWeek; date = date.AddDays(1))
+            if (startDate.Value > endDate.Value)
             {
-                // Get a random shift type for each day (assuming "DayShift" and "NightShift" are valid ShiftType values)
-                ShiftType[] shiftTypes = { ShiftType.DayShift, ShiftType.NightShift };
-                ShiftType randomShiftType = shiftTypes[random.Next(shiftTypes.Length)];
-
-                // Assign shifts to employees
-                if (employees.Count > 0)
-                {
-
-                    Employee employee = employees[0];
-                    Shift shift = new Shift(randomShiftType, date, employee.id);
-                    shifts.Add(shift);
-                    employees.RemoveAt(0);
-                }
+                MessageBox.Show("You cannot pick a starting date to be after the end date!", "Error!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Assign shifts to employees based on availability and constraints
-            foreach (Shift shift in shifts)
+            else
             {
-                DataAccessEmployeeDashboard.AssignEmployeeToShiftToDB(shift);
-                foreach (var item in shifts)
+
+                foreach (Employee employee in employees)
                 {
-                    lbShifts.Items.Add($"{shift.date} - {shift.emplId} - {shift.shiftType}");
+                    // Iterate through the available shifts
+                    for (DateTime date = startDate.Value; date <= endDate.Value; date = date.AddDays(1))
+                    {
+                        // Get a random shift type for each day (assuming "DayShift" and "NightShift" are valid ShiftType values)
+                        ShiftType[] shiftTypes = { ShiftType.DayShift, ShiftType.NightShift };
+                        ShiftType randomShiftType = shiftTypes[random.Next(shiftTypes.Length)];
+                        // Assign shifts to employees
+                        shiftsEmployee = DataAccessEmployeeDashboard.GetShiftsEmployeeToday(employee, date);
+                        if (shiftsEmployee.Count == 0)
+                        {
+                            Shift shift = new Shift(randomShiftType, date, employee.id);
+                            shifts.Add(shift);
+                            break;
+                        }
+                    }
                 }
-
-                // Update any relevant data or UI to reflect the shift assignment
+                // Assign shifts to employees based on availability and constraints
+                foreach (Shift shift in shifts)
+                {
+                    DataAccessEmployeeDashboard.AssignEmployeeToShiftToDB(shift);
+                    lbShifts.Items.Add($"{shift.date} - {DataAccessEmployeeDashboard.GetEmployeeByIdFromDB(shift.emplId).GetFirstAndLastName()} - {shift.shiftType}");
+                    // Update any relevant data or UI to reflect the shift assignment
+                }
+                MessageBox.Show("Shifts assigned successfully!");
+                lbShifts.Show();
             }
-
-            MessageBox.Show("Shifts assigned successfully!");
-
         }
     }
 }

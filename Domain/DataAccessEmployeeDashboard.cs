@@ -353,6 +353,18 @@ public class DataAccessEmployeeDashboard
         }
         return shifts;
     }
+    public List<Shift> GetShiftsEmployeeToday(Employee employee, DateTime date)
+    {
+        List<Shift> shifts = new List<Shift>();
+        foreach (Shift shift in GetAllShiftsFromDB())
+        {
+            if (shift.emplId == employee.id && date == shift.date)
+            {
+                shifts.Add(shift);
+            }
+        }
+        return shifts;
+    }
     //public int ExecuteNonQuery(string query)
     //{
     //    using (var connection = new SqlConnection(_connectionString))

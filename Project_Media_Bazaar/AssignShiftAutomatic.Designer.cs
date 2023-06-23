@@ -28,47 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnAssignTheShift = new Button();
-            lbShifts = new ListBox();
-            SuspendLayout();
+            this.btnAssignTheShift = new System.Windows.Forms.Button();
+            this.lbShifts = new System.Windows.Forms.ListBox();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.SuspendLayout();
             // 
             // btnAssignTheShift
             // 
-            btnAssignTheShift.Location = new Point(26, 9);
-            btnAssignTheShift.Margin = new Padding(3, 2, 3, 2);
-            btnAssignTheShift.Name = "btnAssignTheShift";
-            btnAssignTheShift.Size = new Size(118, 37);
-            btnAssignTheShift.TabIndex = 0;
-            btnAssignTheShift.Text = "assignTheShift";
-            btnAssignTheShift.UseVisualStyleBackColor = true;
-            btnAssignTheShift.Click += btnAssignTheShift_Click;
+            this.btnAssignTheShift.Location = new System.Drawing.Point(30, 12);
+            this.btnAssignTheShift.Name = "btnAssignTheShift";
+            this.btnAssignTheShift.Size = new System.Drawing.Size(189, 29);
+            this.btnAssignTheShift.TabIndex = 0;
+            this.btnAssignTheShift.Text = "assignTheShift";
+            this.btnAssignTheShift.UseVisualStyleBackColor = true;
+            this.btnAssignTheShift.Click += new System.EventHandler(this.btnAssignTheShift_Click);
             // 
             // lbShifts
             // 
-            lbShifts.FormattingEnabled = true;
-            lbShifts.ItemHeight = 15;
-            lbShifts.Location = new Point(26, 50);
-            lbShifts.Margin = new Padding(3, 2, 3, 2);
-            lbShifts.Name = "lbShifts";
-            lbShifts.Size = new Size(646, 259);
-            lbShifts.TabIndex = 1;
+            this.lbShifts.FormattingEnabled = true;
+            this.lbShifts.ItemHeight = 20;
+            this.lbShifts.Location = new System.Drawing.Point(30, 101);
+            this.lbShifts.Name = "lbShifts";
+            this.lbShifts.Size = new System.Drawing.Size(656, 264);
+            this.lbShifts.TabIndex = 1;
+            // 
+            // startDate
+            // 
+            this.startDate.Location = new System.Drawing.Point(411, 14);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(250, 27);
+            this.startDate.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(295, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Start date: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(295, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "End date: ";
+            // 
+            // endDate
+            // 
+            this.endDate.Location = new System.Drawing.Point(411, 58);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(250, 27);
+            this.endDate.TabIndex = 5;
             // 
             // AssignShiftAutomatic
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
-            Controls.Add(lbShifts);
-            Controls.Add(btnAssignTheShift);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "AssignShiftAutomatic";
-            Text = "AssignShiftAutomatic";
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.endDate);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.startDate);
+            this.Controls.Add(this.lbShifts);
+            this.Controls.Add(this.btnAssignTheShift);
+            this.Name = "AssignShiftAutomatic";
+            this.Text = "AssignShiftAutomatic";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Button btnAssignTheShift;
         private ListBox lbShifts;
+        private DateTimePicker startDate;
+        private Label label1;
+        private Label label2;
+        private DateTimePicker endDate;
     }
 }

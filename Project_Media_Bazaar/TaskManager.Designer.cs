@@ -45,10 +45,10 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(548, 9);
+            btnClose.Location = new Point(576, 11);
             btnClose.Margin = new Padding(3, 2, 3, 2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(142, 52);
+            btnClose.Size = new Size(112, 26);
             btnClose.TabIndex = 0;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             btnShift.Location = new Point(28, 258);
             btnShift.Margin = new Padding(3, 2, 3, 2);
             btnShift.Name = "btnShift";
-            btnShift.Size = new Size(641, 34);
+            btnShift.Size = new Size(641, 42);
             btnShift.TabIndex = 15;
             btnShift.Text = "Assign Task";
             btnShift.UseVisualStyleBackColor = true;
