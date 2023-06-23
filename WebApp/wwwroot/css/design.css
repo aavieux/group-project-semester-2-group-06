@@ -256,3 +256,16 @@ h1 {
 .form-container{
     text-align: center;
 }
+.containerCalendar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.legend {
+    flex-basis: 15%;
+    align-items: center;
+}
+
+.calendar {
+    flex-basis: 70%;
+}

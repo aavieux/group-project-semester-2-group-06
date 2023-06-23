@@ -2,76 +2,84 @@
 @model WebApp.Pages.ScheduleModel
 @{
 }
-<table bgcolor="lightgrey" align="center"
-       cellspacing="18" cellpadding="18">
 
+   <div class="containerCalendar">
+ 
     <!-- The tr tag is used to enter
         rows in the table -->
     <!-- It is used to give the heading to the
         table. We can give the heading to the
         top and bottom of the table -->
-
-    <caption align="top">
-<p >Shift colors:</p>
-<p class="day-shift">Day shift</p>
-<p class="evening-shift">Evening shift</p>
-<p class="night-shift">Night shift</p>
-    </caption>
-    <thead>
-        <tr>
-            <th>Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-        </tr>
-    </thead>
+    <div class="legend">
+            <caption align="top">
+        <p >Shift colors:</p>
+        <p class="day-shift">Day shift</p>
+        <p class="evening-shift">Evening shift</p>
+        <p class="night-shift">Night shift</p>
+            </caption>
+    </div>
+    <div class="calendar">
+    <table bgcolor="lightgrey" align="center"
+       cellspacing="18" cellpadding="18">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
                 
-    <tbody>
-        <tr>
-            @for (int i = 0; i < 42; i++)
-            {
-                DateTime usedDate = Model.StartDate.AddDays(i);
-                if (i % 7 == 0 && i > 0)
+        <tbody>
+            <tr>
+                @for (int i = 0; i < 42; i++)
                 {
-                    @:</tr><tr>
-                }
-                bool dayAdded = false;
-                foreach(var shift in Model.Shifts)
-                {
-                    if((shift.emplId == Model.EmployeeId) && shift.date.Date == usedDate.Date)
+                    DateTime usedDate = Model.StartDate.AddDays(i);
+                    if (i % 7 == 0 && i > 0)
                     {
-                        switch (shift.shiftType)
+                        @:</tr><tr>
+                    }
+                    bool dayAdded = false;
+                    foreach(var shift in Model.Shifts)
+                    {
+                        if((shift.emplId == Model.EmployeeId) && shift.date.Date == usedDate.Date)
                         {
-                            case Domain.Enums.ShiftType.DayShift:
-                                <td class="day-shift">@usedDate.Day <br> Day shift</td>
-                                dayAdded = true;
-                                break;
-                            case Domain.Enums.ShiftType.EveningShift:
-                                <td class="evening-shift">@usedDate.Day <br> Evening shift</td>
-                                dayAdded = true;
-                                break;
-                            case Domain.Enums.ShiftType.NightShift:
-                                <td class="night-shift">@usedDate.Day <br> Night shift</td>
-                                dayAdded = true;
-                                break;
+                            switch (shift.shiftType)
+                            {
+                                case Domain.Enums.ShiftType.DayShift:
+                                    <td class="day-shift">@usedDate.Day <br> Day shift</td>
+                                    dayAdded = true;
+                                    break;
+                                case Domain.Enums.ShiftType.EveningShift:
+                                    <td class="evening-shift">@usedDate.Day <br> Evening shift</td>
+                                    dayAdded = true;
+                                    break;
+                                case Domain.Enums.ShiftType.NightShift:
+                                    <td class="night-shift">@usedDate.Day <br> Night shift</td>
+                                    dayAdded = true;
+                                    break;
+                            }
                         }
                     }
+                    if (!dayAdded && (Model.GetDate.Month != usedDate.Month))
+                    {
+                        <td class="bold">@usedDate.Day</td>
+                    }
+                    else if (!dayAdded)
+                    {
+                        <td>@usedDate.Day</td>
+                    }
                 }
-                if (!dayAdded && (Model.GetDate.Month != usedDate.Month))
-                {
-                    <td class="bold">@usedDate.Day</td>
-                }
-                else if (!dayAdded)
-                {
-                    <td>@usedDate.Day</td>
-                }
-            }
-        </tr>
-    </tbody>
-</table>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+ 
+ 
 <div class="calendar-tools">
     <a asp-page-handler="NextMonth">Show next month</a>
 <br>
