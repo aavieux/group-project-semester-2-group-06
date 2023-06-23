@@ -56,14 +56,16 @@
             // 
             // comboBox1
             // 
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox1.AutoCompleteMode = AutoCompleteMode.Append;
             comboBox1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(700, 49);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(435, 36);
             comboBox1.TabIndex = 12;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.TextChanged += comboBox1_TextChanged;
+            comboBox1.Click += comboBox1_Click;
             // 
             // EmployeeShiftsView
             // 

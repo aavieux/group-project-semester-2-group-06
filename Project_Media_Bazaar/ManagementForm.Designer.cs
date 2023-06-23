@@ -169,6 +169,7 @@
             tbF.Name = "tbF";
             tbF.Size = new Size(519, 34);
             tbF.TabIndex = 9;
+            tbF.TextChanged += tbF_TextChanged;
             // 
             // search_lbl
             // 
@@ -214,17 +215,18 @@
             // bLogout
             // 
             bLogout.Location = new Point(10, 59);
-            bLogout.Margin = new Padding(2, 2, 2, 2);
+            bLogout.Margin = new Padding(2);
             bLogout.Name = "bLogout";
             bLogout.Size = new Size(111, 32);
             bLogout.TabIndex = 14;
             bLogout.Text = "Log out";
             bLogout.UseVisualStyleBackColor = true;
+            bLogout.Click += bLogout_Click;
             // 
             // bShowAllAgain
             // 
             bShowAllAgain.Location = new Point(568, 7);
-            bShowAllAgain.Margin = new Padding(2, 2, 2, 2);
+            bShowAllAgain.Margin = new Padding(2);
             bShowAllAgain.Name = "bShowAllAgain";
             bShowAllAgain.Size = new Size(78, 48);
             bShowAllAgain.TabIndex = 15;

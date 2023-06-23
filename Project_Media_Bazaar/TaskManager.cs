@@ -23,12 +23,12 @@ namespace Project_Media_Bazaar
             employees = this.DataAccessEmployeeDashboard.GetAllUsersFromDB();
             LoadData();
             var selectedValue = cbEmployeesShifts.SelectedValue;
-            if (selectedValue != null)
-            {
-                if (selectedValue.ToString().Contains("Completed")) { progressBar1.Value = 100; }
-                if (selectedValue.ToString().Contains("Working on")) { progressBar1.Value = 60; }
-                if (selectedValue.ToString().Contains("In process")) { progressBar1.Value = 20; }
-            }
+            //if (selectedValue != null)
+            //{
+            //    if (selectedValue.ToString().Contains("Completed")) { progressBar1.Value = 100; }
+            //    if (selectedValue.ToString().Contains("Working on")) { progressBar1.Value = 60; }
+            //    if (selectedValue.ToString().Contains("In process")) { progressBar1.Value = 20; }
+            //}
 
         }
 

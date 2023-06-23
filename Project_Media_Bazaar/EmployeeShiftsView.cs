@@ -40,21 +40,58 @@ namespace Project_Media_Bazaar
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            //string searchInput = comboBox1.Text;
-            //comboBox1.DataSource = dataAccessEmployeeDashboard.GetEmployeesFromDB();
-            //// Filter the data source based on the search input
-            //List<string> filteredValues = comboBox1.DataSource
-            //    .Where(value => value.StartsWith(searchInput, StringComparison.OrdinalIgnoreCase))
-            //    .ToList();
+            try
+            {
+                int cursorPosition = comboBox1.SelectionStart;
+                string searchInput = comboBox1.Text;
 
-            //comboBox1.DataSource = filteredValues;
+                comboBox1.DroppedDown = true;
 
-            //// Show the drop-down list
-            //comboBox1.DroppedDown = true;
+
+                comboBox1.Items.Clear();
+                foreach (Employee employee in dataAccessEmployeeDashboard.GetAllUsersFromDB())
+                {
+                    if (employee.GetFirstAndLastName().ToLower().Contains(searchInput.ToLower()))
+                    {
+                        comboBox1.Items.Add(employee.GetIdAndFirstAndLastName());
+                    }
+                }
+                comboBox1.SelectionStart = cursorPosition;
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void EmployeeShiftsView_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+
+            //foreach (Employee employee in dataAccessEmployeeDashboard.GetEmployeesFromDB())
+            //{
+            //    try
+            //    {
+            //        if (comboBox1.SelectedItem.ToString() == employee.GetIdAndFirstAndLastName().ToString())
+            //        {
+            //            MessageBox.Show("ok");
+            //        }
+            //    }
+            //    catch (Exception)
+            //    {
+            //    }
+            //}
 
         }
     }
