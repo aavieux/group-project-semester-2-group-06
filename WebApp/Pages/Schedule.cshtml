@@ -2,6 +2,33 @@
 @model WebApp.Pages.ScheduleModel
 @{
 }
+<br>
+<div class="calendar-tools">
+    <a asp-page-handler="NextMonth">Show next month</a>
+<br>
+<a asp-page-handler="">Show current month</a>
+            <br>
+            <br>
+<form method="post">
+            <select class="month" asp-for="ChosenMonth">
+                <option value="">@Model.CurrentMonth</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <br>
+            <input class="choose-month" type="submit" value="Show chosen month" />
+</form>
+</div>
 
    <div class="containerCalendar">
  
@@ -77,32 +104,4 @@
         </tbody>
     </table>
     </div>
-</div>
- 
- 
-<div class="calendar-tools">
-    <a asp-page-handler="NextMonth">Show next month</a>
-<br>
-<a asp-page-handler="">Show current month</a>
-            <br>
-            <br>
-<form method="post">
-            <select class="month" asp-for="ChosenMonth">
-                <option value="">@Model.CurrentMonth</option>
-                <option value="January">January</option>
-                <option value="February">February</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <option value="September">September</option>
-                <option value="October">October</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
-            </select>
-            <br>
-            <input class="choose-month" type="submit" value="Show chosen month" />
-</form>
 </div>
