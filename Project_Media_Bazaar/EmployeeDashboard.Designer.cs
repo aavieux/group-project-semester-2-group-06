@@ -82,16 +82,19 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.tabControl1.Controls.Add(this.tabDashboard);
-            this.tabControl1.Controls.Add(this.tabCreateEmployee);
-            this.tabControl1.Controls.Add(this.tabShift);
-            this.tabControl1.Location = new System.Drawing.Point(27, 12);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1029, 499);
-            this.tabControl1.TabIndex = 0;
+            tabControl1.Alignment = TabAlignment.Left;
+            tabControl1.Controls.Add(tabDashboard);
+            tabControl1.Controls.Add(tabCreateEmployee);
+            tabControl1.Controls.Add(tabShift);
+            tabControl1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            tabControl1.Location = new Point(24, 9);
+            tabControl1.Margin = new Padding(3, 2, 3, 2);
+            tabControl1.Multiline = true;
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(900, 374);
+            tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabDashboard
             // 
