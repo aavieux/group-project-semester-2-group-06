@@ -45,7 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 337);
+            ClientSize = new Size(700, 321);
             Controls.Add(monthCalendar1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "EmployeeShiftsView";

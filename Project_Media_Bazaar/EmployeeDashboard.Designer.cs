@@ -72,6 +72,7 @@
             btnShift = new Button();
             dtDateShift = new DateTimePicker();
             cbShifts = new ComboBox();
+            btnEmployeeShiftsView = new Button();
             tabControl1.SuspendLayout();
             tabDashboard.SuspendLayout();
             tabCreateEmployee.SuspendLayout();
@@ -441,6 +442,7 @@
             // 
             // tabShift
             // 
+            tabShift.Controls.Add(btnEmployeeShiftsView);
             tabShift.Controls.Add(selectedEmployees_lbl);
             tabShift.Controls.Add(selectFromEmployees_lbl);
             tabShift.Controls.Add(selectedEmployees_clb);
@@ -583,6 +585,18 @@
             cbShifts.Size = new Size(226, 38);
             cbShifts.TabIndex = 4;
             // 
+            // btnEmployeeShiftsView
+            // 
+            btnEmployeeShiftsView.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEmployeeShiftsView.Location = new Point(3, 261);
+            btnEmployeeShiftsView.Margin = new Padding(3, 2, 3, 2);
+            btnEmployeeShiftsView.Name = "btnEmployeeShiftsView";
+            btnEmployeeShiftsView.Size = new Size(402, 45);
+            btnEmployeeShiftsView.TabIndex = 19;
+            btnEmployeeShiftsView.Text = "View employee shifts";
+            btnEmployeeShiftsView.UseVisualStyleBackColor = true;
+            btnEmployeeShiftsView.Click += btnEmployeeShiftsView_Click;
+            // 
             // EmployeeDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -652,5 +666,6 @@
         private Button select_btn;
         private Label label10;
         private Label label9;
+        private Button btnEmployeeShiftsView;
     }
 }

@@ -23,5 +23,11 @@ namespace Project_Media_Bazaar
             ShiftForm shiftForm = new ShiftForm(selectedDate);
             shiftForm.Show();
         }
+
+        private void btnEmployeeShiftsView_Click(object sender, EventArgs e)
+        {
+            EmployeeShiftsView employeeShiftsView = new EmployeeShiftsView();
+            employeeShiftsView.ShowDialog();
+        }
     }
 }

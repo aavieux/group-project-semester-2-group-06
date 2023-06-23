@@ -502,6 +502,12 @@ namespace Project_Media_Bazaar
         {
             LoadData();
         }
+
+        private void btnEmployeeShiftsView_Click(object sender, EventArgs e)
+        {
+            EmployeeShiftsView employeeShiftsView = new EmployeeShiftsView();
+            employeeShiftsView.ShowDialog();
+        }
     }
 }
 
